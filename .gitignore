@@ -1,11 +1,11 @@
 node_modules
 Gruntfile
 gulpfile
-main
-package-lock
+main.ts
+package-lock.json
 bower
 src/dist
 .DS_Store
 __MACOSX
-.eslintrc
+.eslintrc.js
 .vscode
