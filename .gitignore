@@ -1,0 +1,11 @@
+node_modules
+Gruntfile
+gulpfile
+main
+package-lock
+bower
+src/dist
+.DS_Store
+__MACOSX
+.eslintrc
+.vscode

@@ -1,0 +1,30 @@
+{
+  "name": "paymentrails",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./main/index.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^8.5.2",
+    "@types/request": "^2.0.9",
+    "@types/sinon": "^4.1.2",
+    "mocha": "^3.2.0",
+    "request": "^2.81.0",
+    "sinon": "^2.4.1",
+    "tslint": "^5.8.0",
+    "tslint-eslint-rules": "^4.1.1",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.7.0-dev.20171229"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.44",
+    "@types/es6-promise": "^3.3.0"
+  }
+}
