@@ -13,10 +13,10 @@ describe("Add Payment", () => {
 
         const payload = {
             type: "individual",
-            email: "tespss@ssspirateking.com",
-            name: "Monkey D. Luffy",
-            firstName: "Luffy",
-            lastName: "Monkey",
+            email: "test6@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
         let response = await Recipient.create(payload);
 
@@ -64,10 +64,10 @@ describe("Process Batch", () => {
 
         const payload = {
             type: "individual",
-            email: "letsllpd@dikdksng.com",
-            name: "Monkey D. Luffy",
-            firstName: "Luffy",
-            lastName: "Monkey",
+            email: "test7@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
         let response = await Recipient.create(payload);
 
@@ -107,10 +107,10 @@ describe("Delete Batch", () => {
 
         const payload = {
             type: "individual",
-            email: "ledf@snfsdg.com",
-            name: "Monkey D. Luffy",
-            firstName: "Luffy",
-            lastName: "Monkey",
+            email: "test8@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
         let response = await Recipient.create(payload);
 
@@ -148,10 +148,10 @@ describe("Create Batch", () => {
         Configuration.setApiSecret("YOUR_PRIVATE_KEY");
         const payload = {
             type: "individual",
-            email: "lesxAxsdfa@snfsdgdf.com",
-            name: "Monkey D. Luffy",
-            firstName: "Luffy",
-            lastName: "Monkey",
+            email: "test9@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
         let response = await Recipient.create(payload);
 

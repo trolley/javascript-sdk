@@ -8,7 +8,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "npm run test:unit",
+    "test:unit": "mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
+    "test:integration": "mocha --require ts-node/register \"test/integration/**/*Spec.ts\""
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +21,7 @@
     "mocha": "^3.2.0",
     "request": "^2.81.0",
     "sinon": "^2.4.1",
+    "ts-node": "^4.1.0",
     "tslint": "^5.8.0",
     "tslint-eslint-rules": "^4.1.1",
     "tslint-microsoft-contrib": "^5.0.1",

@@ -11,15 +11,15 @@ describe("Update Recipient", () => {
 
         const payload = {
             type: "individual",
-            email: "newtest10@test.com",
-            name: "Captain Crunch",
-            firstName: "Captain",
-            lastName: "Crunch",
+            email: "test@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
         let response = await Recipient.create(payload);
 
         const recipientId = response.recipient.id;
-        assert.equal("Captain", response.recipient.firstName);
+        assert.equal("John", response.recipient.firstName);
 
         const payload1 = {
             firstName: "George",
@@ -38,14 +38,14 @@ describe("Delete Recipient", () => {
 
         const payload = {
             type: "individual",
-            email: "test12@pirateking.com",
-            name: "Monkey D. Luffy",
-            firstName: "Luffy",
-            lastName: "Monkey",
+            email: "test1@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
         let response = await Recipient.create(payload);
 
-        assert.equal(response.recipient.email, "test12@pirateking.com");
+        assert.equal(response.recipient.email, "test1@paymentrails.com");
         const recipientId = response.recipient.id;
         response = await Recipient.remove(recipientId);
         assert.equal(response, "{\"ok\":true}");
@@ -59,15 +59,15 @@ describe("Create Account", () => {
 
         const payload = {
             type: "individual",
-            email: "BBr1i@capsulecorp.com",
-            name: "Bulma Briefs",
-            firstName: "Bulma",
-            lastName: "Briefs",
+            email: "test2@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
 
         let response = await Recipient.create(payload);
         const recipientId = response.recipient.id;
-        assert.equal(response.recipient.firstName, "Bulma");
+        assert.equal(response.recipient.firstName, "John");
 
         const body = {
             type: "bank-transfer",
@@ -92,15 +92,15 @@ describe("Delete Account", () => {
         Configuration.setApiSecret("YOUR_PRIVATE_KEY");
         const payload = {
             type: "individual",
-            email: "Bpdddssd@capsulecorp.com",
-            name: "Bulma Briefs",
-            firstName: "Bulma",
-            lastName: "Briefs",
+            email: "test3@paymentrails.com",
+            name: "John Smith",
+            firstName: "John",
+            lastName: "Smith",
         };
 
         let response = await Recipient.create(payload);
         const recipientId = response.recipient.id;
-        assert.equal(response.recipient.firstName, "Bulma");
+        assert.equal(response.recipient.firstName, "John");
 
         const body = {
             type: "bank-transfer",
