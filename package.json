@@ -2,7 +2,8 @@
   "name": "paymentrails",
   "version": "0.1.0",
   "description": "",
-  "main": "./main/index.ts",
+  "main": "./src/dist/index",
+  "types": "./src/dist/index",
   "directories": {
     "test": "tests"
   },

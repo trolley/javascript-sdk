@@ -5,11 +5,9 @@ import { Balances } from './src/Balances';
 import { Batch } from './src/Batch';
 import { Payment } from './src/Payment';
 
-module.exports = {
-    Configuration,
-    Recipient,
-    RecipientAccount,
-    Balances,
-    Payment,
-    Batch,
-};
+export { Configuration };
+export { Recipient };
+export { RecipientAccount };
+export { Balances };
+export { Batch };
+export { Payment };
