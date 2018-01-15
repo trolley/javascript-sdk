@@ -30,7 +30,7 @@ jobs:
             if
 
 workflows:
-  version:2
+  version: 2
   build-deploy:
     jobs:
       - build
