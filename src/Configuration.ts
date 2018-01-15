@@ -1,4 +1,4 @@
-import { Gateway } from './gateway';
+import { Gateway } from './Gateway';
 
 let apiKey: string;
 let apiSecret: string;
