@@ -1,8 +1,8 @@
-import { Configuration } from '../../src/dist/src/Configuration';
-import { Recipient } from '../../src/dist/src/Recipient';
-import { RecipientAccount } from '../../src/dist/src/RecipientAccount';
-import { Batch } from '../../src/dist/src/Batch';
-import { Payment } from '../../src/dist/src/Payment';
+import { Configuration } from '../../src/Configuration';
+import { Recipient } from '../../src/Recipient';
+import { RecipientAccount } from '../../src/RecipientAccount';
+import { Batch } from '../../src/Batch';
+import { Payment } from '../../src/Payment';
 import * as types from "../../types";
 import * as assert from "assert";
 
