@@ -10,7 +10,8 @@
   "scripts": {
     "test": "npm run test:unit",
     "test:unit": "mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
-    "test:integration": "mocha --require ts-node/register \"test/integration/**/*Spec.ts\""
+    "test:integration": "mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
+    "build": "tsc || echo Done"
   },
   "author": "",
   "license": "ISC",
