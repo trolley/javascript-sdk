@@ -29,13 +29,12 @@ jobs:
               npm publish --access public
             if
 
-
 workflows:
   version: 2
   build-deploy:
     jobs:
       - build
-      # - deploy-npm:
-      #   - context: org-global
-      #   - requires:
-      #     - build
+      - deploy-npm:
+          context: org-global
+          requires:
+           - build
