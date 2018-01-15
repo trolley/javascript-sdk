@@ -30,4 +30,4 @@ workflows:
   build-deploy:
     jobs:
       - build:
-        context: org-global
+          context: org-global
