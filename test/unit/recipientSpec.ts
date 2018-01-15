@@ -1,8 +1,7 @@
 "use strict";
 
-import { Configuration } from '../../src/dist/src/Configuration';
-import { Recipient } from '../../src/dist/src/Recipient';
-
+import { Configuration } from '../../src/Configuration';
+import { Recipient } from '../../src/Recipient';
 
 import * as assert from "assert";
 import * as sinon from "sinon";

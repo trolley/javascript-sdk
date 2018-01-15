@@ -1,7 +1,7 @@
 "use strict";
 
-import { Configuration } from '../../src/dist/src/Configuration';
-import { Payment } from '../../src/dist/src/Payment';
+import { Configuration } from '../../src/Configuration';
+import { Payment } from '../../src/Payment';
 
 import * as assert from "assert";
 import * as sinon from "sinon";

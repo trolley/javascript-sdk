@@ -17,18 +17,17 @@ For more information about the API as well as NodeJS code samples check out the 
 
 ```ts
 // A simple TypeScript application using the Payment Rails SDK
-var PaymentRails = require('paymentrails');
+import * as PaymentRails from 'paymentrails';
 
-PaymentRails.Configuration.setApiKey('access-code');
-PaymentRails.Configuration.setApiSecret('secret-code');
-let response = Promise.resolve(Recipient.find("R-BdTs1oed3PuUA5TXxGzDYE"));
+PaymentRails.Configuration.setApiKey("YOUR-API-KEY");
+PaymentRails.Configuration.setApiSecret("YOUR-API-SECRET");
 
-response.then(function (result: types.Recipient.Recipient) {
-    console.log(result.recipient.id)
-});
+async function main() {
+    const response = await PaymentRails.Recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC");
+    console.log(response.recipient.id);
+}
 
-```
-
+main();
 ## Documentation for API Endpoint Methods
 
 All URIs are relative to *https://api.paymentrails.com/v1*
