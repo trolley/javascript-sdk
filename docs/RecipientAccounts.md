@@ -11,7 +11,7 @@ Utility method to make GET requests to the payout method API
 Parameters | Return Type
 --- | ---:
 (recipientId, recipientAccountId) | 
-Promise<types.Recipient.RecipientPayoutMethod>
+Promise<types.Recipient.AccountResponse>
 
 ---
 ### **post**
@@ -19,7 +19,7 @@ Utility method to make POST requests to the payout method API
 
 Parameters | Return Type
 --- | ---:
-(recipientId, body) | Promise<types.Recipient.RecipientPayoutMethod>
+(recipientId, body) | Promise<types.Recipient.AccountResponse>
 
 ---
 ### **patch**

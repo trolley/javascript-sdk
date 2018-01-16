@@ -17,7 +17,7 @@ describe("Update Recipient", () => {
             firstName: "John",
             lastName: "Smith",
         };
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
 
         const recipientId = response.recipient.id;
         assert.equal("John", response.recipient.firstName);
@@ -27,8 +27,8 @@ describe("Update Recipient", () => {
             lastName: "Jetson",
         };
 
-        response = await Recipient.update(recipientId, payload1);
-        assert.equal(response.ok, true);
+        const response1 = await Recipient.update(recipientId, payload1);
+        assert.equal(response1.ok, true);
     });
 });
 
@@ -44,12 +44,12 @@ describe("Delete Recipient", () => {
             firstName: "John",
             lastName: "Smith",
         };
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
 
         assert.equal(response.recipient.email, "test1@paymentrails.com");
         const recipientId = response.recipient.id;
-        response = await Recipient.remove(recipientId);
-        assert.equal(response, "{\"ok\":true}");
+        const response1 = await Recipient.remove(recipientId);
+        assert.equal(response1, "{\"ok\":true}");
     });
 });
 
@@ -66,7 +66,7 @@ describe("Create Account", () => {
             lastName: "Smith",
         };
 
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
         const recipientId = response.recipient.id;
         assert.equal(response.recipient.firstName, "John");
 
@@ -81,8 +81,8 @@ describe("Create Account", () => {
             accountHolderName: "John Smith",
         };
 
-        response = await RecipientAccount.create(recipientId, body);
-        assert.equal(response.account.type, "bank-transfer");
+        const response1 = await RecipientAccount.create(recipientId, body);
+        assert.equal(response1.account.type, "bank-transfer");
     });
 });
 
@@ -99,7 +99,7 @@ describe("Delete Account", () => {
             lastName: "Smith",
         };
 
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
         const recipientId = response.recipient.id;
         assert.equal(response.recipient.firstName, "John");
 
@@ -114,10 +114,10 @@ describe("Delete Account", () => {
             accountHolderName: "John Smith",
         };
 
-        response = await RecipientAccount.create(recipientId, body);
-        assert.equal(response.account.type, "bank-transfer");
-        const recipientAccountId = response.account.recipientAccountId;
-        response = await RecipientAccount.remove(recipientId, recipientAccountId);
-        assert.equal(response, "{\"ok\":false,\"errors\":[{\"code\":\"invalid_status\",\"message\":\"Cannot delete primary account\",\"field\":\"primary\"}]}");
+        const response1 = await RecipientAccount.create(recipientId, body);
+        assert.equal(response1.account.type, "bank-transfer");
+        const recipientAccountId = response1.account.recipientAccountId;
+        const response2 = await RecipientAccount.remove(recipientId, recipientAccountId);
+        assert.equal(response2, "{\"ok\":false,\"errors\":[{\"code\":\"invalid_status\",\"message\":\"Cannot delete primary account\",\"field\":\"primary\"}]}");
     });
 });

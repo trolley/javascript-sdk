@@ -5,6 +5,7 @@ import { Batch } from '../../src/Batch';
 import { Payment } from '../../src/Payment';
 import * as types from "../../types";
 import * as assert from "assert";
+import {} from 'jasmine';
 
 describe("Add Payment", () => {
     it("", async () => {
@@ -13,12 +14,12 @@ describe("Add Payment", () => {
 
         const payload = {
             type: "individual",
-            email: "test6@paymentrails.com",
+            email: "test672@paymentrails.com",
             name: "John Smith",
             firstName: "John",
             lastName: "Smith",
         };
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
 
         const body = {
             type: "bank-transfer",
@@ -30,29 +31,28 @@ describe("Add Payment", () => {
             branchId: "47261",
             accountHolderName: "John Smith",
         };
-
-        response = RecipientAccount.create(response.recipient.id, body);
+        const response1 = RecipientAccount.create(response.recipient.id, body);
         const body1 = {
             payments: [{
                 recipient: {
-                    id: "R-PWAEMx64EWNag6e4Yh8YKn",
+                    id: "R-RLaenm8MGPRGRybqzLcgtL",
                 },
                 sourceAmount: "975",
-                sourceCurrency: "USD",
+                sourceCurrency: "CAD",
                 description: "test",
             }],
         };
-        response = await Batch.create(body1);
+        const response2 = await Batch.create(body1);
         const body2 = {
             recipient: {
-                id: "R-PWAEMx64EWNag6e4Yh8YKn",
+                id: "R-RLaenm8MGPRGRybqzLcgtL",
             },
             sourceAmount: "100.10",
             sourceCurrency: "CAD",
             memo: "Freelance Payment",
         };
-        response = await Payment.create(response.batch.id, body2);
-        assert.equal(response.payment.sourceAmount, "100.10");
+        const response3 = await Payment.create(response2.batch.id, body2);
+        assert.equal(response3.payment.sourceAmount, "100.10");
 
     });
 });
@@ -69,7 +69,7 @@ describe("Process Batch", () => {
             firstName: "John",
             lastName: "Smith",
         };
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
 
         const body = {
             type: "bank-transfer",
@@ -82,7 +82,7 @@ describe("Process Batch", () => {
             accountHolderName: "John Smith",
         };
 
-        response = await RecipientAccount.create(response.recipient.id, body);
+        const response1 = await RecipientAccount.create(response.recipient.id, body);
         const body1 = {
             payment: [{
                 recipient: {
@@ -93,10 +93,10 @@ describe("Process Batch", () => {
                 description: "test",
             }],
         };
-        response = await Batch.create(body1);
-        Batch.generateQuote(response.batch.id);
-        response = await Batch.processBatch(response.batch.id);
-        assert.equal("processing", response.batch.status);
+        const response2 = await Batch.create(body1);
+        Batch.generateQuote(response2.batch.id);
+        const response3 = await Batch.processBatch(response2.batch.id);
+        assert.equal("processing", response3.batch.status);
     });
 });
 
@@ -112,7 +112,7 @@ describe("Delete Batch", () => {
             firstName: "John",
             lastName: "Smith",
         };
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
 
         const body = {
             type: "bank-transfer",
@@ -125,7 +125,7 @@ describe("Delete Batch", () => {
             accountHolderName: "John Smith",
         };
 
-        response = await RecipientAccount.create(response.recipient.id, body);
+        const response1 = await RecipientAccount.create(response.recipient.id, body);
         const body1 = {
             payment: [{
                 recipient: {
@@ -136,8 +136,8 @@ describe("Delete Batch", () => {
                 description: "test",
             }],
         };
-        response = await Batch.create(body1);
-        response = await Batch.remove(response.batch.id);
+        const response2 = await Batch.create(body1);
+        const response3 = await Batch.remove(response2.batch.id);
         assert.equal(response, "{\"ok\":true}");
     });
 });
@@ -153,7 +153,7 @@ describe("Create Batch", () => {
             firstName: "John",
             lastName: "Smith",
         };
-        let response = await Recipient.create(payload);
+        const response = await Recipient.create(payload);
 
         const body = {
             type: "bank-transfer",
@@ -166,7 +166,7 @@ describe("Create Batch", () => {
             accountHolderName: "John Smith",
         };
 
-        response = await RecipientAccount.create(response.recipient.id, body);
+        const response2 = await RecipientAccount.create(response.recipient.id, body);
         const body1 = {
             payment: [{
                 recipient: {
@@ -177,7 +177,7 @@ describe("Create Batch", () => {
                 description: "test",
             }],
         };
-        response = await Batch.create(body1);
-        assert.equal(response.batch.currency, "USD");
+        const response3 = await Batch.create(body1);
+        assert.equal(response3.batch.currency, "USD");
     });
 });

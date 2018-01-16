@@ -10,6 +10,6 @@ export class Balances { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().balances.find(term);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Balance.Balance>jsonObj;
+        return <types.Balance.Result>jsonObj;
     }
 }

@@ -48,7 +48,7 @@ describe("Create recipient", () => {
             email: "wonder@woman.com",
             name: "Wonder Woman",
             lastName: "Woman",
-            firstName: "Wonder"
+            firstName: "Wonder",
         };
         sinon.stub(Recipient, "create").withArgs(body).callsFake(() => {
             return ("{'ok':true,'recipient':{'id':'R-LVqW7CTFRoTCunpV9QSBRe','referenceId':'jsmith@example.com','email':'jsmith@example.com','name':'John Smith','lastName':'Smith','firstName':'John','type':'individual','taxType':null,'status':'incomplete','language':'en','complianceStatus':'pending','dob':null,'payoutMethod':null,'updatedAt':'2017-08-02T19:43:19.492Z','createdAt':'2017-08-02T19:43:19.492Z','gravatarUrl':'https://s3.amazonaws.com/static.api.paymentrails.com/icon_user.svg','compliance':{'status':'pending','checkedAt':null},'accounts':[],'payout':{},'address':{'street1':null,'street2':null,'city':null,'postalCode':null,'country':null,'region':null,'phone':null}}}");

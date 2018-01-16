@@ -12,9 +12,9 @@ export class Recipient { // tslint:disable no-stateless-class
   static async find(recipientId: string, term: string = "") {
 
     const data = await Configuration.gateway().recipient.find(recipientId, term);
-    const jsonObj: any = JSON.parse(data.toString());
+    const jsonObj = JSON.parse(data.toString());
 
-    return <types.Recipient.Recipient>jsonObj;
+    return <types.Recipient.Response>jsonObj;
   }
   /**
    * Creates a recipient based on the body given to the client
@@ -23,7 +23,7 @@ export class Recipient { // tslint:disable no-stateless-class
   static async create(body: any) {
     const data = await Configuration.gateway().recipient.create(body);
 
-    return <types.Recipient.Recipient>data;
+    return <types.Recipient.Response>data;
   }
   /**
    * Updates a recipient based on the body given to the client
@@ -52,6 +52,6 @@ export class Recipient { // tslint:disable no-stateless-class
     const data = await Configuration.gateway().recipient.search(page, pageSize, search);
     const jsonObj: any = JSON.parse(data.toString());
 
-    return <types.Recipient.Recipient>jsonObj;
+    return <types.Recipient.ListResponse>jsonObj;
   }
 }

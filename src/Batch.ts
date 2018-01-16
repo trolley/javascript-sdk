@@ -11,7 +11,7 @@ export class Batch { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().batch.find(batchId);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Batch.Batch>jsonObj;
+        return <types.Batch.Result>jsonObj;
     }
 
     /**
@@ -24,7 +24,7 @@ export class Batch { // tslint:disable no-stateless-class
     static async create(body: any) {
         const data = await Configuration.gateway().batch.create(body);
 
-        return <types.Batch.Batch>data;
+        return <types.Batch.Result>data;
     }
 
     /**
@@ -56,7 +56,7 @@ export class Batch { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().batch.search(page, pageSize, search);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Batch.Batch>jsonObj;
+        return <types.Batch.ListResult>jsonObj;
     }
 
     /**
@@ -67,7 +67,7 @@ export class Batch { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().batch.generateQuote(batchId);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Batch.Batch>jsonObj;
+        return <types.Batch.Result>jsonObj;
 
     }
 
@@ -79,7 +79,7 @@ export class Batch { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().batch.processBatch(batchId);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Batch.Batch>jsonObj;
+        return <types.Batch.Result>jsonObj;
     }
 
     /**
@@ -90,7 +90,7 @@ export class Batch { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().batch.summary(batchId);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.BatchSummary.BatchSummary>jsonObj;
+        return <types.BatchSummary.Result>jsonObj;
 
     }
 }

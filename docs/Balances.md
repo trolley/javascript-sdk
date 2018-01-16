@@ -9,5 +9,5 @@ Utility method to make GET requests to the balances API
 
 Parameters | Return Type 
 --- | ---:
-no paramaters | Promise<types.Balance.Balance>
-(type) | Promise<types.Balance.Balance>
+no paramaters | Promise<types.Balance.Result>
+(type) | Promise<types.Balance.Result>

@@ -4,7 +4,6 @@ gulpfile
 main.ts
 package-lock.json
 bower
-src/dist
 .DS_Store
 __MACOSX
 .eslintrc.js

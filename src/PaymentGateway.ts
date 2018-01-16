@@ -15,12 +15,12 @@ export class PaymentGateway {
     find(paymentId: string) {
         const endPoint = `/v1/payments/${paymentId}`;
 
-        return this.gateway.client.get<types.Payment.Payment>(endPoint);
+        return this.gateway.client.get<types.Payment.Result>(endPoint);
     }
     create(batchId: string, body: any) {
         const endPoint = `/v1/batches/${batchId}/payments`;
 
-        return this.gateway.client.post(endPoint, body);
+        return this.gateway.client.post<types.Payment.Result>(endPoint, body);
     }
     update(paymentId: string, batchId: string, body: any) {
         const endPoint = `/v1/batches/${batchId}/payments/${paymentId}`;
@@ -35,6 +35,6 @@ export class PaymentGateway {
     search(batchId: string, page: number = 1, pageSize: number = 10, search: string = "") {
         const endPoint = `/v1/batches/${batchId}/payments/?&search=${search}&page=${page}&pageSize=${pageSize}`;
 
-        return this.gateway.client.get(endPoint);
+        return this.gateway.client.get<types.Payment.ListResult>(endPoint);
     }
 }

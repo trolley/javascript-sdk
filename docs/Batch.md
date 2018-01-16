@@ -10,7 +10,7 @@ Utility method to make GET requests to the batch API
 
 Parameters | Return Type
 --- | ---:
-(batchId) | Promise<types.Batch.Batch>
+(batchId) | Promise<types.Batch.Result>
 
 
 ---
@@ -19,8 +19,8 @@ Utility method to make POST requests to the batch API
 
 Parameters | Return Type
 --- | ---:
-(body) | Promise<types.Batch.Batch>
-(body, batchId) | Promise<types.Batch.Batch>
+(body) | Promise<types.Batch.Result>
+(body, batchId) | Promise<types.Batch.Result>
 
 ---
 ### **patch**
@@ -44,7 +44,7 @@ Utility method for querying batches
 
 Parameters | Return Type
 --- | ---:
-(page, pageSize, term) | Promise<types.Batch.Batch>
+(page, pageSize, term) | Promise<types.Batch.ListResult>
 
 ---
 ### **generateQuote**
@@ -52,7 +52,7 @@ Utility method to generating a quote for a bacth
 
 Parameters | Return Type
 --- | ---:
-(batchId) | Promise<types.Batch.Batch>
+(batchId) | Promise<types.Batch.Result>
 
 
 ---
@@ -61,7 +61,7 @@ Utility method to send a batch out for processing
 
 Parameters | Return Type
 --- | ---:
-(batchId) | Promise<types.Batch.Batch>
+(batchId) | Promise<types.Batch.Result>
 
 
 ---
@@ -70,4 +70,4 @@ Utility method to get a batch summary
 
 Parameters | Return Type
 --- | ---:
-(batchId) | Promise<types.BatchSummary.BatchSummary>
+(batchId) | Promise<types.BatchSummary.Result>

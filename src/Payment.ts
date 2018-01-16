@@ -10,7 +10,7 @@ export class Payment { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().payment.find(paymentId);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Payment.Payment>jsonObj;
+        return <types.Payment.Result>jsonObj;
     }
     /**
      * Creates a payment based on the batch id
@@ -20,7 +20,7 @@ export class Payment { // tslint:disable no-stateless-class
     static async create(batchId: string, body: any) {
         const data = await Configuration.gateway().payment.create(batchId, body);
 
-        return <types.Payment.Payment>data;
+        return <types.Payment.Result>data;
     }
     /**
      * Updates a payment based on the payment id
@@ -50,6 +50,6 @@ export class Payment { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().payment.search(batchId, page, pageSize, search);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Payment.Payment>jsonObj;
+        return <types.Payment.ListResult>jsonObj;
     }
 }

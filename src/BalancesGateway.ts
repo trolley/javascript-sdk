@@ -15,6 +15,6 @@ export class BalancesGateway {
     find(term = "") {
         const endPoint = `/v1/profile/balances/${term}`;
 
-        return this.gateway.client.get<types.Balance.Balance>(endPoint);
+        return this.gateway.client.get<types.Balance.Result>(endPoint);
     }
 }

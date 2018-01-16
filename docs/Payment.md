@@ -10,7 +10,7 @@ Utility method to make GET requests to the payment API
 
 Parameters | Return Type
 --- | ---:
-(paymentId) | Promise<types.Payment.Payment>
+(paymentId) | Promise<types.Payment.Result>
 
 
 ---
@@ -19,7 +19,7 @@ Utility method to make POST requests to the payment API
 
 Parameters | Return Type
 --- | ---:
-(body, batchId) | Promise<types.Payment.Payment>
+(body, batchId) | Promise<types.Payment.Result>
 
 ---
 ### **patch**
@@ -43,7 +43,7 @@ Utility method for querying payments
 
 Parameters | Return Type
 --- | ---:
-(no-parameters) | Promise<types.Payment.Payment>
-(page) | Promise<types.Payment.Payment>
-(page, pageSize) | Promise<types.Payment.Payment>
-(page, pageSize, term) | Promise<types.Payment.Payment>
+(no-parameters) | Promise<types.Payment.ListResult>
+(page) | Promise<types.Payment.ListResult>
+(page, pageSize) | Promise<types.Payment.ListResult>
+(page, pageSize, term) | Promise<types.Payment.ListResult>

@@ -11,7 +11,7 @@ export class RecipientAccount { // tslint:disable no-stateless-class
         const data = await Configuration.gateway().recipientAccount.find(recipientId, recipientAccountId);
         const jsonObj: any = JSON.parse(data.toString());
 
-        return <types.Recipient.RecipientPayoutMethod>jsonObj;
+        return <types.Recipient.AccountResponse>jsonObj;
     }
     /**
      * Creates a payout method based on the body and recipient id
@@ -21,7 +21,7 @@ export class RecipientAccount { // tslint:disable no-stateless-class
     static async create(recipientId: string, body: any) {
         const data = await Configuration.gateway().recipientAccount.create(recipientId, body);
 
-        return <types.Recipient.RecipientPayoutMethod>data;
+        return <types.Recipient.AccountResponse>data;
     }
 
     /**
@@ -31,7 +31,7 @@ export class RecipientAccount { // tslint:disable no-stateless-class
      * @param {string} recipientAccountId
      */
     static async update(recipientId: string, recipientAccountId: string, body: any) {
-        return await Configuration.gateway().recipientAccount.update(recipientId, recipientAccountId, body);
+        return Configuration.gateway().recipientAccount.update(recipientId, recipientAccountId, body);
     }
 
     /**
@@ -41,7 +41,7 @@ export class RecipientAccount { // tslint:disable no-stateless-class
      * @param {string} recipientAccountId
      */
     static async remove(recipientId: string, recipientAccountId: string) {
-        return await Configuration.gateway().recipientAccount.remove(recipientId, recipientAccountId);
+        return Configuration.gateway().recipientAccount.remove(recipientId, recipientAccountId);
     }
 
 }

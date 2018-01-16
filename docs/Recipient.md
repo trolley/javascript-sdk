@@ -10,8 +10,8 @@ Utility method to make GET requests to the recipient API
 
 Parameters | Return Type
 ---| ---:
-(recipientId) | Promise<types.Recipient.Recipient>
-(recipientId, term) | Promise<types.Recipient.Recipient>
+(recipientId) | Promise<types.Recipient.Response>
+(recipientId, term) | Promise<types.Recipient.Response>
 
 ---
 ### **post**
@@ -19,7 +19,7 @@ Utility method to make POST requests to the recipient API
 
 Parameters | Return Type
 --- | ---:
-(body) | Promise<types.Recipient.Recipient>
+(body) | Promise<types.Recipient.Response>
 
 ---
 ### **patch**
@@ -43,7 +43,7 @@ Utility method for querying recipients
 
 Parameters | Return Type
 --- | ---:
-(no-parameters) | Promise<types.Recipient.Recipient>
-(page) | Promise<types.Recipient.Recipient>
-(page, pageSize) | Promise<types.Recipient.Recipient>
-(page, pageSize, term) | Promise<types.Recipient.Recipient>
+(no-parameters) | Promise<types.Recipient.ListResponse>
+(page) | Promise<types.Recipient.ListResponse>
+(page, pageSize) | Promise<types.Recipient.ListResponse>
+(page, pageSize, term) | Promise<types.Recipient.ListResponse>
