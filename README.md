@@ -27,6 +27,8 @@ async function main() {
 }
 
 main();
+
+
 ## Documentation for API Endpoint Methods
 
 All URIs are relative to *https://api.paymentrails.com/v1*
