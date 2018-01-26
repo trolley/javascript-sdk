@@ -1,13 +1,11 @@
-# Payment Rails TypeScript SDK
+# Payment Rails JavaScript SDK
 
-A native TypeScript SDK for the Payment Rails API
-
-For more information about the API as well as NodeJS code samples check out the [full API documentation](http://docs.paymentrails.com)
+A JavaScript SDK (written in TypeScript) - For more information about the API as well as NodeJS code samples check out the [full API documentation](http://docs.paymentrails.com)
 
 
 ## Installation
 
-#
+    npm install --save paymentrails
 
 #### For [TypeScript](https://www.typescriptlang.org/)
 
@@ -15,9 +13,9 @@ For more information about the API as well as NodeJS code samples check out the 
 
 ## Getting Started
 
-```ts
+```js
 // A simple TypeScript application using the Payment Rails SDK
-import * as PaymentRails from 'paymentrails';
+const PaymentRails = require('paymentrails');
 
 PaymentRails.Configuration.setApiKey("YOUR-API-KEY");
 PaymentRails.Configuration.setApiSecret("YOUR-API-SECRET");
