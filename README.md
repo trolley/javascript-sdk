@@ -21,6 +21,7 @@ import * as PaymentRails from 'paymentrails';
 
 PaymentRails.Configuration.setApiKey("YOUR-API-KEY");
 PaymentRails.Configuration.setApiSecret("YOUR-API-SECRET");
+PaymentRails.Configuration.setEnviroment("production");
 
 async function main() {
     const response = await PaymentRails.Recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC");
