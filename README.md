@@ -25,6 +25,13 @@ async function main() {
 main();
 ```
 
+### Usage
+
+Methods should all have JSDoc comments to help you understand their usage. As mentioned the [full API documentation](http://docs.paymentrails.com)
+is the best source of information about the API.
+
+For more information please read the [JavaScript API docs](https://github.com/PaymentRails/javascript-sdk/blob/master/docs/api.md) is available.
+
 #### Running Unit tests
 
 If you're working on the library itself, here's easy way to run the unit tests. They are designed to be run with configuration coming through environment variables.

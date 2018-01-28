@@ -13,7 +13,6 @@ export class Client {
   /**
    * Makes an HTTP GET request to the API
    * @param {string} endPoint
-   * @returns {The response}
    */
   async get<T>(endPoint: string): Promise<T> {
     const date: any = new Date();
@@ -21,7 +20,7 @@ export class Client {
     const authoriation = this.generateAuthorization(timestamp, endPoint, "GET");
     const options = {
       uri: endPoint,
-      baseUrl: this.config.getApiBase(),
+      baseUrl: this.config.apiBase,
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -45,7 +44,6 @@ export class Client {
    * Makes an HTTP POST request to the API
    * @param {string} endPoint
    * @param {array} body
-   * @returns {The response}
    */
   async post<T>(endPoint: string, payload?: any): Promise<T> {
     const date: any = new Date();
@@ -60,7 +58,7 @@ export class Client {
     );
 
     const options = {
-      uri: this.config.getApiBase() + endPoint,
+      uri: this.config.apiBase + endPoint,
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -88,7 +86,6 @@ export class Client {
    * Makes an HTTP PATCH request to the API
    * @param {string} endPoint
    * @param {array} body
-   * @returns {The response}
    */
   async patch<T>(endPoint: string, payload: any): Promise<T> {
     const date: any = new Date();
@@ -102,7 +99,7 @@ export class Client {
     );
     const options = {
       uri: endPoint,
-      baseUrl: this.config.getApiBase(),
+      baseUrl: this.config.apiBase,
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -125,7 +122,6 @@ export class Client {
   /**
    * Makes an HTTP DELETE request to the API
    * @param {string} endPoint
-   * @returns {The response}
    */
   async remove<T>(endPoint: string): Promise<T> {
     const date: any = new Date();
@@ -137,7 +133,7 @@ export class Client {
     );
     const options = {
       uri: endPoint,
-      baseUrl: this.config.getApiBase(),
+      baseUrl: this.config.apiBase,
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -170,12 +166,12 @@ export class Client {
     body: string = "",
   ) {
     try {
-      const hmac = crypto.createHmac("sha256", `${this.config.getApiSecret()}`);
+      const hmac = crypto.createHmac("sha256", `${this.config.apiSecret}`);
 
       hmac.update(`${timestamp}\n${method}\n${endPoint}\n${body}\n`);
       const signature = hmac.digest("hex");
 
-      return `prsign ${this.config.getApiKey()}:${signature}`;
+      return `prsign ${this.config.apiKey}:${signature}`;
     } catch (typeError) {
       return "prsign 1:1";
     }

@@ -2,6 +2,9 @@ import { Configuration } from "./Configuration";
 import { DownForMaintenance } from "./exceptions";
 import * as types from "./types";
 
+/**
+ * @name RecipientAccount
+ */
 // tslint:disable:function-name
 export class RecipientAccount {
   id: string = "";

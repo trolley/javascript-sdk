@@ -3,6 +3,9 @@ import { Recipient } from './Recipient';
 import * as types from "./types";
 
 // tslint:disable:function-name
+/**
+ * @name Payment
+ */
 export class Payment {
   id: string = "";
   recipient: Recipient = {} as any;

@@ -4,6 +4,9 @@ import * as types from "./types";
 
 // tslint:disable:function-name
 
+/**
+ * @name Balance
+ */
 export class Balance {
   primary: boolean = false;
   amount: string = "0.00";

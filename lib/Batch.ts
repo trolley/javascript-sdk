@@ -1,5 +1,5 @@
 import { Configuration } from "./Configuration";
-import { Payment } from './Payment';
+import { Payment } from "./Payment";
 import * as types from "./types";
 
 // tslint:disable:function-name
@@ -27,6 +27,9 @@ export interface PaymentInput {
   };
 }
 
+/**
+ * @name Batch
+ */
 export class Batch {
   id: string = "";
   status: string = "";
@@ -41,18 +44,18 @@ export class Batch {
   payments?: Payment[] = [];
   quoteExpiredAt?: string;
 
-  /*
-  * Retrieves a batch based on the batch id
-  * @param {string} batchId
-  */
+  /**
+   * Retrieves a batch based on the batch id
+   * @param {string} batchId
+   */
   static async all() {
     return Configuration.gateway().batch.all();
   }
 
-  /*
-  * Retrieves a batch based on the batch id
-  * @param {string} batchId
-  */
+  /**
+   * Retrieves a batch based on the batch id
+   * @param {string} batchId
+   */
   static async find(batchId: string) {
     return Configuration.gateway().batch.find(batchId);
   }
@@ -101,11 +104,7 @@ export class Batch {
     pageSize: number = 10,
     term: string = "",
   ) {
-    return Configuration.gateway().batch.search(
-      page,
-      pageSize,
-      term,
-    );
+    return Configuration.gateway().batch.search(page, pageSize, term);
   }
 
   /**
@@ -156,11 +155,7 @@ export class Batch {
     page: number = 1,
     pageSize: number = 10,
   ) {
-    return Configuration.gateway().batch.payments(
-      batchId,
-      page,
-      pageSize,
-    );
+    return Configuration.gateway().batch.payments(batchId, page, pageSize);
   }
 
   static factory(batch: types.Batch.Batch) {

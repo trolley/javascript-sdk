@@ -2,6 +2,9 @@ import { Configuration } from "./Configuration";
 import { RecipientAccount } from "./RecipientAccount";
 import * as types from "./types";
 
+/**
+ * @name Recipient
+ */
 // tslint:disable:function-name
 export class Recipient {
   id: string = "";

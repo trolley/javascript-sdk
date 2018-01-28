@@ -1,6 +1,6 @@
 {
   "name": "paymentrails",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "",
   "main": "./dist/index",
   "types": "./dist/index",
@@ -16,12 +16,14 @@
     "test:unit": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
     "test:integration": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
     "build": "rm -rf dist/ && tsc && echo Done",
+    "docs": "rm -rf dist/ && tsc && jsdoc2md dist/[A-Z]*.js > docs/api.md",
     "clean": "rm -rf dist/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@types/request": "^2.0.9",
+    "jsdoc": "^3.5.5",
     "request": "^2.81.0"
   },
   "devDependencies": {
@@ -32,6 +34,7 @@
     "@types/node": "^9.4.0",
     "@types/sinon": "^4.1.3",
     "@types/uuid": "^3.4.3",
+    "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^5.0.0",
     "sinon": "^4.2.2",
     "ts-node": "^4.1.0",

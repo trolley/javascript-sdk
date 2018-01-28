@@ -10,37 +10,62 @@ export class Configuration {
   apiSecret: string;
   apiBase: string;
 
+  /**
+   * Internal constructor
+   */
   constructor() {
     this.apiKey = Configuration.apiKeyDefault;
     this.apiSecret = Configuration.apiSecretDefault;
     this.apiBase = Configuration.apiBaseDefault;
   }
 
-  static setApiKey(newApiKey: string) {
-    Configuration.apiKeyDefault = newApiKey;
+  /**
+   * Globally set the public API key to connect to Payment Rails
+   * @param key Your Payment Rails API public key
+   */
+  static setApiKey(key: string) {
+    Configuration.apiKeyDefault = key;
   }
 
-  static setApiSecret(newApiSecret: string) {
-    Configuration.apiSecretDefault = newApiSecret;
+  /**
+   * Globally set the secret API key to connect to Payment Rails
+   * @param secret Your Payment Rails API secret Key
+   */
+  static setApiSecret(secret: string) {
+    Configuration.apiSecretDefault = secret;
   }
 
+  /**
+   * Function to construct a gateway for this configuration
+   */
   static gateway() {
     const config = new Configuration();
 
     return new Gateway(config);
   }
 
-  static setApiBase(newApiBase: string) {
-    Configuration.apiBaseDefault = newApiBase;
+  /**
+   * Set the base URL to use to connect to the API gateway
+   * @param baseUrl url root
+   */
+  static setApiBase(baseUrl: string) {
+    Configuration.apiBaseDefault = baseUrl;
   }
 
-  static setEnvironment(enviroment: string) {
-    switch (enviroment) {
+  /**
+   * Set the Payment Rails API environment that your using
+   * @param environment one of "production" or "sandbox"
+   */
+  static setEnvironment(environment: string) {
+    switch (environment) {
       case "integration":
         Configuration.setApiBase("http://api.local.dev:3000");
         break;
       case "development":
         Configuration.setApiBase("http://api.railz.io");
+        break;
+      case "sandbox":
+        Configuration.setApiBase("https://api.paymentrails.com");
         break;
       case "production":
         Configuration.setApiBase("https://api.paymentrails.com");
@@ -48,17 +73,5 @@ export class Configuration {
       default:
         Configuration.setApiBase("https://api.paymentrails.com");
     }
-  }
-
-  getApiKey() {
-    return this.apiKey;
-  }
-
-  getApiSecret() {
-    return this.apiSecret;
-  }
-
-  getApiBase() {
-    return this.apiBase;
   }
 }
