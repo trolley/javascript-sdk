@@ -20,23 +20,6 @@ export namespace Serializer {
     pageSize: number;
     rows: T[];
   }
-
-  export interface Serializer<T, R, L extends WithMeta = never> {
-    serialize: (target: T) => R;
-    serializeList: (listArgs: ListArg<T>, serializer?: Serializer<T, R, L>) => L;
-  }
-
-  export interface SerializerNoList<T, R> {
-    serialize: (target: T) => R;
-  }
-
-  export interface SerializerSimple<T, R, L> {
-    serialize: (target: T) => R;
-    serializeList: (listArgs: T[]) => L;
-  }
-}
-
-export namespace Admin {
 }
 
 /*
@@ -119,77 +102,6 @@ export namespace ApiKey {
   }
 }
 
-export namespace Approval {
-  /*
-  ** approval-list.ts
-  */
-  export interface Approval {
-    approval: boolean;
-    userId: string;
-    createdAt: string;
-    comment?: string;
-  }
-
-  export interface Result {
-    approval: Approval;
-  }
-
-  export interface ListResult {
-    approvals: Approval[];
-  }
-
-  /*
-  **  approval-settings.ts
-  */
-  export interface Settings {
-    id: string;
-    approvalNumber?: number;
-    approvalLimit?: string;
-  }
-
-  export interface SettingsResult {
-    approvalSettings: Settings | null;
-  }
-
-  export interface SettingsListsResult {
-    settings: Settings[];
-  }
-
-  /*
-  **
-  */
-  interface SettingsUser {
-    id: string;
-    email: string;
-    approvalSettingId: string;
-    name: string;
-  }
-
-  export interface SettingsUserResult {
-    approver: SettingsUser;
-  }
-
-  export interface SettingsUserListResult {
-    approvers: SettingsUser[];
-  }
-}
-
-export namespace Approver {
-  /*
-  **  approvalSettings-approvers.ts
-  */
-  export interface Approver {
-    id: string;
-    email: string;
-    approvalSettingId: string;
-    name: string;
-  }
-
-  export interface ListResult {
-    approvers: Approver[];
-  }
-}
-
 export namespace Balance {
   export interface Balance {
     primary: boolean;
@@ -201,10 +113,12 @@ export namespace Balance {
   }
 
   export interface Result {
+    ok: boolean;
     balance: Balance;
   }
 
   export interface ListResult {
+    ok: boolean;
     balances: {
       [key: string]: Balance;
     };
@@ -228,16 +142,18 @@ export namespace Batch {
   }
 
   export interface Result {
+    ok: boolean;
     batch: Batch;
   }
 
   export interface ListResult extends Serializer.WithMeta {
+    ok: boolean;
     batches: Batch[];
   }
 }
 
 export namespace BatchBalance {
-  interface BatchBalance {
+  export interface BatchBalance {
     id: string;
     merchantBalances: {
       paymentRails: number;
@@ -275,6 +191,7 @@ export namespace BatchSummary {
   }
 
   export interface Result {
+    ok: boolean;
     batchSummary: BatchSummary;
   }
 }
@@ -375,67 +292,6 @@ export namespace Currency {
   }
 }
 
-export namespace Fees {
-  interface FeeGeneral {
-    fxRate: string;
-    merchantCoverAmount: string;
-  }
-
-  interface FeePaypal {
-    fee: string;
-  }
-
-  interface FeeBank {
-    wire: string;
-    eft: string;
-    ach: string;
-    iach: string;
-    sepa: string;
-    wire_no_fx: string;
-  }
-
-  interface FeeStructure {
-    currencyCode: string;
-    general: FeeGeneral;
-    paypal: FeePaypal;
-    bankTransfer: FeeBank;
-  }
-
-  export interface FeesAll {
-    fees: {
-      [currency: string]: FeeStructure;
-    };
-  }
-
-  export interface FeesCurrency {
-    feeCurrency: FeeStructure;
-  }
-
-  export interface FeesIntegration {
-    feeCurrencyIntegration: FeeGeneral | FeePaypal | FeeBank;
-  }
-
-  export interface FeesIntegrationType {
-    feeCurrencyIntegrationType: string;
-  }
-}
-
-export namespace IFrameConfig {
-  export interface IFrameConfig {
-    color: string;
-    enabled: boolean;
-    usTax: boolean;
-    allowedDomains: string;
-    faq: boolean;
-    faqLink: string;
-    allowedDomainsEnabled: boolean;
-    taxIncomeCode: string;
-    taxHelpText: string;
-  }
-
-  export type Result = IFrameConfig;
-}
-
 export namespace Merchant {
   export interface Balance {
     primary: boolean;
@@ -494,31 +350,6 @@ export namespace MerchantBankAccount {
   }
 }
 
-export namespace Notification {
-  interface Notification {
-    id: number;
-    category: string;
-    topic: string;
-    action: string;
-    url: string;
-    source: string;
-    testMode: boolean;
-    createdAt: string;
-    user?: {
-      id: number;
-      name: string;
-    };
-  }
-
-  export interface Result {
-    notification: Notification;
-  }
-
-  export interface ListResult extends Serializer.WithMeta {
-    records: Notification[];
-  }
-}
-
 export namespace Payment {
   export interface Payment {
     id: string;
@@ -554,40 +385,18 @@ export namespace Payment {
   }
 
   export interface Result {
+    ok: boolean;
     payment: Payment;
   }
 
   export interface ListResult extends Serializer.WithMeta {
+    ok: boolean;
     payments: Payment[];
   }
 }
 
-export namespace PayoutMethod {
-  interface PaypalSettings {
-    apiUsername: string;
-    apiPassword: string;
-  }
-
-  export interface PayoutMethod {
-    integration: string;
-    enabled: boolean;
-    updatedAt: string;
-    settings: {
-      title: string;
-    } & (PaypalSettings | {});
-  }
-
-  export interface Result {
-    payoutMethod: PayoutMethod;
-  }
-
-  export interface ListResult {
-    payoutMethods: PayoutMethod[];
-  }
-}
-
 export namespace PaymentReason {
-  interface PaymentReason {
+  export interface PaymentReason {
     code: string;
     country: string;
     reason: string;
@@ -596,19 +405,8 @@ export namespace PaymentReason {
   export type Response = PaymentReason;
 
   export type ListResponse = {
-    paymentReasons: PaymentReason[],
+    paymentReasons: PaymentReason[];
   };
-}
-
-export namespace Pandadoc {
-  type Pandadoc = {
-    UUID: string;
-    name: string;
-  };
-
-  export interface ListResult extends Serializer.WithMeta {
-    records: Pandadoc[];
-  }
 }
 
 export namespace Profile {
@@ -777,8 +575,8 @@ export namespace Recipient {
       phoneValidated: boolean;
     };
     compliance: {
-      status: string,
-      checkedAt: string,
+      status: string;
+      checkedAt: string;
     };
     gravatarUrl: string;
 
@@ -841,9 +639,9 @@ export namespace Recipient {
   }
 
   export interface Account {
+    id: string;
     primary: boolean;
     currency: string;
-    recipientAccountId: string;
     routeType?: string;
     recipientFees?: string;
 
@@ -867,52 +665,23 @@ export namespace Recipient {
   }
 
   export interface AccountResponse {
+    ok: boolean;
     account: Account;
   }
 
   export interface AccountListResponse {
+    ok: boolean;
     accounts: Account[];
   }
 
   export interface Response {
+    ok: boolean;
     recipient: Recipient;
   }
 
   export interface ListResponse extends Serializer.WithMeta {
+    ok: boolean;
     recipients: Recipient[];
-  }
-}
-
-export namespace Report {
-  interface Entry {
-    activeRecipients: string;
-    totalRecipients: string;
-    week: string;
-  }
-
-  export interface Report {
-    [key: number]: Entry;
-  }
-
-  export interface Result {
-    report: Report;
-  }
-}
-
-export namespace Subscription {
-  export interface Subscription {
-    id: string;
-    action: string;
-    model: string;
-    target: string;
-  }
-
-  export interface Result {
-    subscription: Subscription;
-  }
-
-  export interface ListResult {
-    subscriptions: Subscription[];
   }
 }
 
@@ -942,47 +711,6 @@ export namespace TeamMember {
   }
 }
 
-export namespace ThirdPartyToken {
-  interface ThirdPartyToken {
-    data: string;
-    thirdParty: string;
-  }
-
-  export type Result = ThirdPartyToken;
-}
-
-export namespace UploadFile {
-  interface UploadLine {
-    id: number;
-    status: string;
-    data: string;
-    valid: boolean;
-    errors: string;
-    processedAt: string;
-    // recipientId: number;
-  }
-
-  export interface UploadFile {
-    id: number;
-    testMode: boolean;
-    status: string;
-    type: string;
-    referenceId: string;
-    startedAt: string;
-    completedAt: string;
-    stats: {
-      processable: number;
-      records: number;
-      pending: number;
-      failed: number;
-      processed: number;
-    };
-    lines: UploadLine[];
-  }
-
-  export type Result = UploadFile;
-}
-
 export namespace User {
   export interface User {
     id: string;
@@ -1006,20 +734,6 @@ export namespace User {
 
   export interface ListResponse extends Serializer.WithMeta {
     records: User[];
-  }
-}
-
-export namespace Webhook {
-  interface Webhook {
-    testMode: boolean;
-    topic: string;
-    address: string;
-  }
-
-  export type Response = Webhook;
-
-  export interface ListResponse extends Serializer.WithMeta {
-    records: Webhook[];
   }
 }
 

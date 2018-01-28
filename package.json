@@ -2,16 +2,21 @@
   "name": "paymentrails",
   "version": "0.2.0",
   "description": "",
-  "main": "./src/dist/index",
-  "types": "./src/dist/index",
+  "main": "./dist/index",
+  "types": "./dist/index",
   "directories": {
     "test": "tests"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "scripts": {
     "test": "npm run test:unit",
-    "test:unit": "mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
-    "test:integration": "mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
-    "build": "tsc || echo Done"
+    "test:unit": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
+    "test:integration": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
+    "build": "rm -rf dist/ && tsc && echo Done",
+    "clean": "rm -rf dist/"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +37,9 @@
   "devDependencies": {
     "@types/core-js": "^0.9.44",
     "@types/es6-promise": "^3.3.0",
-    "@types/jasmine": "^2.8.4"
+    "@types/jasmine": "^2.8.4",
+    "@types/mocha": "^2.2.47",
+    "@types/uuid": "^3.4.3",
+    "uuid": "^3.2.1"
   }
 }

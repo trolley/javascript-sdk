@@ -1,183 +1,336 @@
-import { Configuration } from '../../src/Configuration';
-import { Recipient } from '../../src/Recipient';
-import { RecipientAccount } from '../../src/RecipientAccount';
-import { Batch } from '../../src/Batch';
-import { Payment } from '../../src/Payment';
-import * as types from "../../types";
+import {
+  Configuration,
+  Recipient,
+  RecipientAccount,
+  Batch,
+  Payment,
+} from "../../lib";
+import * as types from "../../lib/types";
 import * as assert from "assert";
-import {} from 'jasmine';
+import * as uuid from "uuid";
 
-describe("Add Payment", () => {
-    it("", async () => {
-        Configuration.setApiKey("YOUR_PUBLIC_KEY");
-        Configuration.setApiSecret("YOUR_PRIVATE_KEY");
+describe("Payment Integration", () => {
+  before(() => {
+    Configuration.setApiKey(process.env.PR_ACCESS_KEY);
+    Configuration.setApiSecret(process.env.PR_SECRET_KEY);
+    Configuration.setEnvironment(process.env.PR_ENVIRONMENT);
+  });
 
-        const payload = {
-            type: "individual",
-            email: "test672@paymentrails.com",
-            name: "John Smith",
-            firstName: "John",
-            lastName: "Smith",
-        };
-        const response = await Recipient.create(payload);
+  async function createRecipient() {
+    const id = uuid.v4();
 
-        const body = {
-            type: "bank-transfer",
-            primary: "true",
-            country: "CA",
-            currency: "CAD",
-            accountNum: "6022847",
-            bankId: "004",
-            branchId: "47261",
-            accountHolderName: "John Smith",
-        };
-        const response1 = RecipientAccount.create(response.recipient.id, body);
-        const body1 = {
-            payments: [{
-                recipient: {
-                    id: "R-RLaenm8MGPRGRybqzLcgtL",
-                },
-                sourceAmount: "975",
-                sourceCurrency: "CAD",
-                description: "test",
-            }],
-        };
-        const response2 = await Batch.create(body1);
-        const body2 = {
-            recipient: {
-                id: "R-RLaenm8MGPRGRybqzLcgtL",
-            },
-            sourceAmount: "100.10",
-            sourceCurrency: "CAD",
-            memo: "Freelance Payment",
-        };
-        const response3 = await Payment.create(response2.batch.id, body2);
-        assert.equal(response3.payment.sourceAmount, "100.10");
-
+    const recipient = await Recipient.create({
+      type: "individual",
+      firstName: "Tom",
+      lastName: `Jones${id}`,
+      email: `test.batch+${id}@example.com`,
+      address: {
+        street1: "123 Wolfstrasse",
+        city: "Berlin",
+        country: "DE",
+        postalCode: "123123",
+      },
     });
-});
 
-describe("Process Batch", () => {
-    it("", async () => {
-        Configuration.setApiKey("YOUR_PUBLIC_KEY");
-        Configuration.setApiSecret("YOUR_PRIVATE_KEY");
-
-        const payload = {
-            type: "individual",
-            email: "test7@paymentrails.com",
-            name: "John Smith",
-            firstName: "John",
-            lastName: "Smith",
-        };
-        const response = await Recipient.create(payload);
-
-        const body = {
-            type: "bank-transfer",
-            primary: "true",
-            country: "CA",
-            currency: "CAD",
-            accountNum: "6022847",
-            bankId: "004",
-            branchId: "47261",
-            accountHolderName: "John Smith",
-        };
-
-        const response1 = await RecipientAccount.create(response.recipient.id, body);
-        const body1 = {
-            payment: [{
-                recipient: {
-                    id: "R-PWAEMx64EWNag6e4Yh8YKn",
-                },
-                sourceAmount: "975",
-                sourceCurrency: "USD",
-                description: "test",
-            }],
-        };
-        const response2 = await Batch.create(body1);
-        Batch.generateQuote(response2.batch.id);
-        const response3 = await Batch.processBatch(response2.batch.id);
-        assert.equal("processing", response3.batch.status);
+    await RecipientAccount.create(recipient.id, {
+      type: "bank-transfer",
+      currency: "EUR",
+      iban: "DE89 3704 0044 0532 0130 00",
     });
-});
 
-describe("Delete Batch", () => {
-    it("", async () => {
-        Configuration.setApiKey("YOUR_PUBLIC_KEY");
-        Configuration.setApiSecret("YOUR_PRIVATE_KEY");
+    return recipient;
+  }
 
-        const payload = {
-            type: "individual",
-            email: "test8@paymentrails.com",
-            name: "John Smith",
-            firstName: "John",
-            lastName: "Smith",
-        };
-        const response = await Recipient.create(payload);
-
-        const body = {
-            type: "bank-transfer",
-            primary: "true",
-            country: "CA",
-            currency: "CAD",
-            accountNum: "6022847",
-            bankId: "004",
-            branchId: "47261",
-            accountHolderName: "John Smith",
-        };
-
-        const response1 = await RecipientAccount.create(response.recipient.id, body);
-        const body1 = {
-            payment: [{
-                recipient: {
-                    id: "R-PWAEMx64EWNag6e4Yh8YKn",
-                },
-                sourceAmount: "975",
-                sourceCurrency: "USD",
-                description: "test",
-            }],
-        };
-        const response2 = await Batch.create(body1);
-        const response3 = await Batch.remove(response2.batch.id);
-        assert.equal(response, "{\"ok\":true}");
+  it("basic create", async () => {
+    const batch = await Batch.create({
+      sourceCurrency: "USD",
+      description: "Integration Test Create",
     });
-});
+    assert.ok(batch);
+    assert.ok(batch.id);
 
-describe("Create Batch", () => {
-    it("", async () => {
-        Configuration.setApiKey("YOUR_PUBLIC_KEY");
-        Configuration.setApiSecret("YOUR_PRIVATE_KEY");
-        const payload = {
-            type: "individual",
-            email: "test9@paymentrails.com",
-            name: "John Smith",
-            firstName: "John",
-            lastName: "Smith",
-        };
-        const response = await Recipient.create(payload);
+    const all = await Batch.all();
+    assert.ok(all.length > 0);
+  });
 
-        const body = {
-            type: "bank-transfer",
-            primary: "true",
-            country: "CA",
-            currency: "CAD",
-            accountNum: "6022847",
-            bankId: "004",
-            branchId: "47261",
-            accountHolderName: "John Smith",
-        };
-
-        const response2 = await RecipientAccount.create(response.recipient.id, body);
-        const body1 = {
-            payment: [{
-                recipient: {
-                    id: "R-PWAEMx64EWNag6e4Yh8YKn",
-                },
-                sourceAmount: "975",
-                sourceCurrency: "USD",
-                description: "test",
-            }],
-        };
-        const response3 = await Batch.create(body1);
-        assert.equal(response3.batch.currency, "USD");
+  it("update", async () => {
+    const batch = await Batch.create({
+      sourceCurrency: "USD",
+      description: "Integration Test Create",
     });
+    assert.ok(batch);
+    assert.ok(batch.id);
+
+    const all = await Batch.all();
+    assert.ok(all.length > 0);
+
+    const response = await Batch.update(batch.id, {
+      description: "Integration Update",
+    });
+    assert.ok(response);
+
+    const findBatch = await Batch.find(batch.id);
+    assert.equal("Integration Update", findBatch.description);
+    assert.equal("open", findBatch.status);
+
+    const removeResponse = Batch.remove(batch.id);
+    assert.ok(removeResponse);
+  });
+
+  // tslint:disable-next-line:mocha-no-side-effect-code
+  it("create with payments", async () => {
+    const recipientAlpha = await createRecipient();
+    const recipientBeta = await createRecipient();
+
+    const batch = await Batch.create(
+      {
+        sourceCurrency: "USD",
+        description: "Integration Test Payments",
+      },
+      [
+        {
+          targetAmount: "10.00",
+          targetCurrency: "EUR",
+          recipient: { id: recipientAlpha.id },
+        },
+        {
+          sourceAmount: "10.00",
+          recipient: { id: recipientBeta.id },
+        },
+      ],
+    );
+
+    assert.ok(batch);
+    assert.ok(batch.id);
+    const findBatch = await Batch.find(batch.id);
+
+    assert.ok(findBatch);
+    assert.equal(batch.totalPayments, 2);
+
+    const payments = await Batch.paymentList(batch.id);
+    for (const item of payments) {
+      assert.equal(item.status, "pending");
+    }
+  }).timeout(5000);
+
+  // tslint:disable-next-line:mocha-no-side-effect-code
+  it("test processing", async () => {
+    const recipientAlpha = await createRecipient();
+    const recipientBeta = await createRecipient();
+
+    const batch = await Batch.create(
+      {
+        sourceCurrency: "USD",
+        description: "Integration Test Payments",
+      },
+      [
+        {
+          targetAmount: "10.00",
+          targetCurrency: "EUR",
+          recipient: { id: recipientAlpha.id },
+        },
+        {
+          sourceAmount: "10.00",
+          recipient: { id: recipientBeta.id },
+        },
+      ],
+    );
+
+    assert.ok(batch);
+    assert.ok(batch.id);
+
+    const summary = await Batch.summary(batch.id);
+    assert.equal(2, summary.detail["bank-transfer"].count, "Bad Count");
+
+    const quote = await Batch.generateQuote(batch.id);
+    assert.ok(quote, "failed to get quote");
+
+    const start = await Batch.startProcessing(batch.id);
+    assert.ok(start, "Failed to start");
+  }).timeout(5000);
+
+  /*
+  it("test all - smoke test", async () => {
+    const all = Recipient.all();
+
+    assert.ok(all.length > 0);
+  });
+  */
+
+  /*
+  it("add ", async () => {
+    const payload = {
+      type: "individual",
+      email: "test672@paymentrails.com",
+      name: "John Smith",
+      firstName: "John",
+      lastName: "Smith",
+    };
+    const response = await Recipient.create(payload);
+
+    const body = {
+      type: "bank-transfer",
+      primary: "true",
+      country: "CA",
+      currency: "CAD",
+      accountNum: "6022847",
+      bankId: "004",
+      branchId: "47261",
+      accountHolderName: "John Smith",
+    };
+    const response1 = RecipientAccount.create(response.recipient.id, body);
+    const body1 = {
+      payments: [
+        {
+          recipient: {
+            id: "R-RLaenm8MGPRGRybqzLcgtL",
+          },
+          sourceAmount: "975",
+          sourceCurrency: "CAD",
+          description: "test",
+        },
+      ],
+    };
+    const response2 = await Batch.create(body1);
+    const body2 = {
+      recipient: {
+        id: "R-RLaenm8MGPRGRybqzLcgtL",
+      },
+      sourceAmount: "100.10",
+      sourceCurrency: "CAD",
+      memo: "Freelance Payment",
+    };
+    const response3 = await Payment.create(response2.batch.id, body2);
+    assert.equal(response3.payment.sourceAmount, "100.10");
+  });
+
+  it("process", async () => {
+    const payload = {
+      type: "individual",
+      email: "test7@paymentrails.com",
+      name: "John Smith",
+      firstName: "John",
+      lastName: "Smith",
+    };
+    const response = await Recipient.create(payload);
+
+    const body = {
+      type: "bank-transfer",
+      primary: "true",
+      country: "CA",
+      currency: "CAD",
+      accountNum: "6022847",
+      bankId: "004",
+      branchId: "47261",
+      accountHolderName: "John Smith",
+    };
+
+    const response1 = await RecipientAccount.create(
+      response.recipient.id,
+      body,
+    );
+    const body1 = {
+      payment: [
+        {
+          recipient: {
+            id: "R-PWAEMx64EWNag6e4Yh8YKn",
+          },
+          sourceAmount: "975",
+          sourceCurrency: "USD",
+          description: "test",
+        },
+      ],
+    };
+    const response2 = await Batch.create(body1);
+    Batch.generateQuote(response2.batch.id);
+    const response3 = await Batch.processBatch(response2.batch.id);
+    assert.equal("processing", response3.batch.status);
+  });
+
+  it("delete", async () => {
+    Configuration.setApiKey("YOUR_PUBLIC_KEY");
+    Configuration.setApiSecret("YOUR_PRIVATE_KEY");
+
+    const payload = {
+      type: "individual",
+      email: "test8@paymentrails.com",
+      name: "John Smith",
+      firstName: "John",
+      lastName: "Smith",
+    };
+    const response = await Recipient.create(payload);
+
+    const body = {
+      type: "bank-transfer",
+      primary: "true",
+      country: "CA",
+      currency: "CAD",
+      accountNum: "6022847",
+      bankId: "004",
+      branchId: "47261",
+      accountHolderName: "John Smith",
+    };
+
+    const response1 = await RecipientAccount.create(
+      response.recipient.id,
+      body,
+    );
+    const body1 = {
+      payment: [
+        {
+          recipient: {
+            id: "R-PWAEMx64EWNag6e4Yh8YKn",
+          },
+          sourceAmount: "975",
+          sourceCurrency: "USD",
+          description: "test",
+        },
+      ],
+    };
+    const response2 = await Batch.create(body1);
+    const response3 = await Batch.remove(response2.batch.id);
+    assert.equal(response, '{"ok":true}');
+  });
+
+  it("create", async () => {
+    const payload = {
+      type: "individual",
+      email: "test9@paymentrails.com",
+      name: "John Smith",
+      firstName: "John",
+      lastName: "Smith",
+    };
+    const response = await Recipient.create(payload);
+
+    const body = {
+      type: "bank-transfer",
+      primary: "true",
+      country: "CA",
+      currency: "CAD",
+      accountNum: "6022847",
+      bankId: "004",
+      branchId: "47261",
+      accountHolderName: "John Smith",
+    };
+
+    const response2 = await RecipientAccount.create(
+      response.recipient.id,
+      body,
+    );
+    const body1 = {
+      payment: [
+        {
+          recipient: {
+            id: "R-PWAEMx64EWNag6e4Yh8YKn",
+          },
+          sourceAmount: "975",
+          sourceCurrency: "USD",
+          description: "test",
+        },
+      ],
+    };
+    const response3 = await Batch.create(body1);
+    assert.equal(response3.batch.currency, "USD");
+  });
+  */
 });

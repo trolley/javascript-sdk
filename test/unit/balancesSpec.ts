@@ -1,47 +1,64 @@
-"use strict";
-
-import { Configuration } from '../../src/Configuration';
-import { Balances } from '../../src/Balances';
+import { Configuration, Balances } from "../../lib";
+import { BalanceGateway } from "../../lib/PaymentRails/BalanceGateway";
 
 import * as assert from "assert";
 import * as sinon from "sinon";
 
-describe("Retrieve Balances", () => {
-    it("ok field should be true yes", async () => {
+describe("Balance", () => {
+  let sandbox: sinon.SinonSandbox;
 
-        Configuration.setApiKey("access-code"); Configuration.setApiSecret("secret-code");
-        sinon.stub(Balances, "find").callsFake(() => {
-            return ("{'ok':true,'balances':{}}");
-        });
-        const data = Balances.find();
-        assert.equal(data.substring(6, 10), "true");
+  before(() => {
+    sandbox = sinon.sandbox.create();
+    Configuration.setApiKey("access-code");
+    Configuration.setApiSecret("secret-code");
+  });
 
-        Balances.find.restore();
+  afterEach(() => {
+    sandbox.restore();
+  });
+
+  it("Retrieve all balances", async () => {
+    sandbox.stub(BalancesGateway.prototype, "all").callsFake(async () => {
+      return {
+        ok: true,
+        balances: {},
+      };
     });
-});
 
-describe("Retrieve paymentrails balance", () => {
-    it("ok field should be true", async () => {
-        Configuration.setApiKey("access-code"); Configuration.setApiSecret("secret-code");
-        sinon.stub(Balances, "find").withArgs("paymentrails").callsFake(() => {
-            return ("{'ok':true,'balances':{}}");
-        });
-        const data = Balances.find("paymentrails");
-        assert.equal(data.substring(6, 10), "true");
+    const data = await Balances.all();
 
-        Balances.find.restore();
-    });
-});
+    assert.deepEqual(data, {});
+  });
 
-describe("Retrieve paypal balances", () => {
-    it("ok field should be true", async () => {
-        Configuration.setApiKey("access-code"); Configuration.setApiSecret("secret-code");
-        sinon.stub(Balances, "find").withArgs("paypal").callsFake(() => {
-            return ("{'ok':true,'balances':{}}");
-        });
-        const data = Balances.find("paypal");
-        assert.equal(data.substring(6, 10), "true");
+  it("Retrieve paymentrails balance", async () => {
+    sandbox
+      .stub(BalancesGateway.prototype, "find")
+      .withArgs("paymentrails")
+      .callsFake(async () => {
+        return {
+          ok: true,
+          balance: {},
+        };
+      });
 
-        Balances.find.restore();
-    });
+    const data = await Balances.find("paymentrails");
+
+    assert.deepEqual(data, {});
+  });
+
+  it("Retreive paypal balance", async () => {
+    sandbox
+      .stub(BalancesGateway.prototype, "find")
+      .withArgs("paypal")
+      .callsFake(async () => {
+        return {
+          ok: true,
+          balance: {},
+        };
+      });
+
+    const data = await Balances.find("paypal");
+
+    assert.deepEqual(data, {});
+  });
 });

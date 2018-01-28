@@ -9,6 +9,9 @@
     "no-floating-promises": [true],
     "align": [true, "parameters", "statements"],
 
+    "no-stateless-class": [false],
+    "no-redundant-jsdoc": [false],
+
     "brace-style": [
       true,
       "1tbs",

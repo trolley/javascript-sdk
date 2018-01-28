@@ -1,11 +1,9 @@
-"use strict";
-
 import { Configuration } from "./Configuration";
 import { RecipientGateway } from "./RecipientGateway";
 import { RecipientAccountGateway } from "./RecipientAccountGateway";
 import { BatchGateway } from "./BatchGateway";
 import { PaymentGateway } from "./PaymentGateway";
-import { BalancesGateway } from "./BalancesGateway";
+import { BalanceGateway } from "./BalanceGateway";
 import { Client } from "./Client";
 
 export class Gateway {
@@ -14,7 +12,7 @@ export class Gateway {
     recipient: RecipientGateway;
     batch: BatchGateway;
     recipientAccount: RecipientAccountGateway;
-    balances: BalancesGateway;
+    balance: BalanceGateway;
     payment: PaymentGateway;
 
     constructor(config: Configuration) {
@@ -23,8 +21,7 @@ export class Gateway {
         this.recipient = new RecipientGateway(this);
         this.batch = new BatchGateway(this);
         this.recipientAccount = new RecipientAccountGateway(this);
-        this.balances = new BalancesGateway(this);
+        this.balance = new BalanceGateway(this);
         this.payment = new PaymentGateway(this);
-
     }
 }

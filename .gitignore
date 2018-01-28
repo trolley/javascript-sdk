@@ -8,3 +8,4 @@ bower
 __MACOSX
 .eslintrc.js
 .vscode
+dist/
