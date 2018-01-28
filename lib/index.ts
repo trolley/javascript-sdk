@@ -1,6 +1,6 @@
-export { Configuration } from './PaymentRails/Configuration';
-export { Recipient } from './PaymentRails/Recipient';
-export { RecipientAccount } from './PaymentRails/RecipientAccount';
-export { Balance } from './PaymentRails/Balance';
-export { Batch } from './PaymentRails/Batch';
-export { Payment } from './PaymentRails/Payment';
+export { Configuration } from './Configuration';
+export { Recipient } from './Recipient';
+export { RecipientAccount } from './RecipientAccount';
+export { Balance } from './Balance';
+export { Batch } from './Batch';
+export { Payment } from './Payment';

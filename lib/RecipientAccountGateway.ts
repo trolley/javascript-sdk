@@ -2,7 +2,7 @@ import { Configuration } from "./Configuration";
 import { Gateway } from "./Gateway";
 import { RecipientAccount } from "./RecipientAccount";
 import { DownForMaintenance } from "./exceptions";
-import * as types from "../types";
+import * as types from "./types";
 
 export class RecipientAccountGateway {
   gateway: Gateway;

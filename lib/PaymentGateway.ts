@@ -1,7 +1,7 @@
 import { Configuration } from "./Configuration";
 import { Gateway } from "./Gateway";
 import { Payment } from './Payment';
-import * as types from "../types";
+import * as types from "./types";
 import { DownForMaintenance } from "./exceptions";
 
 export class PaymentGateway {

@@ -1,7 +1,7 @@
 import { Configuration } from "./Configuration";
 import { Gateway } from "./Gateway";
 import { DownForMaintenance } from "./exceptions";
-import * as types from "../types";
+import * as types from "./types";
 import { Batch } from './Batch';
 import { Payment } from './Payment';
 

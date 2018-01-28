@@ -1,6 +1,6 @@
 import { Configuration } from "./Configuration";
 import { DownForMaintenance } from "./exceptions";
-import * as types from "../types";
+import * as types from "./types";
 
 // tslint:disable:function-name
 
