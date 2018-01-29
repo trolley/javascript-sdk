@@ -28,7 +28,7 @@ export interface PaymentInput {
 }
 
 /**
- * @name Batch
+ * 
  */
 export class Batch {
   id: string = "";
@@ -67,15 +67,11 @@ export class Batch {
    * @param {string} batchId
    * @param {array} body
    */
-  static async create(batchInfo: BatchInput, paymentsIn?: PaymentInput[]) {
-    return Configuration.gateway().batch.create({
-      ...batchInfo,
-      payments: paymentsIn,
-    });
+  static async create(batch: BatchInput, payments?: PaymentInput[]) {
+    return Configuration.gateway().batch.create(batch, payments);
   }
 
   /**
-   * @deprecated May 31, 2017
    * Updates a batch based on the batch id
    * @param {string} batchId
    * @param {array} body
@@ -155,7 +151,7 @@ export class Batch {
     page: number = 1,
     pageSize: number = 10,
   ) {
-    return Configuration.gateway().batch.payments(batchId, page, pageSize);
+    return Configuration.gateway().batch.paymentList(batchId, page, pageSize);
   }
 
   static factory(batch: types.Batch.Batch) {

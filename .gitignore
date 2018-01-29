@@ -2,7 +2,6 @@ node_modules
 Gruntfile
 gulpfile
 main.ts
-package-lock.json
 bower
 .DS_Store
 __MACOSX

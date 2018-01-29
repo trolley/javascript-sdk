@@ -9,20 +9,38 @@ A JavaScript SDK (written in TypeScript) - For more information about the API as
 
 ## Getting Started
 
+The Payment Rails API is built using promises and all methods except
+connect will return a promise. The connect call allows you to setup
+your API Key and Secret with a client that can be used for subsequent
+calls.
+
 ```js
 // A simple application using the Payment Rails SDK
-const PaymentRails = require('paymentrails');
+const paymentrails = require('paymentrails');
 
-PaymentRails.Configuration.setApiKey("YOUR-API-KEY");
-PaymentRails.Configuration.setApiSecret("YOUR-API-SECRET");
-PaymentRails.Configuration.setEnviroment("production");
+const client = paymentrails.connect({
+  key: "YOUR-API-KEY",
+  secret: "YOUR-API-SECRET",
+  environment: "production",
+});
+
+// Async/Await version
 
 async function main() {
-    const recipient = await PaymentRails.Recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC");
-    console.log(recipient.id);
+  const recipient = await client.recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC");
+  console.log(recipient.id);
 }
 
 main();
+
+// Promise version
+
+client.recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC").then(recipient => {
+  console.log(recipient.id);
+}).catch(err => {
+  console.log("ERROR", err);
+});
+
 ```
 
 ### Usage
@@ -32,10 +50,10 @@ is the best source of information about the API.
 
 For more information please read the [JavaScript API docs](https://github.com/PaymentRails/javascript-sdk/blob/master/docs/api.md) is available.
 
-#### Running Unit tests
+#### Running Integration / Unit tests
 
 If you're working on the library itself, here's easy way to run the unit tests. They are designed to be run with configuration coming through environment variables.
-  
+
   * ``PR_ACCESS_KEY``
   * ``PR_SECRET_KEY``
   * ``PR_ENVIRONMENT``

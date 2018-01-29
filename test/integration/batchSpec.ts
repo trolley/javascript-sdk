@@ -1,25 +1,23 @@
-import {
-  Configuration,
-  Recipient,
-  RecipientAccount,
-  Batch,
-  Payment,
-} from "../../lib";
+import * as paymentrails from '../../lib';
 import * as types from "../../lib/types";
 import * as assert from "assert";
 import * as uuid from "uuid";
 
 describe("Payment Integration", () => {
+  let client: paymentrails.Gateway;
+
   before(() => {
-    Configuration.setApiKey(process.env.PR_ACCESS_KEY);
-    Configuration.setApiSecret(process.env.PR_SECRET_KEY);
-    Configuration.setEnvironment(process.env.PR_ENVIRONMENT);
+    client = paymentrails.connect({
+      key: process.env.PR_ACCESS_KEY,
+      secret: process.env.PR_SECRET_KEY,
+      environment: process.env.PR_ENVIRONMENT,
+    });
   });
 
   async function createRecipient() {
     const id = uuid.v4();
 
-    const recipient = await Recipient.create({
+    const recipient = await client.recipient.create({
       type: "individual",
       firstName: "Tom",
       lastName: `Jones${id}`,
@@ -32,7 +30,7 @@ describe("Payment Integration", () => {
       },
     });
 
-    await RecipientAccount.create(recipient.id, {
+    await client.recipientAccount.create(recipient.id, {
       type: "bank-transfer",
       currency: "EUR",
       iban: "DE89 3704 0044 0532 0130 00",
@@ -42,38 +40,38 @@ describe("Payment Integration", () => {
   }
 
   it("basic create", async () => {
-    const batch = await Batch.create({
+    const batch = await client.batch.create({
       sourceCurrency: "USD",
       description: "Integration Test Create",
     });
     assert.ok(batch);
     assert.ok(batch.id);
 
-    const all = await Batch.all();
+    const all = await client.batch.all();
     assert.ok(all.length > 0);
   });
 
   it("update", async () => {
-    const batch = await Batch.create({
+    const batch = await client.batch.create({
       sourceCurrency: "USD",
       description: "Integration Test Create",
     });
     assert.ok(batch);
     assert.ok(batch.id);
 
-    const all = await Batch.all();
+    const all = await client.batch.all();
     assert.ok(all.length > 0);
 
-    const response = await Batch.update(batch.id, {
+    const response = await client.batch.update(batch.id, {
       description: "Integration Update",
     });
     assert.ok(response);
 
-    const findBatch = await Batch.find(batch.id);
+    const findBatch = await client.batch.find(batch.id);
     assert.equal("Integration Update", findBatch.description);
     assert.equal("open", findBatch.status);
 
-    const removeResponse = Batch.remove(batch.id);
+    const removeResponse = client.batch.remove(batch.id);
     assert.ok(removeResponse);
   });
 
@@ -82,7 +80,7 @@ describe("Payment Integration", () => {
     const recipientAlpha = await createRecipient();
     const recipientBeta = await createRecipient();
 
-    const batch = await Batch.create(
+    const batch = await client.batch.create(
       {
         sourceCurrency: "USD",
         description: "Integration Test Payments",
@@ -102,12 +100,12 @@ describe("Payment Integration", () => {
 
     assert.ok(batch);
     assert.ok(batch.id);
-    const findBatch = await Batch.find(batch.id);
+    const findBatch = await client.batch.find(batch.id);
 
     assert.ok(findBatch);
     assert.equal(batch.totalPayments, 2);
 
-    const payments = await Batch.paymentList(batch.id);
+    const payments = await client.batch.paymentList(batch.id);
     for (const item of payments) {
       assert.equal(item.status, "pending");
     }
@@ -118,7 +116,7 @@ describe("Payment Integration", () => {
     const recipientAlpha = await createRecipient();
     const recipientBeta = await createRecipient();
 
-    const batch = await Batch.create(
+    const batch = await client.batch.create(
       {
         sourceCurrency: "USD",
         description: "Integration Test Payments",
@@ -139,13 +137,13 @@ describe("Payment Integration", () => {
     assert.ok(batch);
     assert.ok(batch.id);
 
-    const summary = await Batch.summary(batch.id);
+    const summary = await client.batch.summary(batch.id);
     assert.equal(2, summary.detail["bank-transfer"].count, "Bad Count");
 
-    const quote = await Batch.generateQuote(batch.id);
+    const quote = await client.batch.generateQuote(batch.id);
     assert.ok(quote, "failed to get quote");
 
-    const start = await Batch.startProcessing(batch.id);
+    const start = await client.batch.startProcessing(batch.id);
     assert.ok(start, "Failed to start");
   }).timeout(5000);
 
