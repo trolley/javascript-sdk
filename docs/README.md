@@ -10,20 +10,38 @@ A JavaScript SDK (written in TypeScript) - For more information about the API as
 
 ## Getting Started
 
+The Payment Rails API is built using promises and all methods except
+connect will return a promise. The connect call allows you to setup
+your API Key and Secret with a client that can be used for subsequent
+calls.
+
 ```js
 // A simple application using the Payment Rails SDK
-const PaymentRails = require('paymentrails');
+const paymentrails = require('paymentrails');
 
-PaymentRails.Configuration.setApiKey("YOUR-API-KEY");
-PaymentRails.Configuration.setApiSecret("YOUR-API-SECRET");
-PaymentRails.Configuration.setEnviroment("production");
+const client = paymentrails.connect({
+  key: "YOUR-API-KEY",
+  secret: "YOUR-API-SECRET",
+  environment: "production",
+});
+
+// Async/Await version
 
 async function main() {
-    const recipient = await PaymentRails.Recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC");
-    console.log(recipient.id);
+  const recipient = await client.recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC");
+  console.log(recipient.id);
 }
 
 main();
+
+// Promise version
+
+client.recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC").then(recipient => {
+  console.log(recipient.id);
+}).catch(err => {
+  console.log("ERROR", err);
+});
+
 ```
 
 ### Usage
@@ -33,10 +51,10 @@ is the best source of information about the API.
 
 For more information please read the [JavaScript API docs](https://github.com/PaymentRails/javascript-sdk/blob/master/docs/api.md) is available.
 
-#### Running Unit tests
+#### Running Integration / Unit tests
 
 If you're working on the library itself, here's easy way to run the unit tests. They are designed to be run with configuration coming through environment variables.
-  
+
   * ``PR_ACCESS_KEY``
   * ``PR_SECRET_KEY``
   * ``PR_ENVIRONMENT``
@@ -53,25 +71,93 @@ For a command like:
 
 ## Index
 
-### External modules
+### Modules
 
-* ["Balance"](modules/_balance_.md)
-* ["BalanceGateway"](modules/_balancegateway_.md)
-* ["Batch"](modules/_batch_.md)
-* ["BatchGateway"](modules/_batchgateway_.md)
-* ["Client"](modules/_client_.md)
-* ["Configuration"](modules/_configuration_.md)
-* ["Gateway"](modules/_gateway_.md)
-* ["Payment"](modules/_payment_.md)
-* ["PaymentGateway"](modules/_paymentgateway_.md)
-* ["Recipient"](modules/_recipient_.md)
-* ["RecipientAccount"](modules/_recipientaccount_.md)
-* ["RecipientAccountGateway"](modules/_recipientaccountgateway_.md)
-* ["RecipientGateway"](modules/_recipientgateway_.md)
-* ["exceptions/index"](modules/_exceptions_index_.md)
-* ["index"](modules/_index_.md)
-* ["types"](modules/_types_.md)
+* [AccountActivity](modules/accountactivity.md)
+* [ApiCall](modules/apicall.md)
+* [ApiKey](modules/apikey.md)
+* [Auth](modules/auth.md)
+* [BalanceAddFunds](modules/balanceaddfunds.md)
+* [BankInfo](modules/bankinfo.md)
+* [BatchBalance](modules/batchbalance.md)
+* [BatchSummary](modules/batchsummary.md)
+* [BeneficialOwner](modules/beneficialowner.md)
+* [ComplianceCheck](modules/compliancecheck.md)
+* [Country](modules/country.md)
+* [Currency](modules/currency.md)
+* [Merchant](modules/merchant.md)
+* [MerchantBankAccount](modules/merchantbankaccount.md)
+* [PandadocState](modules/pandadocstate.md)
+* [PaymentReason](modules/paymentreason.md)
+* [Profile](modules/profile.md)
+* [Serializer](modules/serializer.md)
+* [TaxForm](modules/taxform.md)
+* [TeamMember](modules/teammember.md)
+* [User](modules/user.md)
+* [WhiteLabel](modules/whitelabel.md)
+
+
+### Classes
+
+* [Balance](classes/balance.md)
+* [BalanceGateway](classes/balancegateway.md)
+* [Batch](classes/batch.md)
+* [BatchGateway](classes/batchgateway.md)
+* [Client](classes/client.md)
+* [Configuration](classes/configuration.md)
+* [DownForMaintenance](classes/downformaintenance.md)
+* [Gateway](classes/gateway.md)
+* [Payment](classes/payment.md)
+* [PaymentGateway](classes/paymentgateway.md)
+* [Recipient](classes/recipient.md)
+* [RecipientAccount](classes/recipientaccount.md)
+* [RecipientAccountGateway](classes/recipientaccountgateway.md)
+* [RecipientGateway](classes/recipientgateway.md)
+
+
+### Interfaces
+
+* [BatchInput](interfaces/batchinput.md)
+* [ConfigurationParams](interfaces/configurationparams.md)
+* [PaymentInput](interfaces/paymentinput.md)
+
+
+### Functions
+
+* [connect](#connect)
 
 
 
 ---
+# Functions
+<a id="connect"></a>
+
+###  connect
+
+► **connect**(config: *[ConfigurationParams](interfaces/configurationparams.md)*): [Gateway](classes/gateway.md)
+
+
+
+*Defined in [index.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/index.ts#L11)*
+
+
+
+**Parameters:**
+
+| Param | Type | Description |
+| ------ | ------ | ------ |
+| config | [ConfigurationParams](interfaces/configurationparams.md)   |  - |
+
+
+
+
+
+**Returns:** [Gateway](classes/gateway.md)
+
+
+
+
+
+___
+
+
