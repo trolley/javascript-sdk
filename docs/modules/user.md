@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [User](../modules/user.md)
+[Payment Rails JavaScript SDK](../README.md) > [User](../modules/user.md)
 
 
 
@@ -26,7 +26,7 @@
 
 **Τ Response**:  *[User](../interfaces/user.user-1.md)* 
 
-*Defined in [types.ts:733](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L733)*
+*Defined in [types.ts:733](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L733)*
 
 
 

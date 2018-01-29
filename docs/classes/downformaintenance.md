@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [DownForMaintenance](../classes/downformaintenance.md)
+[Payment Rails JavaScript SDK](../README.md) > [DownForMaintenance](../classes/downformaintenance.md)
 
 
 

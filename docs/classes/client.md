@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Client](../classes/client.md)
+[Payment Rails JavaScript SDK](../README.md) > [Client](../classes/client.md)
 
 
 
@@ -34,7 +34,7 @@
 ### ⊕ **new Client**(config: *[Configuration](configuration.md)*): [Client](client.md)
 
 
-*Defined in [Client.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L7)*
+*Defined in [Client.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L7)*
 
 
 
@@ -60,7 +60,7 @@
 
 **●  config**:  *[Configuration](configuration.md)* 
 
-*Defined in [Client.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L7)*
+*Defined in [Client.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L7)*
 
 
 
@@ -78,7 +78,7 @@ ___
 
 
 
-*Defined in [Client.ts:162](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L162)*
+*Defined in [Client.ts:162](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L162)*
 
 
 
@@ -114,7 +114,7 @@ ___
 
 
 
-*Defined in [Client.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L17)*
+*Defined in [Client.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L17)*
 
 
 
@@ -150,7 +150,7 @@ ___
 
 
 
-*Defined in [Client.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L90)*
+*Defined in [Client.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L90)*
 
 
 
@@ -187,7 +187,7 @@ ___
 
 
 
-*Defined in [Client.ts:48](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L48)*
+*Defined in [Client.ts:48](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L48)*
 
 
 
@@ -224,7 +224,7 @@ ___
 
 
 
-*Defined in [Client.ts:126](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Client.ts#L126)*
+*Defined in [Client.ts:126](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Client.ts#L126)*
 
 
 

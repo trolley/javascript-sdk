@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [PaymentReason](../modules/paymentreason.md)
+[Payment Rails JavaScript SDK](../README.md) > [PaymentReason](../modules/paymentreason.md)
 
 
 
@@ -26,7 +26,7 @@
 
 **Τ ListResponse**:  *`object`* 
 
-*Defined in [types.ts:407](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L407)*
+*Defined in [types.ts:407](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L407)*
 
 
 #### Type declaration
@@ -50,7 +50,7 @@ ___
 
 **Τ Response**:  *[PaymentReason](../interfaces/paymentreason.paymentreason-1.md)* 
 
-*Defined in [types.ts:405](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L405)*
+*Defined in [types.ts:405](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L405)*
 
 
 

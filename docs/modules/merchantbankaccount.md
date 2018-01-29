@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [MerchantBankAccount](../modules/merchantbankaccount.md)
+[Payment Rails JavaScript SDK](../README.md) > [MerchantBankAccount](../modules/merchantbankaccount.md)
 
 
 
@@ -26,7 +26,7 @@
 
 **Τ Result**:  *[MerchantBankAccount](../interfaces/merchantbankaccount.merchantbankaccount-1.md)* 
 
-*Defined in [types.ts:346](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L346)*
+*Defined in [types.ts:346](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L346)*
 
 
 

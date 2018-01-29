@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchSummary](../modules/batchsummary.md) > [BatchSummary](../interfaces/batchsummary.batchsummary-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchSummary](../modules/batchsummary.md) > [BatchSummary](../interfaces/batchsummary.batchsummary-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  detail**:  *`object`* 
 
-*Defined in [types.ts:187](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L187)*
+*Defined in [types.ts:187](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L187)*
 
 
 #### Type declaration
@@ -33,7 +33,7 @@ ___
 
 **●  total**:  *[SummaryInfo](batchsummary.summaryinfo.md)* 
 
-*Defined in [types.ts:190](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L190)*
+*Defined in [types.ts:190](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L190)*
 
 
 

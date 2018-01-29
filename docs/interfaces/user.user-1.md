@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [User](../modules/user.md) > [User](../interfaces/user.user-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [User](../modules/user.md) > [User](../interfaces/user.user-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  authType**:  *`number`* 
 
-*Defined in [types.ts:730](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L730)*
+*Defined in [types.ts:730](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L730)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  email**:  *`string`* 
 
-*Defined in [types.ts:726](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L726)*
+*Defined in [types.ts:726](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L726)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  emailSettings**:  *`any`* 
 
-*Defined in [types.ts:727](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L727)*
+*Defined in [types.ts:727](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L727)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  firstName**:  *`string`* 
 
-*Defined in [types.ts:720](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L720)*
+*Defined in [types.ts:720](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L720)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  gravatarUrl**:  *`string`* 
 
-*Defined in [types.ts:728](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L728)*
+*Defined in [types.ts:728](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L728)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  hmac**:  *`string`* 
 
-*Defined in [types.ts:729](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L729)*
+*Defined in [types.ts:729](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L729)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  id**:  *`string`* 
 
-*Defined in [types.ts:716](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L716)*
+*Defined in [types.ts:716](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L716)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  language**:  *`string`* 
 
-*Defined in [types.ts:725](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L725)*
+*Defined in [types.ts:725](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L725)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  lastName**:  *`string`* 
 
-*Defined in [types.ts:721](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L721)*
+*Defined in [types.ts:721](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L721)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  merchantId**:  *`string`* 
 
-*Defined in [types.ts:717](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L717)*
+*Defined in [types.ts:717](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L717)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  name**:  *`string`* 
 
-*Defined in [types.ts:719](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L719)*
+*Defined in [types.ts:719](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L719)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  notificationNumber**:  *`string`* 
 
-*Defined in [types.ts:718](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L718)*
+*Defined in [types.ts:718](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L718)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  role**:  *`string`* 
 
-*Defined in [types.ts:722](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L722)*
+*Defined in [types.ts:722](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L722)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 **●  status**:  *`string`* 
 
-*Defined in [types.ts:723](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L723)*
+*Defined in [types.ts:723](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L723)*
 
 
 
@@ -208,7 +208,7 @@ ___
 
 **●  timeZone**:  *`string`* 
 
-*Defined in [types.ts:724](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L724)*
+*Defined in [types.ts:724](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L724)*
 
 
 

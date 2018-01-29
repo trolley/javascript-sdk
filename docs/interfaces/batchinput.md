@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchInput](../interfaces/batchinput.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchInput](../interfaces/batchinput.md)
 
 
 
@@ -19,8 +19,8 @@
 
 **●  description**:  *`string`* 
 
-*Defined in [Batch.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L15)*
-*Defined in [BatchGateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L14)*
+*Defined in [Batch.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L15)*
+*Defined in [BatchGateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L14)*
 
 
 
@@ -34,8 +34,8 @@ ___
 
 **●  sourceCurrency**:  *`string`* 
 
-*Defined in [Batch.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L14)*
-*Defined in [BatchGateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L13)*
+*Defined in [Batch.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L14)*
+*Defined in [BatchGateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L13)*
 
 
 

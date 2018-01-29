@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Country](../modules/country.md)
+[Payment Rails JavaScript SDK](../README.md) > [Country](../modules/country.md)
 
 
 

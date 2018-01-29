@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Balance](../classes/balance.md)
+[Payment Rails JavaScript SDK](../README.md) > [Balance](../classes/balance.md)
 
 
 
@@ -42,7 +42,7 @@
 
 **●  accountNumber**:  *`string`*  = ""
 
-*Defined in [Balance.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L15)*
+*Defined in [Balance.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L15)*
 
 
 
@@ -56,7 +56,7 @@ ___
 
 **●  amount**:  *`string`*  = "0.00"
 
-*Defined in [Balance.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L12)*
+*Defined in [Balance.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L12)*
 
 
 
@@ -70,7 +70,7 @@ ___
 
 **●  currency**:  *`string`*  = ""
 
-*Defined in [Balance.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L13)*
+*Defined in [Balance.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L13)*
 
 
 
@@ -84,7 +84,7 @@ ___
 
 **●  primary**:  *`boolean`*  = false
 
-*Defined in [Balance.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L11)*
+*Defined in [Balance.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L11)*
 
 
 
@@ -98,7 +98,7 @@ ___
 
 **●  type**:  *`string`*  = ""
 
-*Defined in [Balance.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L14)*
+*Defined in [Balance.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L14)*
 
 
 
@@ -116,7 +116,7 @@ ___
 
 
 
-*Defined in [Balance.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L40)*
+*Defined in [Balance.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L40)*
 
 
 
@@ -146,7 +146,7 @@ ___
 
 
 
-*Defined in [Balance.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L21)*
+*Defined in [Balance.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L21)*
 
 
 
@@ -171,7 +171,7 @@ ___
 
 
 
-*Defined in [Balance.ts:33](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L33)*
+*Defined in [Balance.ts:33](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L33)*
 
 
 
@@ -201,7 +201,7 @@ ___
 
 
 
-*Defined in [Balance.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Balance.ts#L29)*
+*Defined in [Balance.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Balance.ts#L29)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Batch](../classes/batch.md) > [Batch](../interfaces/batch.batch-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [Batch](../classes/batch.md) > [Batch](../interfaces/batch.batch-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  amount**:  *`string`* 
 
-*Defined in [types.ts:132](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L132)*
+*Defined in [types.ts:132](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L132)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  completedAt**:  *`string`* 
 
-*Defined in [types.ts:137](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L137)*
+*Defined in [types.ts:137](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L137)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  createdAt**:  *`string`* 
 
-*Defined in [types.ts:138](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L138)*
+*Defined in [types.ts:138](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L138)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  currency**:  *`string`* 
 
-*Defined in [types.ts:134](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L134)*
+*Defined in [types.ts:134](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L134)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  description**:  *`string`* 
 
-*Defined in [types.ts:135](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L135)*
+*Defined in [types.ts:135](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L135)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  id**:  *`string`* 
 
-*Defined in [types.ts:130](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L130)*
+*Defined in [types.ts:130](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L130)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  payments**:  *[ListResult](payment.listresult.md)* 
 
-*Defined in [types.ts:140](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L140)*
+*Defined in [types.ts:140](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L140)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  quoteExpiredAt**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:141](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L141)*
+*Defined in [types.ts:141](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L141)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  sentAt**:  *`string`* 
 
-*Defined in [types.ts:136](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L136)*
+*Defined in [types.ts:136](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L136)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  status**:  *`string`* 
 
-*Defined in [types.ts:131](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L131)*
+*Defined in [types.ts:131](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L131)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  totalPayments**:  *`number`* 
 
-*Defined in [types.ts:133](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L133)*
+*Defined in [types.ts:133](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L133)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  updatedAt**:  *`string`* 
 
-*Defined in [types.ts:139](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L139)*
+*Defined in [types.ts:139](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L139)*
 
 
 

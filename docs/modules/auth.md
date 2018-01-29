@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Auth](../modules/auth.md)
+[Payment Rails JavaScript SDK](../README.md) > [Auth](../modules/auth.md)
 
 
 

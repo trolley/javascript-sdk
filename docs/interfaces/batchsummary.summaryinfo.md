@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchSummary](../modules/batchsummary.md) > [SummaryInfo](../interfaces/batchsummary.summaryinfo.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchSummary](../modules/batchsummary.md) > [SummaryInfo](../interfaces/batchsummary.summaryinfo.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  count**:  *`number`* 
 
-*Defined in [types.ts:174](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L174)*
+*Defined in [types.ts:174](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L174)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  debitAmount**:  *`string`* 
 
-*Defined in [types.ts:175](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L175)*
+*Defined in [types.ts:175](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L175)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  merchantFees**:  *`string`* 
 
-*Defined in [types.ts:176](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L176)*
+*Defined in [types.ts:176](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L176)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  sendingAmount**:  *`string`* 
 
-*Defined in [types.ts:178](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L178)*
+*Defined in [types.ts:178](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L178)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  totalFees**:  *`string`* 
 
-*Defined in [types.ts:177](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L177)*
+*Defined in [types.ts:177](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L177)*
 
 
 

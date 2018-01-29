@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BalanceGateway](../classes/balancegateway.md)
+[Payment Rails JavaScript SDK](../README.md) > [BalanceGateway](../classes/balancegateway.md)
 
 
 
@@ -32,7 +32,7 @@
 ### ⊕ **new BalanceGateway**(gateway: *[Gateway](gateway.md)*): [BalanceGateway](balancegateway.md)
 
 
-*Defined in [BalanceGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BalanceGateway.ts#L9)*
+*Defined in [BalanceGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BalanceGateway.ts#L9)*
 
 
 
@@ -58,7 +58,7 @@
 
 **●  config**:  *[Configuration](configuration.md)* 
 
-*Defined in [BalanceGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BalanceGateway.ts#L9)*
+*Defined in [BalanceGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BalanceGateway.ts#L9)*
 
 
 
@@ -72,7 +72,7 @@ ___
 
 **●  gateway**:  *[Gateway](gateway.md)* 
 
-*Defined in [BalanceGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BalanceGateway.ts#L8)*
+*Defined in [BalanceGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BalanceGateway.ts#L8)*
 
 
 
@@ -90,7 +90,7 @@ ___
 
 
 
-*Defined in [BalanceGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BalanceGateway.ts#L16)*
+*Defined in [BalanceGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BalanceGateway.ts#L16)*
 
 
 
@@ -112,7 +112,7 @@ ___
 
 
 
-*Defined in [BalanceGateway.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BalanceGateway.ts#L30)*
+*Defined in [BalanceGateway.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BalanceGateway.ts#L30)*
 
 
 

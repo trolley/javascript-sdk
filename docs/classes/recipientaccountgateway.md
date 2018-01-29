@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [RecipientAccountGateway](../classes/recipientaccountgateway.md)
+[Payment Rails JavaScript SDK](../README.md) > [RecipientAccountGateway](../classes/recipientaccountgateway.md)
 
 
 
@@ -35,7 +35,7 @@
 ### ⊕ **new RecipientAccountGateway**(gateway: *[Gateway](gateway.md)*): [RecipientAccountGateway](recipientaccountgateway.md)
 
 
-*Defined in [RecipientAccountGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L9)*
+*Defined in [RecipientAccountGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L9)*
 
 
 
@@ -61,7 +61,7 @@
 
 **●  config**:  *[Configuration](configuration.md)* 
 
-*Defined in [RecipientAccountGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L9)*
+*Defined in [RecipientAccountGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L9)*
 
 
 
@@ -75,7 +75,7 @@ ___
 
 **●  gateway**:  *[Gateway](gateway.md)* 
 
-*Defined in [RecipientAccountGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L8)*
+*Defined in [RecipientAccountGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L8)*
 
 
 
@@ -93,7 +93,7 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L16)*
+*Defined in [RecipientAccountGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L16)*
 
 
 
@@ -123,7 +123,7 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L44)*
+*Defined in [RecipientAccountGateway.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L44)*
 
 
 
@@ -154,7 +154,7 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L30)*
+*Defined in [RecipientAccountGateway.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L30)*
 
 
 
@@ -185,7 +185,7 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:72](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L72)*
+*Defined in [RecipientAccountGateway.ts:72](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L72)*
 
 
 
@@ -216,7 +216,7 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/RecipientAccountGateway.ts#L58)*
+*Defined in [RecipientAccountGateway.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L58)*
 
 
 

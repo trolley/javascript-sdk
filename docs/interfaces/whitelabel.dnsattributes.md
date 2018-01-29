@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [WhiteLabel](../modules/whitelabel.md) > [DnsAttributes](../interfaces/whitelabel.dnsattributes.md)
+[Payment Rails JavaScript SDK](../README.md) > [WhiteLabel](../modules/whitelabel.md) > [DnsAttributes](../interfaces/whitelabel.dnsattributes.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  dkim1**:  *[DnsRecord](whitelabel.dnsrecord.md)* 
 
-*Defined in [types.ts:754](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L754)*
+*Defined in [types.ts:754](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L754)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  dkim2**:  *[DnsRecord](whitelabel.dnsrecord.md)* 
 
-*Defined in [types.ts:755](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L755)*
+*Defined in [types.ts:755](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L755)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  mailCname**:  *[DnsRecord](whitelabel.dnsrecord.md)* 
 
-*Defined in [types.ts:753](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L753)*
+*Defined in [types.ts:753](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L753)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Profile](../modules/profile.md)
+[Payment Rails JavaScript SDK](../README.md) > [Profile](../modules/profile.md)
 
 
 

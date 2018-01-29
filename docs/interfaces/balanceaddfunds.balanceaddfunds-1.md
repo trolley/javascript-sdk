@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BalanceAddFunds](../modules/balanceaddfunds.md) > [BalanceAddFunds](../interfaces/balanceaddfunds.balanceaddfunds-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [BalanceAddFunds](../modules/balanceaddfunds.md) > [BalanceAddFunds](../interfaces/balanceaddfunds.balanceaddfunds-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  afxDealId**:  *`string`* 
 
-*Defined in [types.ts:783](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L783)*
+*Defined in [types.ts:783](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L783)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  amount**:  *`string`* 
 
-*Defined in [types.ts:782](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L782)*
+*Defined in [types.ts:782](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L782)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  currency**:  *`string`* 
 
-*Defined in [types.ts:781](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L781)*
+*Defined in [types.ts:781](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L781)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  type**:  *`string`* 
 
-*Defined in [types.ts:784](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L784)*
+*Defined in [types.ts:784](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L784)*
 
 
 

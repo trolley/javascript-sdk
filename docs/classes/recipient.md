@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Recipient](../classes/recipient.md)
+[Payment Rails JavaScript SDK](../README.md) > [Recipient](../classes/recipient.md)
 
 
 
@@ -73,7 +73,7 @@
 
 **●  accounts**:  *[RecipientAccount](recipientaccount.md)[]*  =  []
 
-*Defined in [Recipient.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L52)*
+*Defined in [Recipient.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L52)*
 
 
 
@@ -87,7 +87,7 @@ ___
 
 **●  complianceStatus**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L20)*
+*Defined in [Recipient.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L20)*
 
 
 
@@ -101,7 +101,7 @@ ___
 
 **●  createdAt**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L24)*
+*Defined in [Recipient.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L24)*
 
 
 
@@ -115,7 +115,7 @@ ___
 
 **●  dob**:  *`null`⎮`string`*  = ""
 
-*Defined in [Recipient.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L21)*
+*Defined in [Recipient.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L21)*
 
 
 
@@ -129,7 +129,7 @@ ___
 
 **●  email**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L12)*
+*Defined in [Recipient.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L12)*
 
 
 
@@ -143,7 +143,7 @@ ___
 
 **●  estimatedFees**:  *`string`⎮`null`*  =  null
 
-*Defined in [Recipient.ts:56](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L56)*
+*Defined in [Recipient.ts:56](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L56)*
 
 
 
@@ -157,7 +157,7 @@ ___
 
 **●  firstName**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L15)*
+*Defined in [Recipient.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L15)*
 
 
 
@@ -171,7 +171,7 @@ ___
 
 **●  governmentId**:  *`null`⎮`string`*  =  null
 
-*Defined in [Recipient.ts:50](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L50)*
+*Defined in [Recipient.ts:50](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L50)*
 
 
 
@@ -185,7 +185,7 @@ ___
 
 **●  gravatarUrl**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:48](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L48)*
+*Defined in [Recipient.ts:48](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L48)*
 
 
 
@@ -199,7 +199,7 @@ ___
 
 **●  id**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L10)*
+*Defined in [Recipient.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L10)*
 
 
 
@@ -213,7 +213,7 @@ ___
 
 **●  language**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L19)*
+*Defined in [Recipient.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L19)*
 
 
 
@@ -227,7 +227,7 @@ ___
 
 **●  lastName**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L14)*
+*Defined in [Recipient.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L14)*
 
 
 
@@ -241,7 +241,7 @@ ___
 
 **●  name**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L13)*
+*Defined in [Recipient.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L13)*
 
 
 
@@ -255,7 +255,7 @@ ___
 
 **●  passport**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L22)*
+*Defined in [Recipient.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L22)*
 
 
 
@@ -269,7 +269,7 @@ ___
 
 **●  primaryCurrency**:  *`null`⎮`string`*  =  null
 
-*Defined in [Recipient.ts:54](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L54)*
+*Defined in [Recipient.ts:54](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L54)*
 
 
 
@@ -283,7 +283,7 @@ ___
 
 **●  referenceId**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L11)*
+*Defined in [Recipient.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L11)*
 
 
 
@@ -297,7 +297,7 @@ ___
 
 **●  routeType**:  *`string`⎮`null`*  =  null
 
-*Defined in [Recipient.ts:55](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L55)*
+*Defined in [Recipient.ts:55](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L55)*
 
 
 
@@ -311,7 +311,7 @@ ___
 
 **●  ssn**:  *`null`⎮`string`*  =  null
 
-*Defined in [Recipient.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L51)*
+*Defined in [Recipient.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L51)*
 
 
 
@@ -325,7 +325,7 @@ ___
 
 **●  status**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:18](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L18)*
+*Defined in [Recipient.ts:18](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L18)*
 
 
 
@@ -339,7 +339,7 @@ ___
 
 **●  taxType**:  *`null`⎮`string`*  = ""
 
-*Defined in [Recipient.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L17)*
+*Defined in [Recipient.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L17)*
 
 
 
@@ -353,7 +353,7 @@ ___
 
 **●  type**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L16)*
+*Defined in [Recipient.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L16)*
 
 
 
@@ -367,7 +367,7 @@ ___
 
 **●  updatedAt**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L23)*
+*Defined in [Recipient.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L23)*
 
 
 
@@ -385,7 +385,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:127](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L127)*
+*Defined in [Recipient.ts:127](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L127)*
 
 
 
@@ -415,7 +415,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L58)*
+*Defined in [Recipient.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L58)*
 
 
 
@@ -437,7 +437,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:76](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L76)*
+*Defined in [Recipient.ts:76](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L76)*
 
 
 
@@ -470,7 +470,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:120](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L120)*
+*Defined in [Recipient.ts:120](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L120)*
 
 
 
@@ -503,7 +503,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:68](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L68)*
+*Defined in [Recipient.ts:68](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L68)*
 
 
 
@@ -536,7 +536,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:94](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L94)*
+*Defined in [Recipient.ts:94](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L94)*
 
 
 
@@ -569,7 +569,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:105](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L105)*
+*Defined in [Recipient.ts:105](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L105)*
 
 
 
@@ -604,7 +604,7 @@ ___
 
 
 
-*Defined in [Recipient.ts:86](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L86)*
+*Defined in [Recipient.ts:86](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L86)*
 
 
 
@@ -642,7 +642,7 @@ ___
 
 **●  city**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L37)*
+*Defined in [Recipient.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L37)*
 
 
 
@@ -655,7 +655,7 @@ ___
 
 **●  country**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:39](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L39)*
+*Defined in [Recipient.ts:39](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L39)*
 
 
 
@@ -668,7 +668,7 @@ ___
 
 **●  phone**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:41](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L41)*
+*Defined in [Recipient.ts:41](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L41)*
 
 
 
@@ -681,7 +681,7 @@ ___
 
 **●  phoneValidated**:  *`boolean`*  = false
 
-*Defined in [Recipient.ts:42](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L42)*
+*Defined in [Recipient.ts:42](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L42)*
 
 
 
@@ -694,7 +694,7 @@ ___
 
 **●  postalCode**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:38](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L38)*
+*Defined in [Recipient.ts:38](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L38)*
 
 
 
@@ -707,7 +707,7 @@ ___
 
 **●  region**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L40)*
+*Defined in [Recipient.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L40)*
 
 
 
@@ -720,7 +720,7 @@ ___
 
 **●  street1**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:35](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L35)*
+*Defined in [Recipient.ts:35](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L35)*
 
 
 
@@ -733,7 +733,7 @@ ___
 
 **●  street2**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:36](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L36)*
+*Defined in [Recipient.ts:36](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L36)*
 
 
 
@@ -752,7 +752,7 @@ ___
 
 **●  checkedAt**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:47](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L47)*
+*Defined in [Recipient.ts:47](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L47)*
 
 
 
@@ -765,7 +765,7 @@ ___
 
 **●  status**:  *`string`*  = ""
 
-*Defined in [Recipient.ts:47](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Recipient.ts#L47)*
+*Defined in [Recipient.ts:47](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Recipient.ts#L47)*
 
 
 

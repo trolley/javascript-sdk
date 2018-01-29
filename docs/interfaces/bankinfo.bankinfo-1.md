@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BankInfo](../modules/bankinfo.md) > [BankInfo](../interfaces/bankinfo.bankinfo-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [BankInfo](../modules/bankinfo.md) > [BankInfo](../interfaces/bankinfo.bankinfo-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  accountNum**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:802](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L802)*
+*Defined in [types.ts:802](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L802)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  bankAddress**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:795](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L795)*
+*Defined in [types.ts:795](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L795)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  bankCity**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:797](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L797)*
+*Defined in [types.ts:797](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L797)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  bankName**:  *`string`* 
 
-*Defined in [types.ts:794](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L794)*
+*Defined in [types.ts:794](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L794)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  bankPostalCode**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:798](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L798)*
+*Defined in [types.ts:798](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L798)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  bankRegion**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:796](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L796)*
+*Defined in [types.ts:796](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L796)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  branchNum**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:800](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L800)*
+*Defined in [types.ts:800](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L800)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  bsb**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:807](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L807)*
+*Defined in [types.ts:807](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L807)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  clabe**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:806](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L806)*
+*Defined in [types.ts:806](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L806)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  iban**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:801](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L801)*
+*Defined in [types.ts:801](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L801)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  ifscCode**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:808](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L808)*
+*Defined in [types.ts:808](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L808)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  institution**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:799](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L799)*
+*Defined in [types.ts:799](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L799)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  routing**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:803](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L803)*
+*Defined in [types.ts:803](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L803)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 **●  sortCode**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:805](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L805)*
+*Defined in [types.ts:805](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L805)*
 
 
 
@@ -208,7 +208,7 @@ ___
 
 **●  swiftBic**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:804](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L804)*
+*Defined in [types.ts:804](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L804)*
 
 
 

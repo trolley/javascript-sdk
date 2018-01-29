@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BalanceAddFunds](../modules/balanceaddfunds.md)
+[Payment Rails JavaScript SDK](../README.md) > [BalanceAddFunds](../modules/balanceaddfunds.md)
 
 
 

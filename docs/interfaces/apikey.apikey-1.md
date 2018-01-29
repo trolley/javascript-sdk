@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiKey](../modules/apikey.md) > [ApiKey](../interfaces/apikey.apikey-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiKey](../modules/apikey.md) > [ApiKey](../interfaces/apikey.apikey-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  accessKey**:  *`string`* 
 
-*Defined in [types.ts:88](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L88)*
+*Defined in [types.ts:88](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L88)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  active**:  *`boolean`* 
 
-*Defined in [types.ts:89](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L89)*
+*Defined in [types.ts:89](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L89)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  createdAt**:  *`string`* 
 
-*Defined in [types.ts:92](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L92)*
+*Defined in [types.ts:92](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L92)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  lastUsedAt**:  *`string`* 
 
-*Defined in [types.ts:91](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L91)*
+*Defined in [types.ts:91](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L91)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  name**:  *`string`* 
 
-*Defined in [types.ts:87](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L87)*
+*Defined in [types.ts:87](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L87)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  sandbox**:  *`boolean`* 
 
-*Defined in [types.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L90)*
+*Defined in [types.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L90)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  secretKey**:  *`undefined`⎮`string`* 
 
-*Defined in [types.ts:93](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L93)*
+*Defined in [types.ts:93](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L93)*
 
 
 

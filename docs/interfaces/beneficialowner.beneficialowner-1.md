@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BeneficialOwner](../modules/beneficialowner.md) > [BeneficialOwner](../interfaces/beneficialowner.beneficialowner-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [BeneficialOwner](../modules/beneficialowner.md) > [BeneficialOwner](../interfaces/beneficialowner.beneficialowner-1.md)
 
 
 
@@ -25,7 +25,7 @@
 
 **●  address**:  *`string`* 
 
-*Defined in [types.ts:208](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L208)*
+*Defined in [types.ts:208](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L208)*
 
 
 
@@ -39,7 +39,7 @@ ___
 
 **●  city**:  *`string`* 
 
-*Defined in [types.ts:209](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L209)*
+*Defined in [types.ts:209](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L209)*
 
 
 
@@ -53,7 +53,7 @@ ___
 
 **●  country**:  *`string`* 
 
-*Defined in [types.ts:207](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L207)*
+*Defined in [types.ts:207](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L207)*
 
 
 
@@ -67,7 +67,7 @@ ___
 
 **●  firstName**:  *`string`* 
 
-*Defined in [types.ts:203](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L203)*
+*Defined in [types.ts:203](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L203)*
 
 
 
@@ -81,7 +81,7 @@ ___
 
 **●  id**:  *`number`* 
 
-*Defined in [types.ts:201](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L201)*
+*Defined in [types.ts:201](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L201)*
 
 
 
@@ -95,7 +95,7 @@ ___
 
 **●  lastName**:  *`string`* 
 
-*Defined in [types.ts:204](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L204)*
+*Defined in [types.ts:204](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L204)*
 
 
 
@@ -109,7 +109,7 @@ ___
 
 **●  ownershipType**:  *`string`* 
 
-*Defined in [types.ts:206](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L206)*
+*Defined in [types.ts:206](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L206)*
 
 
 
@@ -123,7 +123,7 @@ ___
 
 **●  percentOfOwnership**:  *`string`* 
 
-*Defined in [types.ts:205](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L205)*
+*Defined in [types.ts:205](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L205)*
 
 
 
@@ -137,7 +137,7 @@ ___
 
 **●  profileId**:  *`number`* 
 
-*Defined in [types.ts:202](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L202)*
+*Defined in [types.ts:202](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L202)*
 
 
 
@@ -151,7 +151,7 @@ ___
 
 **●  region**:  *`string`* 
 
-*Defined in [types.ts:210](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L210)*
+*Defined in [types.ts:210](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L210)*
 
 
 
@@ -165,7 +165,7 @@ ___
 
 **●  zip**:  *`string`* 
 
-*Defined in [types.ts:211](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L211)*
+*Defined in [types.ts:211](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L211)*
 
 
 

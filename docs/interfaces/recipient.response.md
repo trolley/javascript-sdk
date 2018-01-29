@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Recipient](../classes/recipient.md) > [Response](../interfaces/recipient.response.md)
+[Payment Rails JavaScript SDK](../README.md) > [Recipient](../classes/recipient.md) > [Response](../interfaces/recipient.response.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  ok**:  *`boolean`* 
 
-*Defined in [types.ts:678](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L678)*
+*Defined in [types.ts:678](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L678)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  recipient**:  *[Recipient](recipient.recipient-1.md)* 
 
-*Defined in [types.ts:679](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L679)*
+*Defined in [types.ts:679](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L679)*
 
 
 

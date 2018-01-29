@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [TaxForm](../modules/taxform.md) > [TaxForm](../interfaces/taxform.taxform-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [TaxForm](../modules/taxform.md) > [TaxForm](../interfaces/taxform.taxform-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  id**:  *`string`* 
 
-*Defined in [types.ts:469](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L469)*
+*Defined in [types.ts:469](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L469)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  kind**:  *`string`* 
 
-*Defined in [types.ts:470](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L470)*
+*Defined in [types.ts:470](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L470)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  recipientId**:  *`string`* 
 
-*Defined in [types.ts:471](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L471)*
+*Defined in [types.ts:471](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L471)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  reviewedAt**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:472](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L472)*
+*Defined in [types.ts:472](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L472)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  signed**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:473](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L473)*
+*Defined in [types.ts:473](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L473)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  signedAt**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:474](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L474)*
+*Defined in [types.ts:474](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L474)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  status**:  *`string`* 
 
-*Defined in [types.ts:475](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L475)*
+*Defined in [types.ts:475](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L475)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  uploadURI**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:476](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L476)*
+*Defined in [types.ts:476](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L476)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  voidedAt**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:477](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L477)*
+*Defined in [types.ts:477](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L477)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  voidedBy**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:478](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L478)*
+*Defined in [types.ts:478](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L478)*
 
 
 

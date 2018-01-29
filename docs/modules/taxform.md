@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [TaxForm](../modules/taxform.md)
+[Payment Rails JavaScript SDK](../README.md) > [TaxForm](../modules/taxform.md)
 
 
 

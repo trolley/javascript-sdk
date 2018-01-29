@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Merchant](../modules/merchant.md)
+[Payment Rails JavaScript SDK](../README.md) > [Merchant](../modules/merchant.md)
 
 
 
@@ -27,7 +27,7 @@
 
 **Τ Result**:  *[Merchant](../interfaces/merchant.merchant-1.md)* 
 
-*Defined in [types.ts:320](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L320)*
+*Defined in [types.ts:320](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L320)*
 
 
 

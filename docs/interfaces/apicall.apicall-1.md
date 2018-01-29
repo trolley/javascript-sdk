@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiCall](../modules/apicall.md) > [ApiCall](../interfaces/apicall.apicall-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiCall](../modules/apicall.md) > [ApiCall](../interfaces/apicall.apicall-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  code**:  *`number`* 
 
-*Defined in [types.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L67)*
+*Defined in [types.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L67)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  createdAt**:  *`string`* 
 
-*Defined in [types.ts:70](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L70)*
+*Defined in [types.ts:70](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L70)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  headers**:  *`string`* 
 
-*Defined in [types.ts:64](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L64)*
+*Defined in [types.ts:64](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L64)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  ip**:  *`string`* 
 
-*Defined in [types.ts:61](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L61)*
+*Defined in [types.ts:61](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L61)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  method**:  *`string`* 
 
-*Defined in [types.ts:63](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L63)*
+*Defined in [types.ts:63](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L63)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  request**:  *`string`* 
 
-*Defined in [types.ts:65](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L65)*
+*Defined in [types.ts:65](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L65)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  response**:  *`string`* 
 
-*Defined in [types.ts:66](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L66)*
+*Defined in [types.ts:66](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L66)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  source**:  *`string`* 
 
-*Defined in [types.ts:68](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L68)*
+*Defined in [types.ts:68](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L68)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  testMode**:  *`boolean`* 
 
-*Defined in [types.ts:69](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L69)*
+*Defined in [types.ts:69](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L69)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  url**:  *`string`* 
 
-*Defined in [types.ts:62](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L62)*
+*Defined in [types.ts:62](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L62)*
 
 
 

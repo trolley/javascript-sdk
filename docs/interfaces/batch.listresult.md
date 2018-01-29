@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Batch](../classes/batch.md) > [ListResult](../interfaces/batch.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [Batch](../classes/batch.md) > [ListResult](../interfaces/batch.listresult.md)
 
 
 
@@ -25,7 +25,7 @@
 
 **●  batches**:  *[Batch](batch.batch-1.md)[]* 
 
-*Defined in [types.ts:151](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L151)*
+*Defined in [types.ts:151](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L151)*
 
 
 
@@ -41,7 +41,7 @@ ___
 
 *Inherited from [WithMeta](serializer.withmeta.md).[meta](serializer.withmeta.md#meta)*
 
-*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L10)*
+*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L10)*
 
 
 #### Type declaration
@@ -79,7 +79,7 @@ ___
 
 **●  ok**:  *`boolean`* 
 
-*Defined in [types.ts:150](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L150)*
+*Defined in [types.ts:150](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L150)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Balance](../classes/balance.md) > [Balance](../interfaces/balance.balance-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [Balance](../classes/balance.md) > [Balance](../interfaces/balance.balance-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  accountNumber**:  *`string`* 
 
-*Defined in [types.ts:111](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L111)*
+*Defined in [types.ts:111](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L111)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  amount**:  *`string`* 
 
-*Defined in [types.ts:108](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L108)*
+*Defined in [types.ts:108](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L108)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  currency**:  *`string`* 
 
-*Defined in [types.ts:109](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L109)*
+*Defined in [types.ts:109](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L109)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  display**:  *`boolean`* 
 
-*Defined in [types.ts:112](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L112)*
+*Defined in [types.ts:112](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L112)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  primary**:  *`boolean`* 
 
-*Defined in [types.ts:107](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L107)*
+*Defined in [types.ts:107](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L107)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  type**:  *`string`* 
 
-*Defined in [types.ts:110](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L110)*
+*Defined in [types.ts:110](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L110)*
 
 
 

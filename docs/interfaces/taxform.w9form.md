@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [TaxForm](../modules/taxform.md) > [W9Form](../interfaces/taxform.w9form.md)
+[Payment Rails JavaScript SDK](../README.md) > [TaxForm](../modules/taxform.md) > [W9Form](../interfaces/taxform.w9form.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  address**:  *`string`* 
 
-*Defined in [types.ts:485](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L485)*
+*Defined in [types.ts:485](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L485)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  businessName**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:483](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L483)*
+*Defined in [types.ts:483](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L483)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  city**:  *`string`* 
 
-*Defined in [types.ts:487](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L487)*
+*Defined in [types.ts:487](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L487)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  email**:  *`string`* 
 
-*Defined in [types.ts:484](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L484)*
+*Defined in [types.ts:484](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L484)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  exemptPayee**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:493](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L493)*
+*Defined in [types.ts:493](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L493)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  exemptReporting**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:492](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L492)*
+*Defined in [types.ts:492](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L492)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  idType**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:491](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L491)*
+*Defined in [types.ts:491](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L491)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  personName**:  *`string`* 
 
-*Defined in [types.ts:482](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L482)*
+*Defined in [types.ts:482](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L482)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  state**:  *`string`* 
 
-*Defined in [types.ts:486](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L486)*
+*Defined in [types.ts:486](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L486)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  taxId**:  *`string`* 
 
-*Defined in [types.ts:489](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L489)*
+*Defined in [types.ts:489](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L489)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  taxType**:  *`string`* 
 
-*Defined in [types.ts:490](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L490)*
+*Defined in [types.ts:490](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L490)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  zip**:  *`string`* 
 
-*Defined in [types.ts:488](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L488)*
+*Defined in [types.ts:488](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L488)*
 
 
 

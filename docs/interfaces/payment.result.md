@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Payment](../classes/payment.md) > [Result](../interfaces/payment.result.md)
+[Payment Rails JavaScript SDK](../README.md) > [Payment](../classes/payment.md) > [Result](../interfaces/payment.result.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  ok**:  *`boolean`* 
 
-*Defined in [types.ts:388](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L388)*
+*Defined in [types.ts:388](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L388)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  payment**:  *[Payment](payment.payment-1.md)* 
 
-*Defined in [types.ts:389](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L389)*
+*Defined in [types.ts:389](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L389)*
 
 
 

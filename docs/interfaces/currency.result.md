@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Currency](../modules/currency.md) > [Result](../interfaces/currency.result.md)
+[Payment Rails JavaScript SDK](../README.md) > [Currency](../modules/currency.md) > [Result](../interfaces/currency.result.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  currency**:  *[Currency](currency.currency-1.md)* 
 
-*Defined in [types.ts:285](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L285)*
+*Defined in [types.ts:285](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L285)*
 
 
 

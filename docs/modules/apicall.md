@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiCall](../modules/apicall.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiCall](../modules/apicall.md)
 
 
 

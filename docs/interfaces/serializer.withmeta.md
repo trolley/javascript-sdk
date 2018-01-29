@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Serializer](../modules/serializer.md) > [WithMeta](../interfaces/serializer.withmeta.md)
+[Payment Rails JavaScript SDK](../README.md) > [Serializer](../modules/serializer.md) > [WithMeta](../interfaces/serializer.withmeta.md)
 
 
 
@@ -70,7 +70,7 @@
 
 **●  meta**:  *`object`* 
 
-*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L10)*
+*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L10)*
 
 
 #### Type declaration

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [MerchantBankAccount](../modules/merchantbankaccount.md) > [MerchantBankAccount](../interfaces/merchantbankaccount.merchantbankaccount-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [MerchantBankAccount](../modules/merchantbankaccount.md) > [MerchantBankAccount](../interfaces/merchantbankaccount.merchantbankaccount-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  accountName**:  *`string`* 
 
-*Defined in [types.ts:331](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L331)*
+*Defined in [types.ts:331](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L331)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  accountNum**:  *`string`* 
 
-*Defined in [types.ts:336](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L336)*
+*Defined in [types.ts:336](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L336)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  bankAddress**:  *`string`* 
 
-*Defined in [types.ts:339](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L339)*
+*Defined in [types.ts:339](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L339)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  bankCity**:  *`string`* 
 
-*Defined in [types.ts:340](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L340)*
+*Defined in [types.ts:340](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L340)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  bankName**:  *`string`* 
 
-*Defined in [types.ts:338](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L338)*
+*Defined in [types.ts:338](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L338)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  bankPostalCode**:  *`string`* 
 
-*Defined in [types.ts:341](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L341)*
+*Defined in [types.ts:341](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L341)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  bankRegion**:  *`string`* 
 
-*Defined in [types.ts:342](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L342)*
+*Defined in [types.ts:342](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L342)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  completed**:  *`boolean`* 
 
-*Defined in [types.ts:333](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L333)*
+*Defined in [types.ts:333](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L333)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  country**:  *`string`* 
 
-*Defined in [types.ts:330](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L330)*
+*Defined in [types.ts:330](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L330)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  currency**:  *`string`* 
 
-*Defined in [types.ts:329](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L329)*
+*Defined in [types.ts:329](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L329)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  enabled**:  *`boolean`* 
 
-*Defined in [types.ts:343](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L343)*
+*Defined in [types.ts:343](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L343)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  fileLink**:  *`string`* 
 
-*Defined in [types.ts:332](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L332)*
+*Defined in [types.ts:332](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L332)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  iban**:  *`string`* 
 
-*Defined in [types.ts:335](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L335)*
+*Defined in [types.ts:335](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L335)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchBalance](../modules/batchbalance.md) > [BatchBalance](../interfaces/batchbalance.batchbalance-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchBalance](../modules/batchbalance.md) > [BatchBalance](../interfaces/batchbalance.batchbalance-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  enoughFunds**:  *`boolean`* 
 
-*Defined in [types.ts:166](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L166)*
+*Defined in [types.ts:166](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L166)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  fundsRequired**:  *`object`* 
 
-*Defined in [types.ts:162](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L162)*
+*Defined in [types.ts:162](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L162)*
 
 
 #### Type declaration
@@ -57,7 +57,7 @@ ___
 
 **●  id**:  *`string`* 
 
-*Defined in [types.ts:157](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L157)*
+*Defined in [types.ts:157](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L157)*
 
 
 
@@ -71,7 +71,7 @@ ___
 
 **●  merchantBalances**:  *`object`* 
 
-*Defined in [types.ts:158](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L158)*
+*Defined in [types.ts:158](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L158)*
 
 
 #### Type declaration

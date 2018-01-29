@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Batch](../classes/batch.md)
+[Payment Rails JavaScript SDK](../README.md) > [Batch](../classes/batch.md)
 
 
 
@@ -54,7 +54,7 @@
 
 **●  amount**:  *`string`*  = "0.00"
 
-*Defined in [Batch.ts:36](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L36)*
+*Defined in [Batch.ts:36](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L36)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  completedAt**:  *`string`*  = ""
 
-*Defined in [Batch.ts:41](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L41)*
+*Defined in [Batch.ts:41](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L41)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  createdAt**:  *`string`*  = ""
 
-*Defined in [Batch.ts:42](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L42)*
+*Defined in [Batch.ts:42](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L42)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  currency**:  *`string`*  = ""
 
-*Defined in [Batch.ts:38](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L38)*
+*Defined in [Batch.ts:38](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L38)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  description**:  *`string`*  = ""
 
-*Defined in [Batch.ts:39](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L39)*
+*Defined in [Batch.ts:39](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L39)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  id**:  *`string`*  = ""
 
-*Defined in [Batch.ts:34](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L34)*
+*Defined in [Batch.ts:34](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L34)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  payments**:  *`Payment`[]*  =  []
 
-*Defined in [Batch.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L44)*
+*Defined in [Batch.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L44)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  quoteExpiredAt**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:45](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L45)*
+*Defined in [Batch.ts:45](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L45)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  sentAt**:  *`string`*  = ""
 
-*Defined in [Batch.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L40)*
+*Defined in [Batch.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L40)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  status**:  *`string`*  = ""
 
-*Defined in [Batch.ts:35](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L35)*
+*Defined in [Batch.ts:35](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L35)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 **●  totalPayments**:  *`number`*  = 0
 
-*Defined in [Batch.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L37)*
+*Defined in [Batch.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L37)*
 
 
 
@@ -208,7 +208,7 @@ ___
 
 **●  updatedAt**:  *`string`*  = ""
 
-*Defined in [Batch.ts:43](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L43)*
+*Defined in [Batch.ts:43](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L43)*
 
 
 
@@ -226,7 +226,7 @@ ___
 
 
 
-*Defined in [Batch.ts:164](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L164)*
+*Defined in [Batch.ts:164](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L164)*
 
 
 
@@ -256,7 +256,7 @@ ___
 
 
 
-*Defined in [Batch.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L51)*
+*Defined in [Batch.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L51)*
 
 
 
@@ -281,7 +281,7 @@ ___
 
 
 
-*Defined in [Batch.ts:70](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L70)*
+*Defined in [Batch.ts:70](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L70)*
 
 
 
@@ -315,7 +315,7 @@ ___
 
 
 
-*Defined in [Batch.ts:157](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L157)*
+*Defined in [Batch.ts:157](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L157)*
 
 
 
@@ -345,7 +345,7 @@ ___
 
 
 
-*Defined in [Batch.ts:59](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L59)*
+*Defined in [Batch.ts:59](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L59)*
 
 
 
@@ -378,7 +378,7 @@ ___
 
 
 
-*Defined in [Batch.ts:110](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L110)*
+*Defined in [Batch.ts:110](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L110)*
 
 
 
@@ -411,7 +411,7 @@ ___
 
 
 
-*Defined in [Batch.ts:149](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L149)*
+*Defined in [Batch.ts:149](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L149)*
 
 
 
@@ -446,7 +446,7 @@ ___
 
 
 
-*Defined in [Batch.ts:87](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L87)*
+*Defined in [Batch.ts:87](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L87)*
 
 
 
@@ -479,7 +479,7 @@ ___
 
 
 
-*Defined in [Batch.ts:98](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L98)*
+*Defined in [Batch.ts:98](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L98)*
 
 
 
@@ -514,7 +514,7 @@ ___
 
 
 
-*Defined in [Batch.ts:118](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L118)*
+*Defined in [Batch.ts:118](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L118)*
 
 
 
@@ -547,7 +547,7 @@ ___
 
 
 
-*Defined in [Batch.ts:126](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L126)*
+*Defined in [Batch.ts:126](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L126)*
 
 
 
@@ -580,7 +580,7 @@ ___
 
 
 
-*Defined in [Batch.ts:79](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Batch.ts#L79)*
+*Defined in [Batch.ts:79](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L79)*
 
 
 

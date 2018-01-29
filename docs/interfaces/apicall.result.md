@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiCall](../modules/apicall.md) > [Result](../interfaces/apicall.result.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiCall](../modules/apicall.md) > [Result](../interfaces/apicall.result.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  apiCall**:  *[ApiCall](apicall.apicall-1.md)* 
 
-*Defined in [types.ts:74](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L74)*
+*Defined in [types.ts:74](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L74)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Currency](../modules/currency.md) > [ListResult](../interfaces/currency.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [Currency](../modules/currency.md) > [ListResult](../interfaces/currency.listresult.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  currencies**:  *`object`* 
 
-*Defined in [types.ts:289](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L289)*
+*Defined in [types.ts:289](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L289)*
 
 
 #### Type declaration

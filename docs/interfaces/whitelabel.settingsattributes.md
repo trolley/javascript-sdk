@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [WhiteLabel](../modules/whitelabel.md) > [SettingsAttributes](../interfaces/whitelabel.settingsattributes.md)
+[Payment Rails JavaScript SDK](../README.md) > [WhiteLabel](../modules/whitelabel.md) > [SettingsAttributes](../interfaces/whitelabel.settingsattributes.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  address**:  *`string`* 
 
-*Defined in [types.ts:766](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L766)*
+*Defined in [types.ts:766](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L766)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  businessName**:  *`string`* 
 
-*Defined in [types.ts:771](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L771)*
+*Defined in [types.ts:771](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L771)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  color**:  *`string`* 
 
-*Defined in [types.ts:774](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L774)*
+*Defined in [types.ts:774](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L774)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  country**:  *`string`* 
 
-*Defined in [types.ts:765](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L765)*
+*Defined in [types.ts:765](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L765)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  domain**:  *`string`* 
 
-*Defined in [types.ts:772](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L772)*
+*Defined in [types.ts:772](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L772)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  email**:  *`string`* 
 
-*Defined in [types.ts:770](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L770)*
+*Defined in [types.ts:770](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L770)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  icon**:  *`string`* 
 
-*Defined in [types.ts:775](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L775)*
+*Defined in [types.ts:775](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L775)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  paymentMethod**:  *`boolean`* 
 
-*Defined in [types.ts:767](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L767)*
+*Defined in [types.ts:767](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L767)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  paymentReturned**:  *`boolean`* 
 
-*Defined in [types.ts:768](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L768)*
+*Defined in [types.ts:768](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L768)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  paymentSent**:  *`boolean`* 
 
-*Defined in [types.ts:769](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L769)*
+*Defined in [types.ts:769](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L769)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  subdomain**:  *`string`* 
 
-*Defined in [types.ts:773](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L773)*
+*Defined in [types.ts:773](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L773)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  supportEmail**:  *`string`* 
 
-*Defined in [types.ts:764](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L764)*
+*Defined in [types.ts:764](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L764)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  website**:  *`string`* 
 
-*Defined in [types.ts:763](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L763)*
+*Defined in [types.ts:763](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L763)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BeneficialOwner](../modules/beneficialowner.md) > [ListResult](../interfaces/beneficialowner.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [BeneficialOwner](../modules/beneficialowner.md) > [ListResult](../interfaces/beneficialowner.listresult.md)
 
 
 
@@ -27,7 +27,7 @@
 
 *Inherited from [WithMeta](serializer.withmeta.md).[meta](serializer.withmeta.md#meta)*
 
-*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L10)*
+*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L10)*
 
 
 #### Type declaration
@@ -65,7 +65,7 @@ ___
 
 **●  records**:  *[BeneficialOwner](beneficialowner.beneficialowner-1.md)[]* 
 
-*Defined in [types.ts:218](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L218)*
+*Defined in [types.ts:218](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L218)*
 
 
 

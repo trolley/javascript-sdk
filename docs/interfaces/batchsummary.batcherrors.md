@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchSummary](../modules/batchsummary.md) > [BatchErrors](../interfaces/batchsummary.batcherrors.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchSummary](../modules/batchsummary.md) > [BatchErrors](../interfaces/batchsummary.batcherrors.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  error**:  *`string`* 
 
-*Defined in [types.ts:182](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L182)*
+*Defined in [types.ts:182](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L182)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  paymentId**:  *`number`* 
 
-*Defined in [types.ts:183](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L183)*
+*Defined in [types.ts:183](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L183)*
 
 
 

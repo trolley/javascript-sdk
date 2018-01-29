@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Merchant](../modules/merchant.md) > [Balance](../interfaces/merchant.balance.md)
+[Payment Rails JavaScript SDK](../README.md) > [Merchant](../modules/merchant.md) > [Balance](../interfaces/merchant.balance.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  amount**:  *`string`* 
 
-*Defined in [types.ts:300](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L300)*
+*Defined in [types.ts:300](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L300)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  currency**:  *`string`* 
 
-*Defined in [types.ts:299](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L299)*
+*Defined in [types.ts:299](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L299)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  pending**:  *`number`* 
 
-*Defined in [types.ts:301](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L301)*
+*Defined in [types.ts:301](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L301)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  primary**:  *`boolean`* 
 
-*Defined in [types.ts:297](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L297)*
+*Defined in [types.ts:297](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L297)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  type**:  *`string`* 
 
-*Defined in [types.ts:298](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L298)*
+*Defined in [types.ts:298](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L298)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [PandadocState](../modules/pandadocstate.md)
+[Payment Rails JavaScript SDK](../README.md) > [PandadocState](../modules/pandadocstate.md)
 
 
 
@@ -20,7 +20,7 @@
 
 **Τ Result**:  *`object`* 
 
-*Defined in [types.ts:829](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L829)*
+*Defined in [types.ts:829](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L829)*
 
 
 #### Type declaration

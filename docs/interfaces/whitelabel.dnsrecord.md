@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [WhiteLabel](../modules/whitelabel.md) > [DnsRecord](../interfaces/whitelabel.dnsrecord.md)
+[Payment Rails JavaScript SDK](../README.md) > [WhiteLabel](../modules/whitelabel.md) > [DnsRecord](../interfaces/whitelabel.dnsrecord.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  data**:  *`string`* 
 
-*Defined in [types.ts:744](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L744)*
+*Defined in [types.ts:744](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L744)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  host**:  *`string`* 
 
-*Defined in [types.ts:743](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L743)*
+*Defined in [types.ts:743](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L743)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  type**:  *`string`* 
 
-*Defined in [types.ts:742](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L742)*
+*Defined in [types.ts:742](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L742)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  valid**:  *`boolean`* 
 
-*Defined in [types.ts:745](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L745)*
+*Defined in [types.ts:745](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L745)*
 
 
 

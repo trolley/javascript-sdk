@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [TaxForm](../modules/taxform.md) > [W8BENForm](../interfaces/taxform.w8benform.md)
+[Payment Rails JavaScript SDK](../README.md) > [TaxForm](../modules/taxform.md) > [W8BENForm](../interfaces/taxform.w8benform.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  certificationDate**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:502](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L502)*
+*Defined in [types.ts:502](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L502)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  certificationEmail**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:503](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L503)*
+*Defined in [types.ts:503](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L503)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  certificationName**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:504](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L504)*
+*Defined in [types.ts:504](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L504)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  mailingAddress**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:510](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L510)*
+*Defined in [types.ts:510](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L510)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  mailingCity**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:511](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L511)*
+*Defined in [types.ts:511](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L511)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  mailingCountry**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:512](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L512)*
+*Defined in [types.ts:512](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L512)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  mailingPostalCode**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:513](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L513)*
+*Defined in [types.ts:513](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L513)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  mailingRegion**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:514](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L514)*
+*Defined in [types.ts:514](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L514)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  noUsCertification**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:499](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L499)*
+*Defined in [types.ts:499](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L499)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  organizationCountry**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:498](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L498)*
+*Defined in [types.ts:498](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L498)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  personsName**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:497](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L497)*
+*Defined in [types.ts:497](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L497)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  residenceAddress**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:505](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L505)*
+*Defined in [types.ts:505](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L505)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  residenceCity**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:506](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L506)*
+*Defined in [types.ts:506](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L506)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 **●  residenceCountry**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:507](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L507)*
+*Defined in [types.ts:507](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L507)*
 
 
 
@@ -208,7 +208,7 @@ ___
 
 **●  residencePostalCode**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:508](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L508)*
+*Defined in [types.ts:508](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L508)*
 
 
 
@@ -222,7 +222,7 @@ ___
 
 **●  residenceRegion**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:509](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L509)*
+*Defined in [types.ts:509](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L509)*
 
 
 
@@ -236,7 +236,7 @@ ___
 
 **●  taxPayerForeignId**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:500](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L500)*
+*Defined in [types.ts:500](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L500)*
 
 
 
@@ -250,7 +250,7 @@ ___
 
 **●  taxPayerUsId**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:501](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L501)*
+*Defined in [types.ts:501](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L501)*
 
 
 
@@ -264,7 +264,7 @@ ___
 
 **●  treatyArticle**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:515](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L515)*
+*Defined in [types.ts:515](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L515)*
 
 
 
@@ -278,7 +278,7 @@ ___
 
 **●  withholding**:  *`null`⎮`string`* 
 
-*Defined in [types.ts:516](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L516)*
+*Defined in [types.ts:516](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L516)*
 
 
 

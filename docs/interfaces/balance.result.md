@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Balance](../classes/balance.md) > [Result](../interfaces/balance.result.md)
+[Payment Rails JavaScript SDK](../README.md) > [Balance](../classes/balance.md) > [Result](../interfaces/balance.result.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  balance**:  *[Balance](balance.balance-1.md)* 
 
-*Defined in [types.ts:117](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L117)*
+*Defined in [types.ts:117](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L117)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  ok**:  *`boolean`* 
 
-*Defined in [types.ts:116](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L116)*
+*Defined in [types.ts:116](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L116)*
 
 
 

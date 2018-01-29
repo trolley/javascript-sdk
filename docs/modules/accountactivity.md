@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [AccountActivity](../modules/accountactivity.md)
+[Payment Rails JavaScript SDK](../README.md) > [AccountActivity](../modules/accountactivity.md)
 
 
 

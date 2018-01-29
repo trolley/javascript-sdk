@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BeneficialOwner](../modules/beneficialowner.md)
+[Payment Rails JavaScript SDK](../README.md) > [BeneficialOwner](../modules/beneficialowner.md)
 
 
 

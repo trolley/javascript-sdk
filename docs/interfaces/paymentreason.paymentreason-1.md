@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [PaymentReason](../modules/paymentreason.md) > [PaymentReason](../interfaces/paymentreason.paymentreason-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [PaymentReason](../modules/paymentreason.md) > [PaymentReason](../interfaces/paymentreason.paymentreason-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  code**:  *`string`* 
 
-*Defined in [types.ts:400](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L400)*
+*Defined in [types.ts:400](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L400)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  country**:  *`string`* 
 
-*Defined in [types.ts:401](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L401)*
+*Defined in [types.ts:401](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L401)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  reason**:  *`string`* 
 
-*Defined in [types.ts:402](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L402)*
+*Defined in [types.ts:402](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L402)*
 
 
 

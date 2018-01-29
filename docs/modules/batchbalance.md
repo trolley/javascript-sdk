@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchBalance](../modules/batchbalance.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchBalance](../modules/batchbalance.md)
 
 
 
@@ -25,7 +25,7 @@
 
 **Τ Result**:  *[BatchBalance](../interfaces/batchbalance.batchbalance-1.md)* 
 
-*Defined in [types.ts:169](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L169)*
+*Defined in [types.ts:169](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L169)*
 
 
 

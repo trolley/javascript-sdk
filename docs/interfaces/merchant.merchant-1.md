@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Merchant](../modules/merchant.md) > [Merchant](../interfaces/merchant.merchant-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [Merchant](../modules/merchant.md) > [Merchant](../interfaces/merchant.merchant-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  allowedDomains**:  *`string`* 
 
-*Defined in [types.ts:314](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L314)*
+*Defined in [types.ts:314](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L314)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  allowedIPs**:  *`string`* 
 
-*Defined in [types.ts:313](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L313)*
+*Defined in [types.ts:313](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L313)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  balances**:  *`undefined`⎮`object`* 
 
-*Defined in [types.ts:315](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L315)*
+*Defined in [types.ts:315](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L315)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  id**:  *`number`* 
 
-*Defined in [types.ts:305](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L305)*
+*Defined in [types.ts:305](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L305)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  merchantId**:  *`string`* 
 
-*Defined in [types.ts:306](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L306)*
+*Defined in [types.ts:306](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L306)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  name**:  *`string`* 
 
-*Defined in [types.ts:307](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L307)*
+*Defined in [types.ts:307](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L307)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  permalink**:  *`string`* 
 
-*Defined in [types.ts:311](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L311)*
+*Defined in [types.ts:311](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L311)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  phone**:  *`string`* 
 
-*Defined in [types.ts:309](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L309)*
+*Defined in [types.ts:309](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L309)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  primaryCurrency**:  *`string`* 
 
-*Defined in [types.ts:312](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L312)*
+*Defined in [types.ts:312](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L312)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  status**:  *`string`* 
 
-*Defined in [types.ts:308](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L308)*
+*Defined in [types.ts:308](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L308)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  website**:  *`string`* 
 
-*Defined in [types.ts:310](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L310)*
+*Defined in [types.ts:310](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L310)*
 
 
 

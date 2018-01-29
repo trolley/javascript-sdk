@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Recipient](../classes/recipient.md) > [RecipientPayoutMethod](../interfaces/recipient.recipientpayoutmethod.md)
+[Payment Rails JavaScript SDK](../README.md) > [Recipient](../classes/recipient.md) > [RecipientPayoutMethod](../interfaces/recipient.recipientpayoutmethod.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  accounts**:  *`object`* 
 
-*Defined in [types.ts:616](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L616)*
+*Defined in [types.ts:616](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L616)*
 
 
 #### Type declaration
@@ -33,7 +33,7 @@ ___
 
 **●  autoswitch**:  *`object`* 
 
-*Defined in [types.ts:598](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L598)*
+*Defined in [types.ts:598](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L598)*
 
 
 #### Type declaration
@@ -64,7 +64,7 @@ ___
 
 **●  holdup**:  *`object`* 
 
-*Defined in [types.ts:602](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L602)*
+*Defined in [types.ts:602](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L602)*
 
 
 #### Type declaration
@@ -95,7 +95,7 @@ ___
 
 **●  method**:  *`string`* 
 
-*Defined in [types.ts:615](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L615)*
+*Defined in [types.ts:615](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L615)*
 
 
 
@@ -109,7 +109,7 @@ ___
 
 **●  primary**:  *`object`* 
 
-*Defined in [types.ts:606](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L606)*
+*Defined in [types.ts:606](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L606)*
 
 
 #### Type declaration

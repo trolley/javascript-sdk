@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiKey](../modules/apikey.md) > [ListResult](../interfaces/apikey.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiKey](../modules/apikey.md) > [ListResult](../interfaces/apikey.listresult.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  apiKeys**:  *[ApiKey](apikey.apikey-1.md)[]* 
 
-*Defined in [types.ts:101](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L101)*
+*Defined in [types.ts:101](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L101)*
 
 
 

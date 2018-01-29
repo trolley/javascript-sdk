@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiKey](../modules/apikey.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiKey](../modules/apikey.md)
 
 
 

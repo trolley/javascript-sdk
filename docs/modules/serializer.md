@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Serializer](../modules/serializer.md)
+[Payment Rails JavaScript SDK](../README.md) > [Serializer](../modules/serializer.md)
 
 
 

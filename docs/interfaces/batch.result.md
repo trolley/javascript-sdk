@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Batch](../classes/batch.md) > [Result](../interfaces/batch.result.md)
+[Payment Rails JavaScript SDK](../README.md) > [Batch](../classes/batch.md) > [Result](../interfaces/batch.result.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  batch**:  *[Batch](batch.batch-1.md)* 
 
-*Defined in [types.ts:146](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L146)*
+*Defined in [types.ts:146](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L146)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  ok**:  *`boolean`* 
 
-*Defined in [types.ts:145](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L145)*
+*Defined in [types.ts:145](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L145)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Recipient](../classes/recipient.md) > [ListResponse](../interfaces/recipient.listresponse.md)
+[Payment Rails JavaScript SDK](../README.md) > [Recipient](../classes/recipient.md) > [ListResponse](../interfaces/recipient.listresponse.md)
 
 
 
@@ -27,7 +27,7 @@
 
 *Inherited from [WithMeta](serializer.withmeta.md).[meta](serializer.withmeta.md#meta)*
 
-*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L10)*
+*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L10)*
 
 
 #### Type declaration
@@ -65,7 +65,7 @@ ___
 
 **●  ok**:  *`boolean`* 
 
-*Defined in [types.ts:683](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L683)*
+*Defined in [types.ts:683](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L683)*
 
 
 
@@ -79,7 +79,7 @@ ___
 
 **●  recipients**:  *[Recipient](recipient.recipient-1.md)[]* 
 
-*Defined in [types.ts:684](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L684)*
+*Defined in [types.ts:684](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L684)*
 
 
 

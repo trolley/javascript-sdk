@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchSummary](../modules/batchsummary.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchSummary](../modules/batchsummary.md)
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ComplianceCheck](../modules/compliancecheck.md) > [ComplianceCheck](../interfaces/compliancecheck.compliancecheck-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [ComplianceCheck](../modules/compliancecheck.md) > [ComplianceCheck](../interfaces/compliancecheck.compliancecheck-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  checkedAt**:  *`string`* 
 
-*Defined in [types.ts:228](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L228)*
+*Defined in [types.ts:228](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L228)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  createdAt**:  *`string`* 
 
-*Defined in [types.ts:229](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L229)*
+*Defined in [types.ts:229](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L229)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  status**:  *`string`* 
 
-*Defined in [types.ts:227](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L227)*
+*Defined in [types.ts:227](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L227)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  updatedAt**:  *`string`* 
 
-*Defined in [types.ts:230](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L230)*
+*Defined in [types.ts:230](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L230)*
 
 
 

@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Currency](../modules/currency.md)
+[Payment Rails JavaScript SDK](../README.md) > [Currency](../modules/currency.md)
 
 
 

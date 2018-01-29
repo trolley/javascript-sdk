@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Configuration](../classes/configuration.md)
+[Payment Rails JavaScript SDK](../README.md) > [Configuration](../classes/configuration.md)
 
 
 
@@ -40,7 +40,7 @@
 ### ⊕ **new Configuration**(config?: *[ConfigurationParams](../interfaces/configurationparams.md)*): [Configuration](configuration.md)
 
 
-*Defined in [Configuration.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L17)*
+*Defined in [Configuration.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L17)*
 
 
 
@@ -69,7 +69,7 @@ Internal constructor
 
 **●  apiBase**:  *`string`* 
 
-*Defined in [Configuration.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L17)*
+*Defined in [Configuration.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L17)*
 
 
 
@@ -83,7 +83,7 @@ ___
 
 **●  apiKey**:  *`string`* 
 
-*Defined in [Configuration.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L15)*
+*Defined in [Configuration.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L15)*
 
 
 
@@ -97,7 +97,7 @@ ___
 
 **●  apiSecret**:  *`string`* 
 
-*Defined in [Configuration.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L16)*
+*Defined in [Configuration.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L16)*
 
 
 
@@ -111,7 +111,7 @@ ___
 
 **●  apiBaseDefault**:  *`string`*  = "https://api.paymentrails.com"
 
-*Defined in [Configuration.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L13)*
+*Defined in [Configuration.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L13)*
 
 
 
@@ -125,7 +125,7 @@ ___
 
 **●  apiKeyDefault**:  *`string`* 
 
-*Defined in [Configuration.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L11)*
+*Defined in [Configuration.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L11)*
 
 
 
@@ -139,7 +139,7 @@ ___
 
 **●  apiSecretDefault**:  *`string`* 
 
-*Defined in [Configuration.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L12)*
+*Defined in [Configuration.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L12)*
 
 
 
@@ -157,7 +157,7 @@ ___
 
 
 
-*Defined in [Configuration.ts:77](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L77)*
+*Defined in [Configuration.ts:77](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L77)*
 
 
 
@@ -190,7 +190,7 @@ ___
 
 
 
-*Defined in [Configuration.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L51)*
+*Defined in [Configuration.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L51)*
 
 
 
@@ -215,7 +215,7 @@ ___
 
 
 
-*Defined in [Configuration.ts:61](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L61)*
+*Defined in [Configuration.ts:61](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L61)*
 
 
 
@@ -248,7 +248,7 @@ ___
 
 
 
-*Defined in [Configuration.ts:36](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L36)*
+*Defined in [Configuration.ts:36](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L36)*
 
 
 
@@ -281,7 +281,7 @@ ___
 
 
 
-*Defined in [Configuration.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L44)*
+*Defined in [Configuration.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L44)*
 
 
 
@@ -314,7 +314,7 @@ ___
 
 
 
-*Defined in [Configuration.ts:69](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L69)*
+*Defined in [Configuration.ts:69](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L69)*
 
 
 

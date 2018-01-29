@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ApiCall](../modules/apicall.md) > [ListResult](../interfaces/apicall.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [ApiCall](../modules/apicall.md) > [ListResult](../interfaces/apicall.listresult.md)
 
 
 
@@ -25,7 +25,7 @@
 
 **●  activities**:  *[ApiCall](apicall.apicall-1.md)[]* 
 
-*Defined in [types.ts:78](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L78)*
+*Defined in [types.ts:78](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L78)*
 
 
 
@@ -41,7 +41,7 @@ ___
 
 *Inherited from [WithMeta](serializer.withmeta.md).[meta](serializer.withmeta.md#meta)*
 
-*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L10)*
+*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L10)*
 
 
 #### Type declaration

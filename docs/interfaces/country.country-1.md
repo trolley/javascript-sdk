@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Country](../modules/country.md) > [Country](../interfaces/country.country-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [Country](../modules/country.md) > [Country](../interfaces/country.country-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  code**:  *`string`* 
 
-*Defined in [types.ts:257](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L257)*
+*Defined in [types.ts:257](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L257)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  currencies**:  *[CountryCurrency](country.countrycurrency.md)[]* 
 
-*Defined in [types.ts:258](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L258)*
+*Defined in [types.ts:258](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L258)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  name**:  *`string`* 
 
-*Defined in [types.ts:256](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L256)*
+*Defined in [types.ts:256](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L256)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  regions**:  *`object`* 
 
-*Defined in [types.ts:259](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L259)*
+*Defined in [types.ts:259](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L259)*
 
 
 #### Type declaration

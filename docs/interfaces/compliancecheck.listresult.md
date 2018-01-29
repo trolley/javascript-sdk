@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ComplianceCheck](../modules/compliancecheck.md) > [ListResult](../interfaces/compliancecheck.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [ComplianceCheck](../modules/compliancecheck.md) > [ListResult](../interfaces/compliancecheck.listresult.md)
 
 
 
@@ -25,7 +25,7 @@
 
 **●  complianceChecks**:  *[ComplianceCheck](compliancecheck.compliancecheck-1.md)[]* 
 
-*Defined in [types.ts:238](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L238)*
+*Defined in [types.ts:238](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L238)*
 
 
 
@@ -41,7 +41,7 @@ ___
 
 *Inherited from [WithMeta](serializer.withmeta.md).[meta](serializer.withmeta.md#meta)*
 
-*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L10)*
+*Defined in [types.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L10)*
 
 
 #### Type declaration

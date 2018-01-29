@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Country](../modules/country.md) > [RegionList](../interfaces/country.regionlist.md)
+[Payment Rails JavaScript SDK](../README.md) > [Country](../modules/country.md) > [RegionList](../interfaces/country.regionlist.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  regions**:  *`object`[]* 
 
-*Defined in [types.ts:249](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L249)*
+*Defined in [types.ts:249](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L249)*
 
 
 

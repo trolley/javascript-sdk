@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [BatchGateway](../classes/batchgateway.md)
+[Payment Rails JavaScript SDK](../README.md) > [BatchGateway](../classes/batchgateway.md)
 
 
 
@@ -40,7 +40,7 @@ Gateway class for batcheso
 
 **●  gateway**:  *[Gateway](gateway.md)* 
 
-*Defined in [BatchGateway.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L37)*
+*Defined in [BatchGateway.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L37)*
 
 
 
@@ -58,7 +58,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L51)*
+*Defined in [BatchGateway.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L51)*
 
 
 
@@ -83,7 +83,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:84](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L84)*
+*Defined in [BatchGateway.ts:84](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L84)*
 
 
 
@@ -117,7 +117,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L67)*
+*Defined in [BatchGateway.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L67)*
 
 
 
@@ -150,7 +150,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:172](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L172)*
+*Defined in [BatchGateway.ts:172](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L172)*
 
 
 
@@ -183,7 +183,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:156](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L156)*
+*Defined in [BatchGateway.ts:156](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L156)*
 
 
 
@@ -218,7 +218,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:120](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L120)*
+*Defined in [BatchGateway.ts:120](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L120)*
 
 
 
@@ -251,7 +251,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:138](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L138)*
+*Defined in [BatchGateway.ts:138](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L138)*
 
 
 
@@ -286,7 +286,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:188](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L188)*
+*Defined in [BatchGateway.ts:188](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L188)*
 
 
 
@@ -319,7 +319,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:204](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L204)*
+*Defined in [BatchGateway.ts:204](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L204)*
 
 
 
@@ -352,7 +352,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:104](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/BatchGateway.ts#L104)*
+*Defined in [BatchGateway.ts:104](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L104)*
 
 
 

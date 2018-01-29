@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [TeamMember](../modules/teammember.md) > [TeamMember](../interfaces/teammember.teammember-1.md)
+[Payment Rails JavaScript SDK](../README.md) > [TeamMember](../modules/teammember.md) > [TeamMember](../interfaces/teammember.teammember-1.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  createdAt**:  *`string`* 
 
-*Defined in [types.ts:701](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L701)*
+*Defined in [types.ts:701](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L701)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  email**:  *`string`* 
 
-*Defined in [types.ts:690](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L690)*
+*Defined in [types.ts:690](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L690)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  emailSettings**:  *`any`* 
 
-*Defined in [types.ts:699](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L699)*
+*Defined in [types.ts:699](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L699)*
 
 
 
@@ -54,7 +54,7 @@ ___
 
 **●  firstName**:  *`string`* 
 
-*Defined in [types.ts:692](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L692)*
+*Defined in [types.ts:692](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L692)*
 
 
 
@@ -68,7 +68,7 @@ ___
 
 **●  gravatarUrl**:  *`string`* 
 
-*Defined in [types.ts:703](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L703)*
+*Defined in [types.ts:703](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L703)*
 
 
 
@@ -82,7 +82,7 @@ ___
 
 **●  id**:  *`string`* 
 
-*Defined in [types.ts:704](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L704)*
+*Defined in [types.ts:704](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L704)*
 
 
 
@@ -96,7 +96,7 @@ ___
 
 **●  language**:  *`string`* 
 
-*Defined in [types.ts:698](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L698)*
+*Defined in [types.ts:698](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L698)*
 
 
 
@@ -110,7 +110,7 @@ ___
 
 **●  lastName**:  *`string`* 
 
-*Defined in [types.ts:693](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L693)*
+*Defined in [types.ts:693](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L693)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 **●  name**:  *`string`* 
 
-*Defined in [types.ts:691](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L691)*
+*Defined in [types.ts:691](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L691)*
 
 
 
@@ -138,7 +138,7 @@ ___
 
 **●  role**:  *`string`* 
 
-*Defined in [types.ts:695](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L695)*
+*Defined in [types.ts:695](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L695)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 **●  status**:  *`string`* 
 
-*Defined in [types.ts:696](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L696)*
+*Defined in [types.ts:696](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L696)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 **●  timeZone**:  *`string`* 
 
-*Defined in [types.ts:697](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L697)*
+*Defined in [types.ts:697](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L697)*
 
 
 
@@ -180,7 +180,7 @@ ___
 
 **●  type**:  *`string`* 
 
-*Defined in [types.ts:694](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L694)*
+*Defined in [types.ts:694](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L694)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 **●  updatedAt**:  *`string`* 
 
-*Defined in [types.ts:700](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L700)*
+*Defined in [types.ts:700](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L700)*
 
 
 

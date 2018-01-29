@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ComplianceCheck](../modules/compliancecheck.md)
+[Payment Rails JavaScript SDK](../README.md) > [ComplianceCheck](../modules/compliancecheck.md)
 
 
 

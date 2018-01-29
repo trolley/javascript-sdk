@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [WhiteLabel](../modules/whitelabel.md)
+[Payment Rails JavaScript SDK](../README.md) > [WhiteLabel](../modules/whitelabel.md)
 
 
 

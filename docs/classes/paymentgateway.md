@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [PaymentGateway](../classes/paymentgateway.md)
+[Payment Rails JavaScript SDK](../README.md) > [PaymentGateway](../classes/paymentgateway.md)
 
 
 
@@ -35,7 +35,7 @@
 ### ⊕ **new PaymentGateway**(gateway: *[Gateway](gateway.md)*): [PaymentGateway](paymentgateway.md)
 
 
-*Defined in [PaymentGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L9)*
+*Defined in [PaymentGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L9)*
 
 
 
@@ -61,7 +61,7 @@
 
 **●  config**:  *[Configuration](configuration.md)* 
 
-*Defined in [PaymentGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L9)*
+*Defined in [PaymentGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L9)*
 
 
 
@@ -75,7 +75,7 @@ ___
 
 **●  gateway**:  *[Gateway](gateway.md)* 
 
-*Defined in [PaymentGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L8)*
+*Defined in [PaymentGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L8)*
 
 
 
@@ -93,7 +93,7 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L28)*
+*Defined in [PaymentGateway.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L28)*
 
 
 
@@ -124,7 +124,7 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L16)*
+*Defined in [PaymentGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L16)*
 
 
 
@@ -154,7 +154,7 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L52)*
+*Defined in [PaymentGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L52)*
 
 
 
@@ -185,7 +185,7 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:64](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L64)*
+*Defined in [PaymentGateway.ts:64](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L64)*
 
 
 
@@ -218,7 +218,7 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/PaymentGateway.ts#L40)*
+*Defined in [PaymentGateway.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L40)*
 
 
 

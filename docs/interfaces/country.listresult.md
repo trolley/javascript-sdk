@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [Country](../modules/country.md) > [ListResult](../interfaces/country.listresult.md)
+[Payment Rails JavaScript SDK](../README.md) > [Country](../modules/country.md) > [ListResult](../interfaces/country.listresult.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  countries**:  *`object`* 
 
-*Defined in [types.ts:269](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/types.ts#L269)*
+*Defined in [types.ts:269](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/types.ts#L269)*
 
 
 #### Type declaration

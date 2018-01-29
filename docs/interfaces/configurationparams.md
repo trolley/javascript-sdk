@@ -1,4 +1,4 @@
-[paymentrails](../README.md) > [ConfigurationParams](../interfaces/configurationparams.md)
+[Payment Rails JavaScript SDK](../README.md) > [ConfigurationParams](../interfaces/configurationparams.md)
 
 
 
@@ -12,7 +12,7 @@
 
 **●  environment**:  *`undefined`⎮`string`* 
 
-*Defined in [Configuration.ts:6](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L6)*
+*Defined in [Configuration.ts:6](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L6)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  key**:  *`string`* 
 
-*Defined in [Configuration.ts:4](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L4)*
+*Defined in [Configuration.ts:4](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L4)*
 
 
 
@@ -40,7 +40,7 @@ ___
 
 **●  secret**:  *`string`* 
 
-*Defined in [Configuration.ts:5](https://github.com/PaymentRails/javascript-sdk/blob/9b4ee77/lib/Configuration.ts#L5)*
+*Defined in [Configuration.ts:5](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L5)*
 
 
 
