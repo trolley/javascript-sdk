@@ -117,6 +117,47 @@ describe("Recipient", () => {
     assert.equal(accountList2.length, 1);
   }).timeout(5000);
 
+  it("account update", async () => {
+    const id = uuid.v4();
+
+    const recipient = await Recipient.create({
+      type: "individual",
+      firstName: "Tom",
+      lastName: "Jones",
+      email: `test.account+${id}@example.com`,
+      address: {
+        street1: "123 Wolfstrasse",
+        city: "Berlin",
+        country: "DE",
+        postalCode: "123123",
+      },
+    });
+
+    assert.ok(recipient);
+
+    const account = await RecipientAccount.create(recipient.id, {
+      type: "bank-transfer",
+      currency: "EUR",
+      iban: "DE89 3704 0044 0532 0130 00",
+    });
+
+    assert.ok(account);
+
+    const account2 = await RecipientAccount.update(recipient.id, account.id, {
+      iban: "FR14 2004 1010 0505 0001 3M02 606",
+    });
+
+    assert.ok(account2);
+    assert.notEqual(account.id, account2.id);
+    assert.ok(account2.iban.includes("**06"));
+
+    const accountList = await RecipientAccount.all(recipient.id);
+
+    assert.equal(accountList.length, 1);
+    assert.ok(accountList[0].iban.includes("**06"));
+    assert.equal(accountList[0].id, account2.id);
+  });
+
   /*
   it("Update - Name should be George", async () => {
     const payload = {

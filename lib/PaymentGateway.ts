@@ -14,51 +14,35 @@ export class PaymentGateway {
   }
 
   async find(paymentId: string) {
-    const endPoint = `/v1/payments/${paymentId}`;
+    const endPoint = `/v1/payments/${encodeURIComponent(paymentId)}`;
 
     const result = await this.gateway.client.get<types.Payment.Result>(endPoint);
 
-    if (result.ok) {
-      return Payment.factory(result.payment);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Payment.factory(result.payment);
   }
 
   async create(batchId: string, body: any) {
-    const endPoint = `/v1/batches/${batchId}/payments`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/payments`;
 
     const result = await this.gateway.client.post<types.Payment.Result>(endPoint, body);
 
-    if (result.ok) {
-      return Payment.factory(result.payment);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Payment.factory(result.payment);
   }
 
   async update(paymentId: string, batchId: string, body: any) {
-    const endPoint = `/v1/batches/${batchId}/payments/${paymentId}`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/payments/${encodeURIComponent(paymentId)}`;
 
     const result = await this.gateway.client.patch<{ ok: boolean }>(endPoint, body);
 
-    if (result.ok) {
-      return true;
-    } else {
-      throw new DownForMaintenance();
-    }
+    return true;
   }
 
   async remove(paymentId: string, batchId: string) {
-    const endPoint = `/v1/batches/${batchId}/payments/${paymentId}`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/payments/${encodeURIComponent(paymentId)}`;
 
     const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
 
-    if (result.ok) {
-      return true;
-    } else {
-      throw new DownForMaintenance();
-    }
+    return true;
   }
 
   async search(
@@ -67,14 +51,11 @@ export class PaymentGateway {
     pageSize: number = 10,
     term: string = "",
   ) {
-    const endPoint = `/v1/batches/${batchId}/payments/?&search=${term}&page=${page}&pageSize=${pageSize}`;
+    // tslint:disable-next-line:max-line-length
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/payments/?&search=${encodeURIComponent(term)}&page=${encodeURIComponent(String(page))}&pageSize=${encodeURIComponent(String(pageSize))}`;
 
     const result = await this.gateway.client.get<types.Payment.ListResult>(endPoint);
 
-    if (result.ok) {
-      return result.payments.map(p => Payment.factory(p));
-    } else {
-      throw new DownForMaintenance();
-    }
+    return result.payments.map(p => Payment.factory(p));
   }
 }

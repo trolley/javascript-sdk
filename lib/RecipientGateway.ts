@@ -14,15 +14,11 @@ export class RecipientGateway {
   }
 
   async find(recipientId: string) {
-    const endPoint = `/v1/recipients/${recipientId}`;
+    const endPoint = `/v1/recipients/${encodeURIComponent(recipientId)}`;
 
     const result = await this.gateway.client.get<types.Recipient.Response>(endPoint);
 
-    if (result.ok) {
-      return Recipient.factory(result.recipient);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Recipient.factory(result.recipient);
   }
 
   async create(body: any) {
@@ -30,44 +26,31 @@ export class RecipientGateway {
 
     const result = await this.gateway.client.post<types.Recipient.Response>(endPoint, body);
 
-    if (result.ok) {
-      return Recipient.factory(result.recipient);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Recipient.factory(result.recipient);
   }
 
   async update(recipientId: string, body: any) {
-    const endPoint = `/v1/recipients/${recipientId}`;
+    const endPoint = `/v1/recipients/${encodeURIComponent(recipientId)}`;
 
     const result = await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
 
-    if (result.ok) {
-      return true;
-    } else {
-      throw new DownForMaintenance();
-    }
+    return true;
   }
 
   async remove(recipientId: string) {
-    const endPoint = `/v1/recipients/${recipientId}`;
+    const endPoint = `/v1/recipients/${encodeURIComponent(recipientId)}`;
 
     const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
-    if (result.ok) {
-      return true;
-    } else {
-      throw new DownForMaintenance();
-    }
+
+    return true;
   }
 
   async search(page: number, pageSize: number, search: string) {
-    const endPoint = `/v1/recipients/?&search=${search}&page=${page}&pageSize=${pageSize}`;
+    // tslint:disable-next-line:max-line-length
+    const endPoint = `/v1/recipients/?&search=${encodeURIComponent(search)}&page=${encodeURIComponent(String(page))}&pageSize=${encodeURIComponent(String(pageSize))}`;
 
     const result = await this.gateway.client.get<types.Recipient.ListResponse>(endPoint);
-    if (result.ok) {
-      return result.recipients.map(r => Recipient.factory(r));
-    } else {
-      throw new DownForMaintenance();
-    }
+
+    return result.recipients.map(r => Recipient.factory(r));
   }
 }

@@ -28,7 +28,7 @@ export interface PaymentInput {
 }
 
 /**
- * 
+ *
  */
 export class Batch {
   id: string = "";

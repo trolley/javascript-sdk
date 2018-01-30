@@ -53,11 +53,7 @@ export class BatchGateway {
 
     const result = await this.gateway.client.get<types.Batch.ListResult>(endPoint);
 
-    if (result.ok) {
-      return result.batches.map(b => Batch.factory(b));
-    } else {
-      throw new DownForMaintenance();
-    }
+    return result.batches.map(b => Batch.factory(b));
   }
 
   /**
@@ -65,19 +61,30 @@ export class BatchGateway {
    * @param {string} batchId
    */
   async find(batchId: string): Promise<Batch> {
-    const endPoint = `/v1/batches/${batchId}`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}`;
 
     const result = await this.gateway.client.get<types.Batch.Result>(endPoint);
 
-    if (result.ok) {
-      return Batch.factory(result.batch);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Batch.factory(result.batch);
   }
 
   /**
-   * Creates a batch with optional payments
+   * Creates a batch with optional payments. This is the interface that is
+   * provide by the {@link http://docs.paymentrails.com/api/#create-a-batch Create Batch} API
+   *
+   * ```js
+   * const batch = await client.batch.create({
+   *     description: "My Batch",
+   *     sourceCurrency: "USD",
+   *   }, [
+   *     {
+   *       recipient: {
+   *         email: "john@example.com",
+   *       },
+   *       sourceAmount: "10.20",
+   *     },
+   *   ]);
+   * ```
    * @param {BatchInput} batch
    * @param {PaymentInput} payments (optional)
    */
@@ -89,11 +96,7 @@ export class BatchGateway {
       ...(payments ? { payments } : {}),
     });
 
-    if (result.ok) {
-      return Batch.factory(result.batch);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Batch.factory(result.batch);
   }
 
   /**
@@ -102,15 +105,11 @@ export class BatchGateway {
    * @param {BatchInput} parameters
    */
   async update(batchId: string, body: BatchInput) {
-    const endPoint = `/v1/batches/${batchId}`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}`;
 
     const result = await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
 
-    if (result.ok) {
-      return true;
-    } else {
-      throw new DownForMaintenance();
-    }
+    return true;
   }
 
   /**
@@ -118,15 +117,11 @@ export class BatchGateway {
    * @param batchId Batch ID
    */
   async remove(batchId: string) {
-    const endPoint = `/v1/batches/${batchId}`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}`;
 
     const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
 
-    if (result.ok) {
-      return true;
-    } else {
-      throw new DownForMaintenance();
-    }
+    return true;
   }
 
   /**
@@ -136,15 +131,12 @@ export class BatchGateway {
    * @param search string search term
    */
   async search(page = 1, pageSize = 10, search = "") {
-    const endPoint = `/v1/batches/?&search=${search}&page=${page}&pageSize=${pageSize}`;
+    // tslint:disable-next-line:max-line-length
+    const endPoint = `/v1/batches/?&search=${encodeURIComponent(search)}&page=${encodeURIComponent(String(page))}&pageSize=${encodeURIComponent(String(pageSize))}`;
 
     const result = await this.gateway.client.get<types.Batch.ListResult>(endPoint);
 
-    if (result.ok) {
-      return result.batches.map(b => Batch.factory(b));
-    } else {
-      throw new DownForMaintenance();
-    }
+    return result.batches.map(b => Batch.factory(b));
   }
 
   /**
@@ -154,15 +146,11 @@ export class BatchGateway {
    * @param pageSize 
    */
   async paymentList(batchId: string, page: number = 1, pageSize: number = 10) {
-    const endPoint = `/v1/batches/${batchId}/payments`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/payments`;
 
     const result = await this.gateway.client.get<types.Payment.ListResult>(endPoint);
 
-    if (result.ok) {
-      return result.payments.map(b => Payment.factory(b));
-    } else {
-      throw new DownForMaintenance();
-    }
+    return result.payments.map(b => Payment.factory(b));
   }
 
   /**
@@ -170,15 +158,11 @@ export class BatchGateway {
    * @param batchId 
    */
   async generateQuote(batchId: string) {
-    const endPoint = `/v1/batches/${batchId}/generate-quote`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/generate-quote`;
 
     const result = await this.gateway.client.post<types.Batch.Result>(endPoint);
 
-    if (result.ok) {
-      return Batch.factory(result.batch);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Batch.factory(result.batch);
   }
 
   /**
@@ -186,15 +170,11 @@ export class BatchGateway {
    * @param batchId 
    */
   async startProcessing(batchId: string) {
-    const endPoint = `/v1/batches/${batchId}/start-processing`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/start-processing`;
 
     const result = await this.gateway.client.post<types.Batch.Result>(endPoint);
 
-    if (result.ok) {
-      return Batch.factory(result.batch);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Batch.factory(result.batch);
   }
 
   /**
@@ -202,14 +182,10 @@ export class BatchGateway {
    * @param batchId
    */
   async summary(batchId: string) {
-    const endPoint = `/v1/batches/${batchId}/summary`;
+    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/summary`;
 
     const result = await this.gateway.client.get<types.BatchSummary.Result>(endPoint);
 
-    if (result.ok) {
-      return result.batchSummary;
-    } else {
-      throw new DownForMaintenance();
-    }
+    return result.batchSummary;
   }
 }

@@ -20,22 +20,14 @@ export class BalanceGateway {
       endPoint,
     );
 
-    if (result.ok) {
-      return Object.values(result.balances).map(b => Balance.factory(b));
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Object.values(result.balances).map(b => Balance.factory(b));
   }
 
   async find(term: string) {
-    const endPoint = `/v1/profile/balances/${term}`;
+    const endPoint = `/v1/profile/balances/${encodeURIComponent(term)}`;
 
     const result = await this.gateway.client.get<types.Balance.Result>(endPoint);
 
-    if (result.ok) {
-      return Balance.factory(result.balance);
-    } else {
-      throw new DownForMaintenance();
-    }
+    return Balance.factory(result.balance);
   }
 }

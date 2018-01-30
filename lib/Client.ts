@@ -2,6 +2,60 @@ import { Configuration } from "./Configuration";
 import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
+import * as exceptions from './exceptions';
+
+function sendRequest<T>(options: any) {
+  return new Promise<T>((resolve, reject) => {
+    // tslint:disable-next-line:cyclomatic-complexity
+    request(options, (error: any, response: request.RequestResponse, responseBody: any) => {
+      if (error) {
+        reject(new exceptions.ServerError(String(error)));
+      } else {
+        try {
+          const data = JSON.parse(responseBody);
+
+          if (response.statusCode === 200) {
+            resolve(data as T);
+
+            return;
+          }
+
+          const firstErr = (data.errors && Array.isArray(data.errors) && data.errors.length !== 0) ? data.errors[0] : undefined;
+          switch (response.statusCode) {
+            case 400:
+              reject(new exceptions.Malformed(firstErr.message || "Not Found"));
+
+              return;
+            case 401:
+              reject(new exceptions.Authentication(firstErr.message || "Not Found"));
+
+              return;
+            case 403:
+              reject(new exceptions.Authorization(firstErr.message || "Not Found"));
+
+              return;
+            case 404:
+              reject(new exceptions.Authorization(firstErr.message || "Not Found"));
+
+              return;
+            case 500:
+              reject(new exceptions.ServerError(firstErr.message || "Not Found"));
+
+              return;
+            case 503:
+              reject(new exceptions.DownForMaintenance(firstErr.message || "Not Found"));
+
+              return;
+            default:
+              reject(new exceptions.Unexpected(`Unexpected HTTP_RESPONSE #${response.statusCode}`));
+          }
+        } catch (err) {
+          reject(new exceptions.Unexpected(String(err)));
+        }
+      }
+    });
+  });
+}
 
 export class Client {
   config: Configuration;
@@ -29,15 +83,7 @@ export class Client {
       },
     };
 
-    return new Promise<T>((resolve, reject) => {
-      request(options, (error: any, response: any, responseBody: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(JSON.parse(responseBody) as T);
-        }
-      });
-    });
+    return sendRequest<T>(options);
   }
 
   /**
@@ -68,19 +114,7 @@ export class Client {
       body,
     };
 
-    return new Promise<T>((resolve, reject) => {
-      request(options, (error: any, response: any, responseBody: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          try {
-            resolve(JSON.parse(responseBody) as T);
-          } catch (err) {
-            reject(err);
-          }
-        }
-      });
-    });
+    return sendRequest<T>(options);
   }
   /**
    * Makes an HTTP PATCH request to the API
@@ -90,7 +124,7 @@ export class Client {
   async patch<T>(endPoint: string, payload: any): Promise<T> {
     const date: any = new Date();
     const timestamp = Math.round(date / 1000);
-    const body = JSON.stringify(payload);
+    const body = payload === undefined ? "{}" : JSON.stringify(payload);
     const authoriation = this.generateAuthorization(
       timestamp,
       endPoint,
@@ -109,15 +143,7 @@ export class Client {
       body,
     };
 
-    return new Promise<T>((resolve, reject) => {
-      request(options, (error: any, response: any, responseBody: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(JSON.parse(responseBody) as T);
-        }
-      });
-    });
+    return sendRequest<T>(options);
   }
   /**
    * Makes an HTTP DELETE request to the API
@@ -142,15 +168,7 @@ export class Client {
       },
     };
 
-    return new Promise<T>((resolve, reject) => {
-      request(options, (error: any, response: any, responseBody: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(JSON.parse(responseBody) as T);
-        }
-      });
-    });
+    return sendRequest<T>(options);
   }
   /**
    * Generates an authoriztion code
