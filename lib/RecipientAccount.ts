@@ -1,5 +1,4 @@
 import { Configuration } from "./Configuration";
-import { DownForMaintenance } from "./exceptions";
 import * as types from "./types";
 
 /**
@@ -35,6 +34,7 @@ export class RecipientAccount {
    * Retrieves the payout method based on the recipient id
    * @param {string} recipientId
    * @param {string} recipientAccountId
+   * @hidden
    */
   static async all(recipientId: string) {
     return Configuration.gateway().recipientAccount.all(
@@ -46,6 +46,7 @@ export class RecipientAccount {
    * Retrieves the payout method based on the recipient id
    * @param {string} recipientId
    * @param {string} recipientAccountId
+   * @hidden
    */
   static async find(recipientId: string, recipientAccountId: string) {
     return Configuration.gateway().recipientAccount.find(
@@ -58,6 +59,7 @@ export class RecipientAccount {
    * Creates a payout method based on the body and recipient id
    * @param {string} recipientId
    * @param {array} body
+   * @hidden
    */
   static async create(recipientId: string, body: any) {
     return Configuration.gateway().recipientAccount.create(
@@ -71,6 +73,7 @@ export class RecipientAccount {
    * @param {string} recipientId
    * @param {array} body
    * @param {string} recipientAccountId
+   * @hidden
    */
   static async update(
     recipientId: string,
@@ -89,6 +92,7 @@ export class RecipientAccount {
    * @param {string} recipientId
    * @param {array} body
    * @param {string} recipientAccountId
+   * @hidden
    */
   static async remove(recipientId: string, recipientAccountId: string) {
     return Configuration.gateway().recipientAccount.remove(
@@ -97,6 +101,11 @@ export class RecipientAccount {
     );
   }
 
+  /**
+   * @param account
+   * @param account
+   * @hidden
+   */
   static factory(account: types.Recipient.Account) {
     const instance = new RecipientAccount();
     instance._initialize(account);
@@ -104,6 +113,10 @@ export class RecipientAccount {
     return instance;
   }
 
+  /**
+   * @param account
+   * @hidden
+   */
   private _initialize(account: types.Recipient.Account) {
     Object.keys(account).forEach(k => {
       (this as any)[k] = (account as any)[k];

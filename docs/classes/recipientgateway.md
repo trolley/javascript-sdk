@@ -6,17 +6,6 @@
 
 ## Index
 
-### Constructors
-
-* [constructor](recipientgateway.md#constructor)
-
-
-### Properties
-
-* [config](recipientgateway.md#config)
-* [gateway](recipientgateway.md#gateway)
-
-
 ### Methods
 
 * [create](recipientgateway.md#create)
@@ -28,80 +17,39 @@
 
 
 ---
-## Constructors
-<a id="constructor"></a>
-
-
-### ⊕ **new RecipientGateway**(gateway: *[Gateway](gateway.md)*): [RecipientGateway](recipientgateway.md)
-
-
-*Defined in [RecipientGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L9)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| gateway | [Gateway](gateway.md)   |  - |
-
-
-
-
-
-**Returns:** [RecipientGateway](recipientgateway.md)
-
----
-
-
-## Properties
-<a id="config"></a>
-
-###  config
-
-**●  config**:  *[Configuration](configuration.md)* 
-
-*Defined in [RecipientGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L9)*
-
-
-
-
-
-___
-
-<a id="gateway"></a>
-
-###  gateway
-
-**●  gateway**:  *[Gateway](gateway.md)* 
-
-*Defined in [RecipientGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L8)*
-
-
-
-
-
-___
-
 
 ## Methods
 <a id="create"></a>
 
 ###  create
 
-► **create**(body: *`any`*): `Promise`.<`Recipient`>
+► **create**(body: *[RecipientInput](../interfaces/recipientinput.md)*): `Promise`.<`Recipient`>
 
 
 
-*Defined in [RecipientGateway.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L28)*
+*Defined in [RecipientGateway.ts:82](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientGateway.ts#L82)*
 
+
+
+Create a given recipient
+
+    const recipient = await client.recipient.create({
+      type: "individual",
+      firstName: "Tom",
+      lastName: "Jones",
+      email: "tom.jones@example.com",
+      address: {
+         street1: "123 Main St",
+         country: "US",
+      }
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| body | `any`   |  - |
+| body | [RecipientInput](../interfaces/recipientinput.md)   |  The recipient information to create |
 
 
 
@@ -123,15 +71,20 @@ ___
 
 
 
-*Defined in [RecipientGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L16)*
+*Defined in [RecipientGateway.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientGateway.ts#L58)*
 
+
+
+Find a specific recipient by their Payment Rails recipient ID
+
+    const recipient = await client.recipient.find('R-1234');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
 
 
 
@@ -153,15 +106,20 @@ ___
 
 
 
-*Defined in [RecipientGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L52)*
+*Defined in [RecipientGateway.ts:115](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientGateway.ts#L115)*
 
+
+
+Delete the given recipient.
+
+    const status = await client.recipient.remove('R-123');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
 
 
 
@@ -179,11 +137,11 @@ ___
 
 ###  search
 
-► **search**(page: *`number`*, pageSize: *`number`*, search: *`string`*): `Promise`.<`Recipient`[]>
+► **search**(page: *`number`*, pageSize: *`number`*, term: *`string`*): `Promise`.<`Recipient`[]>
 
 
 
-*Defined in [RecipientGateway.ts:63](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L63)*
+*Defined in [RecipientGateway.ts:123](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientGateway.ts#L123)*
 
 
 
@@ -193,7 +151,7 @@ ___
 | ------ | ------ | ------ |
 | page | `number`   |  - |
 | pageSize | `number`   |  - |
-| search | `string`   |  - |
+| term | `string`   |  - |
 
 
 
@@ -211,20 +169,27 @@ ___
 
 ###  update
 
-► **update**(recipientId: *`string`*, body: *`any`*): `Promise`.<`boolean`>
+► **update**(recipientId: *`string`*, body: *[RecipientInput](../interfaces/recipientinput.md)*): `Promise`.<`boolean`>
 
 
 
-*Defined in [RecipientGateway.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientGateway.ts#L40)*
+*Defined in [RecipientGateway.ts:100](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientGateway.ts#L100)*
 
+
+
+Update the given recipient
+
+    const recipient = await client.recipient.update('R-1234', {
+      firstName: "Carl",
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| body | `any`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| body | [RecipientInput](../interfaces/recipientinput.md)   |  the changes to make to the recipient |
 
 
 

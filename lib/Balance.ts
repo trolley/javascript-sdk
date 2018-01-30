@@ -1,12 +1,11 @@
 import { Configuration } from "./Configuration";
-import { DownForMaintenance } from "./exceptions";
 import * as types from "./types";
 
-// tslint:disable:function-name
-
 /**
+ * Balance information for a given account type and/or currency
  * @name Balance
  */
+// tslint:disable:function-name
 export class Balance {
   primary: boolean = false;
   amount: string = "0.00";
@@ -17,19 +16,26 @@ export class Balance {
   /**
    * Retrieves the balance based on the api key
    * @param {string} term
+   * @hidden
    */
   static async all() {
-    return Configuration.gateway().balance.all();
+    return Configuration.gateway().balances.all();
   }
 
   /**
    * Retrieves the balance based on the api key
    * @param {string} term
+   * @hidden
    */
-  static async find(term: string) {
-    return Configuration.gateway().balance.find(term);
+  static async find(term: "paypal" | "paymentrails") {
+    return Configuration.gateway().balances.find(term);
   }
 
+  /**
+   * Construct a balance object from a response
+   * @param balance
+   * @hidden
+   */
   static factory(balance: types.Balance.Balance) {
     const instance = new Balance();
     instance._initialize(balance);
@@ -37,6 +43,10 @@ export class Balance {
     return instance;
   }
 
+  /**
+   * Construct a balance object from a response, implementation
+   * @hidden
+   */
   private _initialize(balance: types.Balance.Balance) {
     Object.keys(balance).forEach(k => {
       (this as any)[k] = (balance as any)[k];

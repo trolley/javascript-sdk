@@ -11,11 +11,6 @@ Gateway class for batcheso
 
 ## Index
 
-### Properties
-
-* [gateway](batchgateway.md#gateway)
-
-
 ### Methods
 
 * [all](batchgateway.md#all)
@@ -32,23 +27,6 @@ Gateway class for batcheso
 
 
 ---
-
-## Properties
-<a id="gateway"></a>
-
-###  gateway
-
-**●  gateway**:  *[Gateway](gateway.md)* 
-
-*Defined in [BatchGateway.ts:37](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L37)*
-
-
-
-
-
-___
-
-
 ## Methods
 <a id="all"></a>
 
@@ -58,7 +36,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:51](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L51)*
+*Defined in [BatchGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L52)*
 
 
 
@@ -83,11 +61,23 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:84](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L84)*
+*Defined in [BatchGateway.ts:95](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L95)*
 
 
 
-Creates a batch with optional payments
+Creates a batch with optional payments. This is the interface that is provide by the [Create Batch](http://docs.paymentrails.com/api/#create-a-batch) API
+
+    const batch = await client.batch.create({
+        description: "My Batch",
+        sourceCurrency: "USD",
+      }, [
+        {
+          recipient: {
+            email: "john@example.com",
+          },
+          sourceAmount: "10.20",
+        },
+      ]);
 
 
 **Parameters:**
@@ -117,18 +107,20 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L67)*
+*Defined in [BatchGateway.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L67)*
 
 
 
 Retrieves a batch based on the batch id
+
+    const batch = await client.batch.find('B-xx999bb');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  - |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 
 
 
@@ -150,7 +142,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:172](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L172)*
+*Defined in [BatchGateway.ts:182](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L182)*
 
 
 
@@ -161,7 +153,7 @@ Generate a FX quote for this batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  - |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 
 
 
@@ -183,20 +175,20 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:156](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L156)*
+*Defined in [BatchGateway.ts:166](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L166)*
 
 
 
-Return a paginated list of results for the given batch
+Return a paginated list of payments for this batch
 
 
 **Parameters:**
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| batchId | `string`  | - |   - |
-| page | `number`  | 1 |   - |
-| pageSize | `number`  | 10 |   - |
+| batchId | `string`  | - |   Payment Rails payment id (e.g. "B-xx999bb") |
+| page | `number`  | 1 |   starting a 1 |
+| pageSize | `number`  | 10 |   in the range 0...1000 |
 
 
 
@@ -218,18 +210,20 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:120](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L120)*
+*Defined in [BatchGateway.ts:132](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L132)*
 
 
 
 Delete the given batch
+
+    const success = client.batch.remove('B-xx999bb');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  Batch ID |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 
 
 
@@ -247,11 +241,11 @@ ___
 
 ###  search
 
-► **search**(page?: *`number`*, pageSize?: *`number`*, search?: *`string`*): `Promise`.<`Batch`[]>
+► **search**(page?: *`number`*, pageSize?: *`number`*, term?: *`string`*): `Promise`.<`Batch`[]>
 
 
 
-*Defined in [BatchGateway.ts:138](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L138)*
+*Defined in [BatchGateway.ts:146](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L146)*
 
 
 
@@ -264,7 +258,7 @@ Search for a batch matching the given term
 | ------ | ------ | ------ | ------ |
 | page | `number`  | 1 |   - |
 | pageSize | `number`  | 10 |   - |
-| search | `string`  | &quot;&quot; |   string search term |
+| term | `string`  | &quot;&quot; |   string search term |
 
 
 
@@ -286,7 +280,7 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:188](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L188)*
+*Defined in [BatchGateway.ts:194](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L194)*
 
 
 
@@ -297,7 +291,7 @@ Start processing this batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  - |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 
 
 
@@ -315,11 +309,11 @@ ___
 
 ###  summary
 
-► **summary**(batchId: *`string`*): `Promise`.<[BatchSummary](../interfaces/batchsummary.batchsummary-1.md)>
+► **summary**(batchId: *`string`*): `Promise`.<`BatchSummary`>
 
 
 
-*Defined in [BatchGateway.ts:204](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L204)*
+*Defined in [BatchGateway.ts:206](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L206)*
 
 
 
@@ -330,13 +324,13 @@ Get a transaction totaled summary for this batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  - |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 
 
 
 
 
-**Returns:** `Promise`.<[BatchSummary](../interfaces/batchsummary.batchsummary-1.md)>
+**Returns:** `Promise`.<`BatchSummary`>
 
 
 
@@ -352,18 +346,22 @@ ___
 
 
 
-*Defined in [BatchGateway.ts:104](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L104)*
+*Defined in [BatchGateway.ts:117](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L117)*
 
 
 
-Update the batch data
+Update the batch data, note you can only update the information of a batch not the payments via this API
+
+    const batch = await client.batch.create({
+        description: "My Batch for Wednesday",
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  - |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 | body | `BatchInput`   |  - |
 
 

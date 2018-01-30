@@ -3,7 +3,7 @@ import { RecipientGateway } from "./RecipientGateway";
 import { RecipientAccountGateway } from "./RecipientAccountGateway";
 import { BatchGateway } from "./BatchGateway";
 import { PaymentGateway } from "./PaymentGateway";
-import { BalanceGateway } from "./BalanceGateway";
+import { BalancesGateway } from "./BalancesGateway";
 import { Client } from "./Client";
 
 export class Gateway {
@@ -12,16 +12,21 @@ export class Gateway {
   recipient: RecipientGateway;
   batch: BatchGateway;
   recipientAccount: RecipientAccountGateway;
-  balance: BalanceGateway;
+  balances: BalancesGateway;
   payment: PaymentGateway;
 
+  /**
+   * This should be called by the connect() method to setup a client gateway
+   * @param config Configuration parameters
+   * @hidden
+   */
   constructor(config: Configuration) {
     this.config = config;
     this.client = new Client(config);
     this.recipient = new RecipientGateway(this);
     this.batch = new BatchGateway(this);
     this.recipientAccount = new RecipientAccountGateway(this);
-    this.balance = new BalanceGateway(this);
+    this.balances = new BalancesGateway(this);
     this.payment = new PaymentGateway(this);
   }
 }

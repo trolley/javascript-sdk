@@ -6,14 +6,9 @@
 
 ## Index
 
-### Constructors
-
-* [constructor](gateway.md#constructor)
-
-
 ### Properties
 
-* [balance](gateway.md#balance)
+* [balances](gateway.md#balances)
 * [batch](gateway.md#batch)
 * [client](gateway.md#client)
 * [config](gateway.md#config)
@@ -24,40 +19,14 @@
 
 
 ---
-## Constructors
-<a id="constructor"></a>
-
-
-### ⊕ **new Gateway**(config: *[Configuration](configuration.md)*): [Gateway](gateway.md)
-
-
-*Defined in [Gateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L16)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| config | [Configuration](configuration.md)   |  - |
-
-
-
-
-
-**Returns:** [Gateway](gateway.md)
-
----
-
-
 ## Properties
-<a id="balance"></a>
+<a id="balances"></a>
 
-###  balance
+###  balances
 
-**●  balance**:  *[BalanceGateway](balancegateway.md)* 
+**●  balances**:  *[BalancesGateway](balancesgateway.md)* 
 
-*Defined in [Gateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L15)*
+*Defined in [Gateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L15)*
 
 
 
@@ -71,7 +40,7 @@ ___
 
 **●  batch**:  *[BatchGateway](batchgateway.md)* 
 
-*Defined in [Gateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L13)*
+*Defined in [Gateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L13)*
 
 
 
@@ -83,9 +52,9 @@ ___
 
 ###  client
 
-**●  client**:  *[Client](client.md)* 
+**●  client**:  *`Client`* 
 
-*Defined in [Gateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L11)*
+*Defined in [Gateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L11)*
 
 
 
@@ -99,7 +68,7 @@ ___
 
 **●  config**:  *[Configuration](configuration.md)* 
 
-*Defined in [Gateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L10)*
+*Defined in [Gateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L10)*
 
 
 
@@ -113,7 +82,7 @@ ___
 
 **●  payment**:  *[PaymentGateway](paymentgateway.md)* 
 
-*Defined in [Gateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L16)*
+*Defined in [Gateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L16)*
 
 
 
@@ -127,7 +96,7 @@ ___
 
 **●  recipient**:  *[RecipientGateway](recipientgateway.md)* 
 
-*Defined in [Gateway.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L12)*
+*Defined in [Gateway.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L12)*
 
 
 
@@ -141,7 +110,7 @@ ___
 
 **●  recipientAccount**:  *[RecipientAccountGateway](recipientaccountgateway.md)* 
 
-*Defined in [Gateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Gateway.ts#L14)*
+*Defined in [Gateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L14)*
 
 
 

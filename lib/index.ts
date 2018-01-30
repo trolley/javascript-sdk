@@ -8,6 +8,16 @@ export { Balance } from './Balance';
 export { Batch } from './Batch';
 export { Payment } from './Payment';
 
+/**
+ * Create a client for the Payment Rails JavasScript API
+ * ```
+ * const client = paymentrails.connect({
+ *   key: "MY_PUBLIC_KEY",
+ *   secret: "MY_PRIVATE_KEY",
+ * });
+ * ```
+ * @param config The configuration parameters
+ */
 export function connect(config: ConfigurationParams) {
   return new Gateway(new Configuration(config));
 }

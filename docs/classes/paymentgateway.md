@@ -6,17 +6,6 @@
 
 ## Index
 
-### Constructors
-
-* [constructor](paymentgateway.md#constructor)
-
-
-### Properties
-
-* [config](paymentgateway.md#config)
-* [gateway](paymentgateway.md#gateway)
-
-
 ### Methods
 
 * [create](paymentgateway.md#create)
@@ -28,62 +17,6 @@
 
 
 ---
-## Constructors
-<a id="constructor"></a>
-
-
-### ⊕ **new PaymentGateway**(gateway: *[Gateway](gateway.md)*): [PaymentGateway](paymentgateway.md)
-
-
-*Defined in [PaymentGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L9)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| gateway | [Gateway](gateway.md)   |  - |
-
-
-
-
-
-**Returns:** [PaymentGateway](paymentgateway.md)
-
----
-
-
-## Properties
-<a id="config"></a>
-
-###  config
-
-**●  config**:  *[Configuration](configuration.md)* 
-
-*Defined in [PaymentGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L9)*
-
-
-
-
-
-___
-
-<a id="gateway"></a>
-
-###  gateway
-
-**●  gateway**:  *[Gateway](gateway.md)* 
-
-*Defined in [PaymentGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L8)*
-
-
-
-
-
-___
-
-
 ## Methods
 <a id="create"></a>
 
@@ -93,16 +26,26 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L28)*
+*Defined in [PaymentGateway.ts:55](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/PaymentGateway.ts#L55)*
 
+
+
+Create a new payment in a batch
+
+    const payment = await client.payment.create('B-xx99bb', {
+      recipient: {
+        email: 'tom.jones@example.com',
+      },
+      sourceAmount: '10.99',
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string`   |  - |
-| body | `any`   |  - |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
+| body | `any`   |  Payment information |
 
 
 
@@ -124,15 +67,20 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L16)*
+*Defined in [PaymentGateway.ts:34](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/PaymentGateway.ts#L34)*
 
+
+
+Find a specific payment
+
+    const payment = await client.payment.find('P-aabbccc');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paymentId | `string`   |  - |
+| paymentId | `string`   |  Payment Rails payment id (e.g. "P-aabccc") |
 
 
 
@@ -154,16 +102,21 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L52)*
+*Defined in [PaymentGateway.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/PaymentGateway.ts#L90)*
 
+
+
+Delete a given payment -- Note you can only delete non processed payments
+
+    const success = await client.payment.remove('P-aabbccc', 'B-xx99bb');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paymentId | `string`   |  - |
-| batchId | `string`   |  - |
+| paymentId | `string`   |  Payment Rails payment id (e.g. "P-aabccc") |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
 
 
 
@@ -185,18 +138,21 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:64](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L64)*
+*Defined in [PaymentGateway.ts:105](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/PaymentGateway.ts#L105)*
 
+
+
+Search for payments in a given batch
 
 
 **Parameters:**
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| batchId | `string`  | - |   - |
-| page | `number`  | 1 |   - |
-| pageSize | `number`  | 10 |   - |
-| term | `string`  | &quot;&quot; |   - |
+| batchId | `string`  | - |   Payment Rails payment id (e.g. "B-xx999bb") |
+| page | `number`  | 1 |   Page number (1 based) |
+| pageSize | `number`  | 10 |   Page size (0...1000) |
+| term | `string`  | &quot;&quot; |   Any search terms to look for |
 
 
 
@@ -218,17 +174,24 @@ ___
 
 
 
-*Defined in [PaymentGateway.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/PaymentGateway.ts#L40)*
+*Defined in [PaymentGateway.ts:74](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/PaymentGateway.ts#L74)*
 
+
+
+Update a given payment
+
+    const success = await client.payment.update('P-aabbccc', 'B-xx99bb', {
+      sourceAmount: '99.99',
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| paymentId | `string`   |  - |
-| batchId | `string`   |  - |
-| body | `any`   |  - |
+| paymentId | `string`   |  Payment Rails payment id (e.g. "P-aabccc") |
+| batchId | `string`   |  Payment Rails payment id (e.g. "B-xx999bb") |
+| body | `any`   |  Payment update information |
 
 
 

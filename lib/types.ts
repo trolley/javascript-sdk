@@ -5,6 +5,9 @@
 // tslint:disable:no-shadowed-variable
 // tslint:disable:prefer-method-signature
 
+/**
+ * @hidden
+ */
 export namespace Serializer {
   export interface WithMeta {
     meta: {
@@ -25,6 +28,9 @@ export namespace Serializer {
 /*
 ** accountActivity.ts
 */
+/**
+ * @hidden
+ */
 export namespace AccountActivity {
   export interface AccountActivity {
     type: string;
@@ -53,55 +59,9 @@ export namespace AccountActivity {
   }
 }
 
-/*
-** apiCall.ts
-*/
-export namespace ApiCall {
-  export interface ApiCall {
-    ip: string;
-    url: string;
-    method: string;
-    headers: string;
-    request: string;
-    response: string;
-    code: number;
-    source: string;
-    testMode: boolean;
-    createdAt: string;
-  }
-
-  export interface Result {
-    apiCall: ApiCall;
-  }
-
-  export interface ListResult extends Serializer.WithMeta {
-    activities: ApiCall[];
-  }
-}
-
-/*
-** apiKey.ts
-*/
-export namespace ApiKey {
-  export interface ApiKey {
-    name: string;
-    accessKey: string;
-    active: boolean;
-    sandbox: boolean;
-    lastUsedAt: string;
-    createdAt: string;
-    secretKey?: string;
-  }
-
-  export interface Result {
-    apiKey: ApiKey;
-  }
-
-  export interface ListResult {
-    apiKeys: ApiKey[];
-  }
-}
-
+/**
+ * @hidden
+ */
 export namespace Balance {
   export interface Balance {
     primary: boolean;
@@ -125,6 +85,9 @@ export namespace Balance {
   }
 }
 
+/**
+ * @hidden
+ */
 export namespace Batch {
   export interface Batch {
     id: string;
@@ -152,6 +115,9 @@ export namespace Batch {
   }
 }
 
+/**
+ * @hidden
+ */
 export namespace BatchBalance {
   export interface BatchBalance {
     id: string;
@@ -169,6 +135,9 @@ export namespace BatchBalance {
   export type Result = BatchBalance;
 }
 
+/**
+ * @hidden
+ */
 export namespace BatchSummary {
   export interface SummaryInfo {
     count: number;
@@ -196,29 +165,9 @@ export namespace BatchSummary {
   }
 }
 
-export namespace BeneficialOwner {
-  export interface BeneficialOwner {
-    id: number;
-    profileId: number;
-    firstName: string;
-    lastName: string;
-    percentOfOwnership: string;
-    ownershipType: string;
-    country: string;
-    address: string;
-    city: string;
-    region: string;
-    zip: string;
-  }
-
-  export interface Result extends BeneficialOwner {
-  }
-
-  export interface ListResult extends Serializer.WithMeta {
-    records: BeneficialOwner[];
-  }
-}
-
+/**
+ * @hidden
+ */
 export namespace ComplianceCheck {
   /*
   ** compliance-check.ts
@@ -239,91 +188,10 @@ export namespace ComplianceCheck {
   }
 }
 
-export namespace Country {
-  export interface CountryCurrency {
-    currency: string;
-    isPrimary: boolean;
-  }
 
-  export interface RegionList {
-    regions: {
-      code: string;
-      name: string;
-    }[];
-  }
-
-  export interface Country {
-    name: string;
-    code: string;
-    currencies: CountryCurrency[];
-    regions: {
-      [key: string]: string;
-    };
-  }
-
-  export interface Result {
-    country: Country;
-  }
-
-  export interface ListResult {
-    countries: {
-      [key: string]: Country;
-    };
-  }
-
-}
-/*
-** currency.ts
-*/
-export namespace Currency {
-  export interface Currency {
-    code: string;
-    name: string;
-  }
-
-  export interface Result {
-    currency: Currency;
-  }
-
-  export interface ListResult {
-    currencies: {
-      [key: string]: Currency;
-    };
-  }
-}
-
-export namespace Merchant {
-  export interface Balance {
-    primary: boolean;
-    type: string;
-    currency: string;
-    amount: string;
-    pending: number;
-  }
-
-  export interface Merchant {
-    id: number;
-    merchantId: string;
-    name: string;
-    status: string;
-    phone: string;
-    website: string;
-    permalink: string;
-    primaryCurrency: string;
-    allowedIPs: string;
-    allowedDomains: string;
-    balances?: {
-      [key: string]: Balance;
-    };
-  }
-
-  export type Result = Merchant;
-
-  export interface ListResult extends Serializer.WithMeta {
-    records: Merchant[];
-  }
-}
-
+/**
+ * @hidden
+ */
 export namespace MerchantBankAccount {
   export interface MerchantBankAccount {
     currency: string;
@@ -350,6 +218,9 @@ export namespace MerchantBankAccount {
   }
 }
 
+/**
+ * @hidden
+ */
 export namespace Payment {
   export interface Payment {
     id: string;
@@ -395,6 +266,9 @@ export namespace Payment {
   }
 }
 
+/**
+ * @hidden
+ */
 export namespace PaymentReason {
   export interface PaymentReason {
     code: string;
@@ -409,61 +283,9 @@ export namespace PaymentReason {
   };
 }
 
-export namespace Profile {
-  export interface Profile {
-    id: number;
-    businessCountry: string;
-    businessLegalName: string;
-    businessAsName: string;
-    businessWebsite: string;
-    businessCategory: string;
-    businessPurpose: string;
-    businessPpm: string;
-    businessTotalMonthly: string;
-    businessAveragePayout: string;
-    businessType: string;
-    businessTaxId: string;
-    businessAddress: string;
-    businessCity: string;
-    businessRegion: string;
-    businessZip: string;
-    businessPhone: string;
-    businessFax: string;
-    businessCertificate: string;
-    signingPrimary: boolean;
-    signingFirstName: string;
-    signingLastName: string;
-    signingTitle: string;
-    signingDateOfBirth: string;
-    signingSsn: string;
-    signingPhone: string;
-    signingEmail: string;
-    signingAddress: string;
-    signingCity: string;
-    signingRegion: string;
-    signingZip: string;
-    signingCountry: string;
-    idSigningIssuedId: string;
-    idSigningType: string;
-    idSigningState: string;
-    idSigningDocNum: string;
-    idSigningIssue: string;
-    idSigningExpiry: string;
-    idSigningCountry: string;
-    noOwnership: boolean;
-    completedAt: string | null;
-    isPEP: boolean;
-
-    primaryCurrency: string | undefined;
-
-    beneficialOwners: BeneficialOwner.BeneficialOwner[];
-  }
-
-  export interface Result {
-    profile: Profile;
-  }
-}
-
+/**
+ * @hidden
+ */
 export namespace TaxForm {
   export interface TaxForm {
     id: string;
@@ -544,6 +366,10 @@ export namespace TaxForm {
   }
 }
 
+
+/**
+ * @hidden
+ */
 export namespace Recipient {
   /*
   **  recipient-payout-method.ts
@@ -685,110 +511,9 @@ export namespace Recipient {
   }
 }
 
-export namespace TeamMember {
-  export interface TeamMember {
-    email: string;
-    name: string;
-    firstName: string;
-    lastName: string;
-    type: string;
-    role: string;
-    status: string;
-    timeZone: string;
-    language: string;
-    emailSettings: any;
-    updatedAt: string;
-    createdAt: string;
-
-    gravatarUrl: string;
-    id: string;
-  }
-
-  export type Result = TeamMember;
-
-  export interface ListResult extends Serializer.WithMeta {
-    records: TeamMember[];
-  }
-}
-
-export namespace User {
-  export interface User {
-    id: string;
-    merchantId: string;
-    notificationNumber: string;
-    name: string;
-    firstName: string;
-    lastName: string;
-    role: string;
-    status: string;
-    timeZone: string;
-    language: string;
-    email: string;
-    emailSettings: any;
-    gravatarUrl: string;
-    hmac: string;
-    authType: number;
-  }
-
-  export type Response = User;
-
-  export interface ListResponse extends Serializer.WithMeta {
-    records: User[];
-  }
-}
-
-export namespace WhiteLabel {
-  export interface DnsRecord {
-    type: string;
-    host: string;
-    data: string;
-    valid: boolean;
-  }
-
-  export interface Dns {
-    dnsRecords: DnsAttributes;
-  }
-
-  export interface DnsAttributes {
-    mailCname: DnsRecord;
-    dkim1: DnsRecord;
-    dkim2: DnsRecord;
-  }
-
-  export interface Settings {
-    whiteLabelSettings: SettingsAttributes | null;
-  }
-
-  export interface SettingsAttributes {
-    website: string;
-    supportEmail: string;
-    country: string;
-    address: string;
-    paymentMethod: boolean;
-    paymentReturned: boolean;
-    paymentSent: boolean;
-    email: string;
-    businessName: string;
-    domain: string;
-    subdomain: string;
-    color: string;
-    icon: string;
-  }
-}
-
-export namespace BalanceAddFunds {
-  export interface BalanceAddFunds {
-    currency: string;
-    amount: string;
-    afxDealId: string;
-    type: string;
-  }
-
-  export interface Result {
-    transaction: BalanceAddFunds;
-  }
-}
-
+/**
+ * @hidden
+ */
 export namespace BankInfo {
   export interface BankInfo {
     bankName: string;
@@ -810,23 +535,5 @@ export namespace BankInfo {
 
   export type Result = {
     lookupData: BankInfo;
-  };
-}
-
-export namespace Auth {
-  export interface VerifyResult {
-    valid: boolean;
-    merchant: Partial<Merchant.Merchant>;
-  }
-
-  export interface AuthResult {
-    token: string;
-    user: User.User;
-  }
-}
-
-export namespace PandadocState {
-  export type Result = {
-    state: string;
   };
 }

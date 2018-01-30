@@ -38,6 +38,7 @@ export class Payment {
    * Retrieves a payment based on the payment id and or
    * the batch id
    * @param {string} paymentId
+   * @hidden
    */
   static async find(paymentId: string) {
     const data = await Configuration.gateway().payment.find(paymentId);
@@ -50,6 +51,7 @@ export class Payment {
    * Creates a payment based on the batch id
    * @param {string} batchId
    * @param {array} body
+   * @hidden
    */
   static async create(batchId: string, body: any) {
     return Configuration.gateway().payment.create(batchId, body);
@@ -60,6 +62,7 @@ export class Payment {
    * @param {string} paymentId
    * @param {string} batchId
    * @param {array} body
+   * @hidden
    */
   static async update(paymentId: string, batchId: string, body: any) {
     return Configuration.gateway().payment.update(paymentId, batchId, body);
@@ -69,6 +72,7 @@ export class Payment {
    * Delete a payment based on the paymentId id
    * @param {string} paymentId
    * @param {string} batchId
+   * @hidden
    */
   static async remove(paymentId: string, batchId: string) {
     return Configuration.gateway().payment.remove(paymentId, batchId);
@@ -80,6 +84,7 @@ export class Payment {
    * @param {int} page
    * @param {int} pageSize
    * @param {string} search
+   * @hidden
    */
   static async search(
     batchId: string,
@@ -100,6 +105,7 @@ export class Payment {
 
   /**
    * Should only be called by the Gateway
+   * @hidden
    */
   static factory(payment: types.Payment.Payment) {
     const instance = new Payment();
@@ -108,6 +114,9 @@ export class Payment {
     return instance;
   }
 
+  /**
+   * @hidden
+   */
   private _initialize(payment: types.Payment.Payment) {
     Object.keys(payment).forEach(k => {
       if (k === "recipient") {

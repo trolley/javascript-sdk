@@ -32,17 +32,6 @@
 * [type](recipientaccount.md#type)
 
 
-### Methods
-
-* [_initialize](recipientaccount.md#_initialize)
-* [all](recipientaccount.md#all)
-* [create](recipientaccount.md#create)
-* [factory](recipientaccount.md#factory)
-* [find](recipientaccount.md#find)
-* [remove](recipientaccount.md#remove)
-* [update](recipientaccount.md#update)
-
-
 
 ---
 ## Properties
@@ -52,7 +41,7 @@
 
 **●  accountHolderName**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L24)*
+*Defined in [RecipientAccount.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L23)*
 
 
 
@@ -66,7 +55,7 @@ ___
 
 **●  accountNum**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L23)*
+*Defined in [RecipientAccount.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L22)*
 
 
 
@@ -80,7 +69,7 @@ ___
 
 **●  bankAddress**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L29)*
+*Defined in [RecipientAccount.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L28)*
 
 
 
@@ -94,7 +83,7 @@ ___
 
 **●  bankCity**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L30)*
+*Defined in [RecipientAccount.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L29)*
 
 
 
@@ -108,7 +97,7 @@ ___
 
 **●  bankId**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:27](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L27)*
+*Defined in [RecipientAccount.ts:26](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L26)*
 
 
 
@@ -122,7 +111,7 @@ ___
 
 **●  bankName**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L28)*
+*Defined in [RecipientAccount.ts:27](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L27)*
 
 
 
@@ -136,7 +125,7 @@ ___
 
 **●  bankPostalCode**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:32](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L32)*
+*Defined in [RecipientAccount.ts:31](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L31)*
 
 
 
@@ -150,7 +139,7 @@ ___
 
 **●  bankRegionCode**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:31](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L31)*
+*Defined in [RecipientAccount.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L30)*
 
 
 
@@ -164,7 +153,7 @@ ___
 
 **●  branchId**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:26](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L26)*
+*Defined in [RecipientAccount.ts:25](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L25)*
 
 
 
@@ -178,7 +167,7 @@ ___
 
 **●  country**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L20)*
+*Defined in [RecipientAccount.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L19)*
 
 
 
@@ -192,7 +181,7 @@ ___
 
 **●  currency**:  *`string`*  = ""
 
-*Defined in [RecipientAccount.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L12)*
+*Defined in [RecipientAccount.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L11)*
 
 
 
@@ -206,7 +195,7 @@ ___
 
 **●  emailAddress**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L17)*
+*Defined in [RecipientAccount.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L16)*
 
 
 
@@ -220,7 +209,7 @@ ___
 
 **●  iban**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L22)*
+*Defined in [RecipientAccount.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L21)*
 
 
 
@@ -234,7 +223,7 @@ ___
 
 **●  id**:  *`string`*  = ""
 
-*Defined in [RecipientAccount.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L10)*
+*Defined in [RecipientAccount.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L9)*
 
 
 
@@ -248,7 +237,7 @@ ___
 
 **●  primary**:  *`boolean`*  = false
 
-*Defined in [RecipientAccount.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L11)*
+*Defined in [RecipientAccount.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L10)*
 
 
 
@@ -262,7 +251,7 @@ ___
 
 **●  recipientFees**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L14)*
+*Defined in [RecipientAccount.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L13)*
 
 
 
@@ -276,7 +265,7 @@ ___
 
 **●  routeType**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L13)*
+*Defined in [RecipientAccount.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L12)*
 
 
 
@@ -290,7 +279,7 @@ ___
 
 **●  swiftBic**:  *`string`⎮`null`* 
 
-*Defined in [RecipientAccount.ts:25](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L25)*
+*Defined in [RecipientAccount.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L24)*
 
 
 
@@ -304,239 +293,7 @@ ___
 
 **●  type**:  *`undefined`⎮`string`* 
 
-*Defined in [RecipientAccount.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L21)*
-
-
-
-
-
-___
-
-
-## Methods
-<a id="_initialize"></a>
-
-### «Private» _initialize
-
-► **_initialize**(account: *[Account](../interfaces/recipient.account.md)*): `void`
-
-
-
-*Defined in [RecipientAccount.ts:107](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L107)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| account | [Account](../interfaces/recipient.account.md)   |  - |
-
-
-
-
-
-**Returns:** `void`
-
-
-
-
-
-___
-
-<a id="all"></a>
-
-### «Static» all
-
-► **all**(recipientId: *`string`*): `Promise`.<[RecipientAccount](recipientaccount.md)[]>
-
-
-
-*Defined in [RecipientAccount.ts:39](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L39)*
-
-
-
-Retrieves the payout method based on the recipient id
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-
-
-
-
-
-**Returns:** `Promise`.<[RecipientAccount](recipientaccount.md)[]>
-
-
-
-
-
-___
-
-<a id="create"></a>
-
-### «Static» create
-
-► **create**(recipientId: *`string`*, body: *`any`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
-
-
-
-*Defined in [RecipientAccount.ts:62](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L62)*
-
-
-
-Creates a payout method based on the body and recipient id
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| body | `any`   |  - |
-
-
-
-
-
-**Returns:** `Promise`.<[RecipientAccount](recipientaccount.md)>
-
-
-
-
-
-___
-
-<a id="factory"></a>
-
-### «Static» factory
-
-► **factory**(account: *[Account](../interfaces/recipient.account.md)*): [RecipientAccount](recipientaccount.md)
-
-
-
-*Defined in [RecipientAccount.ts:100](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L100)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| account | [Account](../interfaces/recipient.account.md)   |  - |
-
-
-
-
-
-**Returns:** [RecipientAccount](recipientaccount.md)
-
-
-
-
-
-___
-
-<a id="find"></a>
-
-### «Static» find
-
-► **find**(recipientId: *`string`*, recipientAccountId: *`string`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
-
-
-
-*Defined in [RecipientAccount.ts:50](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L50)*
-
-
-
-Retrieves the payout method based on the recipient id
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| recipientAccountId | `string`   |  - |
-
-
-
-
-
-**Returns:** `Promise`.<[RecipientAccount](recipientaccount.md)>
-
-
-
-
-
-___
-
-<a id="remove"></a>
-
-### «Static» remove
-
-► **remove**(recipientId: *`string`*, recipientAccountId: *`string`*): `Promise`.<`boolean`>
-
-
-
-*Defined in [RecipientAccount.ts:93](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L93)*
-
-
-
-Delete a payout method based on the recipient id
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| recipientAccountId | `string`   |  - |
-
-
-
-
-
-**Returns:** `Promise`.<`boolean`>
-
-
-
-
-
-___
-
-<a id="update"></a>
-
-### «Static» update
-
-► **update**(recipientId: *`string`*, recipientAccountId: *`string`*, body: *`any`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
-
-
-
-*Defined in [RecipientAccount.ts:75](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccount.ts#L75)*
-
-
-
-Updates a payout method based on the body and the recipient id
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| recipientAccountId | `string`   |  - |
-| body | `any`   |  - |
-
-
-
-
-
-**Returns:** `Promise`.<[RecipientAccount](recipientaccount.md)>
+*Defined in [RecipientAccount.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L20)*
 
 
 

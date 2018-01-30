@@ -1,15 +1,33 @@
 import { Gateway } from "./Gateway";
 
 export interface ConfigurationParams {
+  /**
+   * The Payment Rails public key
+   */
   key: string;
+  /**
+   * The Payment Rails private key
+   */
   secret: string;
-  environment?: string;
+  /**
+   * The environment that you're using, most likely one of "production" or "sandbox"
+   */
+  environment?: "production" | "sandbox" | "integration" | "development";
 }
 
 // tslint:disable:function-name
 export class Configuration {
+  /**
+   * @hidden
+   */
   static apiKeyDefault: string;
+  /**
+   * @hidden
+   */
   static apiSecretDefault: string;
+  /**
+   * @hidden
+   */
   static apiBaseDefault: string = "https://api.paymentrails.com";
 
   apiKey: string;
@@ -18,6 +36,7 @@ export class Configuration {
 
   /**
    * Internal constructor
+   * @hidden
    */
   constructor(config?: ConfigurationParams) {
     this.apiKey = (config && config.key) || Configuration.apiKeyDefault;
@@ -47,6 +66,7 @@ export class Configuration {
 
   /**
    * Function to construct a gateway for this configuration
+   * @hidden
    */
   static gateway() {
     const config = new Configuration();
@@ -57,6 +77,7 @@ export class Configuration {
   /**
    * Set the base URL to use to connect to the API gateway
    * @param baseUrl url root
+   * @hidden
    */
   static setApiBase(baseUrl: string) {
     Configuration.apiBaseDefault = baseUrl;
@@ -73,6 +94,7 @@ export class Configuration {
   /**
    * Private method that converts an environment to a specific URL
    * @param environment "production" | "sandbox" | "development"
+   * @hidden
    */
   private static environmentToUrl(environment: string) {
     switch (environment) {
@@ -83,7 +105,7 @@ export class Configuration {
         // tslint:disable-next-line:no-http-string
         return "http://api.railz.io";
       case "sandbox":
-        return "https://api.paymentrails.com";
+        return "https://api.sandbox.paymentrails.com";
       case "production":
         return "https://api.paymentrails.com";
       default:

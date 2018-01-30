@@ -2,14 +2,19 @@ import { Configuration } from "./Configuration";
 import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
-import * as exceptions from './exceptions';
+import { Exceptions } from './exceptions';
 
-function sendRequest<T>(options: any) {
+/**
+ * Private function to handle URL requests and standard responses
+ * @param options The request to pass to the request library
+ * @hidden
+ */
+function sendRequest<T>(options: request.UriOptions) {
   return new Promise<T>((resolve, reject) => {
     // tslint:disable-next-line:cyclomatic-complexity
     request(options, (error: any, response: request.RequestResponse, responseBody: any) => {
       if (error) {
-        reject(new exceptions.ServerError(String(error)));
+        reject(new Exceptions.ServerError(String(error)));
       } else {
         try {
           const data = JSON.parse(responseBody);
@@ -23,40 +28,43 @@ function sendRequest<T>(options: any) {
           const firstErr = (data.errors && Array.isArray(data.errors) && data.errors.length !== 0) ? data.errors[0] : undefined;
           switch (response.statusCode) {
             case 400:
-              reject(new exceptions.Malformed(firstErr.message || "Not Found"));
+              reject(new Exceptions.Malformed(firstErr.message || "Not Found"));
 
               return;
             case 401:
-              reject(new exceptions.Authentication(firstErr.message || "Not Found"));
+              reject(new Exceptions.Authentication(firstErr.message || "Not Found"));
 
               return;
             case 403:
-              reject(new exceptions.Authorization(firstErr.message || "Not Found"));
+              reject(new Exceptions.Authorization(firstErr.message || "Not Found"));
 
               return;
             case 404:
-              reject(new exceptions.Authorization(firstErr.message || "Not Found"));
+              reject(new Exceptions.Authorization(firstErr.message || "Not Found"));
 
               return;
             case 500:
-              reject(new exceptions.ServerError(firstErr.message || "Not Found"));
+              reject(new Exceptions.ServerError(firstErr.message || "Not Found"));
 
               return;
             case 503:
-              reject(new exceptions.DownForMaintenance(firstErr.message || "Not Found"));
+              reject(new Exceptions.DownForMaintenance(firstErr.message || "Not Found"));
 
               return;
             default:
-              reject(new exceptions.Unexpected(`Unexpected HTTP_RESPONSE #${response.statusCode}`));
+              reject(new Exceptions.Unexpected(`Unexpected HTTP_RESPONSE #${response.statusCode}`));
           }
         } catch (err) {
-          reject(new exceptions.Unexpected(String(err)));
+          reject(new Exceptions.Unexpected(String(err)));
         }
       }
     });
   });
 }
 
+/**
+ * @hidden
+ */
 export class Client {
   config: Configuration;
 

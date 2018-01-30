@@ -4,23 +4,16 @@
 
 # Interface: BatchInput
 
-*__typedef__*: {Object} BatchInput
-
-*__property__*: {string} sourceCurrency
-
-*__property__*: {string} description
-
-
 
 ## Properties
 <a id="description"></a>
 
 ###  description
 
-**●  description**:  *`string`* 
+**●  description**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L15)*
-*Defined in [BatchGateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L14)*
+*Defined in [Batch.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L15)*
+*Defined in [BatchGateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L10)*
 
 
 
@@ -32,10 +25,10 @@ ___
 
 ###  sourceCurrency
 
-**●  sourceCurrency**:  *`string`* 
+**●  sourceCurrency**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L14)*
-*Defined in [BatchGateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L13)*
+*Defined in [Batch.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L14)*
+*Defined in [BatchGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L9)*
 
 
 

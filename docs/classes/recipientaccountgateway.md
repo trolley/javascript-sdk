@@ -6,17 +6,6 @@
 
 ## Index
 
-### Constructors
-
-* [constructor](recipientaccountgateway.md#constructor)
-
-
-### Properties
-
-* [config](recipientaccountgateway.md#config)
-* [gateway](recipientaccountgateway.md#gateway)
-
-
 ### Methods
 
 * [all](recipientaccountgateway.md#all)
@@ -28,60 +17,6 @@
 
 
 ---
-## Constructors
-<a id="constructor"></a>
-
-
-### ⊕ **new RecipientAccountGateway**(gateway: *[Gateway](gateway.md)*): [RecipientAccountGateway](recipientaccountgateway.md)
-
-
-*Defined in [RecipientAccountGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L9)*
-
-
-
-**Parameters:**
-
-| Param | Type | Description |
-| ------ | ------ | ------ |
-| gateway | [Gateway](gateway.md)   |  - |
-
-
-
-
-
-**Returns:** [RecipientAccountGateway](recipientaccountgateway.md)
-
----
-
-
-## Properties
-<a id="config"></a>
-
-###  config
-
-**●  config**:  *[Configuration](configuration.md)* 
-
-*Defined in [RecipientAccountGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L9)*
-
-
-
-
-
-___
-
-<a id="gateway"></a>
-
-###  gateway
-
-**●  gateway**:  *[Gateway](gateway.md)* 
-
-*Defined in [RecipientAccountGateway.ts:8](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L8)*
-
-
-
-
-
-___
 
 
 ## Methods
@@ -93,7 +28,14 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L16)*
+*Defined in [RecipientAccountGateway.ts:33](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccountGateway.ts#L33)*
+
+
+
+Fetch all of the accounts for a given Payment Rails recipient
+
+    const accounts = await client.recipientAccount.all('R-1234');
+*__throws__*: {NotFound} if recipient doesn't exist
 
 
 
@@ -101,7 +43,7 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
 
 
 
@@ -123,16 +65,30 @@ ___
 
 
 
-*Defined in [RecipientAccountGateway.ts:44](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L44)*
+*Defined in [RecipientAccountGateway.ts:79](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccountGateway.ts#L79)*
 
+
+
+Create a new recipient account
+
+    const account = await client.recipientAccount.create('R-1234', {
+      type: "bank-transfer",
+      primary: true,
+      country: "CA",
+      currency: "CAD",
+      accountNum: "012345678",
+      bankId: "004",
+      branchId: "47261",
+      accountHolderName: "John Smith",
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| body | `any`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| body | `any`   |  Account information |
 
 
 
@@ -150,11 +106,18 @@ ___
 
 ###  find
 
-► **find**(recipientId: *`string`*, recipientAccountId: *`string`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
+► **find**(recipientId: *`string`*, accountId: *`string`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
 
 
 
-*Defined in [RecipientAccountGateway.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L30)*
+*Defined in [RecipientAccountGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccountGateway.ts#L52)*
+
+
+
+Fetch a specific account for a given Payment Rails recipient
+
+    const account = await client.recipientAccount.find('R-1234', 'A-789');
+*__throws__*: {NotFound} if account or recipient don't exist
 
 
 
@@ -162,8 +125,8 @@ ___
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| recipientAccountId | `string`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| accountId | `string`   |  The Payment Rails account ID (e.g. A-xyzzy) |
 
 
 
@@ -181,20 +144,25 @@ ___
 
 ###  remove
 
-► **remove**(recipientId: *`string`*, recipientAccountId: *`string`*): `Promise`.<`boolean`>
+► **remove**(recipientId: *`string`*, accountId: *`string`*): `Promise`.<`boolean`>
 
 
 
-*Defined in [RecipientAccountGateway.ts:72](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L72)*
+*Defined in [RecipientAccountGateway.ts:121](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccountGateway.ts#L121)*
 
+
+
+Delete the given recipient account. This will only return success, otherwise it will throw an exception (e.g. NotFound)
+
+    const success = await client.recipientAccount.remove('R-1234', 'A-789');
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| recipientAccountId | `string`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| accountId | `string`   |  The Payment Rails account ID (e.g. A-xyzzy) |
 
 
 
@@ -212,21 +180,28 @@ ___
 
 ###  update
 
-► **update**(recipientId: *`string`*, recipientAccountId: *`string`*, body: *`any`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
+► **update**(recipientId: *`string`*, accountId: *`string`*, body: *`any`*): `Promise`.<[RecipientAccount](recipientaccount.md)>
 
 
 
-*Defined in [RecipientAccountGateway.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/RecipientAccountGateway.ts#L58)*
+*Defined in [RecipientAccountGateway.ts:102](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccountGateway.ts#L102)*
 
+
+
+Update a recipient account. Note: Updating an account will create a new account ID if it contains any property that isn't just "primary"
+
+    const account = await client.recipientAccount.update('R-1234', 'A-789', {
+      accountHolderName: "Tom Jones",
+    });
 
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string`   |  - |
-| recipientAccountId | `string`   |  - |
-| body | `any`   |  - |
+| recipientId | `string`   |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| accountId | `string`   |  The Payment Rails account ID (e.g. A-xyzzy) |
+| body | `any`   |  Account information |
 
 
 

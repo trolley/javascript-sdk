@@ -10,10 +10,13 @@
 
 ### «Optional» environment
 
-**●  environment**:  *`undefined`⎮`string`* 
+**●  environment**:  *"production"⎮"sandbox"⎮"integration"⎮"development"* 
 
-*Defined in [Configuration.ts:6](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L6)*
+*Defined in [Configuration.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Configuration.ts#L15)*
 
+
+
+The environment that you're using, most likely one of "production" or "sandbox"
 
 
 
@@ -26,8 +29,11 @@ ___
 
 **●  key**:  *`string`* 
 
-*Defined in [Configuration.ts:4](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L4)*
+*Defined in [Configuration.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Configuration.ts#L7)*
 
+
+
+The Payment Rails public key
 
 
 
@@ -40,8 +46,11 @@ ___
 
 **●  secret**:  *`string`* 
 
-*Defined in [Configuration.ts:5](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Configuration.ts#L5)*
+*Defined in [Configuration.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Configuration.ts#L11)*
 
+
+
+The Payment Rails private key
 
 
 

@@ -1,17 +1,13 @@
 import { Gateway } from "./Gateway";
-import { DownForMaintenance } from "./exceptions";
-import * as types from "./types";
 import { Batch } from './Batch';
 import { Payment } from './Payment';
+import * as querystring from 'querystring';
+import * as types from "./types";
+import { buildURL } from './util';
 
-/**
- * @typedef {Object} BatchInput
- * @property {string} sourceCurrency
- * @property {string} description
- */
 export interface BatchInput {
-  sourceCurrency: string;
-  description: string;
+  sourceCurrency?: string;
+  description?: string;
 }
 
 /**
@@ -34,12 +30,15 @@ export interface PaymentInput {
  * @class BatchGateway
  */
 export class BatchGateway {
+  /**
+   * @hidden
+   */
   gateway: Gateway;
 
   /**
    * Internal constructor to build the gateway interface
    * @param {Gateway} gateway gateway configuration
-   * @private
+   * @hidden
    */
   constructor(gateway: Gateway) {
     this.gateway = gateway;
@@ -47,9 +46,11 @@ export class BatchGateway {
 
   /**
    * Fetch batch all batches with an Iterator
+   * ```
+   * ```
    */
   async all() {
-    const endPoint = "/v1/batches/";
+    const endPoint = buildURL('batches');
 
     const result = await this.gateway.client.get<types.Batch.ListResult>(endPoint);
 
@@ -58,10 +59,13 @@ export class BatchGateway {
 
   /**
    * Retrieves a batch based on the batch id
-   * @param {string} batchId
+   * ```
+   * const batch = await client.batch.find('B-xx999bb');
+   * ```
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    */
   async find(batchId: string): Promise<Batch> {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}`;
+    const endPoint = buildURL('batches', batchId);
 
     const result = await this.gateway.client.get<types.Batch.Result>(endPoint);
 
@@ -89,7 +93,7 @@ export class BatchGateway {
    * @param {PaymentInput} payments (optional)
    */
   async create(batch: BatchInput, payments?: PaymentInput[]): Promise<Batch> {
-    const endPoint = "/v1/batches/";
+    const endPoint = buildURL('batches');
 
     const result = await this.gateway.client.post<types.Batch.Result>(endPoint, {
       ...batch,
@@ -100,12 +104,18 @@ export class BatchGateway {
   }
 
   /**
-   * Update the batch data
-   * @param {string} batchId
+   * Update the batch data, note you can only update the information of a batch
+   *  not the payments via this API
+   * ```
+   * const batch = await client.batch.create({
+   *     description: "My Batch for Wednesday",
+   * });
+   * ```
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    * @param {BatchInput} parameters
    */
   async update(batchId: string, body: BatchInput) {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}`;
+    const endPoint = buildURL('batches', batchId);
 
     const result = await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
 
@@ -114,10 +124,13 @@ export class BatchGateway {
 
   /**
    * Delete the given batch
-   * @param batchId Batch ID
+   * ```
+   * const success = client.batch.remove('B-xx999bb');
+   * ```
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    */
   async remove(batchId: string) {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}`;
+    const endPoint = buildURL('batches', batchId);
 
     const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
 
@@ -128,37 +141,46 @@ export class BatchGateway {
    * Search for a batch matching the given term
    * @param page
    * @param pageSize
-   * @param search string search term
+   * @param term string search term
    */
-  async search(page = 1, pageSize = 10, search = "") {
+  async search(page: number = 1, pageSize: number = 10, term: string = "") {
     // tslint:disable-next-line:max-line-length
-    const endPoint = `/v1/batches/?&search=${encodeURIComponent(search)}&page=${encodeURIComponent(String(page))}&pageSize=${encodeURIComponent(String(pageSize))}`;
+    const endPoint = buildURL('batches');
+    const query = querystring.stringify({
+      page,
+      pageSize,
+      search: term,
+    });
 
-    const result = await this.gateway.client.get<types.Batch.ListResult>(endPoint);
+    const result = await this.gateway.client.get<types.Batch.ListResult>(`${endPoint}?${query}`);
 
     return result.batches.map(b => Batch.factory(b));
   }
 
   /**
-   * Return a paginated list of results for the given batch
-   * @param batchId 
-   * @param page 
-   * @param pageSize 
+   * Return a paginated list of payments for this batch
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param page starting a 1
+   * @param pageSize in the range 0...1000
    */
   async paymentList(batchId: string, page: number = 1, pageSize: number = 10) {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/payments`;
+    const endPoint = buildURL('batches', batchId, 'payments');
+    const query = querystring.stringify({
+      page,
+      pageSize,
+    });
 
-    const result = await this.gateway.client.get<types.Payment.ListResult>(endPoint);
+    const result = await this.gateway.client.get<types.Payment.ListResult>(`${endPoint}?${query}`);
 
     return result.payments.map(b => Payment.factory(b));
   }
 
   /**
    * Generate a FX quote for this batch
-   * @param batchId 
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    */
   async generateQuote(batchId: string) {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/generate-quote`;
+    const endPoint = buildURL('batches', batchId, 'generate-quote');
 
     const result = await this.gateway.client.post<types.Batch.Result>(endPoint);
 
@@ -167,10 +189,10 @@ export class BatchGateway {
 
   /**
    * Start processing this batch
-   * @param batchId 
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    */
   async startProcessing(batchId: string) {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/start-processing`;
+    const endPoint = buildURL('batches', batchId, 'start-processing');
 
     const result = await this.gateway.client.post<types.Batch.Result>(endPoint);
 
@@ -179,10 +201,10 @@ export class BatchGateway {
 
   /**
    * Get a transaction totaled summary for this batch
-   * @param batchId
+   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    */
   async summary(batchId: string) {
-    const endPoint = `/v1/batches/${encodeURIComponent(batchId)}/summary`;
+    const endPoint = buildURL('batches', batchId, 'summary');
 
     const result = await this.gateway.client.get<types.BatchSummary.Result>(endPoint);
 

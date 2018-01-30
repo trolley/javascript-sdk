@@ -3,14 +3,14 @@ import * as types from "../../lib/types";
 import * as assert from "assert";
 import * as uuid from "uuid";
 
-describe("Payment Integration", () => {
+describe("Batch/Payment Integration", () => {
   let client: paymentrails.Gateway;
 
   before(() => {
     client = paymentrails.connect({
       key: process.env.PR_ACCESS_KEY,
       secret: process.env.PR_SECRET_KEY,
-      environment: process.env.PR_ENVIRONMENT,
+      environment: process.env.PR_ENVIRONMENT as any,
     });
   });
 
@@ -109,7 +109,7 @@ describe("Payment Integration", () => {
     for (const item of payments) {
       assert.equal(item.status, "pending");
     }
-  }).timeout(5000);
+  }).timeout(8000);
 
   // tslint:disable-next-line:mocha-no-side-effect-code
   it("test processing", async () => {
@@ -145,7 +145,7 @@ describe("Payment Integration", () => {
 
     const start = await client.batch.startProcessing(batch.id);
     assert.ok(start, "Failed to start");
-  }).timeout(5000);
+  }).timeout(8000);
 
   /*
   it("test all - smoke test", async () => {

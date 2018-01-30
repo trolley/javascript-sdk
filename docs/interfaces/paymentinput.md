@@ -15,8 +15,8 @@
 
 **●  memo**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L22)*
-*Defined in [BatchGateway.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L24)*
+*Defined in [Batch.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L22)*
+*Defined in [BatchGateway.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L20)*
 
 
 
@@ -30,8 +30,8 @@ ___
 
 **●  recipient**:  *`object`* 
 
-*Defined in [Batch.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L23)*
-*Defined in [BatchGateway.ts:25](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L25)*
+*Defined in [Batch.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L23)*
+*Defined in [BatchGateway.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L21)*
 
 
 #### Type declaration
@@ -69,8 +69,8 @@ ___
 
 **●  sourceAmount**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L19)*
-*Defined in [BatchGateway.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L21)*
+*Defined in [Batch.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L19)*
+*Defined in [BatchGateway.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L17)*
 
 
 
@@ -84,8 +84,8 @@ ___
 
 **●  targetAmount**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L20)*
-*Defined in [BatchGateway.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L22)*
+*Defined in [Batch.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L20)*
+*Defined in [BatchGateway.ts:18](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L18)*
 
 
 
@@ -99,8 +99,8 @@ ___
 
 **●  targetCurrency**:  *`undefined`⎮`string`* 
 
-*Defined in [Batch.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/Batch.ts#L21)*
-*Defined in [BatchGateway.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/d7f3cdf/lib/BatchGateway.ts#L23)*
+*Defined in [Batch.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Batch.ts#L21)*
+*Defined in [BatchGateway.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/BatchGateway.ts#L19)*
 
 
 
