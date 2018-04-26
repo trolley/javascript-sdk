@@ -23,10 +23,6 @@
     "strict": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
-    "typeRoots": [
-      "./types",
-      "node_modules/@types"
-    ],
     "types": [
       "node",
       "core-js"

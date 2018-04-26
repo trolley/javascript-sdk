@@ -4,9 +4,9 @@ import * as uuid from "uuid";
 
 describe("Recipient", () => {
   before(() => {
-    Configuration.setApiKey(process.env.PR_ACCESS_KEY);
-    Configuration.setApiSecret(process.env.PR_SECRET_KEY);
-    Configuration.setEnvironment(process.env.PR_ENVIRONMENT);
+    Configuration.setApiKey(process.env.PR_ACCESS_KEY as string);
+    Configuration.setApiSecret(process.env.PR_SECRET_KEY as string);
+    Configuration.setEnvironment(process.env.PR_ENVIRONMENT as any);
   });
 
   it("create", async () => {
@@ -93,14 +93,17 @@ describe("Recipient", () => {
     });
 
     assert.ok(account);
+    assert.ok(account.primary);
 
     const account2 = await RecipientAccount.create(recipient.id, {
       type: "bank-transfer",
       currency: "EUR",
       iban: "FR14 2004 1010 0505 0001 3M02 606",
+      primary: true,
     });
 
     assert.ok(account2);
+    assert.ok(account2.primary);
 
     const findAccount = await RecipientAccount.find(recipient.id, account.id);
 
@@ -110,11 +113,12 @@ describe("Recipient", () => {
     assert.equal(accountList.length, 2);
     assert.equal(accountList[0].currency, "EUR");
 
-    const result = await RecipientAccount.remove(recipient.id, account2.id);
+    const result = await RecipientAccount.remove(recipient.id, account.id);
     assert.equal(true, result);
 
     const accountList2 = await RecipientAccount.all(recipient.id);
     assert.equal(accountList2.length, 1);
+    assert.ok(accountList2[0].primary);
   }).timeout(5000);
 
   it("account update", async () => {
@@ -149,12 +153,12 @@ describe("Recipient", () => {
 
     assert.ok(account2);
     assert.notEqual(account.id, account2.id);
-    assert.ok(account2.iban.includes("**06"));
+    assert.ok(account2.iban && account2.iban.includes("**06"));
 
     const accountList = await RecipientAccount.all(recipient.id);
 
     assert.equal(accountList.length, 1);
-    assert.ok(accountList[0].iban.includes("**06"));
+    assert.ok((accountList as any)[0].iban.includes("**06"));
     assert.equal(accountList[0].id, account2.id);
   });
 
