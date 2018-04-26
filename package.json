@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@types/request": "^2.47.0",
-    "request": "^2.85.0",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.44",
