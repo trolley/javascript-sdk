@@ -1,6 +1,6 @@
 {
   "name": "paymentrails",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "",
   "main": "./dist/index",
   "types": "./dist/index",
@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "test": "npm run test:unit",
-    "test:unit": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
-    "test:integration": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
+    "test:unit": "TS_NODE_PROJECT=test/tsconfig.json mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
+    "test:integration": "TS_NODE_PROJECT=test/tsconfig.json mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
     "build": "rm -rf dist/ && tsc && echo Done",
     "docs": "./node_modules/.bin/typedoc --mode file --name 'Payment Rails JavaScript SDK' --readme none --theme markdown --out docs --hideGenerator lib",
     "clean": "rm -rf dist/"
@@ -22,26 +22,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/request": "^2.0.9",
-    "request": "^2.81.0"
+    "@types/request": "^2.47.0",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.44",
     "@types/es6-promise": "^3.3.0",
     "@types/jasmine": "^2.8.4",
-    "@types/mocha": "^2.2.47",
-    "@types/node": "^9.4.0",
-    "@types/sinon": "^4.1.3",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.0.0",
+    "@types/sinon": "^4.3.1",
     "@types/uuid": "^3.4.3",
-    "mocha": "^5.0.0",
-    "sinon": "^4.2.2",
-    "ts-node": "^4.1.0",
+    "mocha": "^5.1.1",
+    "sinon": "^4.5.0",
+    "ts-node": "^6.0.1",
     "tslint": "^5.9.1",
-    "tslint-eslint-rules": "^4.1.1",
-    "tslint-microsoft-contrib": "^5.0.2",
-    "typedoc": "^0.9.0",
-    "typedoc-plugin-markdown": "^1.0.12",
-    "typescript": "^2.6.2",
+    "tslint-eslint-rules": "^5.1.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "typedoc": "^0.11.1",
+    "typedoc-plugin-markdown": "^1.1.6",
+    "typescript": "^2.8.3",
     "uuid": "^3.2.1"
   }
 }

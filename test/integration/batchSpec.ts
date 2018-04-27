@@ -11,7 +11,7 @@ describe("Batch/Payment Integration", () => {
       key: process.env.PR_ACCESS_KEY,
       secret: process.env.PR_SECRET_KEY,
       environment: process.env.PR_ENVIRONMENT as any,
-    });
+    } as any);
   });
 
   async function createRecipient() {

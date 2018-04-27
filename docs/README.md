@@ -1,6 +1,4 @@
 
-
-
 #  Payment Rails JavaScript SDK
 
 ## Index
@@ -8,7 +6,6 @@
 ### Modules
 
 * [Exceptions](modules/exceptions.md)
-
 
 ### Classes
 
@@ -21,7 +18,6 @@
 * [RecipientAccountGateway](classes/recipientaccountgateway.md)
 * [RecipientGateway](classes/recipientgateway.md)
 
-
 ### Interfaces
 
 * [BatchInput](interfaces/batchinput.md)
@@ -29,26 +25,21 @@
 * [PaymentInput](interfaces/paymentinput.md)
 * [RecipientInput](interfaces/recipientinput.md)
 
-
 ### Functions
 
 * [connect](#connect)
 
-
-
 ---
-# Functions
+
+## Functions
+
 <a id="connect"></a>
 
 ###  connect
 
-► **connect**(config: *[ConfigurationParams](interfaces/configurationparams.md)*): [Gateway](classes/gateway.md)
+▸ **connect**(config: *[ConfigurationParams](interfaces/configurationparams.md)*): [Gateway](classes/gateway.md)
 
-
-
-*Defined in [index.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/index.ts#L21)*
-
-
+*Defined in [index.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/index.ts#L21)*
 
 Create a client for the Payment Rails JavasScript API
 
@@ -57,23 +48,13 @@ Create a client for the Payment Rails JavasScript API
       secret: "MY_PRIVATE_KEY",
     });
 
-
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| config | [ConfigurationParams](interfaces/configurationparams.md)   |  The configuration parameters |
-
-
-
-
+| config | [ConfigurationParams](interfaces/configurationparams.md) |  The configuration parameters |
 
 **Returns:** [Gateway](classes/gateway.md)
 
-
-
-
-
 ___
-
 
