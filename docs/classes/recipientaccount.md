@@ -1,11 +1,12 @@
 [Payment Rails JavaScript SDK](../README.md) > [RecipientAccount](../classes/recipientaccount.md)
 
-
-
 # Class: RecipientAccount
 
 *__name__*: RecipientAccount
 
+## Hierarchy
+
+**RecipientAccount**
 
 ## Index
 
@@ -31,274 +32,211 @@
 * [swiftBic](recipientaccount.md#swiftbic)
 * [type](recipientaccount.md#type)
 
-
-
 ---
+
 ## Properties
+
 <a id="accountholdername"></a>
 
-### «Optional» accountHolderName
+### `<Optional>` accountHolderName
 
-**●  accountHolderName**:  *`undefined`⎮`string`* 
+**● accountHolderName**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L23)*
-
-
-
-
+*Defined in [RecipientAccount.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L23)*
 
 ___
-
 <a id="accountnum"></a>
 
-### «Optional» accountNum
+### `<Optional>` accountNum
 
-**●  accountNum**:  *`undefined`⎮`string`* 
+**● accountNum**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L22)*
-
-
-
-
+*Defined in [RecipientAccount.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L22)*
 
 ___
-
 <a id="bankaddress"></a>
 
-### «Optional» bankAddress
+### `<Optional>` bankAddress
 
-**●  bankAddress**:  *`undefined`⎮`string`* 
+**● bankAddress**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L28)*
-
-
-
-
+*Defined in [RecipientAccount.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L28)*
 
 ___
-
 <a id="bankcity"></a>
 
-### «Optional» bankCity
+### `<Optional>` bankCity
 
-**●  bankCity**:  *`undefined`⎮`string`* 
+**● bankCity**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L29)*
-
-
-
-
+*Defined in [RecipientAccount.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L29)*
 
 ___
-
 <a id="bankid"></a>
 
-### «Optional» bankId
+### `<Optional>` bankId
 
-**●  bankId**:  *`undefined`⎮`string`* 
+**● bankId**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:26](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L26)*
-
-
-
-
+*Defined in [RecipientAccount.ts:26](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L26)*
 
 ___
-
 <a id="bankname"></a>
 
-### «Optional» bankName
+### `<Optional>` bankName
 
-**●  bankName**:  *`undefined`⎮`string`* 
+**● bankName**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:27](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L27)*
-
-
-
-
+*Defined in [RecipientAccount.ts:27](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L27)*
 
 ___
-
 <a id="bankpostalcode"></a>
 
-### «Optional» bankPostalCode
+### `<Optional>` bankPostalCode
 
-**●  bankPostalCode**:  *`undefined`⎮`string`* 
+**● bankPostalCode**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:31](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L31)*
-
-
-
-
+*Defined in [RecipientAccount.ts:31](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L31)*
 
 ___
-
 <a id="bankregioncode"></a>
 
-### «Optional» bankRegionCode
+### `<Optional>` bankRegionCode
 
-**●  bankRegionCode**:  *`undefined`⎮`string`* 
+**● bankRegionCode**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L30)*
-
-
-
-
+*Defined in [RecipientAccount.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L30)*
 
 ___
-
 <a id="branchid"></a>
 
-### «Optional» branchId
+### `<Optional>` branchId
 
-**●  branchId**:  *`undefined`⎮`string`* 
+**● branchId**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:25](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L25)*
-
-
-
-
+*Defined in [RecipientAccount.ts:25](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L25)*
 
 ___
-
 <a id="country"></a>
 
-### «Optional» country
+### `<Optional>` country
 
-**●  country**:  *`undefined`⎮`string`* 
+**● country**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L19)*
-
-
-
-
+*Defined in [RecipientAccount.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L19)*
 
 ___
-
 <a id="currency"></a>
 
 ###  currency
 
-**●  currency**:  *`string`*  = ""
+**● currency**: *`string`* = ""
 
-*Defined in [RecipientAccount.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L11)*
-
-
-
-
+*Defined in [RecipientAccount.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L11)*
 
 ___
-
 <a id="emailaddress"></a>
 
-### «Optional» emailAddress
+### `<Optional>` emailAddress
 
-**●  emailAddress**:  *`undefined`⎮`string`* 
+**● emailAddress**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L16)*
-
-
-
-
+*Defined in [RecipientAccount.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L16)*
 
 ___
-
 <a id="iban"></a>
 
-### «Optional» iban
+### `<Optional>` iban
 
-**●  iban**:  *`undefined`⎮`string`* 
+**● iban**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L21)*
-
-
-
-
+*Defined in [RecipientAccount.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L21)*
 
 ___
-
 <a id="id"></a>
 
 ###  id
 
-**●  id**:  *`string`*  = ""
+**● id**: *`string`* = ""
 
-*Defined in [RecipientAccount.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L9)*
-
-
-
-
+*Defined in [RecipientAccount.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L9)*
 
 ___
-
 <a id="primary"></a>
 
 ###  primary
 
-**●  primary**:  *`boolean`*  = false
+**● primary**: *`boolean`* = false
 
-*Defined in [RecipientAccount.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L10)*
-
-
-
-
+*Defined in [RecipientAccount.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L10)*
 
 ___
-
 <a id="recipientfees"></a>
 
-### «Optional» recipientFees
+### `<Optional>` recipientFees
 
-**●  recipientFees**:  *`undefined`⎮`string`* 
+**● recipientFees**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L13)*
-
-
-
-
+*Defined in [RecipientAccount.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L13)*
 
 ___
-
 <a id="routetype"></a>
 
-### «Optional» routeType
+### `<Optional>` routeType
 
-**●  routeType**:  *`undefined`⎮`string`* 
+**● routeType**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L12)*
-
-
-
-
+*Defined in [RecipientAccount.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L12)*
 
 ___
-
 <a id="swiftbic"></a>
 
-### «Optional» swiftBic
+### `<Optional>` swiftBic
 
-**●  swiftBic**:  *`string`⎮`null`* 
+**● swiftBic**: *`string` |
+`null`
+*
 
-*Defined in [RecipientAccount.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L24)*
-
-
-
-
+*Defined in [RecipientAccount.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L24)*
 
 ___
-
 <a id="type"></a>
 
-### «Optional» type
+### `<Optional>` type
 
-**●  type**:  *`undefined`⎮`string`* 
+**● type**: *`undefined` |
+`string`
+*
 
-*Defined in [RecipientAccount.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/RecipientAccount.ts#L20)*
-
-
-
-
+*Defined in [RecipientAccount.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L20)*
 
 ___
-
 

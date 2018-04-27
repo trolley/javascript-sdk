@@ -1,11 +1,8 @@
 [Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md)
 
-
-
 # Module: Exceptions
 
 *__module__*: exceptions
-
 
 ## Index
 
@@ -20,6 +17,5 @@
 * [ServerError](../classes/exceptions.servererror.md)
 * [Unexpected](../classes/exceptions.unexpected.md)
 
-
-
 ---
+

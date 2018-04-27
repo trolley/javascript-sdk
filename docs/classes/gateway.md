@@ -1,8 +1,10 @@
 [Payment Rails JavaScript SDK](../README.md) > [Gateway](../classes/gateway.md)
 
-
-
 # Class: Gateway
+
+## Hierarchy
+
+**Gateway**
 
 ## Index
 
@@ -16,106 +18,71 @@
 * [recipient](gateway.md#recipient)
 * [recipientAccount](gateway.md#recipientaccount)
 
-
-
 ---
+
 ## Properties
+
 <a id="balances"></a>
 
 ###  balances
 
-**●  balances**:  *[BalancesGateway](balancesgateway.md)* 
+**● balances**: *[BalancesGateway](balancesgateway.md)*
 
-*Defined in [Gateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L15)*
-
-
-
-
+*Defined in [Gateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L15)*
 
 ___
-
 <a id="batch"></a>
 
 ###  batch
 
-**●  batch**:  *[BatchGateway](batchgateway.md)* 
+**● batch**: *[BatchGateway](batchgateway.md)*
 
-*Defined in [Gateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L13)*
-
-
-
-
+*Defined in [Gateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L13)*
 
 ___
-
 <a id="client"></a>
 
 ###  client
 
-**●  client**:  *`Client`* 
+**● client**: *`Client`*
 
-*Defined in [Gateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L11)*
-
-
-
-
+*Defined in [Gateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L11)*
 
 ___
-
 <a id="config"></a>
 
 ###  config
 
-**●  config**:  *[Configuration](configuration.md)* 
+**● config**: *[Configuration](configuration.md)*
 
-*Defined in [Gateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L10)*
-
-
-
-
+*Defined in [Gateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L10)*
 
 ___
-
 <a id="payment"></a>
 
 ###  payment
 
-**●  payment**:  *[PaymentGateway](paymentgateway.md)* 
+**● payment**: *[PaymentGateway](paymentgateway.md)*
 
-*Defined in [Gateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L16)*
-
-
-
-
+*Defined in [Gateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L16)*
 
 ___
-
 <a id="recipient"></a>
 
 ###  recipient
 
-**●  recipient**:  *[RecipientGateway](recipientgateway.md)* 
+**● recipient**: *[RecipientGateway](recipientgateway.md)*
 
-*Defined in [Gateway.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L12)*
-
-
-
-
+*Defined in [Gateway.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L12)*
 
 ___
-
 <a id="recipientaccount"></a>
 
 ###  recipientAccount
 
-**●  recipientAccount**:  *[RecipientAccountGateway](recipientaccountgateway.md)* 
+**● recipientAccount**: *[RecipientAccountGateway](recipientaccountgateway.md)*
 
-*Defined in [Gateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/0e7d5e5/lib/Gateway.ts#L14)*
-
-
-
-
+*Defined in [Gateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L14)*
 
 ___
-
 

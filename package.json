@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "test": "npm run test:unit",
-    "test:unit": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
-    "test:integration": "TS_NODE_PROJECT=test mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
+    "test:unit": "TS_NODE_PROJECT=test/tsconfig.json mocha --require ts-node/register \"test/unit/**/*Spec.ts\"",
+    "test:integration": "TS_NODE_PROJECT=test/tsconfig.json mocha --require ts-node/register \"test/integration/**/*Spec.ts\"",
     "build": "rm -rf dist/ && tsc && echo Done",
     "docs": "./node_modules/.bin/typedoc --mode file --name 'Payment Rails JavaScript SDK' --readme none --theme markdown --out docs --hideGenerator lib",
     "clean": "rm -rf dist/"
