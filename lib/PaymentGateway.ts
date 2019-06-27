@@ -1,8 +1,8 @@
 import { Configuration } from "./Configuration";
 import { Gateway } from "./Gateway";
-import { Payment } from './Payment';
-import { buildURL } from './util';
-import * as querystring from 'querystring';
+import { Payment } from "./Payment";
+import { buildURL } from "./util";
+import * as querystring from "querystring";
 import * as types from "./types";
 
 export class PaymentGateway {
@@ -32,9 +32,11 @@ export class PaymentGateway {
    * @param paymentId Payment Rails payment id (e.g. "P-aabccc")
    */
   async find(paymentId: string) {
-    const endPoint = buildURL('payments', paymentId);
+    const endPoint = buildURL("payments", paymentId);
 
-    const result = await this.gateway.client.get<types.Payment.Result>(endPoint);
+    const result = await this.gateway.client.get<types.Payment.Result>(
+      endPoint,
+    );
 
     return Payment.factory(result.payment);
   }
@@ -53,9 +55,12 @@ export class PaymentGateway {
    * @param body Payment information
    */
   async create(batchId: string, body: any) {
-    const endPoint = buildURL('batches', batchId, 'payments');
+    const endPoint = buildURL("batches", batchId, "payments");
 
-    const result = await this.gateway.client.post<types.Payment.Result>(endPoint, body);
+    const result = await this.gateway.client.post<types.Payment.Result>(
+      endPoint,
+      body,
+    );
 
     return Payment.factory(result.payment);
   }
@@ -72,9 +77,12 @@ export class PaymentGateway {
    * @param body Payment update information
    */
   async update(paymentId: string, batchId: string, body: any) {
-    const endPoint = buildURL('batches', batchId, 'payments', paymentId);
+    const endPoint = buildURL("batches", batchId, "payments", paymentId);
 
-    const result = await this.gateway.client.patch<{ ok: boolean }>(endPoint, body);
+    const result = await this.gateway.client.patch<{ ok: boolean }>(
+      endPoint,
+      body,
+    );
 
     return true;
   }
@@ -88,7 +96,7 @@ export class PaymentGateway {
    * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
    */
   async remove(paymentId: string, batchId: string) {
-    const endPoint = buildURL('batches', batchId, 'payments', paymentId);
+    const endPoint = buildURL("batches", batchId, "payments", paymentId);
 
     const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
 
@@ -97,26 +105,29 @@ export class PaymentGateway {
 
   /**
    * Search for payments in a given batch
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param query Object containing either search key, usually either "recipientId" or "batchId"
    * @param page Page number (1 based)
    * @param pageSize Page size (0...1000)
    * @param term Any search terms to look for
    */
   async search(
-    batchId: string,
+    query: { [key: string]: string },
     page: number = 1,
     pageSize: number = 10,
     term: string = "",
   ) {
     // tslint:disable-next-line:max-line-length
-    const endPoint = buildURL('batches', batchId, 'payments');
-    const query = querystring.stringify({
+    const endPoint = buildURL("payments");
+    const urlQuery = querystring.stringify({
+      ...query,
       page,
       pageSize,
       search: term,
     });
 
-    const result = await this.gateway.client.get<types.Payment.ListResult>(`${endPoint}?${query}`);
+    const result = await this.gateway.client.get<types.Payment.ListResult>(
+      `${endPoint}?${urlQuery}`,
+    );
 
     return result.payments.map(p => Payment.factory(p));
   }

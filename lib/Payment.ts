@@ -1,5 +1,5 @@
 import { Configuration } from "./Configuration";
-import { Recipient } from './Recipient';
+import { Recipient } from "./Recipient";
 import * as types from "./types";
 
 // tslint:disable:function-name
@@ -87,13 +87,13 @@ export class Payment {
    * @hidden
    */
   static async search(
-    batchId: string,
+    query: { [key: string]: string },
     page: number = 1,
     pageSize: number = 10,
     term: string = "",
   ) {
     const data = await Configuration.gateway().payment.search(
-      batchId,
+      query,
       page,
       pageSize,
       term,
