@@ -2,6 +2,7 @@ node_modules
 Gruntfile
 gulpfile
 main.ts
+main.js
 bower
 .DS_Store
 __MACOSX

@@ -188,7 +188,6 @@ export namespace ComplianceCheck {
   }
 }
 
-
 /**
  * @hidden
  */
@@ -263,6 +262,39 @@ export namespace Payment {
   export interface ListResult extends Serializer.WithMeta {
     ok: boolean;
     payments: Payment[];
+  }
+}
+
+export namespace OfflinePayment {
+  export interface OfflinePayment {
+    id: string;
+
+    recipientId: string;
+    externalId: string | null;
+    memo: string;
+    tags: string[];
+    taxReportable: boolean;
+    category: string;
+    amount: string;
+    currency: string;
+    withholdingAmount: string;
+    withholdingCurrency: string;
+    equivalentWithholdingAmount: string;
+    equivalentWithholdingCurrency: string;
+
+    processedAt: string;
+
+    updatedAt: string;
+    createdAt: string;
+    deletedAt: string | null;
+  }
+
+  export interface Response {
+    offlinePayment: OfflinePayment;
+  }
+
+  export interface ListResponse extends Serializer.WithMeta {
+    offlinePayments: OfflinePayment[];
   }
 }
 
@@ -365,7 +397,6 @@ export namespace TaxForm {
     withholding: null | string;
   }
 }
-
 
 /**
  * @hidden
