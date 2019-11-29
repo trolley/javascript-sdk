@@ -5,10 +5,16 @@ import { Configuration, Payment } from "../../lib";
 import * as assert from "assert";
 import * as sinon from "sinon";
 
+const KEY = "ASws3dh9G9P58QA7CCG43YQW";
+const SECRET = "qkx4exxf5rp7ta4bqaaj88d6x8vcg6v9e2van3bg";
+
 describe("Retrieve Payment", () => {
+  beforeAll(() => {
+    Configuration.setApiKey(KEY);
+    Configuration.setApiSecret(SECRET);
+  });
+
   it("update", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "find")
       .withArgs("P-91XPJV99EWX48")
@@ -24,8 +30,6 @@ describe("Retrieve Payment", () => {
 
 describe("Retrieve Payment Invalid Payment Id ", () => {
   it("ok field should be false", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "find")
       .withArgs("P-123")
@@ -48,8 +52,6 @@ describe("update", () => {
       sourceAmount: "100.10",
       memo: "test payment",
     };
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "create")
       .withArgs("B-912PWJGD8RZ7J", body)
@@ -66,8 +68,6 @@ describe("update", () => {
 describe("Update Payment", () => {
   it("ok field should be true", async () => {
     const body = { sourceAmount: "900.90" };
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "update")
       .withArgs("P-91XPJV99EWX48", "B-912PWJGD8RZ7J", body)
@@ -88,8 +88,6 @@ describe("Update Payment", () => {
 describe("Update Payment Invalid Payment Id", () => {
   it("ok field should be false", async () => {
     const body = { sourceAmount: "900.90" };
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "update")
       .withArgs("P-123", "B-912PWJGD8RZ7J", body)
@@ -105,8 +103,6 @@ describe("Update Payment Invalid Payment Id", () => {
 
 describe("Delete Payment", () => {
   it("update", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "remove")
       .withArgs("P-91XPJV99EWX48")
@@ -122,8 +118,6 @@ describe("Delete Payment", () => {
 
 describe("Delete Payment Invalid Batch Id", () => {
   it("ok field should be false", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "remove")
       .withArgs("P-91XPJV99EWX48")
@@ -139,8 +133,6 @@ describe("Delete Payment Invalid Batch Id", () => {
 
 describe("Delete Payment Invalid Payment Id", () => {
   it("ok field should be false", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "remove")
       .withArgs("P-123")
@@ -156,8 +148,6 @@ describe("Delete Payment Invalid Payment Id", () => {
 
 describe("List all Payments", () => {
   it("update", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "search")
       .withArgs("B-912PWJGD8RZ7J")
@@ -173,8 +163,6 @@ describe("List all Payments", () => {
 
 describe("List all Payments with queries", () => {
   it("update", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "search")
       .withArgs("B-912PWJGD8RZ7J", 1, 10)
@@ -190,8 +178,6 @@ describe("List all Payments with queries", () => {
 
 describe("List all Payments Invalid Batch Id", () => {
   it("ok field should be false", async () => {
-    Configuration.setApiKey("access-code");
-    Configuration.setApiSecret("secret-code");
     sinon
       .stub(Payment, "search")
       .withArgs("B-123")

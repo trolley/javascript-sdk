@@ -1,5 +1,5 @@
-import { Configuration, Balances } from "../../lib";
-import { BalanceGateway } from "../../lib/PaymentRails/BalanceGateway";
+import { Configuration, Balance } from "../../lib";
+import { BalancesGateway } from "../../lib/BalancesGateway";
 
 import * as assert from "assert";
 import * as sinon from "sinon";
@@ -25,7 +25,7 @@ describe("Balance", () => {
       };
     });
 
-    const data = await Balances.all();
+    const data = await Balance.all();
 
     assert.deepEqual(data, {});
   });
@@ -41,7 +41,7 @@ describe("Balance", () => {
         };
       });
 
-    const data = await Balances.find("paymentrails");
+    const data = await Balance.find("paymentrails");
 
     assert.deepEqual(data, {});
   });
@@ -57,7 +57,7 @@ describe("Balance", () => {
         };
       });
 
-    const data = await Balances.find("paypal");
+    const data = await Balance.find("paypal");
 
     assert.deepEqual(data, {});
   });

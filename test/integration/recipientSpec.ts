@@ -74,9 +74,9 @@ describe("Recipient", () => {
       email: `test.create+${id}@example.com`,
       address: {
         street1: "123 Wolfstrasse",
-        city: "Berlin",
-        country: "DE",
-        postalCode: "123123",
+        city: "Mtl",
+        country: "CA",
+        postalCode: "h1h1h1",
       },
     });
 
@@ -87,18 +87,26 @@ describe("Recipient", () => {
     assert.ok(recipient.id);
 
     const account = await RecipientAccount.create(recipient.id, {
+      accountHolderName: "Tom Jones",
+      accountNum: "0123456",
+      bankId: "003",
+      branchId: "02621",
+      country: "CA",
+      currency: "CAD",
       type: "bank-transfer",
-      currency: "EUR",
-      iban: "DE89 3704 0044 0532 0130 00",
     });
 
     assert.ok(account);
     assert.ok(account.primary);
 
     const account2 = await RecipientAccount.create(recipient.id, {
+      accountHolderName: "Tom Jones",
+      accountNum: "0123456",
+      bankId: "003",
+      branchId: "02621",
+      country: "CA",
+      currency: "CAD",
       type: "bank-transfer",
-      currency: "EUR",
-      iban: "FR14 2004 1010 0505 0001 3M02 606",
       primary: true,
     });
 
@@ -111,7 +119,7 @@ describe("Recipient", () => {
 
     const accountList = await RecipientAccount.all(recipient.id);
     assert.equal(accountList.length, 2);
-    assert.equal(accountList[0].currency, "EUR");
+    assert.equal(accountList[0].currency, "CAD");
 
     const result = await RecipientAccount.remove(recipient.id, account.id);
     assert.equal(true, result);
@@ -140,25 +148,29 @@ describe("Recipient", () => {
     assert.ok(recipient);
 
     const account = await RecipientAccount.create(recipient.id, {
+      accountHolderName: "Tom Jones",
+      accountNum: "0123456",
+      bankId: "003",
+      branchId: "02621",
+      country: "CA",
+      currency: "CAD",
       type: "bank-transfer",
-      currency: "EUR",
-      iban: "DE89 3704 0044 0532 0130 00",
     });
 
     assert.ok(account);
 
     const account2 = await RecipientAccount.update(recipient.id, account.id, {
-      iban: "FR14 2004 1010 0505 0001 3M02 606",
+      accountHolderName: "Tom James",
     });
 
     assert.ok(account2);
-    assert.notEqual(account.id, account2.id);
-    assert.ok(account2.iban && account2.iban.includes("**06"));
+    assert.notEqual(account.accountHolderName, account2.accountHolderName);
+    assert.ok(account2.accountNum && account2.accountNum.includes("**56"));
 
     const accountList = await RecipientAccount.all(recipient.id);
 
     assert.equal(accountList.length, 1);
-    assert.ok((accountList as any)[0].iban.includes("**06"));
+    assert.ok((accountList as any)[0].accountNum.includes("**56"));
     assert.equal(accountList[0].id, account2.id);
   });
 

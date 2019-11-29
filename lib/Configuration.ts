@@ -40,7 +40,8 @@ export class Configuration {
    */
   constructor(config?: ConfigurationParams) {
     this.apiKey = (config && config.key) || Configuration.apiKeyDefault;
-    this.apiSecret = (config && config.secret) || Configuration.apiSecretDefault;
+    this.apiSecret =
+      (config && config.secret) || Configuration.apiSecretDefault;
     if (config && config.environment) {
       this.apiBase = Configuration.environmentToUrl(config.environment);
     } else {
@@ -87,7 +88,9 @@ export class Configuration {
    * Set the Payment Rails API environment that your using
    * @param environment one of "production" or "sandbox"
    */
-  static setEnvironment(environment: "production" | "sandbox" | "integration") {
+  static setEnvironment(
+    environment: "production" | "development" | "sandbox" | "integration",
+  ) {
     Configuration.apiBaseDefault = Configuration.environmentToUrl(environment);
   }
 

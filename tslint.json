@@ -1,8 +1,5 @@
 {
-  "extends": [
-    "tslint-microsoft-contrib",
-    "tslint-eslint-rules"
-  ],
+  "extends": ["tslint-microsoft-contrib", "tslint-eslint-rules"],
   "rules": {
     "max-line-length": [true, 160],
     "quotemark": [false],
@@ -11,6 +8,7 @@
 
     "no-stateless-class": [false],
     "no-redundant-jsdoc": [false],
+    "no-submodule-imports": [false],
 
     "brace-style": [
       true,
@@ -19,19 +17,10 @@
         "allowSingleLine": true
       }
     ],
-    "array-bracket-spacing": [
-      true,
-      "never"
-    ], // 18.10
-    "object-curly-spacing": [
-      true,
-      "always"
-    ], // 18.11
+    "array-bracket-spacing": [true, "never"], // 18.10
+    "object-curly-spacing": [true, "always"], // 18.11
     "space-in-parens": [true, "never"],
-    "array-bracket-spacing": [
-      true,
-      "never"
-    ], // 18.10
+    "array-bracket-spacing": [true, "never"], // 18.10
     "variable-name": [
       true,
       "check-format" // 22.2

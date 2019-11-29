@@ -1,4 +1,4 @@
-import * as paymentrails from '../../lib';
+import * as paymentrails from "../../lib";
 import * as types from "../../lib/types";
 import * as assert from "assert";
 import * as uuid from "uuid";
@@ -31,9 +31,13 @@ describe("Batch/Payment Integration", () => {
     });
 
     await client.recipientAccount.create(recipient.id, {
+      accountHolderName: "Tom Jones",
+      accountNum: "0123456",
+      bankId: "003",
+      branchId: "02621",
+      country: "CA",
+      currency: "CAD",
       type: "bank-transfer",
-      currency: "EUR",
-      iban: "DE89 3704 0044 0532 0130 00",
     });
 
     return recipient;
@@ -82,13 +86,13 @@ describe("Batch/Payment Integration", () => {
 
     const batch = await client.batch.create(
       {
-        sourceCurrency: "USD",
+        sourceCurrency: "CAD",
         description: "Integration Test Payments",
       },
       [
         {
           targetAmount: "10.00",
-          targetCurrency: "EUR",
+          targetCurrency: "CAD",
           recipient: { id: recipientAlpha.id },
         },
         {
@@ -118,13 +122,13 @@ describe("Batch/Payment Integration", () => {
 
     const batch = await client.batch.create(
       {
-        sourceCurrency: "USD",
+        sourceCurrency: "CAD",
         description: "Integration Test Payments",
       },
       [
         {
           targetAmount: "10.00",
-          targetCurrency: "EUR",
+          targetCurrency: "CAD",
           recipient: { id: recipientAlpha.id },
         },
         {
