@@ -28,7 +28,7 @@ function sendRequest<T>(options: request.UriOptions) {
           const firstErr = (data.errors && Array.isArray(data.errors) && data.errors.length !== 0) ? data.errors[0] : undefined;
           switch (response.statusCode) {
             case 400:
-              reject(new Exceptions.Malformed(firstErr.message || "Not Found"));
+              reject(new Exceptions.Malformed(`${firstErr.message}: ${firstErr.field}` || "Not Found"));
 
               return;
             case 401:
