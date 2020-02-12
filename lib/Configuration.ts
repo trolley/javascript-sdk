@@ -40,7 +40,8 @@ export class Configuration {
    */
   constructor(config?: ConfigurationParams) {
     this.apiKey = (config && config.key) || Configuration.apiKeyDefault;
-    this.apiSecret = (config && config.secret) || Configuration.apiSecretDefault;
+    this.apiSecret =
+      (config && config.secret) || Configuration.apiSecretDefault;
     if (config && config.environment) {
       this.apiBase = Configuration.environmentToUrl(config.environment);
     } else {
@@ -93,7 +94,7 @@ export class Configuration {
 
   /**
    * Private method that converts an environment to a specific URL
-   * @param environment "production" | "sandbox" | "development"
+   * @param environment "production" | "sandbox"
    * @hidden
    */
   private static environmentToUrl(environment: string) {
@@ -101,9 +102,6 @@ export class Configuration {
       case "integration":
         // tslint:disable-next-line:no-http-string
         return "http://api.local.dev:3000";
-      case "development":
-        // tslint:disable-next-line:no-http-string
-        return "https://api.railz.io";
       case "sandbox":
         return "https://api.sandbox.paymentrails.com";
       case "production":
