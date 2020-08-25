@@ -26,8 +26,8 @@ export namespace Serializer {
 }
 
 /*
-** accountActivity.ts
-*/
+ ** accountActivity.ts
+ */
 /**
  * @hidden
  */
@@ -149,7 +149,7 @@ export namespace BatchSummary {
 
   interface BatchErrors {
     error: string;
-    paymentId: number;    // TODO: THis is useless, should be the GUID
+    paymentId: number; // TODO: THis is useless, should be the GUID
   }
 
   export interface BatchSummary {
@@ -170,8 +170,8 @@ export namespace BatchSummary {
  */
 export namespace ComplianceCheck {
   /*
-  ** compliance-check.ts
-  */
+   ** compliance-check.ts
+   */
   export interface ComplianceCheck {
     status: string;
     checkedAt: string;
@@ -238,6 +238,8 @@ export namespace Payment {
     createdAt: string;
     updatedAt: string;
 
+    account: Recipient.Account | null;
+
     merchantFees: string;
     compliance: {
       status: string;
@@ -252,6 +254,32 @@ export namespace Payment {
     payoutMethod: string;
 
     batch?: Batch.Batch;
+
+    externalId: string;
+
+    amount: string;
+    currency: string | null;
+
+    category: string | null;
+
+    checkNumber: string | null;
+
+    tags: string[];
+    coverFees: boolean;
+    estimatedDeliveryAt: string | null;
+    // tax withholding data
+    taxReportable: boolean;
+    withholdingAmount: string;
+    withholdingCurrency: string | null;
+
+    settledAt: string | null;
+    initiatedAt: string | null;
+    returnedAt: string | null;
+
+    returnedReason: string[] | null;
+    returnedNote: string | null;
+
+    failureMessage: string | null;
   }
 
   export interface Result {
@@ -403,8 +431,8 @@ export namespace TaxForm {
  */
 export namespace Recipient {
   /*
-  **  recipient-payout-method.ts
-  */
+   **  recipient-payout-method.ts
+   */
   export interface Recipient {
     id: string;
     referenceId: string;
@@ -471,27 +499,29 @@ export namespace Recipient {
     };
     method: string;
     accounts: {
-      [key: string]: {
-        type: string;
-        bankAddress: string;
-        bankCity: string;
-        bankName: string;
-        iban?: string;
-        primary: boolean;
-        recipientAccountId: string;
-        swiftBic?: string;
-        institution?: string;
-        branchNum?: string;
-        routing: string;
-        branch: string;
-        currency: string;
-        country: string;
-        name: string;
-        accountNum: string;
-      } | {
-        type: string;
-        address: string;
-      };
+      [key: string]:
+        | {
+            type: string;
+            bankAddress: string;
+            bankCity: string;
+            bankName: string;
+            iban?: string;
+            primary: boolean;
+            recipientAccountId: string;
+            swiftBic?: string;
+            institution?: string;
+            branchNum?: string;
+            routing: string;
+            branch: string;
+            currency: string;
+            country: string;
+            name: string;
+            accountNum: string;
+          }
+        | {
+            type: string;
+            address: string;
+          };
     };
   }
 

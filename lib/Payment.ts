@@ -29,6 +29,8 @@ export class Payment {
     checkedAt: string;
   } = { status: "", checkedAt: "" };
 
+  coverFees: boolean = false;
+
   sourceCurrency: string | null = null;
   targetCurrency: string | null = null;
   isSupplyPayment: boolean = false;
@@ -118,7 +120,7 @@ export class Payment {
    * @hidden
    */
   private _initialize(payment: types.Payment.Payment) {
-    Object.keys(payment).forEach(k => {
+    Object.keys(payment).forEach((k) => {
       if (k === "recipient") {
         this.recipient = Recipient.factory(payment.recipient);
       } else {
