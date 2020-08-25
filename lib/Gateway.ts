@@ -4,8 +4,8 @@ import { RecipientAccountGateway } from "./RecipientAccountGateway";
 import { BatchGateway } from "./BatchGateway";
 import { PaymentGateway } from "./PaymentGateway";
 import { BalancesGateway } from "./BalancesGateway";
-import { Client } from "./Client";
 import { OfflinePaymentGateway } from "./OfflinepaymentGateway";
+import { Client } from "./Client";
 
 export class Gateway {
   config: Configuration;
