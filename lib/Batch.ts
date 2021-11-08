@@ -41,7 +41,16 @@ export class Batch {
   completedAt: string = "";
   createdAt: string = "";
   updatedAt: string = "";
-  payments?: Payment[] = [];
+  payments: {
+    payments: Payment[];
+  } & types.Serializer.WithMeta = {
+    payments: [],
+    meta: {
+      records: 0,
+      page: 0,
+      pages: 0,
+    },
+  };
   quoteExpiredAt?: string;
 
   /**
@@ -162,7 +171,7 @@ export class Batch {
   }
 
   private _initialize(account: types.Batch.Batch) {
-    Object.keys(account).forEach(k => {
+    Object.keys(account).forEach((k) => {
       (this as any)[k] = (account as any)[k];
     });
   }
