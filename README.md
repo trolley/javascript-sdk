@@ -1,7 +1,8 @@
-# Payment Rails JavaScript SDK
+# Payment Rails[^1] JavaScript SDK
 
 A JavaScript SDK (written in TypeScript) - For more information about the API as well as NodeJS code samples check out the [full API documentation](http://docs.paymentrails.com)
 
+[^1]: [Payment Rails is now Trolley](https://www.trolley.com/payment-rails-is-now-trolley-series-a), we'll be updating our SDKs to support the new domain during the first half of 2022.
 
 ## Installation
 
