@@ -2,6 +2,8 @@
  *  General serializer types
  */
 
+import { Invoice } from './invoice';
+
 // tslint:disable:no-shadowed-variable
 // tslint:disable:prefer-method-signature
 
@@ -326,6 +328,13 @@ export namespace OfflinePayment {
   }
 }
 
+export namespace InvoiceWrapper {
+  export interface Result {
+    ok: boolean;
+    invoice: Invoice;
+  }
+}
+
 /**
  * @hidden
  */
@@ -596,5 +605,12 @@ export namespace BankInfo {
 
   export type Result = {
     lookupData: BankInfo;
+  };
+}
+
+export namespace Money {
+  export type Amount = {
+    value: number;
+    currency: string;
   };
 }
