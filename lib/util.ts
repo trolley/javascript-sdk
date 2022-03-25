@@ -5,5 +5,5 @@
  * @hidden
  */
 export function buildURL(base: string, ...parts: string[]) {
-  return ['', 'v1'].concat([base], parts).map(encodeURIComponent).join('/');
+  return ['', 'v1'].concat([base], parts.map(encodeURIComponent)).join('/');
 }
