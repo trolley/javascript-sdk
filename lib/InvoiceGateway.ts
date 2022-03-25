@@ -1,7 +1,7 @@
 import { Configuration } from './Configuration';
 import { Gateway } from './Gateway';
 import { Invoice, InvoiceInput } from './Invoice';
-import { InvoiceWrapper, Money } from './types';
+import { InvoiceWrapper } from './types';
 import { buildURL } from './util';
 
 export class InvoiceGateway {
@@ -19,8 +19,8 @@ export class InvoiceGateway {
         const result = await this.gateway.client.post<InvoiceWrapper.Result>(
             endPoint,
             {
-                invoiceId: invoiceId
-            }
+                invoiceId: invoiceId,
+            },
         );
 
         return Object.assign(new Invoice(), result.invoice);
@@ -31,7 +31,7 @@ export class InvoiceGateway {
 
         const result = await this.gateway.client.post<InvoiceWrapper.Result>(
             endPoint,
-            body
+            body,
         );
 
         return Object.assign(new Invoice(), result.invoice);
