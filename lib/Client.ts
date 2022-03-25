@@ -80,14 +80,14 @@ export class Client {
   async get<T>(endPoint: string): Promise<T> {
     const date: any = new Date();
     const timestamp = Math.round(date / 1000);
-    const authoriation = this.generateAuthorization(timestamp, endPoint, "GET");
+    const authorization = this.generateAuthorization(timestamp, endPoint, "GET");
     const options = {
       uri: endPoint,
       baseUrl: this.config.apiBase,
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: authoriation,
+        Authorization: authorization,
         "X-PR-Timestamp": timestamp,
       },
     };
