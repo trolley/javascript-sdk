@@ -1,7 +1,7 @@
 import { Configuration } from './Configuration';
 import { Gateway } from './Gateway';
 import { Invoice, InvoiceInput } from './Invoice';
-import { InvoiceWrapper } from './types';
+import { ApiResponse } from './types';
 import { buildURL } from './util';
 
 export class InvoiceGateway {
@@ -16,7 +16,7 @@ export class InvoiceGateway {
     async find(invoiceId: string) {
         const endPoint = buildURL('invoices/get');
 
-        const result = await this.gateway.client.post<InvoiceWrapper.Result>(
+        const result = await this.gateway.client.post<ApiResponse<Invoice>>(
             endPoint,
             {
                 invoiceId: invoiceId,
@@ -29,7 +29,7 @@ export class InvoiceGateway {
     async create(body: InvoiceInput) {
         const endPoint = buildURL('invoices/create');
 
-        const result = await this.gateway.client.post<InvoiceWrapper.Result>(
+        const result = await this.gateway.client.post<ApiResponse<Invoice>>(
             endPoint,
             body,
         );

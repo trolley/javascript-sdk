@@ -1,7 +1,7 @@
-import { Money } from "./Types";
+import { Currency } from "./Types";
 
 export interface InvoiceLineInput {
-    unitAmount: Money.Amount;
+    unitAmount: Currency;
     category: InvoiceLineCategory;
     description: string;
     externalId: string;
@@ -17,7 +17,7 @@ enum InvoiceLineCategory {
     'royalties_film',
     'prizes',
     'education',
-    'refunds'
+    'refunds',
 }
 
 export class InvoiceLine {
@@ -30,28 +30,28 @@ export class InvoiceLine {
     tags: string[] = [];
     category: string = '';
     forceUsTaxActivity: boolean = false;
-    unitAmount: Money.Amount = {
+    unitAmount: Currency = {
         currency: '',
-        value: 0
+        value: 0,
     };
-    discountAmount: Money.Amount = {
+    discountAmount: Currency = {
         currency: '',
-        value: 0
+        value: 0,
     };
-    taxAmount: Money.Amount = {
+    taxAmount: Currency = {
         currency: '',
-        value: 0
+        value: 0,
     };
-    totalAmount: Money.Amount = {
+    totalAmount: Currency = {
         currency: '',
-        value: 0
+        value: 0,
     };
-    dueAmount: Money.Amount = {
+    dueAmount: Currency = {
         currency: '',
-        value: 0
+        value: 0,
     };
-    paidAmount: Money.Amount = {
+    paidAmount: Currency = {
         currency: '',
-        value: 0
+        value: 0,
     };
 }
