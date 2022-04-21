@@ -36,4 +36,31 @@ export class InvoiceGateway {
 
         return Object.assign(new Invoice(), result.invoice);
     }
+
+    async update(invoiceId: string, body: InvoiceInput) {
+        const endPoint = buildURL('invoices/update');
+
+        const result = await this.gateway.client.post<ApiResponse<Invoice>>(
+            endPoint,
+            {
+                invoiceId: invoiceId,
+                ...body,
+            },
+        );
+
+        return Object.assign(new Invoice(), result.invoice);
+    }
+
+    async remove(invoiceIds: string[]) {
+        const endPoint = buildURL('invoices/delete');
+
+        const result = await this.gateway.client.post<ApiResponse<Invoice>>(
+            endPoint,
+            {
+                invoiceIds: invoiceIds,
+            },
+        );
+
+        return true;
+    }
 }
