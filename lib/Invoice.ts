@@ -1,6 +1,5 @@
-import { Configuration } from "./Configuration";
 import { InvoiceLine, InvoiceLineInput } from "./InvoiceLine";
-import { Currency } from "./Types";
+import { Amount } from "./Types";
 
 export interface InvoiceInput {
     recipientId: string;
@@ -25,15 +24,15 @@ export class Invoice {
     updatedAt: string = "";
     lines: InvoiceLine[] = [];
     tags: string[] = [];
-    totalAmount: Currency = {
+    totalAmount: Amount = {
         currency: "",
         value: 0,
     };
-    paidAmount: Currency = {
+    paidAmount: Amount = {
         currency: "",
         value: 0,
     };
-    dueAmount: Currency = {
+    dueAmount: Amount = {
         currency: "",
         value: 0,
     };

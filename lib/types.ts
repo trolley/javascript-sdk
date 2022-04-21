@@ -604,7 +604,7 @@ export interface ApiResponse<T> {
   ok: boolean;
 }
 
-export type Currency = {
+export type Amount = {
   value: number;
   currency: string;
 };

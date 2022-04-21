@@ -1,7 +1,7 @@
-import { Currency } from "./Types";
+import { Amount } from "./Types";
 
 export interface InvoiceLineInput {
-    unitAmount: Currency;
+    unitAmount: Amount;
     category: InvoiceLineCategory;
     description: string;
     externalId: string;
@@ -30,27 +30,27 @@ export class InvoiceLine {
     tags: string[] = [];
     category: string = '';
     forceUsTaxActivity: boolean = false;
-    unitAmount: Currency = {
+    unitAmount: Amount = {
         currency: '',
         value: 0,
     };
-    discountAmount: Currency = {
+    discountAmount: Amount = {
         currency: '',
         value: 0,
     };
-    taxAmount: Currency = {
+    taxAmount: Amount = {
         currency: '',
         value: 0,
     };
-    totalAmount: Currency = {
+    totalAmount: Amount = {
         currency: '',
         value: 0,
     };
-    dueAmount: Currency = {
+    dueAmount: Amount = {
         currency: '',
         value: 0,
     };
-    paidAmount: Currency = {
+    paidAmount: Amount = {
         currency: '',
         value: 0,
     };
