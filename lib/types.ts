@@ -5,6 +5,8 @@
 // tslint:disable:no-shadowed-variable
 // tslint:disable:prefer-method-signature
 
+import { Invoice } from "./Invoice";
+
 /**
  * @hidden
  */
@@ -600,8 +602,8 @@ export namespace BankInfo {
 }
 
 export interface ApiResponse<T> {
-  [key: string]: T | boolean;
-  ok: boolean;
+    [key: string]: any;
+    ok: boolean;
 }
 
 export type Amount = {

@@ -63,4 +63,15 @@ export class InvoiceGateway {
 
         return true;
     }
+
+    async search(body: any) {
+        const endPoint = buildURL('invoices/search');
+
+        const result = await this.gateway.client.post<ApiResponse<Invoice[]>>(
+          endPoint,
+          body,
+        );
+
+        return result.invoices.map((line: Invoice) => Object.assign(new Invoice(), line));
+    }
 }
