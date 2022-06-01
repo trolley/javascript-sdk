@@ -103,7 +103,7 @@ export class Configuration {
         // tslint:disable-next-line:no-http-string
         return "http://api.local.dev:3000";
       case "sandbox":
-        return "https://api.sandbox.paymentrails.com";
+        return "https://api.railz.io";
       case "production":
         return "https://api.paymentrails.com";
       default:

@@ -8,6 +8,7 @@ export { Balance } from "./Balance";
 export { Batch } from "./Batch";
 export { Payment } from "./Payment";
 export { OfflinePayment } from "./OfflinePayment";
+export { Invoice } from "./Invoice";
 
 /**
  * Create a client for the Payment Rails JavasScript API
