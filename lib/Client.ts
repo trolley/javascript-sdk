@@ -1,5 +1,4 @@
 import { Configuration } from "./Configuration";
-import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
 import { Exceptions } from './exceptions';
@@ -18,7 +17,6 @@ function sendRequest<T>(options: request.UriOptions) {
       } else {
         try {
           const data = JSON.parse(responseBody);
-
           if (response.statusCode === 200) {
             resolve(data as T);
 
