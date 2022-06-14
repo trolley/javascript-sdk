@@ -1,10 +1,9 @@
-import { Configuration, Balance } from "../../lib";
-import { BalancesGateway } from "../../lib/BalancesGateway";
-
 import * as assert from "assert";
 import * as sinon from "sinon";
+
+import { Configuration, Balance } from "../../lib";
 import { Client } from "../../lib/Client";
-import * as types from "../../lib/types";
+import { buildApiResponse } from "../test_helpers";
 
 describe("Balance", () => {
   let sandbox: sinon.SinonSandbox;
@@ -20,30 +19,13 @@ describe("Balance", () => {
   });
 
   it("Retrieve all balances", async (done) => {
+    const response = buildApiResponse("balances/all.json");
+
     sandbox.stub(Client.prototype, "get")
       .callsFake(async () => {
         done();
 
-        return {
-          ok: true,
-          balances: [
-            {
-              primary: true,
-              type: "paymentrails",
-              accountNumber: "BL-He8PPEvr4ZKx6pK7NtbTU6",
-              display: true,
-              amount: "98801.36",
-              currency: "USD",
-              pendingCredit: "0.00",
-              pendingDebit: "0.00",
-              amountPending: "98801.36",
-              amountCleared: "98801.36",
-              provider: "sandbox",
-              providerId: undefined,
-              providerAcct: "03362348950",
-            },
-          ],
-        };
+        return response;
       });
 
     const balances = await Balance.all();
