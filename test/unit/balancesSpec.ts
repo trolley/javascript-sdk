@@ -18,7 +18,7 @@ describe("Balance", () => {
     sandbox.restore();
   });
 
-  it("Retrieve all balances", async (done) => {
+  it("retrieves all balances", async (done) => {
     const response = buildApiResponse("balances/all.json");
 
     sandbox.stub(Client.prototype, "get")
@@ -30,42 +30,44 @@ describe("Balance", () => {
 
     const balances = await Balance.all();
 
+    assert.strictEqual(balances.length, 2);
+    assert.strictEqual(balances[0] instanceof Balance, true);
+    assert.strictEqual(balances[1] instanceof Balance, true);
+    assert.strictEqual(balances[0].type, "paymentrails");
+    assert.strictEqual(balances[1].type, "paypal");
+  });
+
+  it("retrieves paymentrails balance", async (done) => {
+    const response = buildApiResponse("balances/paymentrails.json");
+
+    sandbox.stub(Client.prototype, "get")
+      .callsFake(async () => {
+        done();
+
+        return response;
+      });
+
+    const balances = await Balance.find("paymentrails");
+
     assert.strictEqual(balances.length, 1);
     assert.strictEqual(balances[0] instanceof Balance, true);
-
-    assert.strictEqual(balances[0].primary, true);
     assert.strictEqual(balances[0].type, "paymentrails");
   });
 
-  // it("Retrieve paymentrails balance", async () => {
-  //   sandbox
-  //     .stub(BalancesGateway.prototype, "find")
-  //     .withArgs("paymentrails")
-  //     .callsFake(async () => {
-  //       return {
-  //         ok: true,
-  //         balance: {},
-  //       };
-  //     });
-  //
-  //   const data = await Balance.find("paymentrails");
-  //
-  //   assert.deepEqual(data, {});
-  // });
+  it("retrieves paypal balance", async (done) => {
+    const response = buildApiResponse("balances/paypal.json");
 
-  // it("Retreive paypal balance", async () => {
-  //   sandbox
-  //     .stub(BalancesGateway.prototype, "find")
-  //     .withArgs("paypal")
-  //     .callsFake(async () => {
-  //       return {
-  //         ok: true,
-  //         balance: {},
-  //       };
-  //     });
-  //
-  //   const data = await Balance.find("paypal");
-  //
-  //   assert.deepEqual(data, {});
-  // });
+    sandbox.stub(Client.prototype, "get")
+      .callsFake(async () => {
+        done();
+
+        return response;
+      });
+
+    const balances = await Balance.find("paypal");
+
+    assert.strictEqual(balances.length, 1);
+    assert.strictEqual(balances[0] instanceof Balance, true);
+    assert.strictEqual(balances[0].type, "paypal");
+  });
 });
