@@ -3,12 +3,14 @@ import { BatchGateway } from "../../lib/BatchGateway";
 
 import * as assert from "assert";
 import * as sinon from "sinon";
+import { buildApiResponse } from "../test_helpers";
+import { Client } from "../../lib/Client";
 
 describe("Batch", () => {
   let sandbox: sinon.SinonSandbox;
 
   before(() => {
-    sandbox = sinon.sandbox.create();
+    sandbox = sinon.createSandbox();
     Configuration.setApiKey("access-code");
     Configuration.setApiSecret("secret-code");
   });
@@ -17,121 +19,43 @@ describe("Batch", () => {
     sandbox.restore();
   });
 
-  // it("Retreive batch", async () => {
-  //   sandbox
-  //     .stub(BatchGateway.prototype, "find")
-  //     .withArgs("B-912PWJGD8RZ7J")
-  //     .callsFake(async () => {
-  //       return {
-  //         ok: true,
-  //         batch: {
-  //           id: "B-LfoeSofUYdPpZBULbezULe",
-  //           status: "open",
-  //           amount: "200.20",
-  //           totalPayments: "2",
-  //           currency: "USD",
-  //           description: "Weekly Payouts on 2017-8-2",
-  //           sentAt: null,
-  //           completedAt: null,
-  //           createdAt: "2017-08-02T18:46:45.957Z",
-  //           updatedAt: "2017-08-02T20:10:05.991Z",
-  //           payments: {
-  //             payments: [
-  //               {
-  //                 id: "P-KQwH3fcJsPddRNkYspAhMV",
-  //                 recipient: {
-  //                   id: "R-PuzPJLVYQXBbPSMQKwmJ5G",
-  //                   referenceId: "U6734f8912345",
-  //                   email: "philipsace@example.com",
-  //                   name: "Fred Flinstones",
-  //                   status: "active",
-  //                   countryCode: "CA",
-  //                 },
-  //                 method: "paypal",
-  //                 methodDisplay: "PayPal",
-  //                 status: "pending",
-  //                 sourceAmount: "100.10",
-  //                 tarfindAmount: "100.10",
-  //                 isSupplyPayment: false,
-  //                 memo: "Freelance payment",
-  //                 fees: "0.00",
-  //                 recipientFees: "0.00",
-  //                 exchangeRate: "1.000000",
-  //                 processedAt: null,
-  //                 merchantFees: "0.00",
-  //                 sourceCurrency: "USD",
-  //                 sourceCurrencyName: "US Dollar",
-  //                 tarfindCurrency: "USD",
-  //                 tarfindCurrencyName: "US Dollar",
-  //                 compliance: {
-  //                   status: "pending",
-  //                   checkedAt: null,
-  //                 },
-  //               },
-  //               {
-  //                 id: "P-VdBwE9sQfnWUL3qYPjj86U",
-  //                 recipient: {
-  //                   id: "R-PuzPJLVYQXBbPSMQKwmJ5G",
-  //                   referenceId: "U6734f8912345",
-  //                   email: "philipsace@example.com",
-  //                   name: "Fred Flinstones",
-  //                   status: "active",
-  //                   countryCode: "CA",
-  //                 },
-  //                 method: "paypal",
-  //                 methodDisplay: "PayPal",
-  //                 status: "pending",
-  //                 sourceAmount: "100.10",
-  //                 tarfindAmount: "100.10",
-  //                 isSupplyPayment: false,
-  //                 memo: "Freelance payment",
-  //                 fees: "0.00",
-  //                 recipientFees: "0.00",
-  //                 exchangeRate: "1.000000",
-  //                 processedAt: null,
-  //                 merchantFees: "0.00",
-  //                 sourceCurrency: "USD",
-  //                 sourceCurrencyName: "US Dollar",
-  //                 tarfindCurrency: "USD",
-  //                 tarfindCurrencyName: "US Dollar",
-  //                 compliance: {
-  //                   status: "pending",
-  //                   checkedAt: null,
-  //                 },
-  //               },
-  //             ],
-  //             meta: {
-  //               page: 0,
-  //               pages: 1,
-  //               records: 10,
-  //             },
-  //           },
-  //         },
-  //       };
-  //     });
-  //
-  //   const data = await Batch.find("B-912PWJGD8RZ7J");
-  //   assert.equal(data.id, "B-LfoeSofUYdPpZBULbezULe");
-  // });
+  it("retrieves batch", async (done) => {
+    const response = buildApiResponse("batch/find.json");
 
-  // it("Retrieve Batch Invalid Batch Id", async () => {
-  //   sandbox
-  //     .stub(BatchGateway.prototype, "find")
-  //     .withArgs("B-123")
-  //     .callsFake(async () => {
-  //       return {
-  //         ok: false,
-  //         errors: [{ code: "not_found", message: "Object not found" }],
-  //       };
-  //     });
-  //
-  //   try {
-  //     await Batch.find("B-123");
-  //     assert.fail("Should have thrown");
-  //   } catch {
-  //     true;
-  //   }
-  // });
+    sandbox.stub(Client.prototype, "get")
+      .callsFake(async () => {
+        done();
+
+        return response;
+      });
+
+    const batch = await Batch.find("B-RonxsahWeE8sJpn9Wd3L9u");
+
+    assert.strictEqual(batch instanceof Batch, true);
+    assert.strictEqual(batch.id, "B-RonxsahWeE8sJpn9Wd3L9u");
+    assert.strictEqual(batch.status, "open");
+    assert.strictEqual(batch.createdAt, "2022-06-04T17:07:49.085Z");
+  });
+
+  describe("when batch is not found", () => {
+    it("throws an error", async (done) => {
+      const response = buildApiResponse("notFound.json");
+
+      sandbox.stub(Client.prototype, "get")
+        .callsFake(async () => {
+          done();
+
+          return response;
+        });
+
+      try {
+        await Batch.find("B-123");
+        assert.fail();
+      } catch {
+        true;
+      }
+      });
+  })
 
   // it("Update Batch", async () => {
   //   const body = {

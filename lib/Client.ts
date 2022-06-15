@@ -17,6 +17,7 @@ function sendRequest<T>(options: request.UriOptions) {
       } else {
         try {
           const data = JSON.parse(responseBody);
+          console.log(JSON.stringify(data));
           if (response.statusCode === 200) {
             resolve(data as T);
 
