@@ -1,3 +1,4 @@
+import * as dotenv from 'dotenv';
 import { Gateway } from "./Gateway";
 import { Configuration, ConfigurationParams } from "./Configuration";
 export { Configuration };
@@ -9,6 +10,8 @@ export { Batch } from "./Batch";
 export { Payment } from "./Payment";
 export { OfflinePayment } from "./OfflinePayment";
 export { Invoice } from "./Invoice";
+
+dotenv.config({ path: './.env' });
 
 /**
  * Create a client for the Payment Rails JavasScript API
