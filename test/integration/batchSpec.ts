@@ -1,5 +1,4 @@
 import * as paymentrails from '../../lib';
-import * as types from "../../lib/types";
 import * as assert from "assert";
 import * as uuid from "uuid";
 
@@ -8,9 +7,9 @@ describe("Batch/Payment Integration", () => {
 
   before(() => {
     client = paymentrails.connect({
-      key: process.env.PR_ACCESS_KEY,
-      secret: process.env.PR_SECRET_KEY,
-      environment: process.env.PR_ENVIRONMENT as any,
+      key: process.env.TROLLEY_ACCESS_KEY,
+      secret: process.env.TROLLEY_SECRET_KEY,
+      environment: process.env.TROLLEY_ENVIRONMENT as any,
     } as any);
   });
 
