@@ -43,7 +43,7 @@ describe("Batch/Payment Integration", () => {
     return recipient;
   }
 
-  it("basic create", async () => {
+  it.only("basic create", async () => {
     const { nockDone } = await nockBack('create.json')
     const batch = await client.batch.create({
       sourceCurrency: "USD",
@@ -60,101 +60,101 @@ describe("Batch/Payment Integration", () => {
     assert.ok(all.length > 0);
   }).timeout(30000);
 
-  // it("update", async () => {
-  //   const batch = await client.batch.create({
-  //     sourceCurrency: "USD",
-  //     description: "Integration Test Create",
-  //   });
-  //   assert.ok(batch);
-  //   assert.ok(batch.id);
-  //
-  //   const all = await client.batch.all();
-  //   assert.ok(all.length > 0);
-  //
-  //   const response = await client.batch.update(batch.id, {
-  //     description: "Integration Update",
-  //   });
-  //   assert.ok(response);
-  //
-  //   const findBatch = await client.batch.find(batch.id);
-  //   assert.equal("Integration Update", findBatch.description);
-  //   assert.equal("open", findBatch.status);
-  //
-  //   const removeResponse = client.batch.remove(batch.id);
-  //   assert.ok(removeResponse);
-  // }).timeout(30000);;
+  it("update", async () => {
+    const batch = await client.batch.create({
+      sourceCurrency: "USD",
+      description: "Integration Test Create",
+    });
+    assert.ok(batch);
+    assert.ok(batch.id);
 
-  // tslint:disable-next-line:mocha-no-side-effect-code
-  // it("create with payments", async () => {
-  //   const recipientAlpha = await createRecipient();
-  //   const recipientBeta = await createRecipient();
-  //
-  //   const batch = await client.batch.create(
-  //       {
-  //         sourceCurrency: "USD",
-  //         description: "Integration Test Payments",
-  //       },
-  //       [
-  //         {
-  //           targetAmount: "10.00",
-  //           targetCurrency: "EUR",
-  //           recipient: { id: recipientAlpha.id },
-  //         },
-  //         {
-  //           sourceAmount: "10.00",
-  //           recipient: { id: recipientBeta.id },
-  //         },
-  //       ],
-  //   );
-  //
-  //   assert.ok(batch);
-  //   assert.ok(batch.id);
-  //   const findBatch = await client.batch.find(batch.id);
-  //
-  //   assert.ok(findBatch);
-  //   assert.equal(batch.totalPayments, 2);
-  //
-  //   const payments = await client.batch.paymentList(batch.id);
-  //   for (const item of payments) {
-  //     assert.equal(item.status, "pending");
-  //   }
-  // }).timeout(30000);
+    const all = await client.batch.all();
+    assert.ok(all.length > 0);
 
-  // tslint:disable-next-line:mocha-no-side-effect-code
-  // it("test processing", async () => {
-  //   const recipientAlpha = await createRecipient();
-  //   const recipientBeta = await createRecipient();
-  //
-  //   const batch = await client.batch.create(
-  //       {
-  //         sourceCurrency: "USD",
-  //         description: "Integration Test Payments",
-  //       },
-  //       [
-  //         {
-  //           targetAmount: "10.00",
-  //           targetCurrency: "EUR",
-  //           recipient: { id: recipientAlpha.id },
-  //         },
-  //         {
-  //           sourceAmount: "10.00",
-  //           recipient: { id: recipientBeta.id },
-  //         },
-  //       ],
-  //   );
-  //
-  //   assert.ok(batch);
-  //   assert.ok(batch.id);
-  //
-  //   const summary = await client.batch.summary(batch.id);
-  //   assert.equal(2, summary.detail["bank-transfer"].count, "Bad Count");
-  //
-  //   const quote = await client.batch.generateQuote(batch.id);
-  //   assert.ok(quote, "failed to get quote");
-  //
-  //   const start = await client.batch.startProcessing(batch.id);
-  //   assert.ok(start, "Failed to start");
-  // }).timeout(30000);
+    const response = await client.batch.update(batch.id, {
+      description: "Integration Update",
+    });
+    assert.ok(response);
+
+    const findBatch = await client.batch.find(batch.id);
+    assert.equal("Integration Update", findBatch.description);
+    assert.equal("open", findBatch.status);
+
+    const removeResponse = client.batch.remove(batch.id);
+    assert.ok(removeResponse);
+  }).timeout(30000);
+
+  //tslint:disable-next-line:mocha-no-side-effect-code
+  it("create with payments", async () => {
+    const recipientAlpha = await createRecipient();
+    const recipientBeta = await createRecipient();
+
+    const batch = await client.batch.create(
+        {
+          sourceCurrency: "USD",
+          description: "Integration Test Payments",
+        },
+        [
+          {
+            targetAmount: "10.00",
+            targetCurrency: "EUR",
+            recipient: { id: recipientAlpha.id },
+          },
+          {
+            sourceAmount: "10.00",
+            recipient: { id: recipientBeta.id },
+          },
+        ],
+    );
+
+    assert.ok(batch);
+    assert.ok(batch.id);
+    const findBatch = await client.batch.find(batch.id);
+
+    assert.ok(findBatch);
+    assert.equal(batch.totalPayments, 2);
+
+    const payments = await client.batch.paymentList(batch.id);
+    for (const item of payments) {
+      assert.equal(item.status, "pending");
+    }
+  }).timeout(30000);
+
+  //tslint:disable-next-line:mocha-no-side-effect-code
+  it("test processing", async () => {
+    const recipientAlpha = await createRecipient();
+    const recipientBeta = await createRecipient();
+
+    const batch = await client.batch.create(
+        {
+          sourceCurrency: "USD",
+          description: "Integration Test Payments",
+        },
+        [
+          {
+            targetAmount: "10.00",
+            targetCurrency: "EUR",
+            recipient: { id: recipientAlpha.id },
+          },
+          {
+            sourceAmount: "10.00",
+            recipient: { id: recipientBeta.id },
+          },
+        ],
+    );
+
+    assert.ok(batch);
+    assert.ok(batch.id);
+
+    const summary = await client.batch.summary(batch.id);
+    assert.equal(2, summary.detail["bank-transfer"].count, "Bad Count");
+
+    const quote = await client.batch.generateQuote(batch.id);
+    assert.ok(quote, "failed to get quote");
+
+    const start = await client.batch.startProcessing(batch.id);
+    assert.ok(start, "Failed to start");
+  }).timeout(30000);
 
   /*
   it("test all - smoke test", async () => {
