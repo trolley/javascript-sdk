@@ -127,7 +127,7 @@ describe("Batch/Payment Integration", () => {
   }).timeout(30000);
 
   //tslint:disable-next-line:mocha-no-side-effect-code
-  it.only("test processing", async () => {
+  it("test processing", async () => {
     const { nockDone } = await nockBack('test-processing.json')
 
     const recipientAlpha = await createRecipient('processing-recipient@example.com');
