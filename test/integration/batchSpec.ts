@@ -1,6 +1,5 @@
 import * as paymentrails from '../../lib';
 import * as assert from "assert";
-import * as uuid from "uuid";
 import * as nock from "nock"
 
 let nockBack = nock.back
@@ -18,14 +17,12 @@ describe("Batch/Payment Integration", () => {
     } as any);
   });
 
-  async function createRecipient() {
-    const id = uuid.v4();
-
+  async function createRecipient(email: string) {
     const recipient = await client.recipient.create({
       type: "individual",
       firstName: "Tom",
-      lastName: `Jones${id}`,
-      email: `test.batch+${id}@example.com`,
+      lastName: `Jones`,
+      email: email,
       address: {
         street1: "123 Wolfstrasse",
         city: "Berlin",
@@ -43,7 +40,7 @@ describe("Batch/Payment Integration", () => {
     return recipient;
   }
 
-  it.only("basic create", async () => {
+  it("basic create", async () => {
     const { nockDone } = await nockBack('create.json')
     const batch = await client.batch.create({
       sourceCurrency: "USD",
@@ -61,10 +58,12 @@ describe("Batch/Payment Integration", () => {
   }).timeout(30000);
 
   it("update", async () => {
+    const { nockDone } = await nockBack('update.json')
     const batch = await client.batch.create({
       sourceCurrency: "USD",
       description: "Integration Test Create",
     });
+
     assert.ok(batch);
     assert.ok(batch.id);
 
@@ -80,14 +79,19 @@ describe("Batch/Payment Integration", () => {
     assert.equal("Integration Update", findBatch.description);
     assert.equal("open", findBatch.status);
 
-    const removeResponse = client.batch.remove(batch.id);
+    const removeResponse = await client.batch.remove(batch.id);
+
     assert.ok(removeResponse);
+
+    nockDone();
   }).timeout(30000);
 
   //tslint:disable-next-line:mocha-no-side-effect-code
   it("create with payments", async () => {
-    const recipientAlpha = await createRecipient();
-    const recipientBeta = await createRecipient();
+    const { nockDone } = await nockBack('create-with-payments.json')
+
+    const recipientAlpha = await createRecipient('test@example.com');
+    const recipientBeta = await createRecipient('test2@example.com');
 
     const batch = await client.batch.create(
         {
@@ -118,12 +122,16 @@ describe("Batch/Payment Integration", () => {
     for (const item of payments) {
       assert.equal(item.status, "pending");
     }
+
+    nockDone();
   }).timeout(30000);
 
   //tslint:disable-next-line:mocha-no-side-effect-code
-  it("test processing", async () => {
-    const recipientAlpha = await createRecipient();
-    const recipientBeta = await createRecipient();
+  it.only("test processing", async () => {
+    const { nockDone } = await nockBack('test-processing.json')
+
+    const recipientAlpha = await createRecipient('processing-recipient@example.com');
+    const recipientBeta = await createRecipient('processing-recipient2@example.com');
 
     const batch = await client.batch.create(
         {
@@ -152,8 +160,12 @@ describe("Batch/Payment Integration", () => {
     const quote = await client.batch.generateQuote(batch.id);
     assert.ok(quote, "failed to get quote");
 
+    // There's an issue here when it runs too quick. It returns "Operation In Progress"
+    // Sleep when running against real API
     const start = await client.batch.startProcessing(batch.id);
     assert.ok(start, "Failed to start");
+
+    nockDone();
   }).timeout(30000);
 
   /*
