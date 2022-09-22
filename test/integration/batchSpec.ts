@@ -1,65 +1,38 @@
-import * as paymentrails from '../../lib';
-import * as assert from "assert";
-import * as nock from "nock"
+ import * as assert from "assert";
+import { apiClient, nockBack, withNockRecorder } from "./integrationTestsHelper.js";
+import {RecipientFactory} from "./factories/RecipientFactory";
+import {RecipientAccountFactory} from "./factories/RecipientAccountFactory";
 
-let nockBack = nock.back
-nockBack.setMode('record')
-nockBack.fixtures = __dirname + '-fixtures'
+const recipientFactory = new RecipientFactory(apiClient);
+const recipientAccountFactory = new RecipientAccountFactory(apiClient);
 
 describe("Batch/Payment Integration", () => {
-  let client: paymentrails.Gateway;
-
-  before(() => {
-    client = paymentrails.connect({
-      key: process.env.TROLLEY_ACCESS_KEY,
-      secret: process.env.TROLLEY_SECRET_KEY,
-      environment: process.env.TROLLEY_ENVIRONMENT as any,
-    } as any);
-  });
-
   async function createRecipient(email: string) {
-    const recipient = await client.recipient.create({
-      type: "individual",
-      firstName: "Tom",
-      lastName: `Jones`,
-      email: email,
-      address: {
-        street1: "123 Wolfstrasse",
-        city: "Berlin",
-        country: "DE",
-        postalCode: "123123",
-      },
-    });
-
-    await client.recipientAccount.create(recipient.id, {
-      type: "bank-transfer",
-      currency: "EUR",
-      iban: "DE89 3704 0044 0532 0130 00",
-    });
+    const recipient = recipientFactory.createResource({ email });
+    await recipientAccountFactory.createResource({ recipient });
 
     return recipient;
   }
 
-  it("basic create", async () => {
-    const { nockDone } = await nockBack('create.json')
-    const batch = await client.batch.create({
-      sourceCurrency: "USD",
-      description: "Integration Test Create",
-    });
+  it.only("basic create", async () => {
+    await withNockRecorder('create.json', async () => {
+      const batch = await apiClient.batch.create({
+        sourceCurrency: "USD",
+        description: "Integration Test Create",
+      });
 
-    assert.ok(batch);
-    assert.ok(batch.id);
+      assert.ok(batch);
+      assert.ok(batch.id);
 
-    const all = await client.batch.all();
+      const all = await apiClient.batch.all();
 
-    nockDone();
-
-    assert.ok(all.length > 0);
+      assert.ok(all.length > 0);
+    })
   }).timeout(30000);
 
   it("update", async () => {
     const { nockDone } = await nockBack('update.json')
-    const batch = await client.batch.create({
+    const batch = await apiClient.batch.create({
       sourceCurrency: "USD",
       description: "Integration Test Create",
     });
@@ -67,19 +40,19 @@ describe("Batch/Payment Integration", () => {
     assert.ok(batch);
     assert.ok(batch.id);
 
-    const all = await client.batch.all();
+    const all = await apiClient.batch.all();
     assert.ok(all.length > 0);
 
-    const response = await client.batch.update(batch.id, {
+    const response = await apiClient.batch.update(batch.id, {
       description: "Integration Update",
     });
     assert.ok(response);
 
-    const findBatch = await client.batch.find(batch.id);
+    const findBatch = await apiClient.batch.find(batch.id);
     assert.equal("Integration Update", findBatch.description);
     assert.equal("open", findBatch.status);
 
-    const removeResponse = await client.batch.remove(batch.id);
+    const removeResponse = await apiClient.batch.remove(batch.id);
 
     assert.ok(removeResponse);
 
@@ -93,7 +66,7 @@ describe("Batch/Payment Integration", () => {
     const recipientAlpha = await createRecipient('test@example.com');
     const recipientBeta = await createRecipient('test2@example.com');
 
-    const batch = await client.batch.create(
+    const batch = await apiClient.batch.create(
         {
           sourceCurrency: "USD",
           description: "Integration Test Payments",
@@ -113,12 +86,12 @@ describe("Batch/Payment Integration", () => {
 
     assert.ok(batch);
     assert.ok(batch.id);
-    const findBatch = await client.batch.find(batch.id);
+    const findBatch = await apiClient.batch.find(batch.id);
 
     assert.ok(findBatch);
     assert.equal(batch.totalPayments, 2);
 
-    const payments = await client.batch.paymentList(batch.id);
+    const payments = await apiClient.batch.paymentList(batch.id);
     for (const item of payments) {
       assert.equal(item.status, "pending");
     }
@@ -133,7 +106,7 @@ describe("Batch/Payment Integration", () => {
     const recipientAlpha = await createRecipient('processing-recipient@example.com');
     const recipientBeta = await createRecipient('processing-recipient2@example.com');
 
-    const batch = await client.batch.create(
+    const batch = await apiClient.batch.create(
         {
           sourceCurrency: "USD",
           description: "Integration Test Payments",
@@ -154,15 +127,15 @@ describe("Batch/Payment Integration", () => {
     assert.ok(batch);
     assert.ok(batch.id);
 
-    const summary = await client.batch.summary(batch.id);
+    const summary = await apiClient.batch.summary(batch.id);
     assert.equal(2, summary.detail["bank-transfer"].count, "Bad Count");
 
-    const quote = await client.batch.generateQuote(batch.id);
+    const quote = await apiClient.batch.generateQuote(batch.id);
     assert.ok(quote, "failed to get quote");
 
     // There's an issue here when it runs too quick. It returns "Operation In Progress"
     // Sleep when running against real API
-    const start = await client.batch.startProcessing(batch.id);
+    const start = await apiClient.batch.startProcessing(batch.id);
     assert.ok(start, "Failed to start");
 
     nockDone();
