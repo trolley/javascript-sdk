@@ -1,33 +1,30 @@
  import * as assert from "assert";
-import { apiClient, nockBack, withNockRecorder } from "./integrationTestsHelper.js";
+import {apiClient, nockBack, nockIt, withNockRecorder} from "./integrationTestsHelper.js";
 import {RecipientFactory} from "./factories/RecipientFactory";
 import {RecipientAccountFactory} from "./factories/RecipientAccountFactory";
+ import {BatchFactory} from "./factories/BatchFactory";
 
+const batchFactory = new BatchFactory(apiClient);
 const recipientFactory = new RecipientFactory(apiClient);
 const recipientAccountFactory = new RecipientAccountFactory(apiClient);
 
 describe("Batch/Payment Integration", () => {
   async function createRecipient(email: string) {
-    const recipient = recipientFactory.createResource({ email });
+    const recipient = await recipientFactory.createResource({ email });
     await recipientAccountFactory.createResource({ recipient });
 
     return recipient;
   }
 
-  it.only("basic create", async () => {
-    await withNockRecorder('create.json', async () => {
-      const batch = await apiClient.batch.create({
-        sourceCurrency: "USD",
-        description: "Integration Test Create",
-      });
+  nockIt("basic create", async () => {
+    const batch = await batchFactory.createResource();
 
-      assert.ok(batch);
-      assert.ok(batch.id);
+    assert.ok(batch);
+    assert.ok(batch.id);
 
-      const all = await apiClient.batch.all();
+    const all = await apiClient.batch.all();
 
-      assert.ok(all.length > 0);
-    })
+    assert.ok(all.length > 0);
   }).timeout(30000);
 
   it("update", async () => {

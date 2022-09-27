@@ -1,6 +1,11 @@
-import {ApiResourceFactory} from "./ApiResourceFactory";
+import {Gateway} from "../../../lib";
+import {ResourceFactory} from "./ResourceFactory";
 
-export class RecipientFactory extends ApiResourceFactory {
+export class RecipientFactory extends ResourceFactory {
+    constructor (apiClient: Gateway) {
+        super(apiClient);
+    }
+
     async createResource(attrs: any = {}) {
         return await this.apiClient.recipient.create(
             {

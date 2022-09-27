@@ -16,6 +16,15 @@ export let nockBack = nock.back
 nockBack.setMode('record')
 nockBack.fixtures = __dirname + '-fixtures'
 
+export async function nockIt(assertion: string, test: () => Promise<void>) {
+    it(assertion, async () => {
+        const fixtureName = assertion.toLowerCase().split(' ').join('-') + '.json'
+        const { nockDone } = await nockBack(fixtureName)
+        await test()
+        nockDone();
+    });
+}
+
 export async function withNockRecorder(fixtureName: string, test: () => Promise<void>) {
     const { nockDone } = await nockBack(fixtureName)
     await test();
