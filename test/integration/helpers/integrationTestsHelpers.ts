@@ -1,13 +1,11 @@
 import * as paymentrails from "../../../lib";
 import * as nock from "nock";
 
-export const defaultApiClient = paymentrails.connect(
-    {
-        key: process.env.TROLLEY_ACCESS_KEY,
-        secret: process.env.TROLLEY_SECRET_KEY,
-        environment: process.env.TROLLEY_ENVIRONMENT as any,
-    } as any
-);
+export const defaultApiClient = paymentrails.connect({
+    key: process.env.TROLLEY_ACCESS_KEY,
+    secret: process.env.TROLLEY_SECRET_KEY,
+    environment: process.env.TROLLEY_ENVIRONMENT as any,
+} as any);
 
 export let nockBack = nock.back
 nockBack.setMode('record')

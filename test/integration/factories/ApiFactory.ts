@@ -1,7 +1,7 @@
 import {Gateway} from "../../../lib";
 import {defaultApiClient} from "../helpers/integrationTestsHelpers";
 
-export abstract class ApiFactories {
+export abstract class ApiFactory {
     apiClient: Gateway = defaultApiClient;
 
     constructor(apiClient?: Gateway) {
@@ -13,13 +13,15 @@ export abstract class ApiFactories {
     public abstract createResource(attrs: any): any;
 }
 
-export class BatchFactory extends ApiFactories {
+export class BatchFactory extends ApiFactory {
     private defaultAttrs = {
         sourceCurrency: "USD",
         description: "Integration Test Create"
     }
 
-    public async createResource(attrs: any = {}, payments: any = []) {
+    public async createResource(attrs: any = {}) {
+        const payments = attrs.payments || [];
+
         return await this.apiClient.batch.create({
             ...this.defaultAttrs,
             ...attrs
@@ -27,7 +29,7 @@ export class BatchFactory extends ApiFactories {
     }
 }
 
-export class RecipientAccountFactory extends ApiFactories {
+export class RecipientAccountFactory extends ApiFactory {
     private defaultAttrs = {
         type: "bank-transfer",
         currency: "EUR",
@@ -45,7 +47,7 @@ export class RecipientAccountFactory extends ApiFactories {
     }
 }
 
-export class RecipientFactory extends ApiFactories {
+export class RecipientFactory extends ApiFactory {
     private defaultAttrs = {
         type: "individual",
         firstName: "Tom",
