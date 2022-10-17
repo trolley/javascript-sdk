@@ -1,8 +1,8 @@
 import {Gateway} from "../../../lib";
-import {defaultApiClient} from "../helpers/integrationTestsHelpers";
+import {testingApiClient} from "../helpers/integrationTestsHelpers";
 
 export abstract class ApiFactory {
-    apiClient: Gateway = defaultApiClient;
+    apiClient: Gateway = testingApiClient;
 
     constructor(apiClient?: Gateway) {
         if (apiClient) {
@@ -48,7 +48,7 @@ export class RecipientAccountFactory extends ApiFactory {
 }
 
 export class RecipientFactory extends ApiFactory {
-    private defaultAttrs = {
+    defaultAttrs = {
         type: "individual",
         firstName: "Tom",
         lastName: `Jones`,

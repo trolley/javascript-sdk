@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import {defaultApiClient, startNockRec} from "./helpers/integrationTestsHelpers";
+import {testingApiClient, startNockRec} from "./helpers/integrationTestsHelpers";
 import {BatchFactory, RecipientAccountFactory, RecipientFactory} from "./factories/ApiFactory";
 
 const batchFactory = new BatchFactory();
@@ -17,7 +17,7 @@ describe("Batch/Payment Integration", () => {
     const nockDone = await startNockRec('batch-create.json');
 
     const batch = await batchFactory.createResource();
-    const all = await defaultApiClient.batch.all();
+    const all = await testingApiClient.batch.all();
 
     assert.ok(batch);
     assert.ok(batch.id);
@@ -34,10 +34,10 @@ describe("Batch/Payment Integration", () => {
     });
     assert.strictEqual(batch.description, "Integration Test Update");
 
-    await defaultApiClient.batch.update(batch.id, {
+    await testingApiClient.batch.update(batch.id, {
       description: "Integration Test Update 2",
     });
-    batch = await defaultApiClient.batch.find(batch.id);
+    batch = await testingApiClient.batch.find(batch.id);
     assert.ok(batch);
     assert.strictEqual(batch.description, "Integration Test Update 2");
     assert.strictEqual(batch.status, "open");
@@ -68,12 +68,12 @@ describe("Batch/Payment Integration", () => {
 
     assert.ok(batch);
     assert.ok(batch.id);
-    const findBatch = await defaultApiClient.batch.find(batch.id);
+    const findBatch = await testingApiClient.batch.find(batch.id);
 
     assert.ok(findBatch);
     assert.strictEqual(batch.totalPayments, 2);
 
-    let payments = await defaultApiClient.batch.paymentList(batch.id);
+    let payments = await testingApiClient.batch.paymentList(batch.id);
     for (const item of payments) {
       assert.strictEqual(item.status, "pending");
     }
@@ -105,15 +105,15 @@ describe("Batch/Payment Integration", () => {
     assert.ok(batch);
     assert.ok(batch.id);
 
-    const summary = await defaultApiClient.batch.summary(batch.id);
+    const summary = await testingApiClient.batch.summary(batch.id);
     assert.strictEqual(2, summary.detail["bank-transfer"].count, "Bad Count");
 
-    const quote = await defaultApiClient.batch.generateQuote(batch.id);
+    const quote = await testingApiClient.batch.generateQuote(batch.id);
     assert.ok(quote, "failed to get quote");
 
     // There's an issue here when it runs too quick. It returns "Operation In Progress"
     // Sleep when running against real API
-    const start = await defaultApiClient.batch.startProcessing(batch.id);
+    const start = await testingApiClient.batch.startProcessing(batch.id);
     assert.ok(start, "Failed to start");
 
     nockDone();
