@@ -62,133 +62,30 @@ it("account update", async () => {
     const recipient = await recipientFactory.createResource();
     assert.ok(recipient);
 
-  const account = await recipientAccountFactory.createResource({
-      recipient: {id: recipient.id},
-      type: "bank-transfer",
-      currency: "EUR",
-      iban: "DE89 3704 0044 0532 0130 00",
-  });
+    const dummyIban = "DE89 3704 0044 0532 0130 00"
+    const account = await recipientAccountFactory.createResource({
+        recipient: {id: recipient.id},
+        type: "bank-transfer",
+        currency: "EUR",
+        iban: dummyIban,
+    });
 
-  assert.ok(account);
+    assert.ok(account);
 
-  const account2 = await testingApiClient.recipientAccount.update(recipient.id, account.id, {
-    iban: "FR14 2004 1010 0505 0001 3M02 606",
-  });
+    const otherDummyIban = "DE91 1000 0000 0123 4567 89"
+    const account2 = await testingApiClient.recipientAccount.update(recipient.id, account.id, {
+        iban: otherDummyIban,
+    });
 
-  assert.ok(account2);
-  assert.notStrictEqual(account.id, account2.id);
-  assert.ok(account2.iban && account2.iban.includes("**06"));
+    assert.ok(account2);
+    assert.notStrictEqual(account.id, account2.id);
+    assert.ok(account2.iban && account2.iban.includes("**89"));
 
-  const accountList = await testingApiClient.recipientAccount.all(recipient.id);
+    const accountList = await testingApiClient.recipientAccount.all(recipient.id);
 
-  assert.strictEqual(accountList.length, 1);
-  assert.ok((accountList as any)[0].iban.includes("**06"));
-  assert.strictEqual(accountList[0].id, account2.id);
+    assert.strictEqual(accountList.length, 1);
+    assert.ok((accountList as any)[0].iban.includes("**89"));
+    assert.strictEqual(accountList[0].id, account2.id);
 
     nockDone();
 });
-
-/*
-it("Update - Name should be George", async () => {
-  const payload = {
-    type: "individual",
-    email: "test@paymentrails.com",
-    name: "John Smith",
-    firstName: "John",
-    lastName: "Smith",
-  };
-  const response = await Recipient.create(payload);
-
-  const recipientId = response.recipient.id;
-  assert.equal("John", response.recipient.firstName);
-
-  const payload1 = {
-    firstName: "George",
-    lastName: "Jetson",
-  };
-
-  const response1 = await Recipient.update(recipientId, payload1);
-  assert.equal(response1.ok, true);
-});
-
-it("Delete Recipient", async () => {
-  const payload = {
-    type: "individual",
-    email: "test1@paymentrails.com",
-    name: "John Smith",
-    firstName: "John",
-    lastName: "Smith",
-  };
-  const response = await Recipient.create(payload);
-
-  assert.equal(response.recipient.email, "test1@paymentrails.com");
-  const recipientId = response.recipient.id;
-  const response1 = await Recipient.remove(recipientId);
-  assert.equal(response1, '{"ok":true}');
-});
-
-it("Create Account", async () => {
-  const payload = {
-    type: "individual",
-    email: "test2@paymentrails.com",
-    name: "John Smith",
-    firstName: "John",
-    lastName: "Smith",
-  };
-
-  const response = await Recipient.create(payload);
-  const recipientId = response.recipient.id;
-  assert.equal(response.recipient.firstName, "John");
-
-  const body = {
-    type: "bank-transfer",
-    primary: "true",
-    country: "CA",
-    currency: "CAD",
-    accountNum: "6022847",
-    bankId: "004",
-    branchId: "47261",
-    accountHolderName: "John Smith",
-  };
-
-  const response1 = await RecipientAccount.create(recipientId, body);
-  assert.equal(response1.account.type, "bank-transfer");
-});
-
-it("Delete", async () => {
-  const payload = {
-    type: "individual",
-    email: "test3@paymentrails.com",
-    name: "John Smith",
-    firstName: "John",
-    lastName: "Smith",
-  };
-
-  const response = await Recipient.create(payload);
-  const recipientId = response.recipient.id;
-  assert.equal(response.recipient.firstName, "John");
-
-  const body = {
-    type: "bank-transfer",
-    primary: "true",
-    country: "CA",
-    currency: "CAD",
-    accountNum: "6022847",
-    bankId: "004",
-    branchId: "47261",
-    accountHolderName: "John Smith",
-  };
-
-  const response1 = await RecipientAccount.create(recipientId, body);
-  assert.equal(response1.account.type, "bank-transfer");
-  const recipientAccountId = response1.account.recipientAccountId;
-  const response2 = await RecipientAccount.remove(
-    recipientId,
-    recipientAccountId,
-  );
-  assert.equal(
-    response2,
-    '{"ok":false,"errors":[{"code":"invalid_status","message":"Cannot delete primary account","field":"primary"}]}',
-  );
-});
-*/

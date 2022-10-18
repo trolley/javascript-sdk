@@ -19,8 +19,8 @@
         "response": {
             "ok": true,
             "recipient": {
-                "id": "R-REUNhnifzXca9meS7QNjBa",
-                "referenceId": "R-REUNhnifzXca9meS7QNjBa",
+                "id": "R-BmAymySanbTuRMH97f8rGD",
+                "referenceId": "R-BmAymySanbTuRMH97f8rGD",
                 "email": "testEmail@example.com",
                 "name": "Tom Jones",
                 "lastName": "Jones",
@@ -33,8 +33,8 @@
                 "dob": null,
                 "passport": "",
                 "placeOfBirth": null,
-                "updatedAt": "2022-10-17T15:13:17.005Z",
-                "createdAt": "2022-10-17T15:13:17.005Z",
+                "updatedAt": "2022-10-18T03:42:57.154Z",
+                "createdAt": "2022-10-18T03:42:57.154Z",
                 "tags": [],
                 "isPortalUser": false,
                 "taxDeliveryType": "mail",
@@ -82,7 +82,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:17 GMT",
+            "Tue, 18 Oct 2022 03:42:57 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -114,26 +114,26 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "74",
+            "72",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"63b-r6l/xL7Leg4PdmflAJ+HVjoYQZ4\""
+            "W/\"63b-5DlE1rpvEHwh0webXaLwv1x10pg\""
         ],
         "responseIsBinary": false
     },
     {
         "scope": "https://api.railz.io:443",
         "method": "POST",
-        "path": "/v1/recipients/R-REUNhnifzXca9meS7QNjBa/accounts",
+        "path": "/v1/recipients/R-BmAymySanbTuRMH97f8rGD/accounts",
         "body": {
             "type": "bank-transfer",
             "currency": "EUR",
             "iban": "DE89 3704 0044 0532 0130 00",
             "recipient": {
-                "id": "R-REUNhnifzXca9meS7QNjBa"
+                "id": "R-BmAymySanbTuRMH97f8rGD"
             }
         },
         "status": 200,
@@ -144,9 +144,9 @@
                 "type": "bank-transfer",
                 "primary": true,
                 "currency": "EUR",
-                "id": "A-QKpTnd2GC8Kqcw4cxxp6WY",
-                "recipientId": "R-REUNhnifzXca9meS7QNjBa",
-                "recipientAccountId": "A-QKpTnd2GC8Kqcw4cxxp6WY",
+                "id": "A-T3HNSgnWiXYLp7NTiyMBQo",
+                "recipientId": "R-BmAymySanbTuRMH97f8rGD",
+                "recipientAccountId": "A-T3HNSgnWiXYLp7NTiyMBQo",
                 "disabledAt": null,
                 "country": "DE",
                 "iban": "********************00",
@@ -167,7 +167,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:20 GMT",
+            "Tue, 18 Oct 2022 03:42:57 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -199,26 +199,26 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "73",
+            "71",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"2ed-s9MAiHLLUtGEArT/kyNIWAEOdAs\""
+            "W/\"2ed-0oXkk7wAfOlpEcgwCwH+x6L9l74\""
         ],
         "responseIsBinary": false
     },
     {
         "scope": "https://api.railz.io:443",
         "method": "POST",
-        "path": "/v1/recipients/R-REUNhnifzXca9meS7QNjBa/accounts",
+        "path": "/v1/recipients/R-BmAymySanbTuRMH97f8rGD/accounts",
         "body": {
             "type": "bank-transfer",
             "currency": "EUR",
             "iban": "FR14 2004 1010 0505 0001 3M02 606",
             "recipient": {
-                "id": "R-REUNhnifzXca9meS7QNjBa"
+                "id": "R-BmAymySanbTuRMH97f8rGD"
             },
             "primary": true
         },
@@ -230,9 +230,9 @@
                 "type": "bank-transfer",
                 "primary": true,
                 "currency": "EUR",
-                "id": "A-BA1i296d9C6kvS8cAWwUfW",
-                "recipientId": "R-REUNhnifzXca9meS7QNjBa",
-                "recipientAccountId": "A-BA1i296d9C6kvS8cAWwUfW",
+                "id": "A-RWdTokXoVvrBHGYAuAG22g",
+                "recipientId": "R-BmAymySanbTuRMH97f8rGD",
+                "recipientAccountId": "A-RWdTokXoVvrBHGYAuAG22g",
                 "disabledAt": null,
                 "country": "FR",
                 "iban": "*************************06",
@@ -253,7 +253,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:21 GMT",
+            "Tue, 18 Oct 2022 03:43:02 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -285,20 +285,20 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "72",
+            "70",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"2eb-c72jtGyCQ5ET5ih2aIJAP1qtqxU\""
+            "W/\"2eb-ourZkUgENQk4bLcFqf/S6o0AOkM\""
         ],
         "responseIsBinary": false
     },
     {
         "scope": "https://api.railz.io:443",
         "method": "GET",
-        "path": "/v1/recipients/R-REUNhnifzXca9meS7QNjBa/accounts/A-QKpTnd2GC8Kqcw4cxxp6WY",
+        "path": "/v1/recipients/R-BmAymySanbTuRMH97f8rGD/accounts/A-T3HNSgnWiXYLp7NTiyMBQo",
         "body": "",
         "status": 200,
         "response": {
@@ -308,9 +308,9 @@
                 "type": "bank-transfer",
                 "primary": false,
                 "currency": "EUR",
-                "id": "A-QKpTnd2GC8Kqcw4cxxp6WY",
-                "recipientId": "R-REUNhnifzXca9meS7QNjBa",
-                "recipientAccountId": "A-QKpTnd2GC8Kqcw4cxxp6WY",
+                "id": "A-T3HNSgnWiXYLp7NTiyMBQo",
+                "recipientId": "R-BmAymySanbTuRMH97f8rGD",
+                "recipientAccountId": "A-T3HNSgnWiXYLp7NTiyMBQo",
                 "disabledAt": null,
                 "country": "DE",
                 "iban": "********************00",
@@ -331,7 +331,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:22 GMT",
+            "Tue, 18 Oct 2022 03:43:03 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -363,20 +363,20 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "71",
+            "69",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"2ef-bx0Xq2npL+wI5Zuf9UfqDi7YSzc\""
+            "W/\"2ef-9AUxFsF/J9Y/6wnGC5nzCmXJL1s\""
         ],
         "responseIsBinary": false
     },
     {
         "scope": "https://api.railz.io:443",
         "method": "GET",
-        "path": "/v1/recipients/R-REUNhnifzXca9meS7QNjBa/accounts",
+        "path": "/v1/recipients/R-BmAymySanbTuRMH97f8rGD/accounts",
         "body": "",
         "status": 200,
         "response": {
@@ -387,9 +387,9 @@
                     "type": "bank-transfer",
                     "primary": true,
                     "currency": "EUR",
-                    "id": "A-BA1i296d9C6kvS8cAWwUfW",
-                    "recipientId": "R-REUNhnifzXca9meS7QNjBa",
-                    "recipientAccountId": "A-BA1i296d9C6kvS8cAWwUfW",
+                    "id": "A-RWdTokXoVvrBHGYAuAG22g",
+                    "recipientId": "R-BmAymySanbTuRMH97f8rGD",
+                    "recipientAccountId": "A-RWdTokXoVvrBHGYAuAG22g",
                     "disabledAt": null,
                     "country": "FR",
                     "iban": "*************************06",
@@ -412,9 +412,9 @@
                     "type": "bank-transfer",
                     "primary": false,
                     "currency": "EUR",
-                    "id": "A-QKpTnd2GC8Kqcw4cxxp6WY",
-                    "recipientId": "R-REUNhnifzXca9meS7QNjBa",
-                    "recipientAccountId": "A-QKpTnd2GC8Kqcw4cxxp6WY",
+                    "id": "A-T3HNSgnWiXYLp7NTiyMBQo",
+                    "recipientId": "R-BmAymySanbTuRMH97f8rGD",
+                    "recipientAccountId": "A-T3HNSgnWiXYLp7NTiyMBQo",
                     "disabledAt": null,
                     "country": "DE",
                     "iban": "********************00",
@@ -436,7 +436,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:22 GMT",
+            "Tue, 18 Oct 2022 03:43:03 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -468,20 +468,20 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "70",
+            "68",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"62c-bdsts6qglt38d1rR6AQrX7ptkxg\""
+            "W/\"62c-gb1qdsNJ7vB9F3ihP2jK013Mqao\""
         ],
         "responseIsBinary": false
     },
     {
         "scope": "https://api.railz.io:443",
         "method": "DELETE",
-        "path": "/v1/recipients/R-REUNhnifzXca9meS7QNjBa/accounts/A-QKpTnd2GC8Kqcw4cxxp6WY",
+        "path": "/v1/recipients/R-BmAymySanbTuRMH97f8rGD/accounts/A-T3HNSgnWiXYLp7NTiyMBQo",
         "body": "",
         "status": 200,
         "response": {
@@ -489,7 +489,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:22 GMT",
+            "Tue, 18 Oct 2022 03:43:03 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -521,9 +521,9 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "69",
+            "67",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
@@ -534,7 +534,7 @@
     {
         "scope": "https://api.railz.io:443",
         "method": "GET",
-        "path": "/v1/recipients/R-REUNhnifzXca9meS7QNjBa/accounts",
+        "path": "/v1/recipients/R-BmAymySanbTuRMH97f8rGD/accounts",
         "body": "",
         "status": 200,
         "response": {
@@ -545,9 +545,9 @@
                     "type": "bank-transfer",
                     "primary": true,
                     "currency": "EUR",
-                    "id": "A-BA1i296d9C6kvS8cAWwUfW",
-                    "recipientId": "R-REUNhnifzXca9meS7QNjBa",
-                    "recipientAccountId": "A-BA1i296d9C6kvS8cAWwUfW",
+                    "id": "A-RWdTokXoVvrBHGYAuAG22g",
+                    "recipientId": "R-BmAymySanbTuRMH97f8rGD",
+                    "recipientAccountId": "A-RWdTokXoVvrBHGYAuAG22g",
                     "disabledAt": null,
                     "country": "FR",
                     "iban": "*************************06",
@@ -569,7 +569,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Mon, 17 Oct 2022 15:13:23 GMT",
+            "Tue, 18 Oct 2022 03:43:04 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -601,13 +601,13 @@
             "X-Rate-Limit-Limit",
             "75",
             "X-Rate-Limit-Remaining",
-            "68",
+            "66",
             "X-Rate-Limit-Reset",
-            "1666019656",
+            "1666064616",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"326-8GnM0JwSrfKdkjVB3TbTIK8oOvs\""
+            "W/\"326-9yqMPW5bDFMp7CCxvOgyooLMbcU\""
         ],
         "responseIsBinary": false
     }
