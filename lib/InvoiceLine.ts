@@ -10,7 +10,7 @@ export interface InvoiceLineInput {
     tags: string[];
 }
 
-enum InvoiceLineCategory {
+export enum InvoiceLineCategory {
     'services',
     'rent',
     'royalties',
