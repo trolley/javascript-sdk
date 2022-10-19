@@ -1,7 +1,7 @@
 import { Recipient } from "../../lib";
 import * as assert from "assert";
-import {RecipientFactory} from "./factories/ApiFactory";
 import {startNockRec, testingApiClient} from "./helpers/integrationTestsHelpers";
+import {RecipientFactory} from "./factories/RecipientFactory";
 
 const recipientFactory = new RecipientFactory();
 

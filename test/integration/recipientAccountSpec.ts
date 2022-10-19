@@ -1,6 +1,7 @@
 import * as assert from "assert";
-import {RecipientAccountFactory, RecipientFactory} from "./factories/ApiFactory";
 import {startNockRec, testingApiClient} from "./helpers/integrationTestsHelpers";
+import {RecipientFactory} from "./factories/RecipientFactory";
+import {RecipientAccountFactory} from "./factories/RecipientAccountFactory";
 
 const recipientFactory = new RecipientFactory();
 const recipientAccountFactory = new RecipientAccountFactory();
