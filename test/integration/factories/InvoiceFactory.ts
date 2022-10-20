@@ -7,8 +7,7 @@ export class InvoiceFactory extends ApiFactory {
         description: "Test Invoice",
         externalId: "testInvoice",
         invoiceDate: "2020-01-01",
-        dueDate: "2020-01-01",
-        lines: InvoiceLineFactory.defaultAttrs,
+        dueDate: "2020-01-01"
     }
 
     public async createResource(attrs: any = {}) {

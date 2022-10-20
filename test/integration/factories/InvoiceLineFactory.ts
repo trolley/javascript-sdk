@@ -6,7 +6,7 @@ import {InvoiceLineCategory} from "../../../lib/InvoiceLine";
 export class InvoiceLineFactory extends ApiFactory {
     static defaultAttrs = {
         unitAmount: {
-            value: 100,
+            value: "100",
             currency: "USD",
         },
         category: InvoiceLineCategory.services,

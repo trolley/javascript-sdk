@@ -2,16 +2,16 @@ import {startNockRec, testingApiClient} from "./helpers/integrationTestsHelpers"
 import {InvoiceFactory} from "./factories/InvoiceFactory";
 import {RecipientFactory} from "./factories/RecipientFactory";
 import * as assert from "assert";
+import {Invoice} from "../../lib";
 
 const invoiceFactory = new InvoiceFactory();
 const recipientFactory = new RecipientFactory();
 
-const createRecipient = async () => { await recipientFactory.createResource(); };
-const recipient = createRecipient();
-
 describe("Invoice", () => {
     it("creates an invoice", async () => {
         const nockDone = await startNockRec('invoice-create.json');
+
+        const recipient = await recipientFactory.createResource();
 
         const invoice = await invoiceFactory.createResource({
             recipientId: recipient.id
@@ -27,11 +27,13 @@ describe("Invoice", () => {
     it("finds an invoice", async () => {
         const nockDone = await startNockRec('invoice-find.json');
 
+        const recipient = await recipientFactory.createResource();
+
         const invoice = await invoiceFactory.createResource({
             recipientId: recipient.id
         });
 
-        const findInvoice = await testingApiClient.invoice.find("testInvoice");
+        const findInvoice = await testingApiClient.invoice.find(invoice.id);
 
         assert.ok(invoice);
         assert.strictEqual("testInvoice", invoice.externalId);
@@ -39,24 +41,40 @@ describe("Invoice", () => {
         nockDone();
     });
 
-    // it("updates an invoice", async () => {
-    //     const nockDone = await startNockRec('invoice-update.json');
-    //
-    //     const invoice = await testingApiClient.invoice.update("testInvoice",
-    //         {...invoiceFactory.defaultAttrs} );
-    //
-    //     assert.ok(invoice);
-    //     assert.strictEqual("Test Invoice Updated", invoice.description);
-    //
-    //     nockDone();
-    // });
+    it("updates an invoice", async () => {
+        const nockDone = await startNockRec('invoice-update.json');
+
+        const recipient = await recipientFactory.createResource();
+
+        const invoice = await invoiceFactory.createResource({
+            recipientId: recipient.id
+        });
+
+        const updatedInvoice = await testingApiClient.invoice.update(
+            invoice.id,
+            {
+                ...invoiceFactory.defaultAttrs,
+                description: "Updated description",
+                recipientId: recipient.id,
+                lines: [],
+            });
+
+        assert.ok(invoice);
+        assert.strictEqual("Updated description", updatedInvoice.description);
+
+        nockDone();
+    });
 
     it("deletes an invoice", async () => {
         const nockDone = await startNockRec('invoice-delete.json');
 
-        const invoice = await testingApiClient.invoice.remove(["testInvoice"]);
+        const recipient = await recipientFactory.createResource();
 
-        assert.ok(invoice);
+        const invoice = await invoiceFactory.createResource({
+            recipientId: recipient.id
+        });
+
+        assert.ok(testingApiClient.invoice.remove(invoice.id));
 
         nockDone();
     });
@@ -64,13 +82,24 @@ describe("Invoice", () => {
     it("searches for an invoice", async () => {
         const nockDone = await startNockRec('invoice-search.json');
 
-        const invoices = await testingApiClient.invoice.search({
-            externalId: "testInvoice",
+        const recipient = await recipientFactory.createResource();
+
+        const invoice = await invoiceFactory.createResource({
+            recipientId: recipient.id
+        });
+
+        const otherInvoice = await invoiceFactory.createResource({
+            recipientId: recipient.id,
+            externalId: "otherInvoice"
+        });
+
+        const invoices: Invoice[] = await testingApiClient.invoice.search({
+            invoiceIds: [invoice.id, otherInvoice.id],
         });
 
         assert.ok(invoices);
-        assert.strictEqual(1, invoices.length);
-        assert.strictEqual("testInvoice", invoices[0].externalId);
+        assert.strictEqual(2, invoices.length);
+        expect([invoice.id, otherInvoice.id]).toEqual(jasmine.arrayWithExactContents([invoice.id, otherInvoice.id]))
 
         nockDone();
     });
