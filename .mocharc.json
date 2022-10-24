@@ -2,7 +2,7 @@
   "ui": "bdd",
   "timeout": 15000,
   "extension": ["ts"],
-  "spec": ["test/integration/InvoiceLineSpec.ts"],
+  "spec": ["test/integration/*Spec.ts"],
   "require": ["ts-node/register", "test/hooks.ts"],
   "package": "./package.json"
 }
