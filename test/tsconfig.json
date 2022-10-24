@@ -1,32 +1,7 @@
 {
-  "include": [
-    "../lib/**/*.ts"
+  "extends": "../tsconfig.json",
+  "require": [
+    "ts-node/register",
+    "hooks.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "spec"
-  ],
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "lib": [
-      "es7",
-      "esnext.asynciterable",
-      "es2015",
-      "es2016",
-      "es2017"
-    ],
-    "declaration": true,
-    "outDir": "dist",
-    "rootDir": "..",
-    "strict": true,
-    "noImplicitAny": true,
-    "moduleResolution": "node",
-    "types": [
-      "node",
-      "mocha",
-      "core-js"
-    ]
-  }
 }

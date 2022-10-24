@@ -1,0 +1,8 @@
+{
+  "ui": "bdd",
+  "timeout": 30000,
+  "extension": ["ts"],
+  "spec": ["test/**/*.spec.ts"],
+  "require": ["ts-node/register", "hooks.ts"],
+  "package": "./package.json"
+}

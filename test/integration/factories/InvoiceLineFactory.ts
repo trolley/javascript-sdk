@@ -20,10 +20,10 @@ export class InvoiceLineFactory extends ApiFactory {
     public async createResource(attrs: any = {}) {
         return await this.apiClient.invoiceLine.create(
             attrs.invoice.id,
-            {
+            [{
             ...InvoiceLineFactory.defaultAttrs,
             ...attrs
-            }
+            }],
         );
     }
 }
