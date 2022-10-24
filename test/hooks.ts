@@ -1,8 +1,12 @@
-process.env.NODE_ENV = 'test';
-process.env.TS_NODE_PROJECT = 'src/tsconfig.json';
+import * as dotenv from 'dotenv';
 
-exports.mochaHooks = {
-    beforeAll: () => {
-        console.log('beforeAll');
+process.env.NODE_ENV = 'test';
+process.env.TS_NODE_PROJECT = './tsconfig.json';
+
+export const mochaHooks = {
+    beforeAll(done: any) {
+        dotenv.config();
+
+        done();
     },
 };

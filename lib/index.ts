@@ -10,6 +10,11 @@ export { Payment } from "./Payment";
 export { OfflinePayment } from "./OfflinePayment";
 export { Invoice } from "./Invoice";
 
+if (process.env.NODE_ENV === "test") {
+  // tslint:disable-next-line:no-var-requires no-require-imports
+    require("dotenv").config();
+}
+
 /**
  * Create a client for the Payment Rails JavasScript API
  * ```

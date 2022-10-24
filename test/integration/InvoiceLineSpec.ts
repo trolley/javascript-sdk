@@ -20,11 +20,11 @@ describe("InvoiceLine", () => {
 
         const recipient = await recipientFactory.createResource();
         const invoice = await invoiceFactory.createResource({ recipientId: recipient.id });
-        const invoiceLine = await invoiceLineFactory.createResource({ invoice: { id: invoice.id } });
+        const invoiceLines = await invoiceLineFactory.createResource({ invoice: { id: invoice.id } });
 
-        assert.ok(invoiceLine);
-        assert.strictEqual("testInvoiceLine", invoiceLine.externalId);
-        assert.strictEqual(invoice.id, invoiceLine.invoiceId);
+        assert.ok(invoiceLines);
+        assert.strictEqual(invoiceLines.length, 1);
+        assert.strictEqual("testInvoiceLine", invoiceLines[0].externalId);
 
         nockDone();
     });
