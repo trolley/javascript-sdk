@@ -43,10 +43,9 @@ describe("Batch", () => {
     });
     assert.strictEqual(batch.description, "Integration Test Update");
 
-    await testingApiClient.batch.update(batch.id, {
+    batch = await testingApiClient.batch.update(batch.id, {
       description: "Integration Test Update 2",
     });
-    batch = await testingApiClient.batch.find(batch.id);
 
     nockDone();
 
