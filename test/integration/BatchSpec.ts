@@ -14,7 +14,7 @@ async function createRecipient(email: string) {
    return recipient;
  }
 
-describe("Batch/Payment Integration", () => {
+describe("Batch", () => {
   it('creates a batch', async () => {
     const nockDone = await startNockRec('batch-create.json');
 

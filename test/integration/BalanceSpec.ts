@@ -1,4 +1,4 @@
-import {startNockRec, testingApiClient} from "./helpers/integrationTestsHelpers";
+import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelpers";
 import * as assert from "assert";
 
 describe("Balance", () => {
@@ -8,9 +8,8 @@ describe("Balance", () => {
         const balances = await testingApiClient.balances.all();
 
         assert.ok(balances);
-        assert.strictEqual(2, balances.length);
+        assert.strictEqual(1, balances.length);
         assert.strictEqual("paymentrails", balances[0].type);
-        assert.strictEqual("paypal", balances[1].type);
 
         nockDone();
     });
@@ -18,11 +17,11 @@ describe("Balance", () => {
     it("lists balances for a given kind", async () => {
         const nockDone = await startNockRec('balance-find.json');
 
-        const balances = await testingApiClient.balances.find("paypal");
+        const balances = await testingApiClient.balances.find("paymentrails");
 
         assert.ok(balances);
         assert.strictEqual(1, balances.length);
-        assert.strictEqual("paypal", balances[0].type);
+        assert.strictEqual("paymentrails", balances[0].type);
 
         nockDone();
     });
