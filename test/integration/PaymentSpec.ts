@@ -95,4 +95,32 @@ describe('Payment', () => {
         assert.ok(deletedPaymentResult);
         assert.strictEqual(true, deletedPaymentResult);
     });
+
+    it('searches for a payment', async () => {
+        const nockDone = await startNockRec('payment-search.json');
+
+        const recipient = await recipientFactory.createResource();
+        const batch = await batchFactory.createResource();
+        const payment = await paymentFactory.createResource(
+            {
+                batch: {
+                    id: batch.id,
+                },
+                payment: {
+                    recipient: {
+                        id: recipient.id,
+                    },
+                },
+            },
+        );
+
+        const query = { recipientId: recipient.id, batchId: batch.id };
+        const searchResult = await testingApiClient.payment.search(query);
+
+        nockDone();
+
+        assert.ok(searchResult);
+        assert.strictEqual(1, searchResult.length);
+        assert.strictEqual(payment.externalId, searchResult[0].externalId);
+    });
 });
