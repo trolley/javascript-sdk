@@ -1,9 +1,13 @@
 import { Recipient } from "../../lib";
 import * as assert from "assert";
-import {startNockRec, testingApiClient} from "./helpers/integrationTestsHelpers";
-import {RecipientFactory} from "./factories/RecipientFactory";
+import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelpers";
+import { RecipientFactory } from "./factories/RecipientFactory";
 
-const recipientFactory = new RecipientFactory();
+let recipientFactory: RecipientFactory;
+
+before(async () => {
+    recipientFactory = new RecipientFactory();
+});
 
 describe("Recipient", () => {
   it("creates a recipient", async () => {
@@ -19,40 +23,43 @@ describe("Recipient", () => {
     nockDone();
   });
 
-  it("life cycle", async () => {
-    const nockDone = await startNockRec('recipient-life-cycle.json');
+  it("updates a recipient", async () => {
+    const nockDone = await startNockRec('recipient-update.json');
 
-    const recipient = await recipientFactory.createResource(
-        {
-          type: "individual",
-          firstName: "Tom",
-          lastName: "Jones",
-          email: `test.lifecycle@example.com`,
-        }
-    );
-
-    assert.ok(recipient);
-    assert.strictEqual("Tom", recipient.firstName);
-    assert.strictEqual("Jones", recipient.lastName);
-    assert.ok(recipient.id);
-
-    assert.strictEqual("incomplete", recipient.status);
-
-    const updateResult = await testingApiClient.recipient.update(recipient.id, {
-      firstName: "Bob",
+    const recipient = await recipientFactory.createResource();
+    const updated = await testingApiClient.recipient.update(recipient.id, {
+      firstName: "John",
+      lastName: "Smith",
     });
 
-    assert.ok(updateResult);
+    nockDone();
 
-    const fetchResult = await testingApiClient.recipient.find(recipient.id);
-    assert.strictEqual("Bob", fetchResult.firstName);
+    assert.ok(updated);
+    assert.strictEqual("John", updated.firstName);
+    assert.strictEqual("Smith", updated.lastName);
+    });
 
-    const deleteResult = await testingApiClient.recipient.remove(recipient.id);
-    assert.strictEqual(deleteResult, true);
+  it("deletes a recipient", async () => {
+    const nockDone = await startNockRec('recipient-delete.json');
 
-    const fetchDeletedResult = await testingApiClient.recipient.find(recipient.id);
-    assert.strictEqual("archived", fetchDeletedResult.status);
+    const recipient = await recipientFactory.createResource();
+    const deleted = await testingApiClient.recipient.remove(recipient.id);
 
     nockDone();
+
+    assert.ok(deleted);
+    });
+
+  it("searches for a recipient", async () => {
+    const nockDone = await startNockRec('recipient-search.json');
+
+    const recipient = await recipientFactory.createResource();
+    const recipients = await testingApiClient.recipient.search();
+
+    nockDone();
+
+    assert.ok(recipients);
+    assert.strictEqual(1, recipients.length);
+    assert.strictEqual(recipient.id, recipients[0].id);
+    });
   });
-});

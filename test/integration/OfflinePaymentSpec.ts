@@ -28,8 +28,8 @@ describe('OfflinePayment', () => {
         const nockDone = await startNockRec('offline-payment-update.json');
 
         const recipient = await recipientFactory.createResource();
-        const offlinePayment = await offlinePaymentFactory.createResource({ recipient: { id: recipient.id } });
-        const updatedOfflinePayment = await testingApiClient.offlinePayment.update(
+        let offlinePayment = await offlinePaymentFactory.createResource({ recipient: { id: recipient.id } });
+        offlinePayment = await testingApiClient.offlinePayment.update(
             recipient.id,
             offlinePayment.id,
             {
@@ -40,17 +40,11 @@ describe('OfflinePayment', () => {
                 withholdingCurrency: 'USD',
             },
         );
-        const offlinePaymentResults = await testingApiClient.offlinePayment.search(
-            {
-                recipientId: recipient.id,
-            },
-        );
 
         nockDone();
 
-        assert.ok(updatedOfflinePayment);
-        assert.strictEqual(1, offlinePaymentResults.length);
-        assert.strictEqual(true, offlinePaymentResults[0].taxReportable);
+        assert.ok(offlinePayment);
+        assert.strictEqual(true, offlinePayment.taxReportable);
     });
 
     it('deletes an offline payment', async () => {
