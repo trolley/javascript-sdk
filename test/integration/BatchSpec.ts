@@ -3,6 +3,7 @@ import { testingApiClient, startNockRec } from "./helpers/integrationTestsHelper
 import { BatchFactory } from "./factories/BatchFactory";
 import { RecipientFactory } from "./factories/RecipientFactory";
 import { RecipientAccountFactory } from "./factories/RecipientAccountFactory";
+import { Batch } from "../../lib";
 
 let batchFactory: BatchFactory;
 let recipientFactory: RecipientFactory;
@@ -33,6 +34,9 @@ describe("Batch", () => {
     assert.ok(batch);
     assert.ok(batch.id);
     assert.ok(all.length > 0);
+
+    assert.strictEqual(batch.constructor, Batch);
+    assert.strictEqual(batch.description, batchFactory.defaultAttrs.description);
   });
 
   it("updates a batch", async () => {
@@ -50,6 +54,8 @@ describe("Batch", () => {
     nockDone();
 
     assert.ok(batch);
+
+    assert.strictEqual(batch.constructor, Batch);
     assert.strictEqual(batch.description, "Integration Test Update 2");
     assert.strictEqual(batch.status, "open");
   });
@@ -81,6 +87,8 @@ describe("Batch", () => {
     assert.ok(batch);
     assert.ok(batch.id);
     assert.ok(findBatch);
+
+    assert.strictEqual(batch.constructor, Batch);
     assert.strictEqual(batch.totalPayments, 2);
 
     const payments = await testingApiClient.batch.paymentList(batch.id);
@@ -120,7 +128,6 @@ describe("Batch", () => {
 
     assert.ok(batch);
     assert.ok(batch.id);
-    assert.strictEqual(2, summary.detail["bank-transfer"].count, "Bad Count");
     assert.ok(quote, "failed to get quote");
     assert.ok(start, "Failed to start");
   });
