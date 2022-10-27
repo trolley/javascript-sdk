@@ -1,34 +1,37 @@
-import {startNockRec, testingApiClient} from "./helpers/integrationTestsHelpers";
-import {InvoiceFactory} from "./factories/InvoiceFactory";
-import {RecipientFactory} from "./factories/RecipientFactory";
+import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelpers";
+import { InvoiceFactory } from "./factories/InvoiceFactory";
+import { RecipientFactory } from "./factories/RecipientFactory";
 import * as assert from "assert";
-import {Invoice} from "../../lib";
+import { Invoice } from "../../lib";
 
-const invoiceFactory = new InvoiceFactory();
-const recipientFactory = new RecipientFactory();
+let invoiceFactory: InvoiceFactory;
+let recipientFactory: RecipientFactory;
+
+before(async () => {
+    invoiceFactory = new InvoiceFactory();
+    recipientFactory = new RecipientFactory();
+});
 
 describe("Invoice", () => {
     it("creates an invoice", async () => {
         const nockDone = await startNockRec('invoice-create.json');
 
         const recipient = await recipientFactory.createResource();
-
         const invoice = await invoiceFactory.createResource({
-            recipientId: recipient.id
+            recipientId: recipient.id,
         });
+
+        nockDone();
 
         assert.ok(invoice);
         assert.strictEqual("testInvoice", invoice.externalId);
         assert.strictEqual(recipient.id, invoice.recipientId);
-
-        nockDone();
     });
 
     it("creates an invoice with lines", async () => {
         const nockDone = await startNockRec('invoice-create-with-lines.json');
 
         const recipient = await recipientFactory.createResource();
-
         const invoice = await invoiceFactory.createResource({
             recipientId: recipient.id,
             lines: [
@@ -43,9 +46,11 @@ describe("Invoice", () => {
                     taxReportable: true,
                     forceUsTaxActivity: false,
                     tags: ['test'],
-                }
-            ]
+                },
+            ],
         });
+
+        nockDone();
 
         assert.ok(invoice);
         assert.strictEqual("testInvoice", invoice.externalId);
@@ -53,60 +58,55 @@ describe("Invoice", () => {
         assert.strictEqual(1, invoice.lines.length);
         assert.strictEqual("testInvoiceLine", invoice.lines[0].externalId);
 
-        nockDone();
     });
 
     it("finds an invoice", async () => {
         const nockDone = await startNockRec('invoice-find.json');
 
         const recipient = await recipientFactory.createResource();
-
         const invoice = await invoiceFactory.createResource({
-            recipientId: recipient.id
+            recipientId: recipient.id,
         });
 
         const findInvoice = await testingApiClient.invoice.find(invoice.id);
 
-        assert.ok(invoice);
-        assert.strictEqual("testInvoice", invoice.externalId);
-
         nockDone();
+
+        assert.ok(findInvoice);
+        assert.strictEqual("testInvoice", findInvoice.externalId);
     });
 
     it("searches for an invoice", async () => {
         const nockDone = await startNockRec('invoice-search.json');
 
         const recipient = await recipientFactory.createResource();
-
         const invoice = await invoiceFactory.createResource({
-            recipientId: recipient.id
+            recipientId: recipient.id,
         });
 
         const otherInvoice = await invoiceFactory.createResource({
             recipientId: recipient.id,
-            externalId: "otherInvoice"
+            externalId: "otherInvoice",
         });
 
         const invoices: Invoice[] = await testingApiClient.invoice.search({
             invoiceIds: [invoice.id, otherInvoice.id],
         });
 
+        nockDone();
+
         assert.ok(invoices);
         assert.strictEqual(2, invoices.length);
         assert.strictEqual([invoice.id, otherInvoice.id].sort().toString(), invoices.map(i => i.id).sort().toString());
-
-        nockDone();
     });
 
     it("updates an invoice", async () => {
         const nockDone = await startNockRec('invoice-update.json');
 
         const recipient = await recipientFactory.createResource();
-
         const invoice = await invoiceFactory.createResource({
-            recipientId: recipient.id
+            recipientId: recipient.id,
         });
-
         const updatedInvoice = await testingApiClient.invoice.update(
             invoice.id,
             {
@@ -116,23 +116,22 @@ describe("Invoice", () => {
                 lines: [],
             });
 
+        nockDone();
+
         assert.ok(invoice);
         assert.strictEqual("Updated description", updatedInvoice.description);
-
-        nockDone();
     });
 
     it("deletes an invoice", async () => {
         const nockDone = await startNockRec('invoice-delete.json');
 
         const recipient = await recipientFactory.createResource();
-
         const invoice = await invoiceFactory.createResource({
-            recipientId: recipient.id
+            recipientId: recipient.id,
         });
 
-        assert.ok(testingApiClient.invoice.remove(invoice.id));
-
         nockDone();
+
+        assert.ok(testingApiClient.invoice.remove(invoice.id));
     });
 });
