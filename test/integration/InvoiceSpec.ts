@@ -25,7 +25,7 @@ describe("Invoice", () => {
 
         assert.ok(invoice);
         assert.strictEqual(invoice.constructor, Invoice);
-        assert.strictEqual("testInvoice", invoice.externalId);
+        assert.strictEqual(invoice.externalId, "testInvoice");
         assert.strictEqual(recipient.id, invoice.recipientId);
     });
 
@@ -55,10 +55,10 @@ describe("Invoice", () => {
 
         assert.ok(invoice);
         assert.strictEqual(invoice.constructor, Invoice);
-        assert.strictEqual("testInvoice", invoice.externalId);
+        assert.strictEqual(invoice.externalId, "testInvoice");
         assert.strictEqual(recipient.id, invoice.recipientId);
-        assert.strictEqual(1, invoice.lines.length);
-        assert.strictEqual("testInvoiceLine", invoice.lines[0].externalId);
+        assert.strictEqual(invoice.lines.length, 1);
+        assert.strictEqual(invoice.lines[0].externalId, "testInvoiceLine");
 
     });
 
@@ -76,7 +76,7 @@ describe("Invoice", () => {
 
         assert.ok(findInvoice);
         assert.strictEqual(findInvoice.constructor, Invoice);
-        assert.strictEqual("testInvoice", findInvoice.externalId);
+        assert.strictEqual(findInvoice.externalId, "testInvoice");
     });
 
     it("searches for an invoice", async () => {
@@ -125,7 +125,7 @@ describe("Invoice", () => {
 
         assert.ok(invoice);
         assert.strictEqual(invoice.constructor, Invoice);
-        assert.strictEqual("Updated description", updatedInvoice.description);
+        assert.strictEqual(updatedInvoice.description, "Updated description");
     });
 
     it("deletes an invoice", async () => {

@@ -55,7 +55,7 @@ describe("RecipientAccount", () => {
         assert.strictEqual(accountList2.length, 1);
         assert.strictEqual(accountList2[0].id, account2.id);
 
-        assert.strictEqual(true, deleteResult);
+        assert.strictEqual(deleteResult, true);
 
         assert.strictEqual(accountList2.length, 1);
         assert.ok(accountList2[0].primary);
@@ -99,13 +99,13 @@ describe("RecipientAccount", () => {
         const account = await recipientAccountFactory.createResource({
             recipient: { id: recipient.id },
         });
-        const result = await testingApiClient.recipientAccount.remove(recipient.id, account.id);
+        const deleteResult = await testingApiClient.recipientAccount.remove(recipient.id, account.id);
         const accountList = await testingApiClient.recipientAccount.all(recipient.id);
 
         nockDone();
 
         assert.ok(account);
-        assert.strictEqual(true, result);
+        assert.strictEqual(deleteResult, true);
         assert.strictEqual(accountList.length, 0);
     });
 

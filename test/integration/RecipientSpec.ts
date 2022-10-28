@@ -16,10 +16,10 @@ describe("Recipient", () => {
     const recipient = await recipientFactory.createResource();
 
     assert.ok(recipient);
-    assert.strictEqual(recipient.constructor, Recipient);
-    assert.strictEqual("Tom", recipientFactory.defaultAttrs.firstName);
-    assert.strictEqual("Jones", recipientFactory.defaultAttrs.lastName);
     assert.ok(recipient.id);
+    assert.strictEqual(recipient.constructor, Recipient);
+    assert.strictEqual(recipientFactory.defaultAttrs.firstName, "Tom");
+    assert.strictEqual(recipientFactory.defaultAttrs.lastName, "Jones");
 
     nockDone();
   });
@@ -37,8 +37,8 @@ describe("Recipient", () => {
 
     assert.ok(updatedRecipient);
     assert.strictEqual(updatedRecipient.constructor, Recipient);
-    assert.strictEqual("John", updatedRecipient.firstName);
-    assert.strictEqual("Smith", updatedRecipient.lastName);
+    assert.strictEqual(updatedRecipient.firstName, "John");
+    assert.strictEqual(updatedRecipient.lastName, "Smith");
     });
 
   it("deletes a recipient", async () => {
@@ -61,7 +61,7 @@ describe("Recipient", () => {
     nockDone();
 
     assert.ok(recipientsCollection);
-    assert.strictEqual(1, recipientsCollection.length);
+    assert.strictEqual(recipientsCollection.length, 1);
     assert.strictEqual(recipient.id, recipientsCollection[0].id);
     });
   });

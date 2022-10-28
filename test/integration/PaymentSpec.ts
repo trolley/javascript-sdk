@@ -71,7 +71,7 @@ describe('Payment', () => {
 
         assert.ok(updatedPayment);
         assert.strictEqual(updatedPayment.constructor, Payment);
-        assert.strictEqual('updatedPayment', updatedPayment.externalId);
+        assert.strictEqual(updatedPayment.externalId, 'updatedPayment');
     });
 
     it('deletes a payment', async () => {
@@ -96,7 +96,7 @@ describe('Payment', () => {
         nockDone();
 
         assert.ok(deletedPaymentResult);
-        assert.strictEqual(true, deletedPaymentResult);
+        assert.strictEqual(deletedPaymentResult, true);
     });
 
     it('searches for a payment', async () => {
@@ -123,7 +123,7 @@ describe('Payment', () => {
         nockDone();
 
         assert.ok(paymentsCollection);
-        assert.strictEqual(1, paymentsCollection.length);
+        assert.strictEqual(paymentsCollection.length, 1);
         assert.strictEqual(paymentsCollection[0].constructor, Payment);
         assert.strictEqual(payment.externalId, paymentsCollection[0].externalId);
     });

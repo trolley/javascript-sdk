@@ -28,7 +28,7 @@ describe('InvoiceLine', () => {
         assert.ok(invoiceLines);
         assert.strictEqual(invoiceLines.length, 1);
         assert.strictEqual(invoiceLines[0].constructor, InvoiceLine);
-        assert.strictEqual('testInvoiceLine', invoiceLines[0].externalId);
+        assert.strictEqual(invoiceLines[0].externalId, 'testInvoiceLine');
     });
 
     it('updates an invoice line', async () => {
@@ -56,7 +56,7 @@ describe('InvoiceLine', () => {
         assert.strictEqual(invoiceLines.length, 1);
         assert.strictEqual(invoiceLines[0].constructor, InvoiceLine);
         assert.strictEqual(updatedInvoice.lines.length, 1);
-        assert.strictEqual('updated line description', updatedInvoice.lines[0].description);
+        assert.strictEqual(updatedInvoice.lines[0].description, 'updated line description');
     });
 
     it('deletes an invoice line', async () => {

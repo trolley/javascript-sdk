@@ -47,7 +47,7 @@ describe('OfflinePayment', () => {
 
         assert.ok(offlinePayment);
         assert.strictEqual(offlinePayment.constructor, OfflinePayment);
-        assert.strictEqual(true, offlinePayment.taxReportable);
+        assert.strictEqual(offlinePayment.taxReportable, true);
     });
 
     it('deletes an offline payment', async () => {
@@ -88,7 +88,7 @@ describe('OfflinePayment', () => {
         nockDone();
 
         assert.ok(offlinePaymentResults);
-        assert.strictEqual(2, offlinePaymentResults.length);
+        assert.strictEqual(offlinePaymentResults.length, 2);
         assert.strictEqual(offlinePaymentResults[0].constructor, OfflinePayment);
         assert.strictEqual(offlinePaymentResults[1].constructor, OfflinePayment);
     });
