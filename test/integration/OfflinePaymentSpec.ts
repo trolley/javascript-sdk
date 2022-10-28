@@ -2,6 +2,7 @@ import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelper
 import { RecipientFactory } from "./factories/RecipientFactory";
 import * as assert from "assert";
 import { OfflinePaymentFactory } from "./factories/OfflinePaymentFactory";
+import { OfflinePayment } from "../../lib";
 
 let recipientFactory: RecipientFactory;
 let offlinePaymentFactory: OfflinePaymentFactory;
@@ -21,7 +22,8 @@ describe('OfflinePayment', () => {
         nockDone();
 
         assert.ok(offlinePayment);
-        assert.strictEqual('testOfflinePayment', offlinePayment.externalId);
+        assert.strictEqual(offlinePayment.constructor, OfflinePayment);
+        assert.strictEqual(offlinePayment.externalId, 'testOfflinePayment');
     });
 
     it('updates an offline payment', async () => {
@@ -44,6 +46,7 @@ describe('OfflinePayment', () => {
         nockDone();
 
         assert.ok(offlinePayment);
+        assert.strictEqual(offlinePayment.constructor, OfflinePayment);
         assert.strictEqual(true, offlinePayment.taxReportable);
     });
 
@@ -86,5 +89,7 @@ describe('OfflinePayment', () => {
 
         assert.ok(offlinePaymentResults);
         assert.strictEqual(2, offlinePaymentResults.length);
+        assert.strictEqual(offlinePaymentResults[0].constructor, OfflinePayment);
+        assert.strictEqual(offlinePaymentResults[1].constructor, OfflinePayment);
     });
 });

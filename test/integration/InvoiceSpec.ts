@@ -24,6 +24,7 @@ describe("Invoice", () => {
         nockDone();
 
         assert.ok(invoice);
+        assert.strictEqual(invoice.constructor, Invoice);
         assert.strictEqual("testInvoice", invoice.externalId);
         assert.strictEqual(recipient.id, invoice.recipientId);
     });
@@ -53,6 +54,7 @@ describe("Invoice", () => {
         nockDone();
 
         assert.ok(invoice);
+        assert.strictEqual(invoice.constructor, Invoice);
         assert.strictEqual("testInvoice", invoice.externalId);
         assert.strictEqual(recipient.id, invoice.recipientId);
         assert.strictEqual(1, invoice.lines.length);
@@ -73,6 +75,7 @@ describe("Invoice", () => {
         nockDone();
 
         assert.ok(findInvoice);
+        assert.strictEqual(findInvoice.constructor, Invoice);
         assert.strictEqual("testInvoice", findInvoice.externalId);
     });
 
@@ -96,7 +99,9 @@ describe("Invoice", () => {
         nockDone();
 
         assert.ok(invoices);
-        assert.strictEqual(2, invoices.length);
+        assert.strictEqual(invoices.length, 2);
+        assert.strictEqual(invoices[0].constructor, Invoice);
+        assert.strictEqual(invoices[1].constructor, Invoice);
         assert.strictEqual([invoice.id, otherInvoice.id].sort().toString(), invoices.map(i => i.id).sort().toString());
     });
 
@@ -119,6 +124,7 @@ describe("Invoice", () => {
         nockDone();
 
         assert.ok(invoice);
+        assert.strictEqual(invoice.constructor, Invoice);
         assert.strictEqual("Updated description", updatedInvoice.description);
     });
 

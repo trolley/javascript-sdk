@@ -3,6 +3,7 @@ import { PaymentFactory } from "./factories/PaymentFactory";
 import { BatchFactory } from "./factories/BatchFactory";
 import { RecipientFactory } from "./factories/RecipientFactory";
 import * as assert from "assert";
+import { Payment } from "../../lib";
 
 let batchFactory: BatchFactory;
 let recipientFactory: RecipientFactory;
@@ -36,7 +37,8 @@ describe('Payment', () => {
         nockDone();
 
         assert.ok(payment);
-        assert.strictEqual('testPayment', payment.externalId);
+        assert.strictEqual(payment.constructor, Payment);
+        assert.strictEqual(payment.externalId, 'testPayment');
     });
 
     it('updates a payment', async () => {
@@ -68,6 +70,7 @@ describe('Payment', () => {
         nockDone();
 
         assert.ok(updatedPayment);
+        assert.strictEqual(updatedPayment.constructor, Payment);
         assert.strictEqual('updatedPayment', updatedPayment.externalId);
     });
 
@@ -115,12 +118,13 @@ describe('Payment', () => {
         );
 
         const query = { recipientId: recipient.id, batchId: batch.id };
-        const searchResult = await testingApiClient.payment.search(query);
+        const paymentsCollection = await testingApiClient.payment.search(query);
 
         nockDone();
 
-        assert.ok(searchResult);
-        assert.strictEqual(1, searchResult.length);
-        assert.strictEqual(payment.externalId, searchResult[0].externalId);
+        assert.ok(paymentsCollection);
+        assert.strictEqual(1, paymentsCollection.length);
+        assert.strictEqual(paymentsCollection[0].constructor, Payment);
+        assert.strictEqual(payment.externalId, paymentsCollection[0].externalId);
     });
 });

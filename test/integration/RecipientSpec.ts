@@ -16,6 +16,7 @@ describe("Recipient", () => {
     const recipient = await recipientFactory.createResource();
 
     assert.ok(recipient);
+    assert.strictEqual(recipient.constructor, Recipient);
     assert.strictEqual("Tom", recipientFactory.defaultAttrs.firstName);
     assert.strictEqual("Jones", recipientFactory.defaultAttrs.lastName);
     assert.ok(recipient.id);
@@ -27,16 +28,17 @@ describe("Recipient", () => {
     const nockDone = await startNockRec('recipient-update.json');
 
     const recipient = await recipientFactory.createResource();
-    const updated = await testingApiClient.recipient.update(recipient.id, {
+    const updatedRecipient = await testingApiClient.recipient.update(recipient.id, {
       firstName: "John",
       lastName: "Smith",
     });
 
     nockDone();
 
-    assert.ok(updated);
-    assert.strictEqual("John", updated.firstName);
-    assert.strictEqual("Smith", updated.lastName);
+    assert.ok(updatedRecipient);
+    assert.strictEqual(updatedRecipient.constructor, Recipient);
+    assert.strictEqual("John", updatedRecipient.firstName);
+    assert.strictEqual("Smith", updatedRecipient.lastName);
     });
 
   it("deletes a recipient", async () => {
@@ -54,12 +56,12 @@ describe("Recipient", () => {
     const nockDone = await startNockRec('recipient-search.json');
 
     const recipient = await recipientFactory.createResource();
-    const recipients = await testingApiClient.recipient.search();
+    const recipientsCollection: Recipient[] = await testingApiClient.recipient.search();
 
     nockDone();
 
-    assert.ok(recipients);
-    assert.strictEqual(1, recipients.length);
-    assert.strictEqual(recipient.id, recipients[0].id);
+    assert.ok(recipientsCollection);
+    assert.strictEqual(1, recipientsCollection.length);
+    assert.strictEqual(recipient.id, recipientsCollection[0].id);
     });
   });
