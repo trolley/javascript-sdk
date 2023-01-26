@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [BaseException](../classes/exceptions.baseexception.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [BaseException](../classes/exceptions.baseexception.md)
 
 # Class: BaseException
 

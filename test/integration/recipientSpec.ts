@@ -4,9 +4,9 @@ import * as uuid from "uuid";
 
 describe("Recipient", () => {
   before(() => {
-    Configuration.setApiKey(process.env.PR_ACCESS_KEY as string);
-    Configuration.setApiSecret(process.env.PR_SECRET_KEY as string);
-    Configuration.setEnvironment(process.env.PR_ENVIRONMENT as any);
+    Configuration.setApiKey(process.env.TROLLEY_ACCESS_KEY as string);
+    Configuration.setApiSecret(process.env.TROLLEY_SECRET_KEY as string);
+    Configuration.setEnvironment(process.env.TROLLEY_ENVIRONMENT as any);
   });
 
   it("create", async () => {
@@ -166,7 +166,7 @@ describe("Recipient", () => {
   it("Update - Name should be George", async () => {
     const payload = {
       type: "individual",
-      email: "test@paymentrails.com",
+      email: "test@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",
@@ -188,14 +188,14 @@ describe("Recipient", () => {
   it("Delete Recipient", async () => {
     const payload = {
       type: "individual",
-      email: "test1@paymentrails.com",
+      email: "test1@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",
     };
     const response = await Recipient.create(payload);
 
-    assert.equal(response.recipient.email, "test1@paymentrails.com");
+    assert.equal(response.recipient.email, "test1@trolley.com");
     const recipientId = response.recipient.id;
     const response1 = await Recipient.remove(recipientId);
     assert.equal(response1, '{"ok":true}');
@@ -204,7 +204,7 @@ describe("Recipient", () => {
   it("Create Account", async () => {
     const payload = {
       type: "individual",
-      email: "test2@paymentrails.com",
+      email: "test2@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",
@@ -232,7 +232,7 @@ describe("Recipient", () => {
   it("Delete", async () => {
     const payload = {
       type: "individual",
-      email: "test3@paymentrails.com",
+      email: "test3@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",

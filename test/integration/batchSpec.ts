@@ -8,9 +8,9 @@ describe("Batch/Payment Integration", () => {
 
   before(() => {
     client = paymentrails.connect({
-      key: process.env.PR_ACCESS_KEY,
-      secret: process.env.PR_SECRET_KEY,
-      environment: process.env.PR_ENVIRONMENT as any,
+      key: process.env.TROLLEY_ACCESS_KEY,
+      secret: process.env.TROLLEY_SECRET_KEY,
+      environment: process.env.TROLLEY_ENVIRONMENT as any,
     } as any);
   });
 
@@ -159,7 +159,7 @@ describe("Batch/Payment Integration", () => {
   it("add ", async () => {
     const payload = {
       type: "individual",
-      email: "test672@paymentrails.com",
+      email: "test672@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",
@@ -205,7 +205,7 @@ describe("Batch/Payment Integration", () => {
   it("process", async () => {
     const payload = {
       type: "individual",
-      email: "test7@paymentrails.com",
+      email: "test7@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",
@@ -251,7 +251,7 @@ describe("Batch/Payment Integration", () => {
 
     const payload = {
       type: "individual",
-      email: "test8@paymentrails.com",
+      email: "test8@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",
@@ -293,7 +293,7 @@ describe("Batch/Payment Integration", () => {
   it("create", async () => {
     const payload = {
       type: "individual",
-      email: "test9@paymentrails.com",
+      email: "test9@trolley.com",
       name: "John Smith",
       firstName: "John",
       lastName: "Smith",

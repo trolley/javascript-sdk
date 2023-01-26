@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [NotFound](../classes/exceptions.notfound.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [NotFound](../classes/exceptions.notfound.md)
 
 # Class: NotFound
 

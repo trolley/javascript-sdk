@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [RecipientGateway](../classes/recipientgateway.md)
+[Trolley JavaScript SDK](../README.md) > [RecipientGateway](../classes/recipientgateway.md)
 
 # Class: RecipientGateway
 
@@ -82,7 +82,7 @@ ___
 
 *Defined in [RecipientGateway.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L58)*
 
-Find a specific recipient by their Payment Rails recipient ID
+Find a specific recipient by their Trolley recipient ID
 
     const recipient = await client.recipient.find('R-1234');
 
@@ -90,7 +90,7 @@ Find a specific recipient by their Payment Rails recipient ID
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
 
 **Returns:** `Promise`<`Recipient`>
 
@@ -111,7 +111,7 @@ Delete the given recipient.
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
 
 **Returns:** `Promise`<`boolean`>
 
@@ -153,7 +153,7 @@ Update the given recipient
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
 | body | [RecipientInput](../interfaces/recipientinput.md) |  the changes to make to the recipient |
 
 **Returns:** `Promise`<`boolean`>

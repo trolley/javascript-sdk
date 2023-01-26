@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [BalancesGateway](../classes/balancesgateway.md)
+[Trolley JavaScript SDK](../README.md) > [BalancesGateway](../classes/balancesgateway.md)
 
 # Class: BalancesGateway
 

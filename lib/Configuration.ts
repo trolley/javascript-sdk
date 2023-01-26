@@ -2,11 +2,11 @@ import { Gateway } from "./Gateway";
 
 export interface ConfigurationParams {
   /**
-   * The Payment Rails public key
+   * The Trolley public key
    */
   key: string;
   /**
-   * The Payment Rails private key
+   * The Trolley private key
    */
   secret: string;
   /**
@@ -28,7 +28,7 @@ export class Configuration {
   /**
    * @hidden
    */
-  static apiBaseDefault: string = "https://api.paymentrails.com";
+  static apiBaseDefault: string = "https://api.trolley.com";
 
   apiKey: string;
   apiSecret: string;
@@ -50,16 +50,16 @@ export class Configuration {
   }
 
   /**
-   * Globally set the public API key to connect to Payment Rails
-   * @param key Your Payment Rails API public key
+   * Globally set the public API key to connect to Trolley
+   * @param key Your Trolley API public key
    */
   static setApiKey(key: string) {
     Configuration.apiKeyDefault = key;
   }
 
   /**
-   * Globally set the secret API key to connect to Payment Rails
-   * @param secret Your Payment Rails API secret Key
+   * Globally set the secret API key to connect to Trolley
+   * @param secret Your Trolley API secret Key
    */
   static setApiSecret(secret: string) {
     Configuration.apiSecretDefault = secret;
@@ -85,7 +85,7 @@ export class Configuration {
   }
 
   /**
-   * Set the Payment Rails API environment that your using
+   * Set the Trolley API environment that your using
    * @param environment one of "production" or "sandbox"
    */
   static setEnvironment(environment: "production" | "sandbox" | "integration") {
@@ -105,9 +105,9 @@ export class Configuration {
       case "sandbox":
         return "https://api.railz.io";
       case "production":
-        return "https://api.paymentrails.com";
+        return "https://api.trolley.com";
       default:
-        return "https://api.paymentrails.com";
+        return "https://api.trolley.com";
     }
   }
 }

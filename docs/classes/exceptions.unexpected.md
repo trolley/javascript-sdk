@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [Unexpected](../classes/exceptions.unexpected.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [Unexpected](../classes/exceptions.unexpected.md)
 
 # Class: Unexpected
 

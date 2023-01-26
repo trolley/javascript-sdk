@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [BatchInput](../interfaces/batchinput.md)
+[Trolley JavaScript SDK](../README.md) > [BatchInput](../interfaces/batchinput.md)
 
 # Interface: BatchInput
 

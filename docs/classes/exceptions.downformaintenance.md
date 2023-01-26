@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [DownForMaintenance](../classes/exceptions.downformaintenance.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [DownForMaintenance](../classes/exceptions.downformaintenance.md)
 
 # Class: DownForMaintenance
 

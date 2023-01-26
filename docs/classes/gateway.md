@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Gateway](../classes/gateway.md)
+[Trolley JavaScript SDK](../README.md) > [Gateway](../classes/gateway.md)
 
 # Class: Gateway
 
