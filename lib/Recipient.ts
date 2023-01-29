@@ -53,6 +53,7 @@ export class Recipient {
 
   primaryCurrency: null | string = null;
   routeType: string | null = null;
+  routeMinimum: number | null = null;
   estimatedFees: string | null = null;
 
   static async all() {

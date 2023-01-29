@@ -10,6 +10,7 @@ export class RecipientAccount {
   primary: boolean = false;
   currency: string = "";
   routeType?: string;
+  routeMinimum?: number;
   recipientFees?: string;
 
   // paypal

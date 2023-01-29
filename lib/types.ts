@@ -478,6 +478,7 @@ export namespace Recipient {
     payout: any;
 
     routeType: string | null;
+    routeMinimum: number | null;
     estimatedFees: string | null;
   }
 
@@ -532,6 +533,7 @@ export namespace Recipient {
     primary: boolean;
     currency: string;
     routeType?: string;
+    routeMinimum?: number;
     recipientFees?: string;
 
     // paypal

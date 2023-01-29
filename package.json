@@ -1,6 +1,6 @@
 {
   "name": "paymentrails",
-  "version": "0.12.0",
+  "version": "0.11.1",
   "description": "",
   "main": "./dist/index",
   "types": "./dist/index",

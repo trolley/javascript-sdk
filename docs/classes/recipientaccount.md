@@ -29,6 +29,7 @@
 * [primary](recipientaccount.md#primary)
 * [recipientFees](recipientaccount.md#recipientfees)
 * [routeType](recipientaccount.md#routetype)
+* [routeMinimum](recipientaccount.md#routeminimum)
 * [swiftBic](recipientaccount.md#swiftbic)
 * [type](recipientaccount.md#type)
 
@@ -215,6 +216,17 @@ ___
 *
 
 *Defined in [RecipientAccount.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L12)*
+
+___
+<a id="routeminimum"></a>
+
+### `<Optional>` routeMinimum
+
+**● routeMinimum**: *`undefined` |
+`number`
+*
+
+*Defined in [RecipientAccount.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L13)*
 
 ___
 <a id="swiftbic"></a>
