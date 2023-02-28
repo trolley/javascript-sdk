@@ -1,4 +1,4 @@
-import {ApiFactory, InvalidAttributeError} from "./ApiFactory";
+import { ApiFactory, InvalidAttributeError } from "./ApiFactory";
 
 export class PaymentFactory extends ApiFactory {
     private defaultAttrs =  {

@@ -3,6 +3,7 @@ import { RecipientFactory } from './factories/RecipientFactory';
 import { InvoiceFactory } from './factories/InvoiceFactory';
 import { InvoiceLineFactory } from './factories/InvoiceLineFactory';
 import * as assert from 'assert';
+import { InvoiceLine } from "../../lib/InvoiceLine";
 
 let recipientFactory: RecipientFactory;
 let invoiceFactory: InvoiceFactory;
@@ -26,7 +27,8 @@ describe('InvoiceLine', () => {
 
         assert.ok(invoiceLines);
         assert.strictEqual(invoiceLines.length, 1);
-        assert.strictEqual('testInvoiceLine', invoiceLines[0].externalId);
+        assert.strictEqual(invoiceLines[0].constructor, InvoiceLine);
+        assert.strictEqual(invoiceLines[0].externalId, 'testInvoiceLine');
     });
 
     it('updates an invoice line', async () => {
@@ -51,7 +53,10 @@ describe('InvoiceLine', () => {
         nockDone();
 
         assert.ok(updatedInvoice);
-        assert.strictEqual('updated line description', updatedInvoice.lines[0].description);
+        assert.strictEqual(invoiceLines.length, 1);
+        assert.strictEqual(invoiceLines[0].constructor, InvoiceLine);
+        assert.strictEqual(updatedInvoice.lines.length, 1);
+        assert.strictEqual(updatedInvoice.lines[0].description, 'updated line description');
     });
 
     it('deletes an invoice line', async () => {
