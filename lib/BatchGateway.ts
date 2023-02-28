@@ -119,7 +119,7 @@ export class BatchGateway {
 
     const result = await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
 
-    return true;
+    return Batch.factory(result.batch);
   }
 
   /**
