@@ -28,7 +28,7 @@ export class Configuration {
   /**
    * @hidden
    */
-  static apiBaseDefault: string = "https://api.paymentrails.com";
+  static apiBaseDefault: string = "https://api.trolley.com";
 
   apiKey: string;
   apiSecret: string;
@@ -105,9 +105,9 @@ export class Configuration {
       case "sandbox":
         return "https://api.railz.io";
       case "production":
-        return "https://api.paymentrails.com";
+        return "https://api.trolley.com";
       default:
-        return "https://api.paymentrails.com";
+        return "https://api.trolley.com";
     }
   }
 }
