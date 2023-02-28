@@ -11,13 +11,13 @@ export interface InvoiceLineInput {
 }
 
 export enum InvoiceLineCategory {
-    'services',
-    'rent',
-    'royalties',
-    'royalties_film',
-    'prizes',
-    'education',
-    'refunds',
+    'services' = 'services',
+    'rent' = 'rent',
+    'royalties' = 'royalties',
+    'royalties_film' = 'royalties_film',
+    'prizes' = 'prizes',
+    'education' = 'education',
+    'refunds' = 'refunds',
 }
 
 export class InvoiceLine {
