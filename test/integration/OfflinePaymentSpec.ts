@@ -2,6 +2,7 @@ import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelper
 import { RecipientFactory } from "./factories/RecipientFactory";
 import * as assert from "assert";
 import { OfflinePaymentFactory } from "./factories/OfflinePaymentFactory";
+import { OfflinePayment } from "../../lib";
 
 let recipientFactory: RecipientFactory;
 let offlinePaymentFactory: OfflinePaymentFactory;
@@ -21,15 +22,16 @@ describe('OfflinePayment', () => {
         nockDone();
 
         assert.ok(offlinePayment);
-        assert.strictEqual('testOfflinePayment', offlinePayment.externalId);
+        assert.strictEqual(offlinePayment.constructor, OfflinePayment);
+        assert.strictEqual(offlinePayment.externalId, 'testOfflinePayment');
     });
 
     it('updates an offline payment', async () => {
         const nockDone = await startNockRec('offline-payment-update.json');
 
         const recipient = await recipientFactory.createResource();
-        const offlinePayment = await offlinePaymentFactory.createResource({ recipient: { id: recipient.id } });
-        const updatedOfflinePayment = await testingApiClient.offlinePayment.update(
+        let offlinePayment = await offlinePaymentFactory.createResource({ recipient: { id: recipient.id } });
+        offlinePayment = await testingApiClient.offlinePayment.update(
             recipient.id,
             offlinePayment.id,
             {
@@ -40,17 +42,12 @@ describe('OfflinePayment', () => {
                 withholdingCurrency: 'USD',
             },
         );
-        const offlinePaymentResults = await testingApiClient.offlinePayment.search(
-            {
-                recipientId: recipient.id,
-            },
-        );
 
         nockDone();
 
-        assert.ok(updatedOfflinePayment);
-        assert.strictEqual(1, offlinePaymentResults.length);
-        assert.strictEqual(true, offlinePaymentResults[0].taxReportable);
+        assert.ok(offlinePayment);
+        assert.strictEqual(offlinePayment.constructor, OfflinePayment);
+        assert.strictEqual(offlinePayment.taxReportable, true);
     });
 
     it('deletes an offline payment', async () => {
@@ -91,6 +88,8 @@ describe('OfflinePayment', () => {
         nockDone();
 
         assert.ok(offlinePaymentResults);
-        assert.strictEqual(2, offlinePaymentResults.length);
+        assert.strictEqual(offlinePaymentResults.length, 2);
+        assert.strictEqual(offlinePaymentResults[0].constructor, OfflinePayment);
+        assert.strictEqual(offlinePaymentResults[1].constructor, OfflinePayment);
     });
 });

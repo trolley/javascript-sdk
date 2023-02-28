@@ -1,4 +1,4 @@
-import {ApiFactory} from "./ApiFactory";
+import { ApiFactory } from "./ApiFactory";
 
 export class RecipientFactory extends ApiFactory {
     defaultAttrs = {
@@ -15,9 +15,9 @@ export class RecipientFactory extends ApiFactory {
     };
 
     public async createResource(attrs: any = {}) {
-        return await this.apiClient.recipient.create({
+        return this.apiClient.recipient.create({
             ...this.defaultAttrs,
-            ...attrs
+            ...attrs,
         });
     }
 }
