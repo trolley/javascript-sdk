@@ -1,5 +1,19 @@
-import {Gateway} from "../../../lib";
-import {testingApiClient} from "../helpers/integrationTestsHelpers";
+import { Gateway } from "../../../lib";
+import { testingApiClient } from "../helpers/integrationTestsHelpers";
+
+class ApiFactoryError extends Error {
+    constructor(message: string) {
+        super(message);
+        this.name = "ApiFactoryError";
+    }
+}
+
+export class InvalidAttributeError extends ApiFactoryError {
+    constructor(message: string) {
+        super(message);
+        this.name = "InvalidAttributeError";
+    }
+}
 
 export abstract class ApiFactory {
     apiClient: Gateway = testingApiClient;

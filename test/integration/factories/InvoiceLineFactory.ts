@@ -1,7 +1,6 @@
-import {ApiFactory} from "./ApiFactory";
-import {Amount} from "../../../lib/types";
-import {InvoiceLineCategory} from "../../../lib/InvoiceLine";
-
+import { ApiFactory } from "./ApiFactory";
+import { Amount } from "../../../lib/types";
+import { InvoiceLineCategory } from "../../../lib/InvoiceLine";
 
 export class InvoiceLineFactory extends ApiFactory {
     static defaultAttrs = {
@@ -15,14 +14,14 @@ export class InvoiceLineFactory extends ApiFactory {
         taxReportable: true,
         forceUsTaxActivity: false,
         tags: ['test'],
-    }
+    };
 
     public async createResource(attrs: any = {}) {
-        return await this.apiClient.invoiceLine.create(
+        return this.apiClient.invoiceLine.create(
             attrs.invoice.id,
             [{
             ...InvoiceLineFactory.defaultAttrs,
-            ...attrs
+            ...attrs,
             }],
         );
     }
