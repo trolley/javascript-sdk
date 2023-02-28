@@ -1,0 +1,353 @@
+[
+    {
+        "scope": "https://api.railz.io:443",
+        "method": "POST",
+        "path": "/v1/recipients",
+        "body": {
+            "type": "individual",
+            "firstName": "Tom",
+            "lastName": "Jones",
+            "email": "testEmail@example.com",
+            "address": {
+                "street1": "123 Wolfstrasse",
+                "city": "Berlin",
+                "country": "DE",
+                "postalCode": "123123"
+            }
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "recipient": {
+                "id": "R-YB2nieiMhfpdMJDNgztg2A",
+                "referenceId": "R-YB2nieiMhfpdMJDNgztg2A",
+                "email": "testEmail@example.com",
+                "name": "Tom Jones",
+                "lastName": "Jones",
+                "firstName": "Tom",
+                "legalName": "",
+                "type": "individual",
+                "status": "incomplete",
+                "language": "en",
+                "complianceStatus": "pending",
+                "dob": null,
+                "passport": "",
+                "placeOfBirth": null,
+                "updatedAt": "2022-10-24T05:40:11.119Z",
+                "createdAt": "2022-10-24T05:40:11.119Z",
+                "tags": [],
+                "isPortalUser": false,
+                "taxDeliveryType": "mail",
+                "contactEmails": [],
+                "occupation": "",
+                "address": {
+                    "street1": "123 Wolfstrasse",
+                    "street2": "",
+                    "city": "Berlin",
+                    "postalCode": "123123",
+                    "country": "DE",
+                    "region": null,
+                    "phone": "",
+                    "phoneValidated": false
+                },
+                "compliance": {
+                    "status": "pending",
+                    "checkedAt": null
+                },
+                "gravatarUrl": "https://www.gravatar.com/avatar/47891e3b30e9fe3c5355801d4cbd5896?d=404",
+                "governmentId": null,
+                "ssn": null,
+                "governmentIds": [],
+                "birthplace": {
+                    "country": null,
+                    "region": null,
+                    "city": null
+                },
+                "citizenships": [],
+                "routeType": "sepa",
+                "routeMinimum": "0",
+                "estimatedFees": "4",
+                "accounts": [],
+                "payoutMethod": null,
+                "primaryCurrency": null,
+                "riskScore": null,
+                "merchantId": "M-W3mQuLjDafUGietRUqmeRz",
+                "inactiveReasons": {
+                    "primaryAccount": "missing"
+                },
+                "taxWithholdingPercentage": null,
+                "taxForm": null,
+                "taxFormStatus": null
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 05:40:11 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "1595",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "74",
+            "X-Rate-Limit-Reset",
+            "1666590071",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"63b-roipcMRwmUvD1p7uHcm7qccJiig\""
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.railz.io:443",
+        "method": "POST",
+        "path": "/v1/invoices/create",
+        "body": {
+            "recipientId": "R-YB2nieiMhfpdMJDNgztg2A",
+            "description": "Test Invoice",
+            "externalId": "testInvoice",
+            "invoiceDate": "2020-01-01",
+            "dueDate": "2020-01-01"
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "invoice": {
+                "id": "I-6ghoiLzLGMD7ApSCFjWPfT",
+                "invoiceNumber": "",
+                "description": "Test Invoice",
+                "status": "open",
+                "externalId": "testInvoice",
+                "invoiceDate": "2020-01-01T00:00:00.000Z",
+                "dueDate": "2020-01-01T00:00:00.000Z",
+                "releaseAfter": null,
+                "createdAt": "2022-10-24T05:40:11.600Z",
+                "updatedAt": "2022-10-24T05:40:11.600Z",
+                "totalAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "paidAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "dueAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "tags": [],
+                "lines": [],
+                "recipientId": "R-YB2nieiMhfpdMJDNgztg2A"
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 05:40:11 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "696",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "73",
+            "X-Rate-Limit-Reset",
+            "1666590071",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"2b8-2pOqMnNPUzIWtzJg+rAZ+MJWHSk\""
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.railz.io:443",
+        "method": "POST",
+        "path": "/v1/invoices/create-lines",
+        "body": {
+            "invoiceId": "I-6ghoiLzLGMD7ApSCFjWPfT",
+            "lines": [
+                {
+                    "unitAmount": {
+                        "value": "100",
+                        "currency": "USD"
+                    },
+                    "category": "services",
+                    "description": "Test Invoice Line",
+                    "externalId": "testInvoiceLine",
+                    "taxReportable": true,
+                    "forceUsTaxActivity": false,
+                    "tags": [
+                        "test"
+                    ],
+                    "invoice": {
+                        "id": "I-6ghoiLzLGMD7ApSCFjWPfT"
+                    }
+                }
+            ]
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "invoice": {
+                "id": "I-6ghoiLzLGMD7ApSCFjWPfT",
+                "invoiceNumber": "",
+                "description": "Test Invoice",
+                "status": "open",
+                "externalId": "testInvoice",
+                "invoiceDate": "2020-01-01T00:00:00.000Z",
+                "dueDate": "2020-01-01T00:00:00.000Z",
+                "releaseAfter": null,
+                "createdAt": "2022-10-24T05:40:11.600Z",
+                "updatedAt": "2022-10-24T05:40:11.904Z",
+                "totalAmount": {
+                    "value": "100.00",
+                    "currency": "USD"
+                },
+                "paidAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "dueAmount": {
+                    "value": "100.00",
+                    "currency": "USD"
+                },
+                "tags": [],
+                "lines": [
+                    {
+                        "id": "IL-WqBpwrawXCr2LtdGahQs4n",
+                        "status": "open",
+                        "itemUrl": null,
+                        "description": "Test Invoice Line",
+                        "unitAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "quantity": "1",
+                        "discountAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "taxAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "totalAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "dueAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "paidAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "externalId": "testInvoiceLine",
+                        "taxReportable": true,
+                        "tags": [
+                            "test"
+                        ],
+                        "category": "services",
+                        "forceUsTaxActivity": false
+                    }
+                ],
+                "recipientId": "R-YB2nieiMhfpdMJDNgztg2A"
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 05:40:11 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "1619",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "72",
+            "X-Rate-Limit-Reset",
+            "1666590071",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"653-t4fdST+F1nro8PFa39RnoR8PAs4\""
+        ],
+        "responseIsBinary": false
+    }
+]

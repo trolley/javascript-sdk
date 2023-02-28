@@ -8,6 +8,7 @@ import * as types from "./types";
  */
 export class Payment {
   id: string = "";
+  externalId: string = "";
   recipient: Recipient = {} as any;
 
   status: string = "";
