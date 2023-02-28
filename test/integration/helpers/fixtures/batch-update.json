@@ -1,6 +1,6 @@
 [
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/batches",
         "body": {
@@ -79,7 +79,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "PATCH",
         "path": "/v1/batches/B-R3vRrJMQg7E4dMnbYYK9bA",
         "body": {
@@ -148,7 +148,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "GET",
         "path": "/v1/batches/B-R3vRrJMQg7E4dMnbYYK9bA",
         "body": "",

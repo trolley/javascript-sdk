@@ -1,6 +1,6 @@
 [
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/recipients",
         "body": {
@@ -126,7 +126,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/batches",
         "body": {
@@ -205,7 +205,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/batches/B-Dfz9qQuygxeCkwiYjbfLAS/payments",
         "body": {
@@ -443,7 +443,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "GET",
         "path": "/v1/payments?recipientId=R-PoY7FWr6yeyEY1635E47HL&batchId=B-Dfz9qQuygxeCkwiYjbfLAS&page=1&pageSize=10&search=",
         "body": "",

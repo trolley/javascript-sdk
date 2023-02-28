@@ -1,6 +1,6 @@
 [
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/recipients",
         "body": {
@@ -125,7 +125,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/invoices/create",
         "body": {

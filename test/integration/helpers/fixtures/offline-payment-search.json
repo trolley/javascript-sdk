@@ -1,6 +1,6 @@
 [
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/recipients",
         "body": {
@@ -126,7 +126,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/recipients/R-F3SViPWxpjNzEV7V2VRMxY/offlinePayments",
         "body": {
@@ -233,7 +233,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "POST",
         "path": "/v1/recipients/R-F3SViPWxpjNzEV7V2VRMxY/offlinePayments",
         "body": {
@@ -340,7 +340,7 @@
         "responseIsBinary": false
     },
     {
-        "scope": "https://api.railz.io:443",
+        "scope": "https://api.trolley.com:443",
         "method": "GET",
         "path": "/v1/recipients/R-F3SViPWxpjNzEV7V2VRMxY/offline-payments?recipientId=R-F3SViPWxpjNzEV7V2VRMxY&page=1&pageSize=10&search=",
         "body": "",
