@@ -10,3 +10,4 @@ __MACOSX
 .vscode
 .idea
 dist/
+.env
