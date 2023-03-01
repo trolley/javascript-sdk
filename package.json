@@ -33,7 +33,7 @@
     "@types/node": "^11.9.2",
     "@types/sinon": "^7.0.5",
     "@types/uuid": "^3.4.4",
-    "mocha": "^5.2.0",
+    "mocha": "^10.2.0",
     "sinon": "^7.2.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
