@@ -103,7 +103,7 @@ export class Configuration {
         // tslint:disable-next-line:no-http-string
         return "http://api.local.dev:3000";
       case "sandbox":
-        return "https://api.railz.io";
+        return "https://api.trolley.com";
       case "production":
         return "https://api.trolley.com";
       default:
