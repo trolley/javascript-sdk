@@ -71,11 +71,11 @@ export class OfflinePaymentGateway {
       offlinePaymentId,
     );
 
-    const result = await this.gateway.client.patch<
+    await this.gateway.client.patch<
          types.OfflinePayment.Response
         >(endPoint, body);
 
-    return OfflinePayment.factory(result.offlinePayment);
+    return true;
   }
 
   /**

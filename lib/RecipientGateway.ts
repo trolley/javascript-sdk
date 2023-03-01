@@ -100,9 +100,9 @@ export class RecipientGateway {
   async update(recipientId: string, body: RecipientInput) {
     const endPoint = buildURL('recipients', recipientId);
 
-    const result = await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
+    await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
 
-    return Recipient.factory(result.recipient);
+    return true;
   }
 
   /**

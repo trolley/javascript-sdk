@@ -79,12 +79,12 @@ export class PaymentGateway {
   async update(paymentId: string, batchId: string, body: any) {
     const endPoint = buildURL("batches", batchId, "payments", paymentId);
 
-    const result = await this.gateway.client.patch<types.Payment.Result>(
+    const result = await this.gateway.client.patch<{ok: boolean}>(
       endPoint,
       body,
     );
 
-    return Payment.factory(result.payment);
+    return true;
   }
 
   /**
