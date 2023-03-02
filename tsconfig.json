@@ -25,7 +25,8 @@
     "moduleResolution": "node",
     "types": [
       "node",
-      "core-js"
+      "core-js",
+      "mocha"
     ]
   }
 }

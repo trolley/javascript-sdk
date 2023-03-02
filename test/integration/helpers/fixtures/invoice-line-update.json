@@ -1,0 +1,480 @@
+[
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "POST",
+        "path": "/v1/recipients",
+        "body": {
+            "type": "individual",
+            "firstName": "Tom",
+            "lastName": "Jones",
+            "email": "testEmail@example.com",
+            "address": {
+                "street1": "123 Wolfstrasse",
+                "city": "Berlin",
+                "country": "DE",
+                "postalCode": "123123"
+            }
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "recipient": {
+                "id": "R-HjbY32xg4TXty7woXbD73Q",
+                "referenceId": "R-HjbY32xg4TXty7woXbD73Q",
+                "email": "testEmail@example.com",
+                "name": "Tom Jones",
+                "lastName": "Jones",
+                "firstName": "Tom",
+                "legalName": "",
+                "type": "individual",
+                "status": "incomplete",
+                "language": "en",
+                "complianceStatus": "pending",
+                "dob": null,
+                "passport": "",
+                "placeOfBirth": null,
+                "updatedAt": "2022-10-24T15:09:07.618Z",
+                "createdAt": "2022-10-24T15:09:07.618Z",
+                "tags": [],
+                "isPortalUser": false,
+                "taxDeliveryType": "mail",
+                "contactEmails": [],
+                "occupation": "",
+                "address": {
+                    "street1": "123 Wolfstrasse",
+                    "street2": "",
+                    "city": "Berlin",
+                    "postalCode": "123123",
+                    "country": "DE",
+                    "region": null,
+                    "phone": "",
+                    "phoneValidated": false
+                },
+                "compliance": {
+                    "status": "pending",
+                    "checkedAt": null
+                },
+                "gravatarUrl": "https://www.gravatar.com/avatar/47891e3b30e9fe3c5355801d4cbd5896?d=404",
+                "governmentId": null,
+                "ssn": null,
+                "governmentIds": [],
+                "birthplace": {
+                    "country": null,
+                    "region": null,
+                    "city": null
+                },
+                "citizenships": [],
+                "routeType": "sepa",
+                "routeMinimum": "0",
+                "estimatedFees": "4",
+                "accounts": [],
+                "payoutMethod": null,
+                "primaryCurrency": null,
+                "riskScore": null,
+                "merchantId": "M-W3mQuLjDafUGietRUqmeRz",
+                "inactiveReasons": {
+                    "primaryAccount": "missing"
+                },
+                "taxWithholdingPercentage": null,
+                "taxForm": null,
+                "taxFormStatus": null
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 15:09:07 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "1595",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "74",
+            "X-Rate-Limit-Reset",
+            "1666624207",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"63b-kyshr4V84fvK5itwp7Wd3WY06OI\""
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "POST",
+        "path": "/v1/invoices/create",
+        "body": {
+            "recipientId": "R-HjbY32xg4TXty7woXbD73Q",
+            "description": "Test Invoice",
+            "externalId": "testInvoice",
+            "invoiceDate": "2020-01-01",
+            "dueDate": "2020-01-01"
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "invoice": {
+                "id": "I-2pft9Gu7B5i3tYoUQTXxuw",
+                "invoiceNumber": "",
+                "description": "Test Invoice",
+                "status": "open",
+                "externalId": "testInvoice",
+                "invoiceDate": "2020-01-01T00:00:00.000Z",
+                "dueDate": "2020-01-01T00:00:00.000Z",
+                "releaseAfter": null,
+                "createdAt": "2022-10-24T15:09:08.233Z",
+                "updatedAt": "2022-10-24T15:09:08.233Z",
+                "totalAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "paidAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "dueAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "tags": [],
+                "lines": [],
+                "recipientId": "R-HjbY32xg4TXty7woXbD73Q"
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 15:09:08 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "696",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "73",
+            "X-Rate-Limit-Reset",
+            "1666624207",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"2b8-Ux1Qh7GEPinL9xwi20ei2EXQV8M\""
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "POST",
+        "path": "/v1/invoices/create-lines",
+        "body": {
+            "invoiceId": "I-2pft9Gu7B5i3tYoUQTXxuw",
+            "lines": [
+                {
+                    "unitAmount": {
+                        "value": "100",
+                        "currency": "USD"
+                    },
+                    "category": "services",
+                    "description": "Test Invoice Line",
+                    "externalId": "testInvoiceLine",
+                    "taxReportable": true,
+                    "forceUsTaxActivity": false,
+                    "tags": [
+                        "test"
+                    ],
+                    "invoice": {
+                        "id": "I-2pft9Gu7B5i3tYoUQTXxuw"
+                    }
+                }
+            ]
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "invoice": {
+                "id": "I-2pft9Gu7B5i3tYoUQTXxuw",
+                "invoiceNumber": "",
+                "description": "Test Invoice",
+                "status": "open",
+                "externalId": "testInvoice",
+                "invoiceDate": "2020-01-01T00:00:00.000Z",
+                "dueDate": "2020-01-01T00:00:00.000Z",
+                "releaseAfter": null,
+                "createdAt": "2022-10-24T15:09:08.233Z",
+                "updatedAt": "2022-10-24T15:09:08.622Z",
+                "totalAmount": {
+                    "value": "100.00",
+                    "currency": "USD"
+                },
+                "paidAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "dueAmount": {
+                    "value": "100.00",
+                    "currency": "USD"
+                },
+                "tags": [],
+                "lines": [
+                    {
+                        "id": "IL-MzFxZuiEWE95nJaXtHJuf7",
+                        "status": "open",
+                        "itemUrl": null,
+                        "description": "Test Invoice Line",
+                        "unitAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "quantity": "1",
+                        "discountAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "taxAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "totalAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "dueAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "paidAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "externalId": "testInvoiceLine",
+                        "taxReportable": true,
+                        "tags": [
+                            "test"
+                        ],
+                        "category": "services",
+                        "forceUsTaxActivity": false
+                    }
+                ],
+                "recipientId": "R-HjbY32xg4TXty7woXbD73Q"
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 15:09:08 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "1619",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "72",
+            "X-Rate-Limit-Reset",
+            "1666624207",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"653-lKsui/ihyoiBGEPmXG8fTzZK7QE\""
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "POST",
+        "path": "/v1/invoices/update-lines",
+        "body": {
+            "invoiceId": "I-2pft9Gu7B5i3tYoUQTXxuw",
+            "lines": [
+                {
+                    "invoiceLineId": "IL-MzFxZuiEWE95nJaXtHJuf7",
+                    "description": "updated line description"
+                }
+            ]
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "invoice": {
+                "id": "I-2pft9Gu7B5i3tYoUQTXxuw",
+                "invoiceNumber": "",
+                "description": "Test Invoice",
+                "status": "open",
+                "externalId": "testInvoice",
+                "invoiceDate": "2020-01-01T00:00:00.000Z",
+                "dueDate": "2020-01-01T00:00:00.000Z",
+                "releaseAfter": null,
+                "createdAt": "2022-10-24T15:09:08.233Z",
+                "updatedAt": "2022-10-24T15:09:08.622Z",
+                "totalAmount": {
+                    "value": "100.00",
+                    "currency": "USD"
+                },
+                "paidAmount": {
+                    "value": "0.00",
+                    "currency": "USD"
+                },
+                "dueAmount": {
+                    "value": "100.00",
+                    "currency": "USD"
+                },
+                "tags": [],
+                "lines": [
+                    {
+                        "id": "IL-MzFxZuiEWE95nJaXtHJuf7",
+                        "status": "open",
+                        "itemUrl": null,
+                        "description": "updated line description",
+                        "unitAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "quantity": "1",
+                        "discountAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "taxAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "totalAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "dueAmount": {
+                            "value": "100.00",
+                            "currency": "USD"
+                        },
+                        "paidAmount": {
+                            "value": "0.00",
+                            "currency": "USD"
+                        },
+                        "externalId": "testInvoiceLine",
+                        "taxReportable": true,
+                        "tags": [
+                            "test"
+                        ],
+                        "category": "services",
+                        "forceUsTaxActivity": false
+                    }
+                ],
+                "recipientId": "R-HjbY32xg4TXty7woXbD73Q"
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 24 Oct 2022 15:09:08 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "1626",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "71",
+            "X-Rate-Limit-Reset",
+            "1666624207",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"65a-qzbu9GBM7Bmi/O3exY2VXPAhDNY\""
+        ],
+        "responseIsBinary": false
+    }
+]

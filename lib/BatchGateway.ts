@@ -117,7 +117,7 @@ export class BatchGateway {
   async update(batchId: string, body: BatchInput) {
     const endPoint = buildURL('batches', batchId);
 
-    const result = await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
+    await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
 
     return true;
   }
