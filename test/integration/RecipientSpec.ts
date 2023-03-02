@@ -66,4 +66,17 @@ describe("Recipient", () => {
     assert.strictEqual(recipientsCollection.length, 1);
     assert.strictEqual(recipient.id, recipientsCollection[0].id);
     });
+
+  it("checks routeType and routeMinimum for a recipient", async () => {
+    const nockDone = await startNockRec('recipient-search.json');
+
+    const recipient = await recipientFactory.createResource();
+    const recipientsCollection: Recipient[] = await testingApiClient.recipient.search();
+
+    nockDone();
+
+    assert.ok(recipientsCollection);
+    assert.strictEqual(recipientsCollection[0].routeType, "sepa");
+    assert.strictEqual(recipientsCollection[0].routeMinimum, "0");
+    });
   });
