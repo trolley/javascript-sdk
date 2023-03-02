@@ -1,0 +1,72 @@
+[
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "GET",
+        "path": "/v1/profile/balances",
+        "body": "",
+        "status": 200,
+        "response": {
+            "ok": true,
+            "balances": [
+                {
+                    "primary": true,
+                    "type": "paymentrails",
+                    "accountNumber": "BL-XXu8nDvGuz4S9v3X6AbwQB",
+                    "display": true,
+                    "amount": "100000.00",
+                    "currency": "USD",
+                    "pendingCredit": "0.00",
+                    "pendingDebit": "0.00",
+                    "amountPending": "100000.00",
+                    "amountCleared": "100000.00",
+                    "provider": "sandbox",
+                    "providerId": null,
+                    "providerAcct": "04533938150"
+                }
+            ]
+        },
+        "rawHeaders": [
+            "Date",
+            "Wed, 26 Oct 2022 15:25:11 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "455",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "75",
+            "X-Rate-Limit-Remaining",
+            "74",
+            "X-Rate-Limit-Reset",
+            "1666797971",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"1c7-dPxjm19bzk7QgYdmYar6nsTzbK0\""
+        ],
+        "responseIsBinary": false
+    }
+]

@@ -100,7 +100,7 @@ export class RecipientGateway {
   async update(recipientId: string, body: RecipientInput) {
     const endPoint = buildURL('recipients', recipientId);
 
-    const result = await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
+    await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
 
     return true;
   }
@@ -120,7 +120,7 @@ export class RecipientGateway {
     return true;
   }
 
-  async search(page: number, pageSize: number, term: string) {
+  async search(page: number = 1, pageSize: number = 10, term: string = "") {
     // tslint:disable-next-line:max-line-length
     const endPoint = buildURL('recipients');
     const query = querystring.stringify({

@@ -10,14 +10,14 @@ export interface InvoiceLineInput {
     tags: string[];
 }
 
-enum InvoiceLineCategory {
-    'services',
-    'rent',
-    'royalties',
-    'royalties_film',
-    'prizes',
-    'education',
-    'refunds',
+export enum InvoiceLineCategory {
+    'services' = 'services',
+    'rent' = 'rent',
+    'royalties' = 'royalties',
+    'royalties_film' = 'royalties_film',
+    'prizes' = 'prizes',
+    'education' = 'education',
+    'refunds' = 'refunds',
 }
 
 export class InvoiceLine {
