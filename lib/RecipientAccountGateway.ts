@@ -23,11 +23,11 @@ export class RecipientAccountGateway {
   }
 
   /**
-   * Fetch all of the accounts for a given Payment Rails recipient
+   * Fetch all of the accounts for a given Trolley recipient
    * ```
    * const accounts = await client.recipientAccount.all('R-1234');
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    * @throws {NotFound} if recipient doesn't exist
    */
   async all(recipientId: string) {
@@ -41,12 +41,12 @@ export class RecipientAccountGateway {
   }
 
   /**
-   * Fetch a specific account for a given Payment Rails recipient
+   * Fetch a specific account for a given Trolley recipient
    * ```
    * const account = await client.recipientAccount.find('R-1234', 'A-789');
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
-   * @param accountId The Payment Rails account ID (e.g. A-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @param accountId The Trolley account ID (e.g. A-xyzzy)
    * @throws {NotFound} if account or recipient don't exist
    */
   async find(recipientId: string, accountId: string) {
@@ -73,7 +73,7 @@ export class RecipientAccountGateway {
    *   accountHolderName: "John Smith",
    * });
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    * @param body Account information
    */
   async create(recipientId: string, body: any) {
@@ -95,8 +95,8 @@ export class RecipientAccountGateway {
    *   accountHolderName: "Tom Jones",
    * });
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
-   * @param accountId The Payment Rails account ID (e.g. A-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @param accountId The Trolley account ID (e.g. A-xyzzy)
    * @param body Account information
    */
   async update(recipientId: string, accountId: string, body: any) {
@@ -115,8 +115,8 @@ export class RecipientAccountGateway {
    * ```
    * const success = await client.recipientAccount.remove('R-1234', 'A-789');
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
-   * @param accountId The Payment Rails account ID (e.g. A-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @param accountId The Trolley account ID (e.g. A-xyzzy)
    */
   async remove(recipientId: string, accountId: string) {
     const endPoint = buildURL('recipients', recipientId, 'accounts', accountId);

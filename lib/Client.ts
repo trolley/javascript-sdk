@@ -89,6 +89,7 @@ export class Client {
         "Content-Type": "application/json",
         Authorization: authorization,
         "X-PR-Timestamp": timestamp,
+        "Trolley-Source": "javascript-sdk_0.11.1",
       },
     };
 
@@ -119,6 +120,7 @@ export class Client {
         "Content-Type": "application/json",
         Authorization: authoriation,
         "X-PR-Timestamp": timestamp,
+        "Trolley-Source": "javascript-sdk_0.11.1",
       },
       body,
     };
@@ -148,6 +150,7 @@ export class Client {
         "Content-Type": "application/json",
         Authorization: authoriation,
         "X-PR-Timestamp": timestamp,
+        "Trolley-Source": "javascript-sdk_0.11.1",
       },
       body,
     };
@@ -174,6 +177,7 @@ export class Client {
         "Content-Type": "application/json",
         Authorization: authoriation,
         "X-PR-Timestamp": timestamp,
+        "Trolley-Source": "javascript-sdk_0.11.1",
       },
     };
 

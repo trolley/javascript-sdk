@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [PaymentInput](../interfaces/paymentinput.md)
+[Trolley JavaScript SDK](../README.md) > [PaymentInput](../interfaces/paymentinput.md)
 
 # Interface: PaymentInput
 

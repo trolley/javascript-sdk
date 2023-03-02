@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [BatchGateway](../classes/batchgateway.md)
+[Trolley JavaScript SDK](../README.md) > [BatchGateway](../classes/batchgateway.md)
 
 # Class: BatchGateway
 
@@ -49,7 +49,7 @@ ___
 
 *Defined in [BatchGateway.ts:95](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L95)*
 
-Creates a batch with optional payments. This is the interface that is provide by the [Create Batch](http://docs.paymentrails.com/api/#create-a-batch) API
+Creates a batch with optional payments. This is the interface that is provide by the [Create Batch](https://docs.trolley.com/api/#create-a-batch) API
 
     const batch = await client.batch.create({
         description: "My Batch",
@@ -89,7 +89,7 @@ Retrieves a batch based on the batch id
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string` |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` |  Trolley payment id (e.g. "B-xx999bb") |
 
 **Returns:** `Promise`<`Batch`>
 
@@ -108,7 +108,7 @@ Generate a FX quote for this batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string` |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` |  Trolley payment id (e.g. "B-xx999bb") |
 
 **Returns:** `Promise`<`Batch`>
 
@@ -127,7 +127,7 @@ Return a paginated list of payments for this batch
 
 | Param | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| batchId | `string` | - |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` | - |  Trolley payment id (e.g. "B-xx999bb") |
 | `Default value` page | `number` | 1 |  starting a 1 |
 | `Default value` pageSize | `number` | 10 |  in the range 0...1000 |
 
@@ -150,7 +150,7 @@ Delete the given batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string` |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` |  Trolley payment id (e.g. "B-xx999bb") |
 
 **Returns:** `Promise`<`boolean`>
 
@@ -190,7 +190,7 @@ Start processing this batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string` |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` |  Trolley payment id (e.g. "B-xx999bb") |
 
 **Returns:** `Promise`<`Batch`>
 
@@ -209,7 +209,7 @@ Get a transaction totaled summary for this batch
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string` |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` |  Trolley payment id (e.g. "B-xx999bb") |
 
 **Returns:** `Promise`<`BatchSummary`>
 
@@ -232,7 +232,7 @@ Update the batch data, note you can only update the information of a batch not t
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| batchId | `string` |  Payment Rails payment id (e.g. "B-xx999bb") |
+| batchId | `string` |  Trolley payment id (e.g. "B-xx999bb") |
 | body | `BatchInput` | 
 
 **Returns:** `Promise`<`boolean`>

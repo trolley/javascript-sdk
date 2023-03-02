@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [RecipientAccountGateway](../classes/recipientaccountgateway.md)
+[Trolley JavaScript SDK](../README.md) > [RecipientAccountGateway](../classes/recipientaccountgateway.md)
 
 # Class: RecipientAccountGateway
 
@@ -78,7 +78,7 @@ ___
 
 *Defined in [RecipientAccountGateway.ts:33](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L33)*
 
-Fetch all of the accounts for a given Payment Rails recipient
+Fetch all of the accounts for a given Trolley recipient
 
     const accounts = await client.recipientAccount.all('R-1234');
 *__throws__*: {NotFound} if recipient doesn't exist
@@ -87,7 +87,7 @@ Fetch all of the accounts for a given Payment Rails recipient
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
 
 **Returns:** `Promise`<[RecipientAccount](recipientaccount.md)[]>
 
@@ -117,7 +117,7 @@ Create a new recipient account
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
 | body | `any` |  Account information |
 
 **Returns:** `Promise`<[RecipientAccount](recipientaccount.md)>
@@ -131,7 +131,7 @@ ___
 
 *Defined in [RecipientAccountGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L52)*
 
-Fetch a specific account for a given Payment Rails recipient
+Fetch a specific account for a given Trolley recipient
 
     const account = await client.recipientAccount.find('R-1234', 'A-789');
 *__throws__*: {NotFound} if account or recipient don't exist
@@ -140,8 +140,8 @@ Fetch a specific account for a given Payment Rails recipient
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
-| accountId | `string` |  The Payment Rails account ID (e.g. A-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
+| accountId | `string` |  The Trolley account ID (e.g. A-xyzzy) |
 
 **Returns:** `Promise`<[RecipientAccount](recipientaccount.md)>
 
@@ -162,8 +162,8 @@ Delete the given recipient account. This will only return success, otherwise it 
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
-| accountId | `string` |  The Payment Rails account ID (e.g. A-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
+| accountId | `string` |  The Trolley account ID (e.g. A-xyzzy) |
 
 **Returns:** `Promise`<`boolean`>
 
@@ -186,8 +186,8 @@ Update a recipient account. Note: Updating an account will create a new account 
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| recipientId | `string` |  The Payment Rails recipient ID (e.g. R-xyzzy) |
-| accountId | `string` |  The Payment Rails account ID (e.g. A-xyzzy) |
+| recipientId | `string` |  The Trolley recipient ID (e.g. R-xyzzy) |
+| accountId | `string` |  The Trolley account ID (e.g. A-xyzzy) |
 | body | `any` |  Account information |
 
 **Returns:** `Promise`<[RecipientAccount](recipientaccount.md)>

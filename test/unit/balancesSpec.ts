@@ -1,5 +1,5 @@
-import { Configuration, Balances } from "../../lib";
-import { BalanceGateway } from "../../lib/PaymentRails/BalanceGateway";
+import { Configuration, Balance } from "../../lib";
+import { BalancesGateway } from "../../lib/BalancesGateway";
 
 import * as assert from "assert";
 import * as sinon from "sinon";
@@ -30,7 +30,7 @@ describe("Balance", () => {
     assert.deepEqual(data, {});
   });
 
-  it("Retrieve paymentrails balance", async () => {
+  it("Retrieve trolley/paymentrails balance", async () => {
     sandbox
       .stub(BalancesGateway.prototype, "find")
       .withArgs("paymentrails")

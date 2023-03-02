@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [ServerError](../classes/exceptions.servererror.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [ServerError](../classes/exceptions.servererror.md)
 
 # Class: ServerError
 

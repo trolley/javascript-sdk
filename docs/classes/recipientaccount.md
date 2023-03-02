@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [RecipientAccount](../classes/recipientaccount.md)
+[Trolley JavaScript SDK](../README.md) > [RecipientAccount](../classes/recipientaccount.md)
 
 # Class: RecipientAccount
 

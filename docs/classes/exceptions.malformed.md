@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [Malformed](../classes/exceptions.malformed.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [Malformed](../classes/exceptions.malformed.md)
 
 # Class: Malformed
 

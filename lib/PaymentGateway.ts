@@ -29,7 +29,7 @@ export class PaymentGateway {
    * ```
    * const payment = await client.payment.find('P-aabbccc');
    * ```
-   * @param paymentId Payment Rails payment id (e.g. "P-aabccc")
+   * @param paymentId Trolley payment id (e.g. "P-aabccc")
    */
   async find(paymentId: string) {
     const endPoint = buildURL("payments", paymentId);
@@ -51,7 +51,7 @@ export class PaymentGateway {
    *   sourceAmount: '10.99',
    * });
    * ```
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    * @param body Payment information
    */
   async create(batchId: string, body: any) {
@@ -72,8 +72,8 @@ export class PaymentGateway {
    *   sourceAmount: '99.99',
    * });
    * ```
-   * @param paymentId Payment Rails payment id (e.g. "P-aabccc")
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param paymentId Trolley payment id (e.g. "P-aabccc")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    * @param body Payment update information
    */
   async update(paymentId: string, batchId: string, body: any) {
@@ -92,8 +92,8 @@ export class PaymentGateway {
    * ```
    * const success = await client.payment.remove('P-aabbccc', 'B-xx99bb');
    * ```
-   * @param paymentId Payment Rails payment id (e.g. "P-aabccc")
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param paymentId Trolley payment id (e.g. "P-aabccc")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
   async remove(paymentId: string, batchId: string) {
     const endPoint = buildURL("batches", batchId, "payments", paymentId);

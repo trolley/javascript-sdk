@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [Authentication](../classes/exceptions.authentication.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md) > [Authentication](../classes/exceptions.authentication.md)
 
 # Class: Authentication
 

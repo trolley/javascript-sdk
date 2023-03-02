@@ -1,8 +1,8 @@
-# Payment Rails[^1] JavaScript SDK
+# Trolley JavaScript SDK (Previously Payment Rails[^1])
 
-A JavaScript SDK (written in TypeScript) - For more information about the API as well as NodeJS code samples check out the [full API documentation](http://docs.paymentrails.com)
+Trolley's JavaScript SDK (written in TypeScript) - For more information about the API as well as NodeJS code samples check out the [full API documentation](https://docs.trolley.com)
 
-[^1]: [Payment Rails is now Trolley](https://www.trolley.com/payment-rails-is-now-trolley-series-a), we'll be updating our SDKs to support the new domain during the first half of 2022.
+[^1]: [Payment Rails is now Trolley](https://www.trolley.com/payment-rails-is-now-trolley-series-a). We're in the process of updating our SDKs to support the new domain. In this transition phase, you might still see "PaymentRails" at some places.
 
 ## Installation
 
@@ -10,16 +10,16 @@ A JavaScript SDK (written in TypeScript) - For more information about the API as
 
 ## Getting Started
 
-The Payment Rails API is built using promises and all methods except
+The Trolley API is built using promises and all methods except
 connect will return a promise. The connect call allows you to setup
 your API Key and Secret with a client that can be used for subsequent
 calls.
 
 ```js
-// A simple application using the Payment Rails SDK
-const paymentrails = require('paymentrails');
+// A simple application using the Trolley/Payment Rails SDK
+const trolley = require('paymentrails');
 
-const client = paymentrails.connect({
+const client = trolley.connect({
   key: "YOUR-API-KEY",
   secret: "YOUR-API-SECRET",
   environment: "production",
@@ -46,7 +46,7 @@ client.recipient.find("R-G7SXXpm6cs4aTUd9YhmgWC").then(recipient => {
 
 ### Usage
 
-Methods should all have JSDoc comments to help you understand their usage. As mentioned the [full API documentation](http://docs.paymentrails.com)
+Methods should all have JSDoc comments to help you understand their usage. As mentioned the [full API documentation](https://docs.trolley.com)
 is the best source of information about the API.
 
 For more information please read the [JavaScript API docs](https://github.com/PaymentRails/javascript-sdk/blob/master/docs/) is available. The best starting point is:
@@ -62,14 +62,14 @@ For more information please read the [JavaScript API docs](https://github.com/Pa
 
 If you're working on the library itself, here's easy way to run the unit tests. They are designed to be run with configuration coming through environment variables.
 
-  * ``PR_ACCESS_KEY``
-  * ``PR_SECRET_KEY``
-  * ``PR_ENVIRONMENT``
+  * ``TROLLEY_ACCESS_KEY``
+  * ``TROLLEY_SECRET_KEY``
+  * ``TROLLEY_ENVIRONMENT``
 
 For a command like:
     
-    PR_ACCESS_KEY=xxx \
-    PR_SECRET_KEY=yyy \
-    PR_ENVIRONMENT=integration \
+    TROLLEY_ACCESS_KEY=xxx \
+    TROLLEY_SECRET_KEY=yyy \
+    TROLLEY_ENVIRONMENT=integration \
     npm run test:integration
 

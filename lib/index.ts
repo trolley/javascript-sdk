@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === "test") {
 }
 
 /**
- * Create a client for the Payment Rails JavasScript API
+ * Create a client for the Trolley JavasScript API
  * ```
  * const client = paymentrails.connect({
  *   key: "MY_PUBLIC_KEY",
