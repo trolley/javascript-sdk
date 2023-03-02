@@ -42,12 +42,12 @@ describe("Batch", () => {
   it("updates a batch", async () => {
     const nockDone = await startNockRec('batch-update.json');
 
-    let batch = await batchFactory.createResource({
+    const batch = await batchFactory.createResource({
         description: "Integration Test Update",
     });
     assert.strictEqual(batch.description, "Integration Test Update");
 
-    batch = await testingApiClient.batch.update(batch.id, {
+    await testingApiClient.batch.update(batch.id, {
       description: "Integration Test Update 2",
     });
 

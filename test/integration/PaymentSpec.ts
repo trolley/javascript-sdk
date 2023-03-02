@@ -58,7 +58,7 @@ describe('Payment', () => {
                 },
             },
         );
-        const updatedPayment = await testingApiClient.payment.update(
+        await testingApiClient.payment.update(
             payment.id,
             batch.id,
             {
@@ -66,6 +66,8 @@ describe('Payment', () => {
                 externalId: 'updatedPayment',
             },
         );
+
+        const updatedPayment = await testingApiClient.payment.find(payment.id);
 
         nockDone();
 

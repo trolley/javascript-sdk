@@ -28,10 +28,12 @@ describe("Recipient", () => {
     const nockDone = await startNockRec('recipient-update.json');
 
     const recipient = await recipientFactory.createResource();
-    const updatedRecipient = await testingApiClient.recipient.update(recipient.id, {
+    await testingApiClient.recipient.update(recipient.id, {
       firstName: "John",
       lastName: "Smith",
     });
+
+    const updatedRecipient = await testingApiClient.recipient.find(recipient.id);
 
     nockDone();
 
