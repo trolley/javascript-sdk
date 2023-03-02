@@ -58,18 +58,19 @@ For more information please read the [JavaScript API docs](https://github.com/Pa
 | Recipient | [API Docs for Recipient](https://github.com/PaymentRails/javascript-sdk/blob/master/docs/classes/recipientgateway.md) |
 | Recipient Account | [API Docs for Recipient Account](https://github.com/PaymentRails/javascript-sdk/blob/master/docs/classes/recipientaccountgateway.md) |
 
-#### Running Integration / Unit tests
+### Running Integration / Unit tests
 
-If you're working on the library itself, here's easy way to run the unit tests. They are designed to be run with configuration coming through environment variables.
+If you're working on the library itself, here's easy way to run the tests.
 
-  * ``TROLLEY_ACCESS_KEY``
-  * ``TROLLEY_SECRET_KEY``
-  * ``TROLLEY_ENVIRONMENT``
+```
+// if not already, copy the example env file to create an env file
+$ cp .env.test .env
 
-For a command like:
-    
-    TROLLEY_ACCESS_KEY=xxx \
-    TROLLEY_SECRET_KEY=yyy \
-    TROLLEY_ENVIRONMENT=integration \
-    npm run test:integration
+// Set access key and secret in the env file
+TROLLEY_ENVIRONMENT="production"
+TROLLEY_ACCESS_KEY="ACCESS_KEY"
+TROLLEY_SECRET_KEY="SECRET_KEY"
 
+//Run the fixture based tests
+$ npm test
+```
