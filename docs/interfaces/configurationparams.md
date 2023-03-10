@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [ConfigurationParams](../interfaces/configurationparams.md)
+[Trolley JavaScript SDK](../README.md) > [ConfigurationParams](../interfaces/configurationparams.md)
 
 # Interface: ConfigurationParams
 
@@ -41,7 +41,7 @@ ___
 
 *Defined in [Configuration.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L7)*
 
-The Payment Rails public key
+The Trolley public key
 
 ___
 <a id="secret"></a>
@@ -52,7 +52,7 @@ ___
 
 *Defined in [Configuration.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L11)*
 
-The Payment Rails private key
+The Trolley private key
 
 ___
 

@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Configuration](../classes/configuration.md)
+[Trolley JavaScript SDK](../README.md) > [Configuration](../classes/configuration.md)
 
 # Class: Configuration
 
@@ -62,13 +62,13 @@ ___
 
 *Defined in [Configuration.ts:55](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L55)*
 
-Globally set the public API key to connect to Payment Rails
+Globally set the public API key to connect to Trolley
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| key | `string` |  Your Payment Rails API public key |
+| key | `string` |  Your Trolley API public key |
 
 **Returns:** `void`
 
@@ -81,13 +81,13 @@ ___
 
 *Defined in [Configuration.ts:63](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L63)*
 
-Globally set the secret API key to connect to Payment Rails
+Globally set the secret API key to connect to Trolley
 
 **Parameters:**
 
 | Param | Type | Description |
 | ------ | ------ | ------ |
-| secret | `string` |  Your Payment Rails API secret Key |
+| secret | `string` |  Your Trolley API secret Key |
 
 **Returns:** `void`
 
@@ -100,7 +100,7 @@ ___
 
 *Defined in [Configuration.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L90)*
 
-Set the Payment Rails API environment that your using
+Set the Trolley API environment that your using
 
 **Parameters:**
 

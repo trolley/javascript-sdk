@@ -49,11 +49,11 @@ export class RecipientGateway {
   }
 
   /**
-   * Find a specific recipient by their Payment Rails recipient ID
+   * Find a specific recipient by their Trolley recipient ID
    * ```
    * const recipient = await client.recipient.find('R-1234');
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    */
   async find(recipientId: string) {
     const endPoint = buildURL('recipients', recipientId);
@@ -94,13 +94,13 @@ export class RecipientGateway {
    *   firstName: "Carl",
    * });
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    * @param body the changes to make to the recipient
    */
   async update(recipientId: string, body: RecipientInput) {
     const endPoint = buildURL('recipients', recipientId);
 
-    const result = await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
+    await this.gateway.client.patch<types.Recipient.Response>(endPoint, body);
 
     return true;
   }
@@ -110,7 +110,7 @@ export class RecipientGateway {
    * ```
    * const status = await client.recipient.remove('R-123');
    * ```
-   * @param recipientId The Payment Rails recipient ID (e.g. R-xyzzy)
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    */
   async remove(recipientId: string) {
     const endPoint = buildURL('recipients', recipientId);
@@ -120,7 +120,7 @@ export class RecipientGateway {
     return true;
   }
 
-  async search(page: number, pageSize: number, term: string) {
+  async search(page: number = 1, pageSize: number = 10, term: string = "") {
     // tslint:disable-next-line:max-line-length
     const endPoint = buildURL('recipients');
     const query = querystring.stringify({

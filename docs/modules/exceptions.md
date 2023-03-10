@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md)
+[Trolley JavaScript SDK](../README.md) > [Exceptions](../modules/exceptions.md)
 
 # Module: Exceptions
 

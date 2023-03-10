@@ -62,7 +62,7 @@ export class BatchGateway {
    * ```
    * const batch = await client.batch.find('B-xx999bb');
    * ```
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
   async find(batchId: string): Promise<Batch> {
     const endPoint = buildURL('batches', batchId);
@@ -74,7 +74,7 @@ export class BatchGateway {
 
   /**
    * Creates a batch with optional payments. This is the interface that is
-   * provide by the {@link http://docs.paymentrails.com/api/#create-a-batch Create Batch} API
+   * provide by the {@link https://docs.trolley.com/api/#create-a-batch Create Batch} API
    *
    * ```js
    * const batch = await client.batch.create({
@@ -111,13 +111,13 @@ export class BatchGateway {
    *     description: "My Batch for Wednesday",
    * });
    * ```
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    * @param {BatchInput} parameters
    */
   async update(batchId: string, body: BatchInput) {
     const endPoint = buildURL('batches', batchId);
 
-    const result = await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
+    await this.gateway.client.patch<types.Batch.Result>(endPoint, body);
 
     return true;
   }
@@ -127,7 +127,7 @@ export class BatchGateway {
    * ```
    * const success = client.batch.remove('B-xx999bb');
    * ```
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
   async remove(batchId: string) {
     const endPoint = buildURL('batches', batchId);
@@ -159,7 +159,7 @@ export class BatchGateway {
 
   /**
    * Return a paginated list of payments for this batch
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    * @param page starting a 1
    * @param pageSize in the range 0...1000
    */
@@ -177,7 +177,7 @@ export class BatchGateway {
 
   /**
    * Generate a FX quote for this batch
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
   async generateQuote(batchId: string) {
     const endPoint = buildURL('batches', batchId, 'generate-quote');
@@ -189,7 +189,7 @@ export class BatchGateway {
 
   /**
    * Start processing this batch
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
   async startProcessing(batchId: string) {
     const endPoint = buildURL('batches', batchId, 'start-processing');
@@ -201,7 +201,7 @@ export class BatchGateway {
 
   /**
    * Get a transaction totaled summary for this batch
-   * @param batchId Payment Rails payment id (e.g. "B-xx999bb")
+   * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
   async summary(batchId: string) {
     const endPoint = buildURL('batches', batchId, 'summary');

@@ -1,4 +1,4 @@
-[Payment Rails JavaScript SDK](../README.md) > [RecipientInput](../interfaces/recipientinput.md)
+[Trolley JavaScript SDK](../README.md) > [RecipientInput](../interfaces/recipientinput.md)
 
 # Interface: RecipientInput
 

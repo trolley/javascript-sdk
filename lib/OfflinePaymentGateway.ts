@@ -35,7 +35,7 @@ export class OfflinePaymentGateway {
    *   withholdingCurrency: "USD",
    * });
    * ```
-   * @param recipientId Payment Rails recipient id (e.g. "R-xx999bb")
+   * @param recipientId Trolley recipient id (e.g. "R-xx999bb")
    * @param body Offline Payment information
    */
   async create(recipientId: string, body: any) {
@@ -59,8 +59,8 @@ export class OfflinePaymentGateway {
    *   withholdingCurrency: "USD",
    * });
    * ```
-   * @param recipientId Payment Rails recipient id (e.g. "R-aabccc")
-   * @param offlinePaymentId Payment Rails offline payment id (e.g. "OP-xx999bb")
+   * @param recipientId Trolley recipient id (e.g. "R-aabccc")
+   * @param offlinePaymentId Trolley offline payment id (e.g. "OP-xx999bb")
    * @param body Payment update information
    */
   async update(recipientId: string, offlinePaymentId: string, body: any) {
@@ -71,10 +71,9 @@ export class OfflinePaymentGateway {
       offlinePaymentId,
     );
 
-    const result = await this.gateway.client.patch<{ ok: boolean }>(
-      endPoint,
-      body,
-    );
+    await this.gateway.client.patch<
+         types.OfflinePayment.Response
+        >(endPoint, body);
 
     return true;
   }
@@ -84,8 +83,8 @@ export class OfflinePaymentGateway {
    * ```
    * const success = await client.offlinePayment.remove('R-aabbccc', 'OP-xx99bb');
    * ```
-   * @param recipientId Payment Rails recipient id (e.g. "R-aabccc")
-   * @param offlinePaymentId Payment Rails offline payment id (e.g. "OP-xx999bb")
+   * @param recipientId Trolley recipient id (e.g. "R-aabccc")
+   * @param offlinePaymentId Trolley offline payment id (e.g. "OP-xx999bb")
    */
   async remove(recipientId: string, offlinePaymentId: string) {
     const endPoint = buildURL(
