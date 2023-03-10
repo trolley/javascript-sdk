@@ -112,10 +112,18 @@ export class RecipientGateway {
    * ```
    * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    */
-  async remove(recipientId: string) {
-    const endPoint = buildURL('recipients', recipientId);
+  async remove(recipientId: string | string[]) {
+    let endPoint = "";
+    let recipients: string[] = [];
 
-    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
+    if (Array.isArray(recipientId)) {
+      recipients = recipientId;
+      endPoint = buildURL('recipients');
+    } else {
+      endPoint = buildURL('recipients', recipientId);
+    }
+
+    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint, recipients);
 
     return true;
   }

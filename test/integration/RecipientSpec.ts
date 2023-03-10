@@ -58,16 +58,15 @@ describe("Recipient", () => {
     const nockDone = await startNockRec('recipient-delete-multiple.json');
 
     const recipient = await recipientFactory.createResource();
-    const recipient2 = await recipientFactory.createResource();
+    const recipient2 = await recipientFactory.createResource({ email: 'testEmail2@example.com' });
     const deleted = await testingApiClient.recipient.remove([recipient.id, recipient2.id]);
 
     nockDone();
 
     assert.ok(deleted);
-    });
   });
 
-it("searches for a recipient", async () => {
+  it("searches for a recipient", async () => {
     const nockDone = await startNockRec('recipient-search.json');
 
     const recipient = await recipientFactory.createResource();
@@ -80,7 +79,7 @@ it("searches for a recipient", async () => {
     assert.strictEqual(recipient.id, recipientsCollection[0].id);
     });
 
-it("checks routeType and routeMinimum for a recipient", async () => {
+  it("checks routeType and routeMinimum for a recipient", async () => {
     const nockDone = await startNockRec('recipient-search.json');
 
     const recipient = await recipientFactory.createResource();
@@ -92,4 +91,4 @@ it("checks routeType and routeMinimum for a recipient", async () => {
     assert.strictEqual(recipientsCollection[0].routeType, "sepa");
     assert.strictEqual(recipientsCollection[0].routeMinimum, "0");
     });
-  })
+  });
