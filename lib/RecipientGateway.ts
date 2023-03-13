@@ -4,6 +4,8 @@ import { Gateway } from "./Gateway";
 import * as types from "./types";
 import { buildURL } from './util';
 import * as querystring from 'querystring';
+import { ApiResponse } from "./types";
+import { Log } from "./Log";
 
 export interface RecipientInput {
     referenceId?: string;
@@ -126,6 +128,14 @@ export class RecipientGateway {
     const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint, recipients);
 
     return true;
+  }
+
+  async findLogs(recipientId: string) {
+    const endPoint = buildURL('recipients', recipientId, 'logs');
+
+    const result = await this.gateway.client.get<ApiResponse<Log[]>>(endPoint);
+
+    return result.recipientLogs.map((r: Log) => Object.assign(new Log(), r));
   }
 
   async search(page: number = 1, pageSize: number = 10, term: string = "") {
