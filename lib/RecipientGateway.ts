@@ -7,6 +7,7 @@ import * as querystring from 'querystring';
 import { ApiResponse } from "./types";
 import { Log } from "./Log";
 import { Payment } from "./Payment";
+import { OfflinePayment } from "./OfflinePayment";
 
 export interface RecipientInput {
     referenceId?: string;
@@ -144,9 +145,15 @@ export class RecipientGateway {
 
     const result = await this.gateway.client.get<ApiResponse<Payment[]>>(endPoint);
 
-    console.log(result);
-
     return result.payments.map((r: Payment) => Object.assign(new Payment(), r));
+  }
+
+  async findOfflinePayments(recipientId: string) {
+    const endPoint = buildURL('recipients', recipientId, 'offlinePayments');
+
+    const result = await this.gateway.client.get<ApiResponse<OfflinePayment[]>>(endPoint);
+
+    return result.offlinePayments.map((r: OfflinePayment) => Object.assign(new OfflinePayment(), r));
   }
 
   async search(page: number = 1, pageSize: number = 10, term: string = "") {

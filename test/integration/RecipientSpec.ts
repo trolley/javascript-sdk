@@ -1,19 +1,22 @@
-import { Recipient } from "../../lib";
+import { OfflinePayment, Payment, Recipient } from "../../lib";
 import * as assert from "assert";
 import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelpers";
 import { RecipientFactory } from "./factories/RecipientFactory";
 import { Log } from "../../lib/Log";
 import { BatchFactory } from "./factories/BatchFactory";
 import { PaymentFactory } from "./factories/PaymentFactory";
+import { OfflinePaymentFactory } from "./factories/OfflinePaymentFactory";
 
 let recipientFactory: RecipientFactory;
 let batchFactory: BatchFactory;
 let paymentFactory: PaymentFactory;
+let offlinePaymentFactory: OfflinePaymentFactory;
 
 before(async () => {
     recipientFactory = new RecipientFactory();
     batchFactory = new BatchFactory();
     paymentFactory = new PaymentFactory();
+    offlinePaymentFactory = new OfflinePaymentFactory();
 });
 
 describe("Recipient", () => {
@@ -110,7 +113,24 @@ describe("Recipient", () => {
 
     assert.ok(payments);
     assert.strictEqual(payments.length, 1);
+    assert.ok(payments[0] instanceof Payment);
     assert.strictEqual(payments[0].recipient.id, recipient.id);
+  });
+
+  it("finds offline payments for a recipient", async () => {
+    const nockDone = await startNockRec('recipient-find-offline-payments.json');
+
+    const recipient = await recipientFactory.createResource();
+    await offlinePaymentFactory.createResource({ recipient: { id: recipient.id } });
+
+    const offlinePayments = await testingApiClient.recipient.findOfflinePayments(recipient.id);
+
+    nockDone();
+
+    assert.ok(offlinePayments);
+    assert.strictEqual(offlinePayments.length, 1);
+    assert.ok(offlinePayments[0] instanceof OfflinePayment);
+    assert.strictEqual(offlinePayments[0].recipientId, recipient.id);
   });
 
   it("searches for a recipient", async () => {
