@@ -3,11 +3,17 @@ import * as assert from "assert";
 import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelpers";
 import { RecipientFactory } from "./factories/RecipientFactory";
 import { Log } from "../../lib/Log";
+import { BatchFactory } from "./factories/BatchFactory";
+import { PaymentFactory } from "./factories/PaymentFactory";
 
 let recipientFactory: RecipientFactory;
+let batchFactory: BatchFactory;
+let paymentFactory: PaymentFactory;
 
 before(async () => {
     recipientFactory = new RecipientFactory();
+    batchFactory = new BatchFactory();
+    paymentFactory = new PaymentFactory();
 });
 
 describe("Recipient", () => {
@@ -78,7 +84,34 @@ describe("Recipient", () => {
     assert.ok(logs);
     assert.strictEqual(logs.length, 1);
     assert.ok(logs[0] instanceof Log);
-    });
+  });
+
+  it("finds payments for a recipient", async () => {
+    const nockDone = await startNockRec('recipient-find-payments.json');
+
+    const recipient = await recipientFactory.createResource();
+    const batch = await batchFactory.createResource();
+    const payment = await paymentFactory.createResource(
+      {
+        batch: {
+          id: batch.id,
+        },
+        payment: {
+          recipient: {
+            id: recipient.id,
+          },
+        },
+      },
+    );
+
+    const payments = await testingApiClient.recipient.findPayments(recipient.id);
+
+    nockDone();
+
+    assert.ok(payments);
+    assert.strictEqual(payments.length, 1);
+    assert.strictEqual(payments[0].recipient.id, recipient.id);
+  });
 
   it("searches for a recipient", async () => {
     const nockDone = await startNockRec('recipient-search.json');
