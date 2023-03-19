@@ -6,6 +6,7 @@ import { buildURL } from './util';
 import * as querystring from 'querystring';
 import { ApiResponse } from "./types";
 import { Log } from "./Log";
+import { Payment } from "./Payment";
 
 export interface RecipientInput {
     referenceId?: string;
@@ -136,6 +137,16 @@ export class RecipientGateway {
     const result = await this.gateway.client.get<ApiResponse<Log[]>>(endPoint);
 
     return result.recipientLogs.map((r: Log) => Object.assign(new Log(), r));
+  }
+
+  async findPayments(recipientId: string) {
+    const endPoint = buildURL('recipients', recipientId, 'payments');
+
+    const result = await this.gateway.client.get<ApiResponse<Payment[]>>(endPoint);
+
+    console.log(result);
+
+    return result.payments.map((r: Payment) => Object.assign(new Payment(), r));
   }
 
   async search(page: number = 1, pageSize: number = 10, term: string = "") {

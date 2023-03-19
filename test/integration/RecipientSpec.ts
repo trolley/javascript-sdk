@@ -2,6 +2,7 @@ import { Recipient } from "../../lib";
 import * as assert from "assert";
 import { startNockRec, testingApiClient } from "./helpers/integrationTestsHelpers";
 import { RecipientFactory } from "./factories/RecipientFactory";
+import { Log } from "../../lib/Log";
 
 let recipientFactory: RecipientFactory;
 
@@ -65,6 +66,19 @@ describe("Recipient", () => {
 
     assert.ok(deleted);
   });
+
+  it("finds logs for a recipient", async () => {
+    const nockDone = await startNockRec('recipient-find-logs.json');
+
+    const recipient = await recipientFactory.createResource();
+    const logs = await testingApiClient.recipient.findLogs(recipient.id);
+
+    nockDone();
+
+    assert.ok(logs);
+    assert.strictEqual(logs.length, 1);
+    assert.ok(logs[0] instanceof Log);
+    });
 
   it("searches for a recipient", async () => {
     const nockDone = await startNockRec('recipient-search.json');
