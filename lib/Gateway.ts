@@ -8,6 +8,7 @@ import { OfflinePaymentGateway } from "./OfflinePaymentGateway";
 import { InvoiceGateway } from "./InvoiceGateway";
 import { Client } from "./Client";
 import { InvoiceLineGateway } from "./InvoiceLineGateway";
+import { InvoicePaymentGateway } from "./InvoicePaymentGateway";
 
 export class Gateway {
   config: Configuration;
@@ -20,6 +21,7 @@ export class Gateway {
   offlinePayment: OfflinePaymentGateway;
   invoice: InvoiceGateway;
   invoiceLine: InvoiceLineGateway;
+  invoicePayment: InvoicePaymentGateway;
 
   /**
    * This should be called by the connect() method to setup a client gateway
@@ -37,5 +39,6 @@ export class Gateway {
     this.offlinePayment = new OfflinePaymentGateway(this);
     this.invoice = new InvoiceGateway(this);
     this.invoiceLine = new InvoiceLineGateway(this);
+    this.invoicePayment = new InvoicePaymentGateway(this);
   }
 }

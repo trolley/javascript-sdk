@@ -2,7 +2,7 @@ import { Gateway } from "./Gateway";
 import { Configuration } from "./Configuration";
 import { buildURL } from "./util";
 import { ApiResponse } from "./types";
-import { InvoicePayment } from "./InvoicePayment";
+import { InvoicePayment, InvoicePaymentInput } from "./InvoicePayment";
 
 export class InvoicePaymentGateway {
     gateway: Gateway;
@@ -13,15 +13,12 @@ export class InvoicePaymentGateway {
         this.config = gateway.config;
     }
 
-    async create(invoiceId: string, invoicePayment: any) {
+    async create(invoicePayment: InvoicePaymentInput) {
         const endPoint = buildURL('invoices/payment/create');
 
         const result = await this.gateway.client.post<ApiResponse<InvoicePayment>>(
             endPoint,
-            {
-                invoiceId: invoiceId,
-                ...invoicePayment,
-            },
+            invoicePayment,
         );
 
         return Object.assign(new InvoicePayment(), result.invoicePayment);

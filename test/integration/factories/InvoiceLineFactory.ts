@@ -1,5 +1,4 @@
 import { ApiFactory } from "./ApiFactory";
-import { Amount } from "../../../lib/types";
 import { InvoiceLineCategory } from "../../../lib/InvoiceLine";
 
 export class InvoiceLineFactory extends ApiFactory {
