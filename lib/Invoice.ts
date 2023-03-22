@@ -26,14 +26,14 @@ export class Invoice {
     tags: string[] = [];
     totalAmount: Amount = {
         currency: "",
-        value: 0,
+        value: "0",
     };
     paidAmount: Amount = {
         currency: "",
-        value: 0,
+        value: "0",
     };
     dueAmount: Amount = {
         currency: "",
-        value: 0,
+        value: "0",
     };
 }

@@ -8,6 +8,7 @@ export interface InvoicePaymentInput {
 interface InvoicePaymentInputRecord {
     invoiceId?: string;
     invoiceLineId?: string;
+    paymentId?: string;
     amount: Amount;
 }
 

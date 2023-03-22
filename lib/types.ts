@@ -609,6 +609,6 @@ export interface ApiResponse<T> {
 }
 
 export type Amount = {
-  value: number;
+  value: string;
   currency: string;
 };

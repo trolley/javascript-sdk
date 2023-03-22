@@ -24,15 +24,12 @@ export class InvoicePaymentGateway {
         return Object.assign(new InvoicePayment(), result.invoicePayment);
     }
 
-    async update(invoiceId: string, invoicePayment: any) {
+    async update(invoicePayment: any) {
         const endPoint = buildURL('invoices/payment/update');
 
         const result = await this.gateway.client.post<ApiResponse<InvoicePayment>>(
             endPoint,
-            {
-                invoiceId: invoiceId,
-                ...invoicePayment,
-            },
+            invoicePayment,
         );
 
         return Object.assign(new InvoicePayment(), result.invoicePayment);
