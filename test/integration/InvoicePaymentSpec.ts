@@ -4,7 +4,7 @@ import * as assert from "assert";
 import { RecipientFactory } from "./factories/RecipientFactory";
 import { InvoicePaymentFactory } from "./factories/InvoicePaymentFactory";
 import { InvoiceLineFactory } from "./factories/InvoiceLineFactory";
-import { InvoicePayment, InvoicePaymentInput } from "../../lib/InvoicePayment";
+import { InvoicePayment, InvoicePaymentInput, InvoicePaymentRecord } from "../../lib/InvoicePayment";
 
 let recipientFactory: RecipientFactory;
 let invoiceFactory: InvoiceFactory;
@@ -71,5 +71,28 @@ describe("Invoice Payment", () => {
         nockDone();
 
         assert.ok(updatedInvoicePayment);
+    });
+
+    it("deletes an invoice payment", async () => {
+        const nockDone = await startNockRec("invoice-payment-delete.json");
+
+        const recipient = await recipientFactory.createResource();
+        const invoice = await invoiceFactory.createResource({ recipientId: recipient.id });
+        await invoiceLineFactory.createResource({ invoice: { id: invoice.id } });
+        const invoicePayment = await invoicePaymentFactory.createResource(
+            {
+                ids: [{ invoiceId: invoice.id }],
+            },
+        );
+
+        const deletedInvoicePayment = await testingApiClient.invoicePayment.delete(
+          { paymentId: invoicePayment.paymentId,
+              invoiceLineIds: invoicePayment.invoicePayments.map((ip: InvoicePaymentRecord) => ip.invoiceLineId),
+          },
+        );
+
+        nockDone();
+
+        assert.ok(deletedInvoicePayment);
     });
 });

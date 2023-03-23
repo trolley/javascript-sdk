@@ -24,29 +24,26 @@ export class InvoicePaymentGateway {
         return Object.assign(new InvoicePayment(), result.invoicePayment);
     }
 
-    async update(invoicePayment: any) {
+    async update(payload: any) {
         const endPoint = buildURL('invoices/payment/update');
 
-        const result = await this.gateway.client.post<ApiResponse<InvoicePayment>>(
+        const result = await this.gateway.client.post<{ok: boolean}>(
             endPoint,
-            invoicePayment,
+            payload,
         );
 
-        return Object.assign(new InvoicePayment(), result.invoicePayment);
+        return result.ok;
     }
 
-    async delete(invoiceId: string, invoicePaymentId: string) {
+    async delete(payload: any) {
         const endPoint = buildURL('invoices/payment/delete');
 
-        const result = await this.gateway.client.post<ApiResponse<InvoicePayment>>(
+        const result = await this.gateway.client.post<{ok: boolean}>(
             endPoint,
-            {
-                invoiceId: invoiceId,
-                invoicePaymentId: invoicePaymentId,
-            },
+            payload,
         );
 
-        return true;
+        return result.ok;
     }
 
     async search(invoiceId: string, query: any) {

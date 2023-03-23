@@ -18,7 +18,7 @@ export class InvoicePayment {
     invoicePayments: InvoicePaymentRecord[] = [];
 }
 
-interface InvoicePaymentRecord {
+export interface InvoicePaymentRecord {
     invoiceId: string;
     invoiceLineId: string;
     paymentId: string;
