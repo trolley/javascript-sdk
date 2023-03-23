@@ -95,4 +95,50 @@ describe("Invoice Payment", () => {
 
         assert.ok(deletedInvoicePayment);
     });
+
+    it("searches for invoice payments by invoiceIds", async () => {
+        const nockDone = await startNockRec("invoice-payment-search.json");
+
+        const recipient = await recipientFactory.createResource();
+        const invoice = await invoiceFactory.createResource({ recipientId: recipient.id });
+        await invoiceLineFactory.createResource({ invoice: { id: invoice.id } });
+        const invoicePayment = await invoicePaymentFactory.createResource(
+            {
+                ids: [{ invoiceId: invoice.id }],
+            },
+        );
+
+        const searchResults = await testingApiClient.invoicePayment.search(
+          { invoiceIds: [invoice.id] },
+        );
+
+        nockDone();
+
+        assert.ok(searchResults);
+        assert.strictEqual(searchResults.length, 1);
+        assert.strictEqual(searchResults[0].amount.value, "100.00");
+    });
+
+    it("searches for invoice payments by paymentIds", async () => {
+        const nockDone = await startNockRec("invoice-payment-search-by-payment-ids.json");
+
+        const recipient = await recipientFactory.createResource();
+        const invoice = await invoiceFactory.createResource({ recipientId: recipient.id });
+        await invoiceLineFactory.createResource({ invoice: { id: invoice.id } });
+        const invoicePayment = await invoicePaymentFactory.createResource(
+            {
+                ids: [{ invoiceId: invoice.id }],
+            },
+        );
+
+        const searchResults = await testingApiClient.invoicePayment.search(
+          { paymentIds: [invoicePayment.paymentId] },
+        );
+
+        nockDone();
+
+        assert.ok(searchResults);
+        assert.strictEqual(searchResults.length, 1);
+        assert.strictEqual(searchResults[0].amount.value, "100.00");
+    });
 });

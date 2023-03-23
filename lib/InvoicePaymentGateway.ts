@@ -2,7 +2,7 @@ import { Gateway } from "./Gateway";
 import { Configuration } from "./Configuration";
 import { buildURL } from "./util";
 import { ApiResponse } from "./types";
-import { InvoicePayment, InvoicePaymentInput } from "./InvoicePayment";
+import { InvoicePayment, InvoicePaymentInput, InvoicePaymentRecord } from "./InvoicePayment";
 
 export class InvoicePaymentGateway {
     gateway: Gateway;
@@ -46,17 +46,14 @@ export class InvoicePaymentGateway {
         return result.ok;
     }
 
-    async search(invoiceId: string, query: any) {
-        const endPoint = buildURL('invoices/payments/search');
+    async search(payload?: any) {
+        const endPoint = buildURL('invoices/payment/search');
 
-        const result = await this.gateway.client.post<ApiResponse<InvoicePayment>>(
-            endPoint,
-            {
-                invoiceId: invoiceId,
-                ...query,
-            },
+        const result = await this.gateway.client.post<ApiResponse<InvoicePayment[]>>(
+          endPoint,
+          payload,
         );
 
-        return result.invoicePayments;
+        return result.invoicePayments.map((ip: InvoicePaymentRecord) => Object.assign(new InvoicePaymentRecord(), ip));
     }
 }
