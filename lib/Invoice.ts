@@ -1,5 +1,5 @@
 import { InvoiceLine, InvoiceLineInput } from "./InvoiceLine";
-import { Amount } from "./Types";
+import { Amount } from "./types";
 
 export interface InvoiceInput {
     recipientId: string;

@@ -1,4 +1,4 @@
-import { Amount } from "./Types";
+import { Amount } from "./types";
 
 export interface InvoiceLineInput {
     unitAmount: Amount;
