@@ -10,7 +10,7 @@ import { Exceptions } from './exceptions';
  * @hidden
  */
 
-const CURRENT_CLIENT_VERSION = "0.11.1";
+const CURRENT_CLIENT_VERSION = "0.12.0";
 const DEFAULT_HEADERS = {
   "Content-Type": "application/json",
   "Trolley-Source": `javascript-sdk_${CURRENT_CLIENT_VERSION}`,
@@ -152,10 +152,9 @@ export class Client {
       baseUrl: this.config.apiBase,
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json",
+        ...DEFAULT_HEADERS,
         Authorization: authoriation,
         "X-PR-Timestamp": timestamp,
-        "Trolley-Source": "javascript-sdk_0.11.1",
       },
       body,
     };
