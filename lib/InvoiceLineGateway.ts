@@ -17,7 +17,7 @@ export class InvoiceLineGateway {
   async create(invoiceId: string, invoiceLines: InvoiceLineInput[]) {
     const endPoint = buildURL('invoices/create-lines');
 
-    const result = await this.gateway.client.post<ApiResponse<Invoice>>(
+    const result = await this.gateway.client.post<ApiResponse<InvoiceLine>>(
       endPoint,
       {
         invoiceId: invoiceId,
@@ -31,7 +31,7 @@ export class InvoiceLineGateway {
   async update(invoiceId: string, body: any) {
     const endPoint = buildURL('invoices/update-lines');
 
-    const result = await this.gateway.client.post<ApiResponse<Invoice>>(
+    const result = await this.gateway.client.post<ApiResponse<InvoiceLine>>(
       endPoint,
       {
         invoiceId: invoiceId,
@@ -45,7 +45,7 @@ export class InvoiceLineGateway {
   async delete(invoiceId: string, lineIds: string[]) {
     const endPoint = buildURL('invoices/delete-lines');
 
-    const result = await this.gateway.client.post<ApiResponse<Invoice>>(
+    const result = await this.gateway.client.post<ApiResponse<InvoiceLine>>(
       endPoint,
       {
         invoiceId: invoiceId,
