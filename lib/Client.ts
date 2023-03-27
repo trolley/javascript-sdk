@@ -1,5 +1,4 @@
 import { Configuration } from "./Configuration";
-import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
 import { Exceptions } from './exceptions';

@@ -43,8 +43,8 @@ export class Payment {
    * @param {string} paymentId
    * @hidden
    */
-  static async find(paymentId: string) {
-    const data = await Configuration.gateway().payment.find(paymentId);
+  static async find(batchId: string, paymentId: string) {
+    const data = await Configuration.gateway().payment.find(batchId, paymentId);
     const jsonObj: any = JSON.parse(data.toString());
 
     return <types.Payment.Result>jsonObj;
