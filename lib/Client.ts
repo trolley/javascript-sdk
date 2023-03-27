@@ -165,12 +165,12 @@ export class Client {
   /**
    * Makes an HTTP DELETE request to the API
    * @param {string} endPoint
-   * @param {array} recipients
+   * @param {array} ids
    */
-  async remove<T>(endPoint: string, recipients: string[] = []): Promise<T> {
+  async remove<T>(endPoint: string, ids: string[] = []): Promise<T> {
     const date: any = new Date();
     const timestamp = Math.round(date / 1000);
-    const body = recipients.length === 0 ? '' : JSON.stringify({ ids: recipients });
+    const body = ids.length === 0 ? "" : JSON.stringify({ ids: ids });
     const authorization = this.generateAuthorization(
       timestamp,
       endPoint,

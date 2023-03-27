@@ -129,10 +129,18 @@ export class BatchGateway {
    * ```
    * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
-  async remove(batchId: string) {
-    const endPoint = buildURL('batches', batchId);
+  async remove(batchId: string |  string[]) {
+    let endPoint = "";
+    let batchIds: string[] = [];
 
-    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
+    if (Array.isArray(batchId)) {
+      batchIds = batchId;
+      endPoint = buildURL('batches');
+    } else {
+      endPoint = buildURL('batches', batchId);
+    }
+
+    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint, batchIds);
 
     return true;
   }
