@@ -2,7 +2,8 @@ import { Configuration } from "./Configuration";
 import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
-import { Exceptions } from './exceptions';
+import { Errors } from './exceptions';
+import ApiError = Errors.ApiError;
 
 /**
  * Private function to handle URL requests and standard responses
@@ -21,49 +22,55 @@ function sendRequest<T>(options: request.UriOptions) {
     // tslint:disable-next-line:cyclomatic-complexity
     request(options, (error: any, response: request.RequestResponse, responseBody: any) => {
       if (error) {
-        reject(new Exceptions.ServerError(String(error)));
+        reject(new Errors.ServerError(String(error)));
       } else {
         try {
           const data = JSON.parse(responseBody);
 
           if (response.statusCode === 200) {
             resolve(data as T);
+          } else {
+            const apiErrors: ApiError[] = data.errors.map((e: any) => {
+              return {
+                code: e.code,
+                field: e.field,
+                message: e.message,
+              };
+            });
 
-            return;
+            switch (response.statusCode) {
+              case 400:
+                reject(new Errors.MalformedError(apiErrors));
+
+                return;
+              case 401:
+                reject(new Errors.AuthenticationError(apiErrors));
+
+                return;
+              case 403:
+                reject(new Errors.AuthorizationError(apiErrors));
+
+                return;
+              case 404:
+                reject(new Errors.NotFoundError(apiErrors));
+
+                return;
+              case 500:
+                reject(new Errors.ServerError(apiErrors));
+
+                return;
+              case 503:
+                reject(new Errors.DownForMaintenanceError(apiErrors));
+
+                return;
+              default:
+                reject(new Errors.UnexpectedError(`Unexpected HTTP_RESPONSE #${response.statusCode}`, apiErrors));
+            }
           }
 
-          const firstErr = (data.errors && Array.isArray(data.errors) && data.errors.length !== 0) ? data.errors[0] : undefined;
-          switch (response.statusCode) {
-            case 400:
-              const message = firstErr.code === "invalid_field" ? `${firstErr.message}: ${firstErr.field}` : firstErr.message;
-              reject(new Exceptions.Malformed(message || "Not Found"));
-
-              return;
-            case 401:
-              reject(new Exceptions.Authentication(firstErr.message || "Not Found"));
-
-              return;
-            case 403:
-              reject(new Exceptions.Authorization(firstErr.message || "Not Found"));
-
-              return;
-            case 404:
-              reject(new Exceptions.Authorization(firstErr.message || "Not Found"));
-
-              return;
-            case 500:
-              reject(new Exceptions.ServerError(firstErr.message || "Not Found"));
-
-              return;
-            case 503:
-              reject(new Exceptions.DownForMaintenance(firstErr.message || "Not Found"));
-
-              return;
-            default:
-              reject(new Exceptions.Unexpected(`Unexpected HTTP_RESPONSE #${response.statusCode}`));
-          }
+          return;
         } catch (err) {
-          reject(new Exceptions.Unexpected(String(err)));
+          reject(new Errors.UnexpectedError(String(err)));
         }
       }
     });

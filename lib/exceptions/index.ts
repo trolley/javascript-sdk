@@ -3,28 +3,61 @@
 /**
  * @module exceptions
  */
-export namespace Exceptions {
-  export class BaseException extends Error {
+export module Errors {
+  export interface ApiError {
+    code: string;
+    field: string;
+    message: string;
   }
 
-  export class DownForMaintenance extends BaseException {
+  abstract class BaseError extends Error {
+    public errors?: ApiError[];
+
+    protected constructor(message: string, errors?: ApiError[]) {
+      super(message);
+      this.errors = errors;
+    }
   }
 
-  export class ServerError extends BaseException {
+  export class DownForMaintenanceError extends BaseError {
+    public constructor(errors?: ApiError[]) {
+      super("Down for maintenance", errors);
+    }
   }
 
-  export class Unexpected extends BaseException {
+  export class ServerError extends BaseError {
+    public constructor(message: string) {
+      super("Server error");
+    }
   }
 
-  export class NotFound extends BaseException {
+  export class UnexpectedError extends BaseError {
+    public constructor(message: string, errors?: ApiError[]) {
+      super(message, errors);
+    }
   }
 
-  export class Authentication extends BaseException {
+  export class NotFoundError extends BaseError {
+    public constructor(errors?: ApiError[]) {
+      super("Not Found", errors);
+    }
   }
 
-  export class Authorization extends BaseException {
+  export class AuthenticationError extends BaseError {
+    public constructor(errors?: ApiError[]) {
+      super("Authentication failed", errors);
+    }
   }
 
-  export class Malformed extends BaseException {
+  export class AuthorizationError extends BaseError {
+    public constructor(errors?: ApiError[]) {
+      super("Authorization failed", errors);
+    }
+  }
+
+  export class MalformedError extends BaseError {
+    public constructor(errors?: ApiError[]) {
+      super("Malformed request", errors);
+    }
   }
 }
