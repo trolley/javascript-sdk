@@ -3,7 +3,7 @@ import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
 import { Errors } from './exceptions';
-import ApiError = Errors.ApiError;
+import ValidationError = Errors.ValidationError;
 
 /**
  * Private function to handle URL requests and standard responses
@@ -30,7 +30,7 @@ function sendRequest<T>(options: request.UriOptions) {
           if (response.statusCode === 200) {
             resolve(data as T);
           } else {
-            const apiErrors: ApiError[] = data.errors.map((e: any) => {
+            const validationErrors: ValidationError[] = data.errors.map((e: any) => {
               return {
                 code: e.code,
                 field: e.field,
@@ -40,31 +40,25 @@ function sendRequest<T>(options: request.UriOptions) {
 
             switch (response.statusCode) {
               case 400:
-                reject(new Errors.MalformedError(apiErrors));
-
-                return;
+                reject(new Errors.MalformedError(validationErrors));
+                break;
               case 401:
-                reject(new Errors.AuthenticationError(apiErrors));
-
-                return;
+                reject(new Errors.AuthenticationError(validationErrors));
+                break;
               case 403:
-                reject(new Errors.AuthorizationError(apiErrors));
-
-                return;
+                reject(new Errors.AuthorizationError(validationErrors));
+                break;
               case 404:
-                reject(new Errors.NotFoundError(apiErrors));
-
-                return;
+                reject(new Errors.NotFoundError(validationErrors));
+                break;
               case 500:
-                reject(new Errors.ServerError(apiErrors));
-
-                return;
+                reject(new Errors.ServerError("Server error", validationErrors));
+                break;
               case 503:
-                reject(new Errors.DownForMaintenanceError(apiErrors));
-
-                return;
+                reject(new Errors.DownForMaintenanceError(validationErrors));
+                break;
               default:
-                reject(new Errors.UnexpectedError(`Unexpected HTTP_RESPONSE #${response.statusCode}`, apiErrors));
+                reject(new Errors.UnexpectedError(`Unexpected HTTP_RESPONSE #${response.statusCode}`, validationErrors));
             }
           }
 

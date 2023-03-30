@@ -4,60 +4,60 @@
  * @module exceptions
  */
 export module Errors {
-  export interface ApiError {
+  export interface ValidationError {
     code: string;
     field: string;
     message: string;
   }
 
   abstract class BaseError extends Error {
-    public errors?: ApiError[];
+    public validationErrors?: ValidationError[];
 
-    protected constructor(message: string, errors?: ApiError[]) {
+    protected constructor(message: string, validationErrors?: ValidationError[]) {
       super(message);
-      this.errors = errors;
+      this.validationErrors = validationErrors;
     }
   }
 
   export class DownForMaintenanceError extends BaseError {
-    public constructor(errors?: ApiError[]) {
-      super("Down for maintenance", errors);
+    public constructor(validationErrors?: ValidationError[]) {
+      super("Down for maintenance", validationErrors);
     }
   }
 
   export class ServerError extends BaseError {
-    public constructor(message: string) {
-      super("Server error");
+    public constructor(message: string = "Server error", validationErrors?: ValidationError[]) {
+      super(message, validationErrors);
     }
   }
 
   export class UnexpectedError extends BaseError {
-    public constructor(message: string, errors?: ApiError[]) {
-      super(message, errors);
+    public constructor(message: string, validationErrors?: ValidationError[]) {
+      super(message, validationErrors);
     }
   }
 
   export class NotFoundError extends BaseError {
-    public constructor(errors?: ApiError[]) {
-      super("Not Found", errors);
+    public constructor(validationErrors?: ValidationError[]) {
+      super("Not Found", validationErrors);
     }
   }
 
   export class AuthenticationError extends BaseError {
-    public constructor(errors?: ApiError[]) {
-      super("Authentication failed", errors);
+    public constructor(validationErrors?: ValidationError[]) {
+      super("Authentication failed", validationErrors);
     }
   }
 
   export class AuthorizationError extends BaseError {
-    public constructor(errors?: ApiError[]) {
-      super("Authorization failed", errors);
+    public constructor(validationErrors?: ValidationError[]) {
+      super("Authorization failed", validationErrors);
     }
   }
 
   export class MalformedError extends BaseError {
-    public constructor(errors?: ApiError[]) {
-      super("Malformed request", errors);
+    public constructor(validationErrors?: ValidationError[]) {
+      super("Malformed request", validationErrors);
     }
   }
 }
