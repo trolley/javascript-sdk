@@ -1,8 +1,7 @@
 import { Configuration } from "./Configuration";
-import { Recipient } from "./Recipient";
 import * as crypto from "crypto";
 import * as request from "request";
-import { Errors } from './exceptions';
+import { Errors } from './errors';
 import ValidationError = Errors.ValidationError;
 
 /**
