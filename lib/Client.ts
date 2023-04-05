@@ -10,7 +10,7 @@ import ValidationError = Errors.ValidationError;
  * @hidden
  */
 
-const CURRENT_CLIENT_VERSION = "0.11.1";
+const CURRENT_CLIENT_VERSION = "1.0.0";
 const DEFAULT_HEADERS = {
   "Content-Type": "application/json",
   "Trolley-Source": `javascript-sdk_${CURRENT_CLIENT_VERSION}`,

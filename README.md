@@ -6,7 +6,7 @@ Trolley's JavaScript SDK (written in TypeScript) - For more information about th
 
 ## Installation
 
-    npm install --save paymentrails
+    npm install --save trolley
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ calls.
 
 ```js
 // A simple application using the Trolley/Payment Rails SDK
-const trolley = require('paymentrails');
+const trolley = require('trolley');
 
 const client = trolley.connect({
   key: "YOUR-API-KEY",
