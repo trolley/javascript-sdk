@@ -132,6 +132,11 @@ export class RecipientGateway {
     return true;
   }
 
+  /**
+   * Find acitivity logs for a given recipient
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @returns An array of logs
+   */
   async findLogs(recipientId: string) {
     const endPoint = buildURL('recipients', recipientId, 'logs');
 
@@ -140,6 +145,11 @@ export class RecipientGateway {
     return result.recipientLogs.map((r: Log) => Object.assign(new Log(), r));
   }
 
+  /**
+   * Find payments for a given recipient
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @returns An array of payments
+   */
   async findPayments(recipientId: string) {
     const endPoint = buildURL('recipients', recipientId, 'payments');
 
@@ -148,6 +158,11 @@ export class RecipientGateway {
     return result.payments.map((r: Payment) => Object.assign(new Payment(), r));
   }
 
+  /**
+   * Find offline payments for a given recipient
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @returns An array of offline payments
+   */
   async findOfflinePayments(recipientId: string) {
     const endPoint = buildURL('recipients', recipientId, 'offlinePayments');
 

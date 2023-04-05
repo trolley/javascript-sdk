@@ -13,6 +13,11 @@ export class InvoicePaymentGateway {
         this.config = gateway.config;
     }
 
+    /**
+     * Create a new invoice payment
+     * @param invoicePayment Body of the invoice payment
+     * @returns InvoicePayment
+     */
     async create(invoicePayment: InvoicePaymentInput) {
         const endPoint = buildURL('invoices/payment/create');
 
@@ -24,6 +29,11 @@ export class InvoicePaymentGateway {
         return Object.assign(new InvoicePayment(), result.invoicePayment);
     }
 
+    /**
+     * Update an existing invoice payment
+     * @param invoicePayment Body of the invoice payment
+     * @returns InvoicePayment
+     */
     async update(payload: any) {
         const endPoint = buildURL('invoices/payment/update');
 
@@ -35,6 +45,11 @@ export class InvoicePaymentGateway {
         return result.ok;
     }
 
+    /**
+     * Delete an existing invoice payment
+     * @param invoicePayment Body of the invoice payment
+     * @returns boolean
+     */
     async delete(payload: any) {
         const endPoint = buildURL('invoices/payment/delete');
 
@@ -46,6 +61,11 @@ export class InvoicePaymentGateway {
         return result.ok;
     }
 
+    /**
+     * Search for invoice payments
+     * @param payload Search parameters
+     * @returns InvoicePayment[]
+     */
     async search(payload?: any) {
         const endPoint = buildURL('invoices/payment/search');
 
