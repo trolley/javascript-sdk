@@ -135,7 +135,7 @@ describe('Payment', () => {
 
         try {
             await testingApiClient.payment.create('undefined', undefined);
-        } catch (error: any) {
+        } catch (error) {
             nockDone();
 
             assert.strictEqual(error.validationErrors.length, 2);
