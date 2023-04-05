@@ -1,5 +1,5 @@
 import { Configuration, Batch } from "../../lib";
-import { BatchGateway } from "../../lib/PaymentRails/BatchGateway";
+import { BatchGateway } from "../../lib/BatchGateway";
 
 import * as assert from "assert";
 import * as sinon from "sinon";
