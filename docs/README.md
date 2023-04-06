@@ -43,7 +43,7 @@
 
 Create a client for the Trolley (Payment Rails) JavasScript API
 
-    const client = paymentrails.connect({
+    const client = trolley.connect({
       key: "MY_PUBLIC_KEY",
       secret: "MY_PRIVATE_KEY",
     });
