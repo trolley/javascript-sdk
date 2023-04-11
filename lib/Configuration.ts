@@ -2,15 +2,15 @@ import { Gateway } from "./Gateway";
 
 export interface ConfigurationParams {
   /**
-   * The Trolley public key
+   * The Trolley access key
    */
   key: string;
   /**
-   * The Trolley private key
+   * The Trolley secret key
    */
   secret: string;
   /**
-   * Optional. The base URL to use to connect to the API gateway
+   * Optional. The base URL to use to connect to the API gateway. Useful while running from source.
    */
   apiBase?: string;
 }
