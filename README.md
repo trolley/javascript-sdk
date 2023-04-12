@@ -22,7 +22,6 @@ const trolley = require('trolley');
 const client = trolley.connect({
   key: "YOUR-API-KEY",
   secret: "YOUR-API-SECRET",
-  environment: "production",
 });
 
 // Async/Await version
@@ -67,7 +66,6 @@ If you're working on the library itself, here's easy way to run the tests.
 $ cp .env.test .env
 
 // Set access key and secret in the env file
-TROLLEY_ENVIRONMENT="production"
 TROLLEY_ACCESS_KEY="ACCESS_KEY"
 TROLLEY_SECRET_KEY="SECRET_KEY"
 
