@@ -1,8 +1,6 @@
-# Trolley JavaScript SDK (Previously Payment Rails[^1])
+# Trolley JavaScript SDK
 
 Trolley's JavaScript SDK (written in TypeScript) - For more information about the API as well as NodeJS code samples check out the [full API documentation](https://docs.trolley.com)
-
-[^1]: [Payment Rails is now Trolley](https://www.trolley.com/payment-rails-is-now-trolley-series-a). We're in the process of updating our SDKs to support the new domain. In this transition phase, you might still see "PaymentRails" at some places.
 
 ## Installation
 
