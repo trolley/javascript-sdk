@@ -1,6 +1,6 @@
 import { Gateway } from "./Gateway";
 import { Configuration } from "./Configuration";
-import { buildURL } from "./util";
+import { buildURL, PaginatedArray } from "./util";
 import { ApiResponse } from "./types";
 import { InvoicePayment, InvoicePaymentInput, InvoicePaymentRecord } from "./InvoicePayment";
 
@@ -74,6 +74,9 @@ export class InvoicePaymentGateway {
           payload,
         );
 
-        return result.invoicePayments.map((ip: InvoicePaymentRecord) => Object.assign(new InvoicePaymentRecord(), ip));
+        const invoicePayments = result.invoicePayments.map((ip: InvoicePaymentRecord) => Object.assign(new InvoicePaymentRecord(), ip));
+        const meta = result.meta;
+
+        return new PaginatedArray<InvoicePaymentRecord>(meta, ...invoicePayments)
     }
 }

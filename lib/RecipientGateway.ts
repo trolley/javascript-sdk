@@ -2,7 +2,7 @@ import { Configuration } from "./Configuration";
 import { Recipient } from './Recipient';
 import { Gateway } from "./Gateway";
 import * as types from "./types";
-import { buildURL } from './util';
+import { buildURL, PaginatedArray } from "./util";
 import * as querystring from 'querystring';
 import { ApiResponse } from "./types";
 import { Log } from "./Log";
@@ -182,6 +182,9 @@ export class RecipientGateway {
 
     const result = await this.gateway.client.get<types.Recipient.ListResponse>(`${endPoint}?${query}`);
 
-    return result.recipients.map(r => Recipient.factory(r));
+    const recipients = result.recipients.map(r => Recipient.factory(r));
+    const meta = result.meta;
+
+    return new PaginatedArray<Recipient>(meta, ...recipients)
   }
 }
