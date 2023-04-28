@@ -1,7 +1,7 @@
 import { Configuration } from "./Configuration";
 import { Gateway } from "./Gateway";
 import { OfflinePayment } from "./OfflinePayment";
-import { buildURL } from "./util";
+import { buildURL, PaginatedArray } from "./util";
 import * as querystring from "querystring";
 import * as types from "./types";
 
@@ -129,6 +129,9 @@ export class OfflinePaymentGateway {
       types.OfflinePayment.ListResponse
     >(`${endPoint}?${urlQuery}`);
 
-    return result.offlinePayments.map(p => OfflinePayment.factory(p));
+    const offlinePayments = result.offlinePayments.map(p => OfflinePayment.factory(p));
+    const meta = result.meta;
+
+    return new PaginatedArray<OfflinePayment>(meta, ...offlinePayments)
   }
 }

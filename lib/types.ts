@@ -603,7 +603,7 @@ export namespace BankInfo {
   };
 }
 
-export interface ApiResponse<T> {
+export interface ApiResponse<T> extends Serializer.WithMeta {
     [key: string]: any;
     ok: boolean;
 }

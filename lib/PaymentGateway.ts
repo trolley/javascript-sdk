@@ -1,7 +1,7 @@
 import { Configuration } from "./Configuration";
 import { Gateway } from "./Gateway";
 import { Payment } from "./Payment";
-import { buildURL } from "./util";
+import { buildURL, PaginatedArray } from "./util";
 import * as querystring from "querystring";
 import * as types from "./types";
 
@@ -129,6 +129,9 @@ export class PaymentGateway {
       `${endPoint}?${urlQuery}`,
     );
 
-    return result.payments.map(p => Payment.factory(p));
+    const payments = result.payments.map(p => Payment.factory(p));
+    const meta = result.meta;
+
+    return new PaginatedArray<Payment>(meta, ...payments)
   }
 }

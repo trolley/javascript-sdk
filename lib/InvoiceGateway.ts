@@ -2,7 +2,7 @@ import { Configuration } from './Configuration';
 import { Gateway } from './Gateway';
 import { Invoice, InvoiceInput } from './Invoice';
 import { ApiResponse } from './types';
-import { buildURL } from './util';
+import { buildURL, PaginatedArray } from "./util";
 
 export class InvoiceGateway {
     gateway: Gateway;
@@ -72,6 +72,9 @@ export class InvoiceGateway {
           body,
         );
 
-        return result.invoices.map((line: Invoice) => Object.assign(new Invoice(), line));
+        const invoices = result.invoices.map((line: Invoice) => Object.assign(new Invoice(), line));
+        const meta = result.meta;
+
+        return new PaginatedArray<Invoice>(meta, ...invoices)
     }
 }

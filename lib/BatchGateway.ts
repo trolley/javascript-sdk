@@ -3,7 +3,7 @@ import { Batch } from './Batch';
 import { Payment } from './Payment';
 import * as querystring from 'querystring';
 import * as types from "./types";
-import { buildURL } from './util';
+import { buildURL, PaginatedArray } from "./util";
 
 export interface BatchInput {
   sourceCurrency?: string;
@@ -161,8 +161,10 @@ export class BatchGateway {
     });
 
     const result = await this.gateway.client.get<types.Batch.ListResult>(`${endPoint}?${query}`);
+    const batches = result.batches.map(b => Batch.factory(b));
+    const meta = result.meta;
 
-    return result.batches.map(b => Batch.factory(b));
+    return new PaginatedArray<Batch>(meta, ...batches);
   }
 
   /**
