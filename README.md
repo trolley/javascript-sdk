@@ -1,12 +1,10 @@
-# Trolley JavaScript SDK (Previously Payment Rails[^1])
+# Trolley JavaScript SDK
 
 Trolley's JavaScript SDK (written in TypeScript) - For more information about the API as well as NodeJS code samples check out the [full API documentation](https://docs.trolley.com)
 
-[^1]: [Payment Rails is now Trolley](https://www.trolley.com/payment-rails-is-now-trolley-series-a). We're in the process of updating our SDKs to support the new domain. In this transition phase, you might still see "PaymentRails" at some places.
-
 ## Installation
 
-    npm install --save paymentrails
+    npm install --save trolley
 
 ## Getting Started
 
@@ -17,12 +15,11 @@ calls.
 
 ```js
 // A simple application using the Trolley/Payment Rails SDK
-const trolley = require('paymentrails');
+const trolley = require('trolley');
 
 const client = trolley.connect({
   key: "YOUR-API-KEY",
   secret: "YOUR-API-SECRET",
-  environment: "production",
 });
 
 // Async/Await version
@@ -67,7 +64,6 @@ If you're working on the library itself, here's easy way to run the tests.
 $ cp .env.test .env
 
 // Set access key and secret in the env file
-TROLLEY_ENVIRONMENT="production"
 TROLLEY_ACCESS_KEY="ACCESS_KEY"
 TROLLEY_SECRET_KEY="SECRET_KEY"
 

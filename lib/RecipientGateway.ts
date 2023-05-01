@@ -2,8 +2,12 @@ import { Configuration } from "./Configuration";
 import { Recipient } from './Recipient';
 import { Gateway } from "./Gateway";
 import * as types from "./types";
-import { buildURL } from './util';
+import { buildURL, PaginatedArray } from "./util";
 import * as querystring from 'querystring';
+import { ApiResponse } from "./types";
+import { Log } from "./Log";
+import { Payment } from "./Payment";
+import { OfflinePayment } from "./OfflinePayment";
 
 export interface RecipientInput {
     referenceId?: string;
@@ -112,12 +116,59 @@ export class RecipientGateway {
    * ```
    * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
    */
-  async remove(recipientId: string) {
-    const endPoint = buildURL('recipients', recipientId);
+  async remove(recipientId: string | string[]) {
+    let endPoint = "";
+    let recipients: string[] = [];
 
-    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
+    if (Array.isArray(recipientId)) {
+      recipients = recipientId;
+      endPoint = buildURL('recipients');
+    } else {
+      endPoint = buildURL('recipients', recipientId);
+    }
+
+    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint, recipients);
 
     return true;
+  }
+
+  /**
+   * Find acitivity logs for a given recipient
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @returns An array of logs
+   */
+  async findLogs(recipientId: string) {
+    const endPoint = buildURL('recipients', recipientId, 'logs');
+
+    const result = await this.gateway.client.get<ApiResponse<Log[]>>(endPoint);
+
+    return result.recipientLogs.map((r: Log) => Object.assign(new Log(), r));
+  }
+
+  /**
+   * Find payments for a given recipient
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @returns An array of payments
+   */
+  async findPayments(recipientId: string) {
+    const endPoint = buildURL('recipients', recipientId, 'payments');
+
+    const result = await this.gateway.client.get<ApiResponse<Payment[]>>(endPoint);
+
+    return result.payments.map((r: Payment) => Object.assign(new Payment(), r));
+  }
+
+  /**
+   * Find offline payments for a given recipient
+   * @param recipientId The Trolley recipient ID (e.g. R-xyzzy)
+   * @returns An array of offline payments
+   */
+  async findOfflinePayments(recipientId: string) {
+    const endPoint = buildURL('recipients', recipientId, 'offlinePayments');
+
+    const result = await this.gateway.client.get<ApiResponse<OfflinePayment[]>>(endPoint);
+
+    return result.offlinePayments.map((r: OfflinePayment) => Object.assign(new OfflinePayment(), r));
   }
 
   async search(page: number = 1, pageSize: number = 10, term: string = "") {
@@ -131,6 +182,9 @@ export class RecipientGateway {
 
     const result = await this.gateway.client.get<types.Recipient.ListResponse>(`${endPoint}?${query}`);
 
-    return result.recipients.map(r => Recipient.factory(r));
+    const recipients = result.recipients.map(r => Recipient.factory(r));
+    const meta = result.meta;
+
+    return new PaginatedArray<Recipient>(meta, ...recipients)
   }
 }

@@ -2,92 +2,45 @@
     {
         "scope": "https://api.trolley.com:443",
         "method": "POST",
-        "path": "/v1/recipients",
+        "path": "/v1/batches",
         "body": {
-            "type": "individual",
-            "firstName": "Tom",
-            "lastName": "Jones",
-            "email": "testEmail@example.com",
-            "address": {
-                "street1": "123 Wolfstrasse",
-                "city": "Berlin",
-                "country": "DE",
-                "postalCode": "123123"
-            }
+            "sourceCurrency": "USD",
+            "description": "Integration Test Create",
+            "payments": []
         },
         "status": 200,
         "response": {
             "ok": true,
-            "recipient": {
-                "id": "R-Ui2pRJVPAp7HDy2qM4deYZ",
-                "referenceId": "R-Ui2pRJVPAp7HDy2qM4deYZ",
-                "parentRecipientId": null,
-                "email": "testEmail@example.com",
-                "name": "Tom Jones",
-                "lastName": "Jones",
-                "firstName": "Tom",
-                "legalName": "",
-                "type": "individual",
-                "status": "incomplete",
-                "language": "en",
-                "complianceStatus": "pending",
-                "dob": null,
-                "passport": "",
-                "placeOfBirth": null,
-                "updatedAt": "2023-03-10T05:27:13.021Z",
-                "createdAt": "2023-03-10T05:27:13.021Z",
+            "batch": {
+                "id": "B-SMHT5PnRLYMaWTJ6BnjzC4",
+                "status": "open",
                 "tags": [],
-                "isPortalUser": false,
-                "taxDeliveryType": "mail",
-                "contactEmails": [],
-                "occupation": "",
-                "address": {
-                    "street1": "123 Wolfstrasse",
-                    "street2": "",
-                    "city": "Berlin",
-                    "postalCode": "123123",
-                    "country": "DE",
-                    "region": null,
-                    "phone": "",
-                    "phoneValidated": false
-                },
-                "compliance": {
-                    "status": "pending",
-                    "checkedAt": null
-                },
-                "gravatarUrl": "https://www.gravatar.com/avatar/47891e3b30e9fe3c5355801d4cbd5896?d=404",
-                "governmentId": null,
-                "ssn": null,
-                "governmentIds": [],
-                "birthplace": {
-                    "country": null,
-                    "region": null,
-                    "city": null
-                },
-                "citizenships": [],
-                "routeType": "sepa",
-                "routeMinimum": "0",
-                "estimatedFees": "5",
-                "accounts": [],
-                "payoutMethod": null,
-                "primaryCurrency": null,
-                "riskScore": null,
-                "merchantId": "M-C7AsydAeAqW3husDNHSAND",
-                "inactiveReasons": {
-                    "primaryAccount": "missing"
-                },
-                "taxWithholdingPercentage": null,
-                "taxForm": null,
-                "taxFormStatus": null
+                "amount": "0.00",
+                "currency": "USD",
+                "totalPayments": 0,
+                "description": "Integration Test Create",
+                "sentAt": null,
+                "completedAt": null,
+                "createdAt": "2023-03-19T04:33:48.641Z",
+                "updatedAt": "2023-03-19T04:33:48.723Z",
+                "quoteExpiredAt": null,
+                "payments": {
+                    "payments": [],
+                    "meta": {
+                        "page": 1,
+                        "pages": 0,
+                        "records": 0
+                    }
+                }
             }
         },
         "rawHeaders": [
             "Date",
-            "Fri, 10 Mar 2023 05:27:13 GMT",
+            "Sun, 19 Mar 2023 04:33:48 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
-            "1230",
+            "370",
             "Connection",
             "close",
             "Cache-Control",
@@ -117,18 +70,18 @@
             "X-Rate-Limit-Remaining",
             "599",
             "X-Rate-Limit-Reset",
-            "1678426093",
+            "1679200488",
             "Vary",
             "Origin",
             "ETag",
-            "W/\"4ce-+06yeIagJOZIwEKWi/tBDZuOkM4\""
+            "W/\"172-2W5SoFV+lmIeOrAtmvCgd7BOfxY\""
         ],
         "responseIsBinary": false
     },
     {
         "scope": "https://api.trolley.com:443",
         "method": "DELETE",
-        "path": "/v1/recipients/R-Ui2pRJVPAp7HDy2qM4deYZ",
+        "path": "/v1/batches/B-SMHT5PnRLYMaWTJ6BnjzC4",
         "body": "",
         "status": 200,
         "response": {
@@ -136,7 +89,7 @@
         },
         "rawHeaders": [
             "Date",
-            "Fri, 10 Mar 2023 05:27:13 GMT",
+            "Sun, 19 Mar 2023 04:33:49 GMT",
             "Content-Type",
             "application/json; charset=utf-8",
             "Content-Length",
@@ -170,7 +123,7 @@
             "X-Rate-Limit-Remaining",
             "598",
             "X-Rate-Limit-Reset",
-            "1678426093",
+            "1679200488",
             "Vary",
             "Origin",
             "ETag",

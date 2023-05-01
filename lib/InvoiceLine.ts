@@ -1,4 +1,4 @@
-import { Amount } from "./Types";
+import { Amount } from "./types";
 
 export interface InvoiceLineInput {
     unitAmount: Amount;
@@ -32,26 +32,26 @@ export class InvoiceLine {
     forceUsTaxActivity: boolean = false;
     unitAmount: Amount = {
         currency: '',
-        value: 0,
+        value: "0",
     };
     discountAmount: Amount = {
         currency: '',
-        value: 0,
+        value: "0",
     };
     taxAmount: Amount = {
         currency: '',
-        value: 0,
+        value: "0",
     };
     totalAmount: Amount = {
         currency: '',
-        value: 0,
+        value: "0",
     };
     dueAmount: Amount = {
         currency: '',
-        value: 0,
+        value: "0",
     };
     paidAmount: Amount = {
         currency: '',
-        value: 0,
+        value: "0",
     };
 }

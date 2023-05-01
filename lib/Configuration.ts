@@ -2,17 +2,17 @@ import { Gateway } from "./Gateway";
 
 export interface ConfigurationParams {
   /**
-   * The Trolley public key
+   * The Trolley access key
    */
   key: string;
   /**
-   * The Trolley private key
+   * The Trolley secret key
    */
   secret: string;
   /**
-   * The environment that you're using, most likely one of "production" or "sandbox"
+   * Optional. The base URL to use to connect to the API gateway. Useful while running from source.
    */
-  environment?: "production" | "sandbox" | "integration" | "development";
+  apiBase?: string;
 }
 
 // tslint:disable:function-name
@@ -40,13 +40,8 @@ export class Configuration {
    */
   constructor(config?: ConfigurationParams) {
     this.apiKey = (config && config.key) || Configuration.apiKeyDefault;
-    this.apiSecret =
-      (config && config.secret) || Configuration.apiSecretDefault;
-    if (config && config.environment) {
-      this.apiBase = Configuration.environmentToUrl(config.environment);
-    } else {
-      this.apiBase = Configuration.apiBaseDefault;
-    }
+    this.apiSecret = (config && config.secret) || Configuration.apiSecretDefault;
+    this.apiBase = (config && config.apiBase) || Configuration.apiBaseDefault;
   }
 
   /**
@@ -82,32 +77,5 @@ export class Configuration {
    */
   static setApiBase(baseUrl: string) {
     Configuration.apiBaseDefault = baseUrl;
-  }
-
-  /**
-   * Set the Trolley API environment that your using
-   * @param environment one of "production" or "sandbox"
-   */
-  static setEnvironment(environment: "production" | "sandbox" | "integration") {
-    Configuration.apiBaseDefault = Configuration.environmentToUrl(environment);
-  }
-
-  /**
-   * Private method that converts an environment to a specific URL
-   * @param environment "production" | "sandbox"
-   * @hidden
-   */
-  private static environmentToUrl(environment: string) {
-    switch (environment) {
-      case "integration":
-        // tslint:disable-next-line:no-http-string
-        return "http://api.local.dev:3000";
-      case "sandbox":
-        return "https://api.trolley.com";
-      case "production":
-        return "https://api.trolley.com";
-      default:
-        return "https://api.trolley.com";
-    }
   }
 }

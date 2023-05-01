@@ -3,7 +3,7 @@ import { Batch } from './Batch';
 import { Payment } from './Payment';
 import * as querystring from 'querystring';
 import * as types from "./types";
-import { buildURL } from './util';
+import { buildURL, PaginatedArray } from "./util";
 
 export interface BatchInput {
   sourceCurrency?: string;
@@ -129,10 +129,18 @@ export class BatchGateway {
    * ```
    * @param batchId Trolley payment id (e.g. "B-xx999bb")
    */
-  async remove(batchId: string) {
-    const endPoint = buildURL('batches', batchId);
+  async remove(batchId: string |  string[]) {
+    let endPoint = "";
+    let batchIds: string[] = [];
 
-    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint);
+    if (Array.isArray(batchId)) {
+      batchIds = batchId;
+      endPoint = buildURL('batches');
+    } else {
+      endPoint = buildURL('batches', batchId);
+    }
+
+    const result = await this.gateway.client.remove<{ ok: boolean }>(endPoint, batchIds);
 
     return true;
   }
@@ -153,8 +161,10 @@ export class BatchGateway {
     });
 
     const result = await this.gateway.client.get<types.Batch.ListResult>(`${endPoint}?${query}`);
+    const batches = result.batches.map(b => Batch.factory(b));
+    const meta = result.meta;
 
-    return result.batches.map(b => Batch.factory(b));
+    return new PaginatedArray<Batch>(meta, ...batches);
   }
 
   /**

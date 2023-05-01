@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "test") {
 /**
  * Create a client for the Trolley JavasScript API
  * ```
- * const client = paymentrails.connect({
+ * const client = trolley.connect({
  *   key: "MY_PUBLIC_KEY",
  *   secret: "MY_PRIVATE_KEY",
  * });

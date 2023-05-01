@@ -1,0 +1,352 @@
+[
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "POST",
+        "path": "/v1/recipients",
+        "body": {
+            "type": "individual",
+            "firstName": "Tom",
+            "lastName": "Jones",
+            "email": "testEmail@example.com",
+            "address": {
+                "street1": "123 Wolfstrasse",
+                "city": "Berlin",
+                "country": "DE",
+                "postalCode": "123123"
+            }
+        },
+        "status": 200,
+        "response": {
+            "ok": true,
+            "recipient": {
+                "id": "R-TSrs83rGEyQKDkJpPC3fcq",
+                "referenceId": "R-TSrs83rGEyQKDkJpPC3fcq",
+                "parentRecipientId": null,
+                "email": "testEmail@example.com",
+                "name": "Tom Jones",
+                "lastName": "Jones",
+                "firstName": "Tom",
+                "legalName": "",
+                "type": "individual",
+                "status": "incomplete",
+                "language": "en",
+                "complianceStatus": "pending",
+                "dob": null,
+                "passport": "",
+                "placeOfBirth": null,
+                "updatedAt": "2023-03-19T01:56:42.628Z",
+                "createdAt": "2023-03-19T01:56:42.628Z",
+                "tags": [],
+                "isPortalUser": false,
+                "taxDeliveryType": "mail",
+                "contactEmails": [],
+                "occupation": "",
+                "address": {
+                    "street1": "123 Wolfstrasse",
+                    "street2": "",
+                    "city": "Berlin",
+                    "postalCode": "123123",
+                    "country": "DE",
+                    "region": null,
+                    "phone": "",
+                    "phoneValidated": false
+                },
+                "compliance": {
+                    "status": "pending",
+                    "checkedAt": null
+                },
+                "gravatarUrl": "https://www.gravatar.com/avatar/47891e3b30e9fe3c5355801d4cbd5896?d=404",
+                "governmentId": null,
+                "ssn": null,
+                "governmentIds": [],
+                "birthplace": {
+                    "country": null,
+                    "region": null,
+                    "city": null
+                },
+                "citizenships": [],
+                "routeType": "sepa",
+                "routeMinimum": "0",
+                "estimatedFees": "5",
+                "accounts": [],
+                "payoutMethod": null,
+                "primaryCurrency": null,
+                "riskScore": null,
+                "merchantId": "M-C7AsydAeAqW3husDNHSAND",
+                "inactiveReasons": {
+                    "primaryAccount": "missing"
+                },
+                "taxWithholdingPercentage": null,
+                "taxForm": null,
+                "taxFormStatus": null
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Sun, 19 Mar 2023 01:56:42 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "1230",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "600",
+            "X-Rate-Limit-Remaining",
+            "599",
+            "X-Rate-Limit-Reset",
+            "1679191062",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"4ce-ujXSY43wIxXp2S5NFFN+XfN3vp4\""
+        ],
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "GET",
+        "path": "/v1/recipients/R-TSrs83rGEyQKDkJpPC3fcq/logs",
+        "body": "",
+        "status": 200,
+        "response": {
+            "ok": true,
+            "recipientLogs": [
+                {
+                    "via": "apikey",
+                    "ipAddress": "177.93.3.235",
+                    "userId": "ASC7AsydGC5RTBMF6MH4C5NQ",
+                    "type": "create",
+                    "fields": [
+                        {
+                            "name": "guid",
+                            "oldValue": null,
+                            "newValue": "R-TSrs83rGEyQKDkJpPC3fcq"
+                        },
+                        {
+                            "name": "referenceId",
+                            "oldValue": null,
+                            "newValue": "R-TSrs83rGEyQKDkJpPC3fcq"
+                        },
+                        {
+                            "name": "status",
+                            "oldValue": null,
+                            "newValue": "incomplete"
+                        },
+                        {
+                            "name": "enabledStatus",
+                            "oldValue": null,
+                            "newValue": "enabled"
+                        },
+                        {
+                            "name": "email",
+                            "oldValue": null,
+                            "newValue": "testEmail@example.com"
+                        },
+                        {
+                            "name": "name",
+                            "oldValue": null,
+                            "newValue": "Tom Jones"
+                        },
+                        {
+                            "name": "firstName",
+                            "oldValue": null,
+                            "newValue": "Tom"
+                        },
+                        {
+                            "name": "lastName",
+                            "oldValue": null,
+                            "newValue": "Jones"
+                        },
+                        {
+                            "name": "legalName",
+                            "oldValue": null,
+                            "newValue": ""
+                        },
+                        {
+                            "name": "occupation",
+                            "oldValue": null,
+                            "newValue": ""
+                        },
+                        {
+                            "name": "type",
+                            "oldValue": null,
+                            "newValue": "individual"
+                        },
+                        {
+                            "name": "language",
+                            "oldValue": null,
+                            "newValue": "en"
+                        },
+                        {
+                            "name": "complianceStatus",
+                            "oldValue": null,
+                            "newValue": "pending"
+                        },
+                        {
+                            "name": "taxDeliveryType",
+                            "oldValue": null,
+                            "newValue": "mail"
+                        },
+                        {
+                            "name": "phone",
+                            "oldValue": null,
+                            "newValue": ""
+                        },
+                        {
+                            "name": "phoneValidated",
+                            "oldValue": null,
+                            "newValue": false
+                        },
+                        {
+                            "name": "testMode",
+                            "oldValue": null,
+                            "newValue": true
+                        },
+                        {
+                            "name": "isPortalUser",
+                            "oldValue": null,
+                            "newValue": false
+                        },
+                        {
+                            "name": "contactEmails",
+                            "oldValue": null,
+                            "newValue": "[]"
+                        },
+                        {
+                            "name": "street1",
+                            "oldValue": null,
+                            "newValue": "123 Wolfstrasse"
+                        },
+                        {
+                            "name": "street2",
+                            "oldValue": null,
+                            "newValue": ""
+                        },
+                        {
+                            "name": "city",
+                            "oldValue": null,
+                            "newValue": "Berlin"
+                        },
+                        {
+                            "name": "postalCode",
+                            "oldValue": null,
+                            "newValue": "123123"
+                        },
+                        {
+                            "name": "countryCode",
+                            "oldValue": null,
+                            "newValue": "DE"
+                        },
+                        {
+                            "name": "tags",
+                            "oldValue": null,
+                            "newValue": "[]"
+                        },
+                        {
+                            "name": "birthplace",
+                            "oldValue": null,
+                            "newValue": "{\"country\":null,\"region\":null,\"city\":null}"
+                        },
+                        {
+                            "name": "governmentIds",
+                            "oldValue": null,
+                            "newValue": "[]"
+                        },
+                        {
+                            "name": "citizenships",
+                            "oldValue": null,
+                            "newValue": "[]"
+                        },
+                        {
+                            "name": "payoutMethod",
+                            "oldValue": null,
+                            "newValue": "bank-transfer"
+                        },
+                        {
+                            "name": "canPay",
+                            "oldValue": null,
+                            "newValue": false
+                        },
+                        {
+                            "name": "taxFormStatus",
+                            "oldValue": null,
+                            "newValue": "missing"
+                        }
+                    ],
+                    "createdAt": "2023-03-19T01:56:42.677Z"
+                }
+            ],
+            "meta": {
+                "page": 1,
+                "pages": 1,
+                "records": 1
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Sun, 19 Mar 2023 01:56:42 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "2042",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "600",
+            "X-Rate-Limit-Remaining",
+            "598",
+            "X-Rate-Limit-Reset",
+            "1679191062",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"7fa-vE8sYi7DBZzrpmZOpHfBHm8xKps\""
+        ],
+        "responseIsBinary": false
+    }
+]

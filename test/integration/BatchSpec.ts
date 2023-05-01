@@ -97,6 +97,30 @@ describe("Batch", () => {
     }
   });
 
+  it("removes a batch", async () => {
+    const nockDone = await startNockRec('batch-remove.json');
+
+    const batch = await batchFactory.createResource();
+    assert.ok(batch);
+
+    await testingApiClient.batch.remove(batch.id);
+
+    nockDone();
+  });
+
+  it("removes multiple batches", async () => {
+    const nockDone = await startNockRec('batch-remove-multiple.json');
+
+    const batch = await batchFactory.createResource();
+    const otherBatch = await batchFactory.createResource();
+    assert.ok(batch);
+    assert.ok(otherBatch);
+
+    await testingApiClient.batch.remove([batch.id, otherBatch.id]);
+
+    nockDone();
+  });
+
   it("starts processing batch payments", async () => {
     const nockDone = await startNockRec('batch-processing-payments.json');
 

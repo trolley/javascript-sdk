@@ -1,0 +1,67 @@
+[
+    {
+        "scope": "https://api.trolley.com:443",
+        "method": "POST",
+        "path": "/v1/batches/undefined/payments",
+        "body": {},
+        "status": 400,
+        "response": {
+            "ok": false,
+            "errors": [
+                {
+                    "code": "invalid_field",
+                    "message": "Value is invalid",
+                    "field": "batchId"
+                },
+                {
+                    "code": "invalid_field",
+                    "message": "Value is invalid",
+                    "field": "recipient"
+                }
+            ]
+        },
+        "rawHeaders": [
+            "Date",
+            "Thu, 30 Mar 2023 01:38:35 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "169",
+            "Connection",
+            "close",
+            "Cache-Control",
+            "no-store, no-cache",
+            "Content-Security-Policy",
+            "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests",
+            "X-DNS-Prefetch-Control",
+            "off",
+            "Expect-CT",
+            "max-age=0",
+            "Strict-Transport-Security",
+            "max-age=15552000; includeSubDomains",
+            "X-Download-Options",
+            "noopen",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-Permitted-Cross-Domain-Policies",
+            "none",
+            "Referrer-Policy",
+            "no-referrer",
+            "X-XSS-Protection",
+            "0",
+            "Access-Control-Allow-Origin",
+            "*",
+            "X-Rate-Limit-Limit",
+            "600",
+            "X-Rate-Limit-Remaining",
+            "599",
+            "X-Rate-Limit-Reset",
+            "1680140375",
+            "Vary",
+            "Origin",
+            "ETag",
+            "W/\"a9-yaEk6UF4nZNKcky6pKAYPn+yzQs\""
+        ],
+        "responseIsBinary": false
+    }
+]

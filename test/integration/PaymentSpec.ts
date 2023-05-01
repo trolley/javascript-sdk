@@ -129,4 +129,22 @@ describe('Payment', () => {
         assert.strictEqual(paymentsCollection[0].constructor, Payment);
         assert.strictEqual(payment.externalId, paymentsCollection[0].externalId);
     });
+
+    it('handles multiple validation errors', async () => {
+        const nockDone = await startNockRec('payment-validation-errors.json');
+
+        try {
+            await testingApiClient.payment.create('undefined', undefined);
+        } catch (error: any) {
+            nockDone();
+
+            assert.strictEqual(error.validationErrors.length, 2);
+            assert.strictEqual(error.validationErrors[0].code, 'invalid_field');
+            assert.strictEqual(error.validationErrors[0].field, 'batchId');
+            assert.strictEqual(error.validationErrors[0].message, 'Value is invalid');
+            assert.strictEqual(error.validationErrors[1].code, 'invalid_field');
+            assert.strictEqual(error.validationErrors[1].field, 'recipient');
+            assert.strictEqual(error.validationErrors[1].message, 'Value is invalid');
+        }
+    });
 });
