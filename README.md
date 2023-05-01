@@ -4,7 +4,7 @@ Trolley's JavaScript SDK (written in TypeScript) - For more information about th
 
 ## Installation
 
-    npm install --save trolley
+    npm install --save trolleyhq
 
 ## Getting Started
 
