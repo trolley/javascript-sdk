@@ -15,7 +15,7 @@ calls.
 
 ```js
 // A simple application using the Trolley/Payment Rails SDK
-const trolley = require('trolley');
+const trolley = require('trolleyhq');
 
 const client = trolley.connect({
   key: "YOUR-API-KEY",
