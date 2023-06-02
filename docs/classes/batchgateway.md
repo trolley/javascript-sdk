@@ -34,7 +34,7 @@ Gateway class for batcheso
 
 ▸ **all**(): `Promise`<`Batch`[]>
 
-*Defined in [BatchGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L52)*
+*Defined in [BatchGateway.ts:52](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L52)*
 
 Fetch batch all batches with an Iterator
 
@@ -47,7 +47,7 @@ ___
 
 ▸ **create**(batch: *`BatchInput`*, payments?: *`PaymentInput`[]*): `Promise`<`Batch`>
 
-*Defined in [BatchGateway.ts:95](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L95)*
+*Defined in [BatchGateway.ts:95](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L95)*
 
 Creates a batch with optional payments. This is the interface that is provide by the [Create Batch](https://docs.trolley.com/api/#create-a-batch) API
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **find**(batchId: *`string`*): `Promise`<`Batch`>
 
-*Defined in [BatchGateway.ts:67](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L67)*
+*Defined in [BatchGateway.ts:67](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L67)*
 
 Retrieves a batch based on the batch id
 
@@ -100,7 +100,7 @@ ___
 
 ▸ **generateQuote**(batchId: *`string`*): `Promise`<`Batch`>
 
-*Defined in [BatchGateway.ts:182](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L182)*
+*Defined in [BatchGateway.ts:182](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L182)*
 
 Generate a FX quote for this batch
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **paymentList**(batchId: *`string`*, page?: *`number`*, pageSize?: *`number`*): `Promise`<`Payment`[]>
 
-*Defined in [BatchGateway.ts:166](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L166)*
+*Defined in [BatchGateway.ts:166](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L166)*
 
 Return a paginated list of payments for this batch
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **remove**(batchId: *`string`*): `Promise`<`boolean`>
 
-*Defined in [BatchGateway.ts:132](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L132)*
+*Defined in [BatchGateway.ts:132](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L132)*
 
 Delete the given batch
 
@@ -161,7 +161,7 @@ ___
 
 ▸ **search**(page?: *`number`*, pageSize?: *`number`*, term?: *`string`*): `Promise`<`Batch`[]>
 
-*Defined in [BatchGateway.ts:146](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L146)*
+*Defined in [BatchGateway.ts:146](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L146)*
 
 Search for a batch matching the given term
 
@@ -182,7 +182,7 @@ ___
 
 ▸ **startProcessing**(batchId: *`string`*): `Promise`<`Batch`>
 
-*Defined in [BatchGateway.ts:194](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L194)*
+*Defined in [BatchGateway.ts:194](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L194)*
 
 Start processing this batch
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **summary**(batchId: *`string`*): `Promise`<`BatchSummary`>
 
-*Defined in [BatchGateway.ts:206](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L206)*
+*Defined in [BatchGateway.ts:206](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L206)*
 
 Get a transaction totaled summary for this batch
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **update**(batchId: *`string`*, body: *`BatchInput`*): `Promise`<`boolean`>
 
-*Defined in [BatchGateway.ts:117](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L117)*
+*Defined in [BatchGateway.ts:117](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L117)*
 
 Update the batch data, note you can only update the information of a batch not the payments via this API
 

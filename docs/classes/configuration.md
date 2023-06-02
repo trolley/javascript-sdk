@@ -30,7 +30,7 @@
 
 **● apiBase**: *`string`*
 
-*Defined in [Configuration.ts:35](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L35)*
+*Defined in [Configuration.ts:35](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L35)*
 
 ___
 <a id="apikey"></a>
@@ -39,7 +39,7 @@ ___
 
 **● apiKey**: *`string`*
 
-*Defined in [Configuration.ts:33](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L33)*
+*Defined in [Configuration.ts:33](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L33)*
 
 ___
 <a id="apisecret"></a>
@@ -48,7 +48,7 @@ ___
 
 **● apiSecret**: *`string`*
 
-*Defined in [Configuration.ts:34](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L34)*
+*Defined in [Configuration.ts:34](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L34)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **setApiKey**(key: *`string`*): `void`
 
-*Defined in [Configuration.ts:55](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L55)*
+*Defined in [Configuration.ts:55](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L55)*
 
 Globally set the public API key to connect to Trolley
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **setApiSecret**(secret: *`string`*): `void`
 
-*Defined in [Configuration.ts:63](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L63)*
+*Defined in [Configuration.ts:63](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L63)*
 
 Globally set the secret API key to connect to Trolley
 
@@ -98,7 +98,7 @@ ___
 
 ▸ **setEnvironment**(environment: *"production" |"sandbox" |"integration"*): `void`
 
-*Defined in [Configuration.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L90)*
+*Defined in [Configuration.ts:90](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L90)*
 
 Set the Trolley API environment that your using
 

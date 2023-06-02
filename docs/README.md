@@ -39,7 +39,7 @@
 
 ▸ **connect**(config: *[ConfigurationParams](interfaces/configurationparams.md)*): [Gateway](classes/gateway.md)
 
-*Defined in [index.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/index.ts#L21)*
+*Defined in [index.ts:21](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/index.ts#L21)*
 
 Create a client for the Trolley (Payment Rails) JavasScript API
 

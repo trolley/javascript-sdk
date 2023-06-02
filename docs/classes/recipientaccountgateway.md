@@ -35,7 +35,7 @@
 
 ⊕ **new RecipientAccountGateway**(gateway: *[Gateway](gateway.md)*): [RecipientAccountGateway](recipientaccountgateway.md)
 
-*Defined in [RecipientAccountGateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L15)*
+*Defined in [RecipientAccountGateway.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L15)*
 
 **Parameters:**
 
@@ -55,7 +55,7 @@ ___
 
 **● config**: *[Configuration](configuration.md)*
 
-*Defined in [RecipientAccountGateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L15)*
+*Defined in [RecipientAccountGateway.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L15)*
 
 ___
 <a id="gateway"></a>
@@ -64,7 +64,7 @@ ___
 
 **● gateway**: *[Gateway](gateway.md)*
 
-*Defined in [RecipientAccountGateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L11)*
+*Defined in [RecipientAccountGateway.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L11)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 ▸ **all**(recipientId: *`string`*): `Promise`<[RecipientAccount](recipientaccount.md)[]>
 
-*Defined in [RecipientAccountGateway.ts:33](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L33)*
+*Defined in [RecipientAccountGateway.ts:33](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L33)*
 
 Fetch all of the accounts for a given Trolley recipient
 
@@ -98,7 +98,7 @@ ___
 
 ▸ **create**(recipientId: *`string`*, body: *`any`*): `Promise`<[RecipientAccount](recipientaccount.md)>
 
-*Defined in [RecipientAccountGateway.ts:79](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L79)*
+*Defined in [RecipientAccountGateway.ts:79](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L79)*
 
 Create a new recipient account
 
@@ -129,7 +129,7 @@ ___
 
 ▸ **find**(recipientId: *`string`*, accountId: *`string`*): `Promise`<[RecipientAccount](recipientaccount.md)>
 
-*Defined in [RecipientAccountGateway.ts:52](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L52)*
+*Defined in [RecipientAccountGateway.ts:52](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L52)*
 
 Fetch a specific account for a given Trolley recipient
 
@@ -152,7 +152,7 @@ ___
 
 ▸ **remove**(recipientId: *`string`*, accountId: *`string`*): `Promise`<`boolean`>
 
-*Defined in [RecipientAccountGateway.ts:121](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L121)*
+*Defined in [RecipientAccountGateway.ts:121](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L121)*
 
 Delete the given recipient account. This will only return success, otherwise it will throw an exception (e.g. NotFound)
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **update**(recipientId: *`string`*, accountId: *`string`*, body: *`any`*): `Promise`<[RecipientAccount](recipientaccount.md)>
 
-*Defined in [RecipientAccountGateway.ts:102](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L102)*
+*Defined in [RecipientAccountGateway.ts:102](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccountGateway.ts#L102)*
 
 Update a recipient account. Note: Updating an account will create a new account ID if it contains any property that isn't just "primary"
 

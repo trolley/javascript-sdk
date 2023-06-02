@@ -32,7 +32,7 @@
 
 ⊕ **new BalancesGateway**(gateway: *[Gateway](gateway.md)*): [BalancesGateway](balancesgateway.md)
 
-*Defined in [BalancesGateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L15)*
+*Defined in [BalancesGateway.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L15)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 **● config**: *[Configuration](configuration.md)*
 
-*Defined in [BalancesGateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L15)*
+*Defined in [BalancesGateway.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L15)*
 
 ___
 <a id="gateway"></a>
@@ -61,7 +61,7 @@ ___
 
 **● gateway**: *[Gateway](gateway.md)*
 
-*Defined in [BalancesGateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L11)*
+*Defined in [BalancesGateway.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L11)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **all**(): `Promise`<`Balance`[]>
 
-*Defined in [BalancesGateway.ts:32](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L32)*
+*Defined in [BalancesGateway.ts:32](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L32)*
 
 Fetch the account balance for all enabled bank accounts
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **find**(kind: *"paypal" |"paymentrails"*): `Promise`<`Balance`[]>
 
-*Defined in [BalancesGateway.ts:49](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L49)*
+*Defined in [BalancesGateway.ts:49](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BalancesGateway.ts#L49)*
 
 Fetch the account balance for the given account type
 

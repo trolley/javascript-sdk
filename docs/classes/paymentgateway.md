@@ -26,7 +26,7 @@
 
 ▸ **create**(batchId: *`string`*, body: *`any`*): `Promise`<`Payment`>
 
-*Defined in [PaymentGateway.ts:55](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L55)*
+*Defined in [PaymentGateway.ts:55](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L55)*
 
 Create a new payment in a batch
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **find**(paymentId: *`string`*): `Promise`<`Payment`>
 
-*Defined in [PaymentGateway.ts:34](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L34)*
+*Defined in [PaymentGateway.ts:34](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L34)*
 
 Find a specific payment
 
@@ -74,7 +74,7 @@ ___
 
 ▸ **remove**(paymentId: *`string`*, batchId: *`string`*): `Promise`<`boolean`>
 
-*Defined in [PaymentGateway.ts:90](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L90)*
+*Defined in [PaymentGateway.ts:90](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L90)*
 
 Delete a given payment -- Note you can only delete non processed payments
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **search**(batchId: *`string`*, page?: *`number`*, pageSize?: *`number`*, term?: *`string`*): `Promise`<`Payment`[]>
 
-*Defined in [PaymentGateway.ts:105](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L105)*
+*Defined in [PaymentGateway.ts:105](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L105)*
 
 Search for payments in a given batch
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **update**(paymentId: *`string`*, batchId: *`string`*, body: *`any`*): `Promise`<`boolean`>
 
-*Defined in [PaymentGateway.ts:74](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L74)*
+*Defined in [PaymentGateway.ts:74](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/PaymentGateway.ts#L74)*
 
 Update a given payment
 
