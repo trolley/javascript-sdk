@@ -8,10 +8,6 @@
     "Payment Rails"
   ],
   "author": "Trolley",
-  "contributors": [
-    {"name":"Zero Bytes","url":"https://github.com/zero-bites/"},
-    {"name":"Aman Aalam", "url":"https://github.com/Aman-Aalam/"}
-  ],
   "license": "ISC",
   "bugs":{
     "url": "https://github.com/Trolley/javascript-sdk/issues",
