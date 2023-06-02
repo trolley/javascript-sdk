@@ -28,7 +28,7 @@
 
 **● balances**: *[BalancesGateway](balancesgateway.md)*
 
-*Defined in [Gateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L15)*
+*Defined in [Gateway.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L15)*
 
 ___
 <a id="batch"></a>
@@ -37,7 +37,7 @@ ___
 
 **● batch**: *[BatchGateway](batchgateway.md)*
 
-*Defined in [Gateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L13)*
+*Defined in [Gateway.ts:13](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L13)*
 
 ___
 <a id="client"></a>
@@ -46,7 +46,7 @@ ___
 
 **● client**: *`Client`*
 
-*Defined in [Gateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L11)*
+*Defined in [Gateway.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L11)*
 
 ___
 <a id="config"></a>
@@ -55,7 +55,7 @@ ___
 
 **● config**: *[Configuration](configuration.md)*
 
-*Defined in [Gateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L10)*
+*Defined in [Gateway.ts:10](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L10)*
 
 ___
 <a id="payment"></a>
@@ -64,7 +64,7 @@ ___
 
 **● payment**: *[PaymentGateway](paymentgateway.md)*
 
-*Defined in [Gateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L16)*
+*Defined in [Gateway.ts:16](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L16)*
 
 ___
 <a id="recipient"></a>
@@ -73,7 +73,7 @@ ___
 
 **● recipient**: *[RecipientGateway](recipientgateway.md)*
 
-*Defined in [Gateway.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L12)*
+*Defined in [Gateway.ts:12](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L12)*
 
 ___
 <a id="recipientaccount"></a>
@@ -82,7 +82,7 @@ ___
 
 **● recipientAccount**: *[RecipientAccountGateway](recipientaccountgateway.md)*
 
-*Defined in [Gateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L14)*
+*Defined in [Gateway.ts:14](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Gateway.ts#L14)*
 
 ___
 

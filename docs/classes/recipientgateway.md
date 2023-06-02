@@ -30,7 +30,7 @@
 
 ⊕ **new RecipientGateway**(gateway: *[Gateway](gateway.md)*): [RecipientGateway](recipientgateway.md)
 
-*Defined in [RecipientGateway.ts:40](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L40)*
+*Defined in [RecipientGateway.ts:40](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L40)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ ___
 
 ▸ **create**(body: *[RecipientInput](../interfaces/recipientinput.md)*): `Promise`<`Recipient`>
 
-*Defined in [RecipientGateway.ts:82](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L82)*
+*Defined in [RecipientGateway.ts:82](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L82)*
 
 Create a given recipient
 
@@ -80,7 +80,7 @@ ___
 
 ▸ **find**(recipientId: *`string`*): `Promise`<`Recipient`>
 
-*Defined in [RecipientGateway.ts:58](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L58)*
+*Defined in [RecipientGateway.ts:58](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L58)*
 
 Find a specific recipient by their Trolley recipient ID
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **remove**(recipientId: *`string`*): `Promise`<`boolean`>
 
-*Defined in [RecipientGateway.ts:115](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L115)*
+*Defined in [RecipientGateway.ts:115](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L115)*
 
 Delete the given recipient.
 
@@ -122,7 +122,7 @@ ___
 
 ▸ **search**(page: *`number`*, pageSize: *`number`*, term: *`string`*): `Promise`<`Recipient`[]>
 
-*Defined in [RecipientGateway.ts:123](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L123)*
+*Defined in [RecipientGateway.ts:123](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L123)*
 
 **Parameters:**
 
@@ -141,7 +141,7 @@ ___
 
 ▸ **update**(recipientId: *`string`*, body: *[RecipientInput](../interfaces/recipientinput.md)*): `Promise`<`boolean`>
 
-*Defined in [RecipientGateway.ts:100](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L100)*
+*Defined in [RecipientGateway.ts:100](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L100)*
 
 Update the given recipient
 

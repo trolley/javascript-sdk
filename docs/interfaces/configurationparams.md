@@ -28,7 +28,7 @@
 "development"
 *
 
-*Defined in [Configuration.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L15)*
+*Defined in [Configuration.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L15)*
 
 The environment that you're using, most likely one of "production" or "sandbox"
 
@@ -39,7 +39,7 @@ ___
 
 **● key**: *`string`*
 
-*Defined in [Configuration.ts:7](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L7)*
+*Defined in [Configuration.ts:7](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L7)*
 
 The Trolley public key
 
@@ -50,7 +50,7 @@ ___
 
 **● secret**: *`string`*
 
-*Defined in [Configuration.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L11)*
+*Defined in [Configuration.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Configuration.ts#L11)*
 
 The Trolley private key
 

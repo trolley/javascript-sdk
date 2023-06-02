@@ -44,7 +44,7 @@
 `string`
 *
 
-*Defined in [RecipientAccount.ts:23](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L23)*
+*Defined in [RecipientAccount.ts:23](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L23)*
 
 ___
 <a id="accountnum"></a>
@@ -55,7 +55,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:22](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L22)*
+*Defined in [RecipientAccount.ts:22](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L22)*
 
 ___
 <a id="bankaddress"></a>
@@ -66,7 +66,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:28](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L28)*
+*Defined in [RecipientAccount.ts:28](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L28)*
 
 ___
 <a id="bankcity"></a>
@@ -77,7 +77,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L29)*
+*Defined in [RecipientAccount.ts:29](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L29)*
 
 ___
 <a id="bankid"></a>
@@ -88,7 +88,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:26](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L26)*
+*Defined in [RecipientAccount.ts:26](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L26)*
 
 ___
 <a id="bankname"></a>
@@ -99,7 +99,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:27](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L27)*
+*Defined in [RecipientAccount.ts:27](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L27)*
 
 ___
 <a id="bankpostalcode"></a>
@@ -110,7 +110,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:31](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L31)*
+*Defined in [RecipientAccount.ts:31](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L31)*
 
 ___
 <a id="bankregioncode"></a>
@@ -121,7 +121,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:30](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L30)*
+*Defined in [RecipientAccount.ts:30](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L30)*
 
 ___
 <a id="branchid"></a>
@@ -132,7 +132,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:25](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L25)*
+*Defined in [RecipientAccount.ts:25](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L25)*
 
 ___
 <a id="country"></a>
@@ -143,7 +143,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L19)*
+*Defined in [RecipientAccount.ts:19](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L19)*
 
 ___
 <a id="currency"></a>
@@ -152,7 +152,7 @@ ___
 
 **● currency**: *`string`* = ""
 
-*Defined in [RecipientAccount.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L11)*
+*Defined in [RecipientAccount.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L11)*
 
 ___
 <a id="emailaddress"></a>
@@ -163,7 +163,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L16)*
+*Defined in [RecipientAccount.ts:16](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L16)*
 
 ___
 <a id="iban"></a>
@@ -174,7 +174,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:21](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L21)*
+*Defined in [RecipientAccount.ts:21](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L21)*
 
 ___
 <a id="id"></a>
@@ -183,7 +183,7 @@ ___
 
 **● id**: *`string`* = ""
 
-*Defined in [RecipientAccount.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L9)*
+*Defined in [RecipientAccount.ts:9](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L9)*
 
 ___
 <a id="primary"></a>
@@ -192,7 +192,7 @@ ___
 
 **● primary**: *`boolean`* = false
 
-*Defined in [RecipientAccount.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L10)*
+*Defined in [RecipientAccount.ts:10](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L10)*
 
 ___
 <a id="recipientfees"></a>
@@ -203,7 +203,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L13)*
+*Defined in [RecipientAccount.ts:13](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L13)*
 
 ___
 <a id="routetype"></a>
@@ -214,7 +214,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L12)*
+*Defined in [RecipientAccount.ts:12](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L12)*
 
 ___
 <a id="swiftbic"></a>
@@ -225,7 +225,7 @@ ___
 `null`
 *
 
-*Defined in [RecipientAccount.ts:24](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L24)*
+*Defined in [RecipientAccount.ts:24](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L24)*
 
 ___
 <a id="type"></a>
@@ -236,7 +236,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientAccount.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L20)*
+*Defined in [RecipientAccount.ts:20](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientAccount.ts#L20)*
 
 ___
 

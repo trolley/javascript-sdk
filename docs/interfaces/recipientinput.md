@@ -34,7 +34,7 @@
 
 **● account**: *`any`*
 
-*Defined in [RecipientGateway.ts:29](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L29)*
+*Defined in [RecipientGateway.ts:29](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L29)*
 
 ___
 <a id="address"></a>
@@ -45,7 +45,7 @@ ___
 `object`
 *
 
-*Defined in [RecipientGateway.ts:20](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L20)*
+*Defined in [RecipientGateway.ts:20](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L20)*
 
 ___
 <a id="dob"></a>
@@ -56,7 +56,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:15](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L15)*
+*Defined in [RecipientGateway.ts:15](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L15)*
 
 ___
 <a id="email"></a>
@@ -67,7 +67,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:10](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L10)*
+*Defined in [RecipientGateway.ts:10](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L10)*
 
 ___
 <a id="firstname"></a>
@@ -78,7 +78,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:12](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L12)*
+*Defined in [RecipientGateway.ts:12](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L12)*
 
 ___
 <a id="governmentid"></a>
@@ -89,7 +89,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:17](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L17)*
+*Defined in [RecipientGateway.ts:17](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L17)*
 
 ___
 <a id="language"></a>
@@ -100,7 +100,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:19](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L19)*
+*Defined in [RecipientGateway.ts:19](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L19)*
 
 ___
 <a id="lastname"></a>
@@ -111,7 +111,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:13](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L13)*
+*Defined in [RecipientGateway.ts:13](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L13)*
 
 ___
 <a id="name"></a>
@@ -122,7 +122,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:11](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L11)*
+*Defined in [RecipientGateway.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L11)*
 
 ___
 <a id="passport"></a>
@@ -133,7 +133,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:18](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L18)*
+*Defined in [RecipientGateway.ts:18](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L18)*
 
 ___
 <a id="referenceid"></a>
@@ -144,7 +144,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:9](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L9)*
+*Defined in [RecipientGateway.ts:9](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L9)*
 
 ___
 <a id="ssn"></a>
@@ -155,7 +155,7 @@ ___
 `string`
 *
 
-*Defined in [RecipientGateway.ts:16](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L16)*
+*Defined in [RecipientGateway.ts:16](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L16)*
 
 ___
 <a id="type"></a>
@@ -166,7 +166,7 @@ ___
 "business"
 *
 
-*Defined in [RecipientGateway.ts:14](https://github.com/PaymentRails/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L14)*
+*Defined in [RecipientGateway.ts:14](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/RecipientGateway.ts#L14)*
 
 ___
 
