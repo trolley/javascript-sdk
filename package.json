@@ -34,8 +34,7 @@
     "clean": "rm -rf dist/"
   },
   "dependencies": {
-    "@types/request": "^2.48.1",
-    "request": "^2.88.0"
+    "axios": "^1.5.0"
   },
   "devDependencies": {
     "@types/core-js": "^2.5.0",

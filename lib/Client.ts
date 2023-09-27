@@ -1,6 +1,6 @@
 import { Configuration } from "./Configuration";
 import * as crypto from "crypto";
-import * as request from "request";
+import axios from "axios";
 import { Errors } from './errors';
 import ValidationError = Errors.ValidationError;
 
@@ -16,55 +16,47 @@ const DEFAULT_HEADERS = {
   "Trolley-Source": `javascript-sdk_${CURRENT_CLIENT_VERSION}`,
 };
 
-function sendRequest<T>(options: request.UriOptions) {
+function sendRequest<T>(options: any) { 
   return new Promise<T>((resolve, reject) => {
-    // tslint:disable-next-line:cyclomatic-complexity
-    request(options, (error: any, response: request.RequestResponse, responseBody: any) => {
-      if (error) {
-        reject(new Errors.ServerError(String(error)));
+    axios(options)
+    .then((response: any) => {
+      if (response.status === 200) {
+        resolve(response.data as T);
       } else {
-        try {
-          const data = JSON.parse(responseBody);
+        reject(new Errors.ServerError(String(response.data)));
+      }
+    })
+    .catch((error: any) => {
+      const response = error.response;
+      const validationErrors: ValidationError[] = response.data.errors.map((e: any) => {
+        return {
+          code: e.code,
+          field: e.field,
+          message: e.message,
+        };
+      });
 
-          if (response.statusCode === 200) {
-            resolve(data as T);
-          } else {
-            const validationErrors: ValidationError[] = data.errors.map((e: any) => {
-              return {
-                code: e.code,
-                field: e.field,
-                message: e.message,
-              };
-            });
-
-            switch (response.statusCode) {
-              case 400:
-                reject(new Errors.MalformedError(validationErrors));
-                break;
-              case 401:
-                reject(new Errors.AuthenticationError(validationErrors));
-                break;
-              case 403:
-                reject(new Errors.AuthorizationError(validationErrors));
-                break;
-              case 404:
-                reject(new Errors.NotFoundError(validationErrors));
-                break;
-              case 500:
-                reject(new Errors.ServerError("Server error", validationErrors));
-                break;
-              case 503:
-                reject(new Errors.DownForMaintenanceError(validationErrors));
-                break;
-              default:
-                reject(new Errors.UnexpectedError(`Unexpected HTTP_RESPONSE #${response.statusCode}`, validationErrors));
-            }
-          }
-
-          return;
-        } catch (err) {
-          reject(new Errors.UnexpectedError(String(err)));
-        }
+      switch (response.status) {
+        case 400:
+          reject(new Errors.MalformedError(validationErrors));
+          break;
+        case 401:
+          reject(new Errors.AuthenticationError(validationErrors));
+          break;
+        case 403:
+          reject(new Errors.AuthorizationError(validationErrors));
+          break;
+        case 404:
+          reject(new Errors.NotFoundError(validationErrors));
+          break;
+        case 500:
+          reject(new Errors.ServerError("Server error", validationErrors));
+          break;
+        case 503:
+          reject(new Errors.DownForMaintenanceError(validationErrors));
+          break;
+        default:
+          reject(new Errors.UnexpectedError(`Unexpected HTTP_RESPONSE #${response.status}`, validationErrors));
       }
     });
   });
@@ -89,12 +81,12 @@ export class Client {
     const timestamp = Math.round(date / 1000);
     const authorization = this.generateAuthorization(timestamp, endPoint, "GET");
     const options = {
-      uri: endPoint,
-      baseUrl: this.config.apiBase,
-      method: "GET",
+      url: endPoint,
+      baseURL: this.config.apiBase,
+      method: "get",
       headers: {
         ...DEFAULT_HEADERS,
-        Authorization: authorization,
+        'Authorization': authorization,
         "X-PR-Timestamp": timestamp,
       },
     };
@@ -120,14 +112,15 @@ export class Client {
     );
 
     const options = {
-      uri: this.config.apiBase + endPoint,
-      method: "POST",
+      url: endPoint,
+      baseURL: this.config.apiBase,
+      method: "post",
       headers: {
         ...DEFAULT_HEADERS,
-        Authorization: authoriation,
+        "Authorization": authoriation,
         "X-PR-Timestamp": timestamp,
       },
-      body,
+      data: body,
     };
 
     return sendRequest<T>(options);
@@ -148,16 +141,15 @@ export class Client {
       body,
     );
     const options = {
-      uri: endPoint,
-      baseUrl: this.config.apiBase,
+      url: endPoint,
+      baseURL: this.config.apiBase,
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json",
-        Authorization: authoriation,
+        ...DEFAULT_HEADERS,
+        'Authorization': authoriation,
         "X-PR-Timestamp": timestamp,
-        "Trolley-Source": "javascript-sdk_0.11.1",
       },
-      body,
+      data: body,
     };
 
     return sendRequest<T>(options);
@@ -178,17 +170,31 @@ export class Client {
       body,
     );
 
-    const options = {
-      uri: endPoint,
-      baseUrl: this.config.apiBase,
+    let options: {
+      url: string;
+      baseURL: string;
+      method: string;
+      headers: {
+        Authorization: string;
+        "X-PR-Timestamp": number;
+        "Content-Type": string;
+        "Trolley-Source": string;
+      };
+      data?: any; // Optional property
+    } = {
+      url: endPoint,
+      baseURL: this.config.apiBase,
       method: "DELETE",
       headers: {
         ...DEFAULT_HEADERS,
-        Authorization: authorization,
+        'Authorization': authorization,
         "X-PR-Timestamp": timestamp,
-      },
-      body,
+      }
     };
+
+    if (ids.length > 0) {
+      options.data = body;
+    }
 
     return sendRequest<T>(options);
   }
