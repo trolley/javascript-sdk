@@ -22,6 +22,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install packages
+          command: npm ci
+      - run:
           name: Build distribution
           command: |
             if [[ $CIRCLE_BRANCH = master ]]; then
