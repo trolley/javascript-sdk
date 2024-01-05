@@ -1,33 +1,44 @@
-version: 2
+version: 2.1
+
+executors:
+  default:
+    working_directory: ~/sdk
+    docker:
+      - image: cimg/node:18.18.0
 
 jobs:
   build:
-    docker:
-      - image: circleci/node:10.13.0
-
+    executor: default
     steps:
       - checkout
-
       - run:
-          name: "Install packages"
-          command: "npm install"
-
-#      - run:
-#          name: "Integration tests"
-#          command: "npm test"
-
+          name: Install packages
+          command: npm ci
       - run:
-          name: "Build distribution"
+          name: Integration tests
+          command: npm run test
+  publish:
+    executor: default
+    steps:
+      - checkout
+      - run:
+          name: Install packages
+          command: npm ci
+      - run:
+          name: Build distribution
           command: |
             if [[ $CIRCLE_BRANCH = master ]]; then
               echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
               npm run build
               npm publish --access public
             fi
-
 workflows:
-  version: 2
-  build-deploy:
+  build-test:
     jobs:
-      - build:
-          context: org-global
+      - build
+  publish-deploy:
+    jobs:
+      - publish:
+          filters:
+            branches:
+              only: master
