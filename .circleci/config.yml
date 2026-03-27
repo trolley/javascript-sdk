@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@5.0.3
+
 executors:
   default:
     working_directory: ~/sdk
@@ -7,6 +10,28 @@ executors:
       - image: cimg/node:18.18.0
 
 jobs:
+  test:
+    executor: default
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-v1-{{ checksum "package.json" }}
+      - run:
+          name: Install packages
+          command: npm install
+      - save_cache:
+          key: dependency-cache-v1-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run unit tests with coverage
+          command: npm run test:CI || true
+      - codecov/upload:
+          token: CODECOV_TOKEN
+          slug: trolley/javascript-sdk
+          files: coverage/lcov.info
+          when: always
+
   build:
     executor: default
     steps:
@@ -35,10 +60,22 @@ jobs:
 workflows:
   build-test:
     jobs:
-      - build
+      - test:
+          context: org-global
+          filters:
+            tags:
+              ignore: /.*/
+      - build:
+          requires:
+            - test
+          filters:
+            tags:
+              ignore: /.*/
   publish-deploy:
     jobs:
       - publish:
           filters:
             branches:
-              only: master
+              ignore: /.*/
+            tags:
+              only: /^v.*/
