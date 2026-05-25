@@ -2,7 +2,7 @@
     {
         "scope": "https://api.trolley.com:443",
         "method": "GET",
-        "path": "/v1/profile/balances/paymentrails",
+        "path": "/v1/balances/paymentrails",
         "body": "",
         "status": 200,
         "response": {
