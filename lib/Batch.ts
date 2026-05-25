@@ -52,6 +52,7 @@ export class Batch {
     },
   };
   quoteExpiredAt?: string;
+  tags: string[] = [];
 
   /**
    * Retrieves a batch based on the batch id
@@ -126,6 +127,10 @@ export class Batch {
    */
   static async startProcessing(batchId: string) {
     return Configuration.gateway().batch.startProcessing(batchId);
+  }
+
+  static async processBatch(batchId: string) {
+    return Configuration.gateway().batch.processBatch(batchId);
   }
 
   /**

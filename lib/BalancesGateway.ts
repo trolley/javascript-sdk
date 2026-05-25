@@ -30,7 +30,7 @@ export class BalancesGateway {
    * ```
    */
   async all() {
-    const endPoint = buildURL('profile', 'balances');
+    const endPoint = buildURL('balances');
 
     const result = await this.gateway.client.get<types.Balance.ListResult>(
       endPoint,
@@ -47,10 +47,22 @@ export class BalancesGateway {
    * @param kind The account type to get the balances for
    */
   async find(kind: "paypal" | "paymentrails") {
-    const endPoint = buildURL('profile', 'balances', kind);
+    const endPoint = buildURL('balances', kind);
 
     const result = await this.gateway.client.get<types.Balance.ListResult>(endPoint);
 
+    return Object.values(result.balances).map(Balance.factory);
+  }
+
+  async paymentrails() {
+    const endPoint = buildURL('balances', 'paymentrails');
+    const result = await this.gateway.client.get<types.Balance.ListResult>(endPoint);
+    return Object.values(result.balances).map(Balance.factory);
+  }
+
+  async paypal() {
+    const endPoint = buildURL('balances', 'paypal');
+    const result = await this.gateway.client.get<types.Balance.ListResult>(endPoint);
     return Object.values(result.balances).map(Balance.factory);
   }
 }
