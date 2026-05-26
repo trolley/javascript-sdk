@@ -33,9 +33,32 @@ export class Payment {
   coverFees: boolean = false;
 
   sourceCurrency: string | null = null;
+  sourceCurrencyName: string = "";
   targetCurrency: string | null = null;
+  targetCurrencyName: string = "";
   isSupplyPayment: boolean = false;
   payoutMethod: string = "";
+  batch?: any;
+  category: string | null = null;
+  checkNumber: string | null = null;
+  currency: string | null = null;
+  equivalentWithholdingAmount: string = "";
+  equivalentWithholdingCurrency: string | null = null;
+  estimatedDeliveryAt: string | null = null;
+  failureMessage: string | null = null;
+  initiatedAt: string | null = null;
+  merchantId: string = "";
+  returnedAt: string | null = null;
+  returnedNote: string | null = null;
+  returnedReason: string[] | null = null;
+  settledAt: string | null = null;
+  tags: string[] = [];
+  taxBasisAmount: string = "";
+  taxBasisCurrency: string | null = null;
+  taxReportable: boolean = false;
+  visibleToRecipient: boolean = false;
+  withholdingAmount: string = "";
+  withholdingCurrency: string | null = null;
 
   /**
    * Retrieves a payment based on the payment id and or

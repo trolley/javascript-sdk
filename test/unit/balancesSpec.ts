@@ -8,7 +8,7 @@ describe("Balance", () => {
   let sandbox: sinon.SinonSandbox;
 
   before(() => {
-    sandbox = sinon.sandbox.create();
+    sandbox = sinon.createSandbox();
     Configuration.setApiKey("access-code");
     Configuration.setApiSecret("secret-code");
   });
@@ -25,9 +25,9 @@ describe("Balance", () => {
       };
     });
 
-    const data = await Balances.all();
+    const data = await Balance.all();
 
-    assert.deepEqual(data, {});
+    assert.deepEqual(data, { ok: true, balances: {} });
   });
 
   it("Retrieve trolley/paymentrails balance", async () => {
@@ -41,9 +41,9 @@ describe("Balance", () => {
         };
       });
 
-    const data = await Balances.find("paymentrails");
+    const data = await Balance.find("paymentrails");
 
-    assert.deepEqual(data, {});
+    assert.deepEqual(data, { ok: true, balance: {} });
   });
 
   it("Retreive paypal balance", async () => {
@@ -57,8 +57,8 @@ describe("Balance", () => {
         };
       });
 
-    const data = await Balances.find("paypal");
+    const data = await Balance.find("paypal");
 
-    assert.deepEqual(data, {});
+    assert.deepEqual(data, { ok: true, balance: {} });
   });
 });

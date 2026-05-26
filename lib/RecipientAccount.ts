@@ -29,6 +29,9 @@ export class RecipientAccount {
   bankCity?: string;
   bankRegionCode?: string;
   bankPostalCode?: string;
+  cardDetails?: any;
+  mailing?: any;
+  phoneNumber?: string;
 
   /**
    * Retrieves the payout method based on the recipient id

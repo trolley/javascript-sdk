@@ -20,6 +20,12 @@ export class OfflinePayment {
   withholdingAmount: string = "";
   withholdingCurrency: string = "";
   processedAt: string = "";
+  equivalentWithholdingAmount: string = "";
+  equivalentWithholdingCurrency: string = "";
+  updatedAt: string = "";
+  createdAt: string = "";
+  deletedAt: string | null = null;
+  activityCount: string = "";
 
   /**
    * Creates an offline payment

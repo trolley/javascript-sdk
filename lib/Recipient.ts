@@ -48,10 +48,11 @@ export class Recipient {
   gravatarUrl: string = "";
 
   governmentId: null | string = null;
-  ssn: null | string = null;
   accounts: RecipientAccount[] = [];
 
   primaryCurrency: null | string = null;
+  payoutMethod: string = "";
+  tags: string[] = [];
   routeType: string | null = null;
   routeMinimum: number | null = null;
   estimatedFees: string | null = null;

@@ -8,7 +8,7 @@ describe("Batch", () => {
   let sandbox: sinon.SinonSandbox;
 
   before(() => {
-    sandbox = sinon.sandbox.create();
+    sandbox = sinon.createSandbox();
     Configuration.setApiKey("access-code");
     Configuration.setApiSecret("secret-code");
   });
@@ -23,8 +23,6 @@ describe("Batch", () => {
       .withArgs("B-912PWJGD8RZ7J")
       .callsFake(async () => {
         return {
-          ok: true,
-          batch: {
             id: "B-LfoeSofUYdPpZBULbezULe",
             status: "open",
             amount: "200.20",
@@ -106,7 +104,6 @@ describe("Batch", () => {
                 records: 10,
               },
             },
-          },
         };
       });
 
@@ -150,7 +147,7 @@ describe("Batch", () => {
         return { ok: true, object: "updated" };
       });
     const data = await Batch.update("B-912PWJGD8RZ7J", body);
-    assert.equal(data, undefined);
+    assert.deepEqual(data, { ok: true, object: "updated" });
   });
 
   it("Update Batch Invalid Batch Id", async () => {
@@ -213,9 +210,7 @@ describe("Batch", () => {
       .stub(BatchGateway.prototype, "search")
       .withArgs()
       .callsFake(async () => {
-        return {
-          ok: true,
-          batch: {
+        return [{
             id: "B-LfoeSofUYdPpZBULbezULe",
             status: "open",
             amount: "200.20",
@@ -259,8 +254,7 @@ describe("Batch", () => {
               ],
               meta: { page: 0, pages: 10, records: 10 },
             },
-          },
-        };
+        }];
       });
 
     const data = await Batch.search();
@@ -273,8 +267,7 @@ describe("Batch", () => {
       .withArgs(1, 10)
       .callsFake(async () => {
         return {
-          ok: true,
-          batches: {
+          batches: [{
             id: "B-LfoeSofUYdPpZBULbezULe",
             status: "open",
             amount: "200.20",
@@ -318,7 +311,7 @@ describe("Batch", () => {
               ],
               meta: { page: 0, pages: 10, records: 10 },
             },
-          },
+          }],
         };
       });
     const data = await Batch.search(1, 10);
@@ -342,7 +335,7 @@ describe("Batch", () => {
       .stub(BatchGateway.prototype, "create")
       .withArgs(body)
       .callsFake(() => {
-        return "B-912PWJGD8RZ7J";
+        return { id: "B-912PWJGD8RZ7J" };
       });
 
     const batch = await Batch.create(body);

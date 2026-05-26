@@ -31,8 +31,10 @@ export class PaymentGateway {
    * ```
    * @param paymentId Trolley payment id (e.g. "P-aabccc")
    */
-  async find(paymentId: string) {
-    const endPoint = buildURL("payments", paymentId);
+  async find(paymentId: string, batchId?: string) {
+    const endPoint = batchId
+      ? buildURL("batches", batchId, "payments", paymentId)
+      : buildURL("payments", paymentId);
 
     const result = await this.gateway.client.get<types.Payment.Result>(
       endPoint,

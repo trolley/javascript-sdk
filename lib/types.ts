@@ -87,6 +87,26 @@ export namespace Balance {
   }
 }
 
+export namespace Verification {
+  export interface Verification {
+    id: string;
+    type: string;
+    recipientId: string;
+    status: string;
+    createdAt: string;
+    updatedAt: string;
+    submittedAt: string | null;
+    decisionAt: string | null;
+    reasonType: string | null;
+    verifiedData: any;
+  }
+
+  export interface ListResult extends Serializer.WithMeta {
+    ok: boolean;
+    verifications: Verification[];
+  }
+}
+
 /**
  * @hidden
  */
@@ -104,6 +124,7 @@ export namespace Batch {
     updatedAt: string;
     payments?: Payment.ListResult;
     quoteExpiredAt?: string;
+    tags: string[];
   }
 
   export interface Result {
@@ -249,7 +270,9 @@ export namespace Payment {
     };
 
     sourceCurrency: string | null;
+    sourceCurrencyName: string;
     targetCurrency: string | null;
+    targetCurrencyName: string;
     isSupplyPayment: boolean;
 
     methodDisplay: string;
@@ -273,6 +296,11 @@ export namespace Payment {
     taxReportable: boolean;
     withholdingAmount: string;
     withholdingCurrency: string | null;
+    equivalentWithholdingAmount: string;
+    equivalentWithholdingCurrency: string | null;
+    taxBasisAmount: string;
+    taxBasisCurrency: string | null;
+    visibleToRecipient: boolean;
 
     settledAt: string | null;
     initiatedAt: string | null;
@@ -313,7 +341,7 @@ export namespace OfflinePayment {
     equivalentWithholdingCurrency: string;
 
     processedAt: string;
-
+    activityCount: string;
     updatedAt: string;
     createdAt: string;
     deletedAt: string | null;
@@ -468,12 +496,12 @@ export namespace Recipient {
     gravatarUrl: string;
 
     governmentId: null | string;
-    ssn: null | string;
     merchantId: string;
     accounts: Account[];
 
     primaryCurrency: null | string;
     payoutMethod?: string;
+    tags: string[];
 
     payout: any;
 
@@ -553,6 +581,9 @@ export namespace Recipient {
     bankCity?: string;
     bankRegionCode?: string;
     bankPostalCode?: string;
+    cardDetails?: any;
+    mailing?: any;
+    phoneNumber?: string;
   }
 
   export interface AccountResponse {

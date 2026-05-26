@@ -209,6 +209,10 @@ export class BatchGateway {
     return Batch.factory(result.batch);
   }
 
+  async processBatch(batchId: string) {
+    return this.startProcessing(batchId);
+  }
+
   /**
    * Get a transaction totaled summary for this batch
    * @param batchId Trolley payment id (e.g. "B-xx999bb")
