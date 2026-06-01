@@ -39,9 +39,7 @@ export class VerificationGateway {
   }
 
   async triggerWatchlist(body: any) {
-    const endPoint = buildURL("verifications", "watchlist", "trigger");
-    const result = await this.gateway.client.post<types.Verification.ListResult>(endPoint, body);
-    return new PaginatedArray<types.Verification.Verification>(result.meta, ...result.verifications);
+    return this.trigger("watchlist", body);
   }
 
   async trigger_watchlist(body: any) {
