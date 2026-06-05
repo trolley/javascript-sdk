@@ -12,6 +12,7 @@
 
 * [description](batchinput.md#description)
 * [sourceCurrency](batchinput.md#sourcecurrency)
+* [tags](batchinput.md#tags)
 
 ---
 
@@ -39,6 +40,18 @@ ___
 
 *Defined in [Batch.ts:14](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Batch.ts#L14)*
 *Defined in [BatchGateway.ts:9](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L9)*
+
+___
+
+<a id="tags"></a>
+
+###  tags
+
+**● tags**: *`undefined` |
+`string`[]*
+
+*Defined in [Batch.ts:16](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/Batch.ts#L16)*
+*Defined in [BatchGateway.ts:11](https://github.com/Trolley/javascript-sdk/blob/c3121c6/lib/BatchGateway.ts#L11)*
 
 ___
 

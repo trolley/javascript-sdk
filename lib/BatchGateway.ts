@@ -8,6 +8,7 @@ import { buildURL, PaginatedArray } from "./util";
 export interface BatchInput {
   sourceCurrency?: string;
   description?: string;
+  tags?: string[];
 }
 
 /**
@@ -80,6 +81,7 @@ export class BatchGateway {
    * const batch = await client.batch.create({
    *     description: "My Batch",
    *     sourceCurrency: "USD",
+   *     tags: ["weekly-payouts"],
    *   }, [
    *     {
    *       recipient: {

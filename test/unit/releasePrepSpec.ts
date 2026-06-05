@@ -1,4 +1,5 @@
 import { Batch, Balance, Configuration, Gateway, OfflinePayment, Payment, Recipient, RecipientAccount } from "../../lib";
+import { BatchGateway } from "../../lib/BatchGateway";
 import { BalancesGateway } from "../../lib/BalancesGateway";
 import { PaymentGateway } from "../../lib/PaymentGateway";
 import { VerificationGateway } from "../../lib/VerificationGateway";
@@ -109,6 +110,25 @@ describe("Release prep endpoint coverage", () => {
 
     assert.ok(configured.verification instanceof VerificationGateway);
     assert.strictEqual(configured.trust, configured.verification);
+  });
+
+  it("passes batch tags through create requests", async () => {
+    const batches = new BatchGateway(gateway);
+    client.post.resolves({
+      ok: true,
+      batch: { id: "B-123", sourceCurrency: "USD", tags: ["weekly-payouts"] },
+    });
+
+    const batch = await batches.create({
+      sourceCurrency: "USD",
+      tags: ["weekly-payouts"],
+    });
+
+    assert.deepStrictEqual(client.post.getCall(0).args, [
+      "/v1/batches",
+      { sourceCurrency: "USD", tags: ["weekly-payouts"] },
+    ]);
+    assert.deepStrictEqual(batch.tags, ["weekly-payouts"]);
   });
 
   it("maps documented response fields", () => {

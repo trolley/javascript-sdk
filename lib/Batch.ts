@@ -13,6 +13,7 @@ if (Symbol["asyncIterator"] === undefined) {
 export interface BatchInput {
   sourceCurrency: string;
   description: string;
+  tags?: string[];
 }
 
 export interface PaymentInput {
