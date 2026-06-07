@@ -26,11 +26,14 @@ jobs:
       - run:
           name: Run unit tests with coverage
           command: npm run test:CI
+      - run:
+          name: Install Codecov CLI
+          command: python3 -m pip install --user codecov-cli
       - codecov/upload:
           token: CODECOV_TOKEN
           slug: trolley/javascript-sdk
           files: coverage/lcov.info
-          use_pypi: true
+          binary: /home/circleci/.local/bin/codecov
           when: always
 
   build:
