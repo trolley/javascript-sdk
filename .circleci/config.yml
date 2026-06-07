@@ -28,7 +28,10 @@ jobs:
           command: npm run test:CI
       - run:
           name: Install Codecov CLI
-          command: python3 -m pip install --user codecov-cli
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y python3-pip
+            python3 -m pip install --user codecov-cli
       - codecov/upload:
           token: CODECOV_TOKEN
           slug: trolley/javascript-sdk
