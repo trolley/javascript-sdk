@@ -1,10 +1,14 @@
 import { Batch, Balance, Configuration, Gateway, OfflinePayment, Payment, Recipient, RecipientAccount } from "../../lib";
 import { BalancesGateway } from "../../lib/BalancesGateway";
+import { Client } from "../../lib/Client";
 import { PaymentGateway } from "../../lib/PaymentGateway";
 import { VerificationGateway } from "../../lib/VerificationGateway";
 
 import * as assert from "assert";
+import * as nock from "nock";
 import * as sinon from "sinon";
+
+const packageInfo = require("../../package.json");
 
 describe("Release prep endpoint coverage", () => {
   let sandbox: sinon.SinonSandbox;
@@ -30,6 +34,21 @@ describe("Release prep endpoint coverage", () => {
 
   afterEach(() => {
     sandbox.restore();
+    nock.cleanAll();
+  });
+
+  it("uses the package version in the source header", async () => {
+    const sourceHeader = `javascript-sdk_${packageInfo.version}`;
+    const request = nock("https://api.trolley.com")
+      .matchHeader("Trolley-Source", sourceHeader)
+      .get("/v1/balances")
+      .reply(200, { ok: true });
+
+    const apiClient = new Client(new Configuration({ key: "access", secret: "secret" }));
+
+    await apiClient.get("/v1/balances");
+
+    assert.ok(request.isDone());
   });
 
   it("uses documented balance endpoints", async () => {
