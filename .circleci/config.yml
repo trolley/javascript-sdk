@@ -30,7 +30,7 @@ jobs:
           token: CODECOV_TOKEN
           slug: trolley/javascript-sdk
           files: coverage/lcov.info
-          skip_validation: true
+          use_pypi: true
           when: always
 
   build:
