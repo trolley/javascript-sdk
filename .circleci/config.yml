@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@5.0.3
+  codecov: codecov/codecov@5.4.3
 
 executors:
   default:
@@ -26,10 +26,17 @@ jobs:
       - run:
           name: Run unit tests with coverage
           command: npm run test:CI
+      - run:
+          name: Install Codecov CLI
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y python3-pip
+            python3 -m pip install --user codecov-cli
       - codecov/upload:
           token: CODECOV_TOKEN
           slug: trolley/javascript-sdk
           files: coverage/lcov.info
+          binary: /home/circleci/.local/bin/codecov
           when: always
 
   build:
