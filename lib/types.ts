@@ -88,6 +88,30 @@ export namespace Balance {
 }
 
 export namespace Verification {
+  export type IdentityOrBusinessType = "individual" | "business";
+  export type RetryRejectedReasonType = "unprocessable" | "invalid" | "missing_requirements" | "fraudulent";
+
+  export interface TriggerIdentityOrBusinessRequest {
+    recipientId: string;
+    types: IdentityOrBusinessType[];
+    enforceInactiveUntilVerified?: boolean;
+    retryAllowed?: boolean;
+    retryRejectedReasonTypes?: RetryRejectedReasonType[];
+  }
+
+  export interface TriggerIdentityOrBusinessVerification {
+    type: IdentityOrBusinessType;
+    status: "created" | "failed";
+    verificationId?: string;
+    error?: string;
+  }
+
+  export interface TriggerIdentityOrBusinessResult {
+    ok: boolean;
+    recipientId: string;
+    verifications: TriggerIdentityOrBusinessVerification[];
+  }
+
   export interface Verification {
     id: string;
     type: string;

@@ -38,6 +38,11 @@ export class VerificationGateway {
     return new PaginatedArray<types.Verification.Verification>(result.meta, ...result.verifications);
   }
 
+  async triggerIdentityOrBusinessVerification(body: types.Verification.TriggerIdentityOrBusinessRequest) {
+    const endPoint = buildURL("verifications", "trigger");
+    return this.gateway.client.post<types.Verification.TriggerIdentityOrBusinessResult>(endPoint, body);
+  }
+
   async triggerWatchlist(body: any) {
     const endPoint = buildURL("verifications", "watchlist", "trigger");
     const result = await this.gateway.client.post<types.Verification.ListResult>(endPoint, body);
