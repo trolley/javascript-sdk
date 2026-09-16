@@ -95,6 +95,17 @@ describe("Release prep endpoint coverage", () => {
     assert.strictEqual((await verifications.trigger("individual", { recipientIds: ["R-123"] }))[0].id, "WV-123");
     assert.strictEqual((await verifications.triggerWatchlist({ recipientIds: ["R-123"] }))[0].id, "WV-123");
     assert.strictEqual((await verifications.trigger_watchlist({ recipientIds: ["R-123"] }))[0].id, "WV-123");
+    const identityResponse = {
+      ok: true,
+      recipientId: "R-123",
+      verifications: [{ type: "individual", status: "created", verificationId: "IV-123" }],
+    };
+    client.post.resolves(identityResponse);
+    assert.deepStrictEqual(await verifications.triggerIdentityOrBusinessVerification({
+      recipientId: "R-123",
+      types: ["individual"],
+      retryAllowed: true,
+    }), identityResponse);
 
     assert.deepStrictEqual(client.get.getCall(0).args, ["/v1/verifications?verificationType=watchlist&page=1&pageSize=10"]);
     assert.deepStrictEqual(client.get.getCall(1).args, ["/v1/verifications?page=1"]);
@@ -102,6 +113,11 @@ describe("Release prep endpoint coverage", () => {
     assert.deepStrictEqual(client.post.getCall(0).args, ["/v1/verifications/individual/trigger", { recipientIds: ["R-123"] }]);
     assert.deepStrictEqual(client.post.getCall(1).args, ["/v1/verifications/watchlist/trigger", { recipientIds: ["R-123"] }]);
     assert.deepStrictEqual(client.post.getCall(2).args, ["/v1/verifications/watchlist/trigger", { recipientIds: ["R-123"] }]);
+    assert.deepStrictEqual(client.post.getCall(3).args, ["/v1/verifications/trigger", {
+      recipientId: "R-123",
+      types: ["individual"],
+      retryAllowed: true,
+    }]);
   });
 
   it("constructs gateway verification aliases", () => {
