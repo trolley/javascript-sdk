@@ -10,8 +10,11 @@ export class PartnerGateway {
     this.config = gateway.config;
   }
 
-  async getFees() {
-    return this.gateway.client.get<any>("/v1/fees");
+  async getFees(currency?: string) {
+    const endpoint = currency
+      ? `/v1/fees?currency=${encodeURIComponent(currency)}`
+      : "/v1/fees";
+    return this.gateway.client.get<any>(endpoint);
   }
 
   async updateFees(body: { [key: string]: any }) {

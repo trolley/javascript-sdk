@@ -24,6 +24,7 @@ describe("Partner", () => {
     const body = { enabled: true };
 
     await gateway.partner.getFees();
+    await gateway.partner.getFees("USD");
     await gateway.partner.updateFees(body);
     await gateway.partner.listPayoutMethods();
     await gateway.partner.getPayoutMethod("bank-transfer");
@@ -40,6 +41,7 @@ describe("Partner", () => {
     await gateway.partner.updateWidgetConfiguration(body);
 
     assert(get.calledWithExactly("/v1/fees"));
+    assert(get.calledWithExactly("/v1/fees?currency=USD"));
     assert(get.calledWithExactly("/v1/payout-methods"));
     assert(get.calledWithExactly("/v1/payout-methods/bank-transfer"));
     assert(get.calledWithExactly("/v1/processing-settings"));
