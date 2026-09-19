@@ -10,6 +10,7 @@ import { Client } from "./Client";
 import { InvoiceLineGateway } from "./InvoiceLineGateway";
 import { InvoicePaymentGateway } from "./InvoicePaymentGateway";
 import { VerificationGateway } from "./VerificationGateway";
+import { PartnerGateway } from "./PartnerGateway";
 
 export class Gateway {
   config: Configuration;
@@ -25,6 +26,7 @@ export class Gateway {
   invoicePayment: InvoicePaymentGateway;
   verification: VerificationGateway;
   trust: VerificationGateway;
+  partner: PartnerGateway;
 
   /**
    * This should be called by the connect() method to setup a client gateway
@@ -45,5 +47,6 @@ export class Gateway {
     this.invoicePayment = new InvoicePaymentGateway(this);
     this.verification = new VerificationGateway(this);
     this.trust = this.verification;
+    this.partner = new PartnerGateway(this);
   }
 }
