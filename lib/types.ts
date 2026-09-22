@@ -643,3 +643,81 @@ export type Amount = {
   value: string;
   currency: string;
 };
+
+export namespace Fees {
+  export type Integration =
+    | "bank-transfer"
+    | "debit-card"
+    | "mobile-wallet"
+    | "paypal"
+    | "check"
+    | "venmo";
+
+  export type MerchantAmountType = "fixed" | "percentage";
+
+  export interface SearchRoutePricingRequest {
+    currency?: string;
+  }
+
+  export interface CreateRevenueStreamRequest {
+    currencyCode: string;
+    integration: Integration;
+    routeType: string;
+    merchantAmountType: MerchantAmountType;
+    merchantAmount: string;
+    minPercentCapAmount?: string;
+    maxPercentCapAmount?: string;
+  }
+
+  export interface UpdateRevenueStreamRequest {
+    revenueShareId: string;
+    currencyCode: string;
+    integration: Integration;
+    routeType: string;
+    merchantAmountType: MerchantAmountType;
+    merchantAmount: string;
+    minPercentCapAmount?: string | null;
+    maxPercentCapAmount?: string | null;
+  }
+
+  export interface AmountRange {
+    min: string;
+    max: string;
+  }
+
+  export interface RevenueStream {
+    currencyCode: string;
+    integration: string;
+    routeType: string;
+    merchantAmountType: string;
+    merchantAmount: string;
+    guardrails: {
+      fixed: AmountRange;
+      percentage: AmountRange;
+    };
+    percentCap: {
+      min: string | null;
+      max: string | null;
+    };
+    revenueShareId: string | null;
+  }
+
+  export interface RoutePricing {
+    currencyCode: string;
+    revenueStream: {
+      [integration: string]: {
+        [routeType: string]: RevenueStream;
+      };
+    };
+  }
+
+  export interface SearchRoutePricingResponse {
+    ok: boolean;
+    fees: RoutePricing[];
+  }
+
+  export interface RevenueStreamResponse {
+    ok: boolean;
+    revenueStream: RevenueStream;
+  }
+}
