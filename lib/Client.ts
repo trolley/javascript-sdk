@@ -28,7 +28,14 @@ function sendRequest<T>(options: any) {
     })
     .catch((error: any) => {
       const response = error.response;
-      const validationErrors: ValidationError[] = response.data.errors.map((e: any) => {
+      // Transport failures (connection reset, DNS, timeout) have no response.
+      // Throwing here would leave the outer promise pending forever.
+      if (!response) {
+        reject(error);
+        return;
+      }
+      // Non-API bodies (e.g. an HTML 502 from a proxy) have no errors array.
+      const validationErrors: ValidationError[] = (response.data?.errors ?? []).map((e: any) => {
         return {
           code: e.code,
           field: e.field,
