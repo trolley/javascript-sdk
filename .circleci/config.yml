@@ -7,7 +7,7 @@ executors:
   default:
     working_directory: ~/sdk
     docker:
-      - image: cimg/node:18.18.0
+      - image: cimg/node:24.22.1
 
 jobs:
   test:
